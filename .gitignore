@@ -1,3 +1,18 @@
+# DGT added
+# dont clutter repo with chm(obsolete), zip, database and exe files
+*.chm
+*.zip
+*.mdb
+*.exe
+
+# also avoid video
+*.swf
+*.mp4
+
+# also avoid dream weaver sync files
+dwsync.xml
+
+# below are from template
 # Compiled Object files
 *.slo
 *.lo
@@ -23,6 +38,5 @@
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app

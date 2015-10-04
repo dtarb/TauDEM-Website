@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>David Tarboton: Hydrology Research Group-Terain Analysis Using Digital Elevation Models (TauDEM)</title>
+	<meta name="description" content="David Tarboton: Hydrology Research Group - Terain Analysis Using Digital Elevation Models (TauDEM)" />
+	<meta name="keywords" content="David Tarboton: Hydrology Research Group, Utah State Unversity, USU, hydrology, research, academic, higher education, terain, elevation, digital elevation models, DEM, ArcGIS, toolbar, geoprocessing" />
+	<meta name="author" content="Utah State Unversity, David Tarboton Hydrologic Research Group - 2006-2007" />
+	<meta name="language" content="en" />
+	<meta name="robots" content="follow, all" />
+	<meta name="revisit-after" content="5 days" />
+
+  	<link href="/images/favicon.ico" rel="shortcut icon" />
+	<link href="/tarboton.css" rel="stylesheet" type="text/css"/>
+  </head>
+<body>
+	<span class="wordmark"><a href="http://www.usu.edu/"><img src="/images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
+	<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="/images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
+	<div class="mainHeader">
+		<div class="wordmark"></div>
+		<div class="topNav">
+			<ul>
+				<li>
+					<a href="http://www.usu.edu/">USU home</a>
+				<li>
+					<a href="http://www.usu.edu/search/">A-Z index</a>
+				<li>
+					<a href="http://www.usu.edu/calendar/">calendars</a>
+				<li>
+					<a href="http://www.usu.edu/myusu/">MyUSU</a>
+				<li>
+					<a href="http://www.usu.edu/contact/">contact</a>
+				<li>
+					<a href="http://www.usu.edu/directory/">directory</a>
+                <li> 
+                	<a href="http://www.usu.edu/search/">search USU</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mainNav">
+		<div class="signIn">
+		</div>
+	</div>
+	<span class="wordmark"></span>
+	<table width="100%">
+		<tr valign="top">
+			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+			<td class="main">
+				<div class="banner"  >
+                <table  >
+                    <tr>
+                        <td width="360px"><img src="/images/taudem5logo.gif" alt="TauDEM 5 logos" width="350" height="74" style="float:left"/></td>
+                        <td rowspan="2">TauDEM Version 5</td>
+                    </tr>
+                    <tr>
+                        <td style="margin-right: 20px;  padding: 6px; padding-left: 10px; text-align: left "><span style="font-size: 14px; font-weight: bold; font-style:italic">Hydrologic terrain analysis  with parallel processing<br />
+                            developed with  support from the US Army Corps of<br />
+                            Engineers, System Wide Water Resources Program</span></td>
+                    </tr>
+					</table>
+				</div>
+				<div class="navTrail">
+                	<div class="menu3" align="center" style="font-weight:bold">
+                    	<table width="98%"><tr>
+                            <td align="center"><a href=".">Home</td>
+                    		<td align="center"><a href="downloads.html">Downloads</a></td>
+                            <td align="center"><a href="documentation.html">Documentation</a></td>
+                            <td align="center"><a href="support.html">Support</a></td>
+                            <td align="center"><a href="license.html">License</a></td>
+                             <td align="center"><a href="publications.html">Publications</a></td>
+                           <td align="center"><a href="../versions.html">Previous Versions</a></td>
+                            <td align="center"><a href="acknowledge.html">Acknowledgements</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="print"> </div>
+			<em></em>	</div>
+				<div class="content">
+				  
+				<h3>Trouble Shooting</h3>
+                
+			              
+					<p>This page gives issues that sometimes arise, and their resolution/workarounds					</p>
+					<ol>
+					<li>
+					  <p>Language setting issue. A user in Spain reported that they were getting errors related to NoData not being defined. This was traced to the language settings on the computer.  The no data value      in the output file is stored as a text string -3.40283E+038.       However a computer with Spain language settings (and possibly other countries too) expects a comma (e.g. -3,40283E+038) so      it does not recognize the no data and displays the large negative      values.  In other respects the results are correct.  Unfortunately I      do not know how to fix this.  You may be able to use the &quot;Calculate Statistics&quot; tool in ArcGIS to help with no data values.  A work around, which I recognize is not ideal for non US users is to change the computer regional settings to English (United      States), or at least change the decimal symbol to &quot;.&quot;.  </p>
+		              <p><img src="LanguageSetting.png" width="939" height="546" alt="Language Setting Image" /></p>
+	              </li></ol>
+				  <p>Common issues with TauDEM 5.0.x and 5.1. Many of these have been resolved with the switch to Microsoft   HPC Pack 2012 MS-MPI  redistributable libraries.</p>
+					<ol>
+					  <li>You get the error &quot;Failed to Execute&quot;. This is most commonly due to MPICH2 not being installed from the administrator command prompt or administrator account (which is distinct from a user account with administrator priveleges). See the <a href="downloads.html">downloads</a> page Install MPICH2 using Administrator priveleges step (3.2). If you think this was done right this issue is best debugged using a command prompt.			          
+					    <blockquote>
+					      <p>Open a windows command prompt (Start-&gt;All  Programs-&gt;Accessories-&gt;Command Prompt) and type the following command to  run the pitremove function (replace ... by your path  information and dem by your rile name).<br />
+					        mpiexec -n 8 pitremove -z &quot;...\dem.tif&quot; -fel  &quot;...\demfel.tif&quot;</p>
+				        </blockquote>
+				      </li>
+					  
+					  <blockquote>
+					    <p>Based on what happens you should be able to identify one  of the following problems</p>
+				      </blockquote>
+					  <ol type="a">
+					    <li> If you get  mpiexec not found it means mpiexec is not on the path or not installed.  MPICH2 needs to be installed following the  steps for Download and install MPICH2 at <a href="downloads.html">downloads</a>. <a href="ToAddFolderPath.pdf">Detailed path editing instructions</a>.</li>
+					    <li>If you get an  error relating to smpd then it means MPICH2 was not installed correctly as an  administrator.  Check steps 3.2 at  <a href="downloads.html">downloads</a>.  It is important that you install MPICH2  either from an administrator account or a command prompt run as administrator.</li>
+					    <li>If pitremove is  not found you need to put the taudem path (usually C:\Program Files\TauDEM\TauDEM5Exe) on your path or check that box in the  taudem installer.</li>
+					    <li> If you are  asked for a password, then you need to run mpiexec -register				        </li>
+				      </ol>
+					  <li>Program hangs when OK is pushed for a tool.
+                        <ol type="a">
+		      <li>Check that you did mpiexec -register (and got the password correct), it may be waiting for you to enter the password.</li>
+					      <li>Check the file cmsgtmp.txt located in the same folder as your first output file. This may have informative messages. If this has the phrase &quot;Please specify an authentication passphrase for smpd&quot; then you need to uninstall and reinstall MPICH2 from an Administrator account.<br /></li>
+				        </ol>
+				      </li>
+					  <li>Taudem tool does not open and displays red X in ArcGIS toolbox.</li>
+					  <blockquote>
+					    <p>This is a symptom of the DLL's not having registered properly during the install. They may be manually registered using regsvr32.exe (usually located in c:\windows\system32) using commands such as (from an administrator cmd window - see above):</p>
+					    <p>cd C:\Program Files\Taudem<br />
+					      c:\windows\system32\regsvr32 protdvb.dll<br />
+				        c:\windows\system32\regsvr32 protdgpcom.dll</p>
+					    <p>This only applies to the ArcGIS 9.3.1 version of TauDEM as the version for ArcGIS 10 uses python scripts.<br />
+				        </p>
+				      </blockquote>
+					  <li>Program crashes when OK is pushed for a tool and gives error output indicating that commands failed.						</li>
+					  <blockquote>
+					    <p>Look at the cmsgtmp.txt file in  the same folder as your first output file to see if the error messages indicate the problem</p>
+					    <p>Type mpiexec at a cmd prompt to check that the path to mpiexec is (correctly) on the system, and correct if not. </p>
+					    <p>Try running some of the TauDEM programs from the command line, such as:</p>
+					    <p>cd c:\&lt;working directory with example logan.tif data&gt;<br />
+				        mpiexec -n 1 &quot;c:\program files\taudem\taudem5exe\pitremove&quot; logan.tif			          </p>
+				      </blockquote>
+					  <li>If you get a Windows firewall or security warning or error.					  </li>
+					  <blockquote>
+					    <p>At a command prompt run commands like the following to enable each function in the firewall.</p>
+					    <p>netsh firewall add allowedprogram &quot;C:\Program Files\Taudem\TauDEM5Exe\AreaD8.exe&quot; AreaD8 ENABLE<br />
+					      (Repeat for all TauDEM functions)
+				        </p>
+					    <p> It may be easiest to <a href="Firewall.txt">download this  file</a>, rename it as Firewall.bat and at a command prompt run Firewall.bat.<br />
+				        </p>
+				      </blockquote>
+					  <li>If you have a problem installing</li>
+					  <blockquote>
+					    <p>On Windows 7 it may occur that 
+				        the registry size is too small and you get an error when installing TauDEM (and possibly other Windows updates or programs). It may manifest by the TauDEM install hanging or giving an error &quot;Error 1935. An error occurred during the installation of assembly 'Microsoft.VC90.CRT, ...'&quot;. To resolve this follow the steps in the  <a href="http://social.technet.microsoft.com/Forums/en-US/w7itproui/thread/42e2a200-defe-4c6b-a1b3-606836dcfabb">blog posting</a> that explains this, which are briefly:</p>
+				      </blockquote>
+					  <ol type="a">
+					    <li>Use RegEdit to set</li>
+					    
+					    <blockquote>
+					      <p> HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control <br />
+					        Key: RegistrySizeLimit <br />
+					        Type: REG_DWORD <br />
+				          Value: ffffff (4294967295) </p>
+				        </blockquote>
+					    
+					    <li>Reboot</li>
+					    <li>As administrator run sfc /scannow</li>
+				      </ol>
+					  
+					  <li><p>You receive an error &quot;Error while connecting to host. No connection could be made because the target machine actively refused it.</li>
+					  <blockquote>
+					    <p>This occurs if the smpd utility used by MPICH2 has not been installed properly, usually because MPICH2 was not installed when logged in as Administrator (different from user with Administrator privileges). Open an administrator command prompt from Start-&gt;All Programs-&gt;Accessories-&gt;Command Prompt-&gt; Right click run as administrator. Click YES to the user account control about modifying the computer and make sure that the command window that opens says Administrator at the top. Verify that c:/program files/mpich2/bin is on your path (see installation instructions). In this prompt type smpd -install. You should receive confirmation that MPICH2 Process Manager, Argonne National Lab installed. Alternatively uninstall and reinstall MPICH2 when logged is as Administrator or see #1 above.</p>
+					  </blockquote>
+				  </ol>
+		      </div>
+			</td>
+        <td class="gutter">&nbsp;</td>
+        <td class="panel"><script type="text/javascript">
+					var path='../../' <!--this sets the addressing for getting to the root --> 
+				</script>
+				<script src="/contents.js" type="text/javascript"> </script>
+            <script type="text/javascript" language="JavaScript">menu_software();</script>
+				<!--<div class="menuHeading"></div>
+				<div class="menu">
+					<div class="nav"></div>
+					<div class="nav"></div>
+					<div class="nav"></div>
+				</div> -->
+			</td>
+		</tr>
+		<tr>
+			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1"></td>
+			<td class="footer"><ul>
+                <li> &copy; 2006-2013 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+                <li> <a href="mailto:dtarb@usu.edu">webmaster</a></li>
+            </ul></td>
+			<td class="footerRight"><img src="/images/shadow_footer.gif" width="8" height="67" alt=""></td>
+			<td class="footerRight"><img src="/images/footer_right.gif" width="168" height="67" alt=""></td>
+		</tr>
+	</table>
+</body>
+</html>

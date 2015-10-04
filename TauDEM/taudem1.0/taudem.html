@@ -1,0 +1,998 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.73 [en] (Windows NT 5.0; U) [Netscape]">
+   <meta name="Author" content="David Tarboton">
+   <title>TauDEM, A suite of programs for the Analysis of Digital Elevation Data</title>
+</head>
+<body bgcolor="#ffffff" link="#0000ff" vlink="#800080">
+
+<h2>
+TauDEM, Terrain analysis using Digital Elevation Models</h2>
+ <strong><font color="#FF0000">This is an archive of an old version of TauDEM whose use is no longer recommended. For the latest version see <a href="http://hydrology.usu.edu/taudem">http://hydrology.usu.edu/taudem</a></font></strong><p>
+David G. Tarboton&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+July 18, 2001
+<br>Utah State University
+<br>8200 Old Main Hill
+<br>Logan, UT 84322-8200
+<br>USA
+<br><a href="http://www.engineering.usu.edu/dtarb/">http://www.engineering.usu.edu/dtarb/</a>
+<br>email:&nbsp; <A href="mailto:dtarb@cc.usu.edu">dtarb@cc.usu.edu</a>
+<p>
+<hr>
+<br>&nbsp;
+<p>TauDEM is a still somewhat experimental effort to develop a graphical
+user interface version of my programs that have been available in command
+line version for several years.&nbsp; This program is Copyright (C) 2001&nbsp;
+David Tarboton, Utah State University.&nbsp; This program is distributed
+for free in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.
+<h3>
+<a NAME="Instal"></a>Installation</h3>
+ <strong><font color="#FF0000">This is an archive of an old version of TauDEM whose use is no longer recommended. For the latest version see <a href="http://hydrology.usu.edu/taudem">http://hydrology.usu.edu/taudem</a></font></strong><p>
+Download <A href="getinfo.html">taudem.exe</a>.&nbsp; The installation package and software was built for Windows 98.
+<p>
+<hr>
+<h3>
+<a NAME="programs"></a>The programs and what they do.</h3>
+TauDEM is launched as is common from the Start/programs button, or from
+a shortcut, or by clicking on a previously saved *.tdp project file.
+<p>Click on commands and buttons below to go to the help for them.
+<p><IMG height=581 src="tkmain.jpg" width=712 useMap=#tkmain border=0 >
+<p><map NAME="tkmain"><area ONMOUSEOUT="window.status=''; return true" ALT="Startup Dialog Box" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Startup" COORDS="374,110,513,110,513,131,452,131,452,138,609,137,609,542,195,542,196,139,431,139,430,129,376,128,375,109"
+><area ONMOUSEOUT="window.status=''; return true" ALT="Button Bar" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Button" COORDS="1,64,1,86,163,87,163,96,146,96,146,115,224,115,224,101,174,101,174,88,173,86,280,86,280,64,0,64,2,65"
+><area ONMOUSEOUT="window.status=''; return true" ALT="Menu Bar" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Menu" COORDS="97,0,172,0,172,16,142,16,143,42,270,42,270,63,1,63,1,42,132,42,132,17,97,17,98,0"
+><area ONMOUSEOUT="window.status=''; return true" ALT="Layer order arrows" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#Layerorder" COORDS="5,87,88,106"></map>
+<h4>
+<a NAME="Startup"></a>Startup Dialog Box</h4>
+
+<ul>
+<li>
+<b>Load DEM Grid:</b> To work with 
+  a new DEM grid file. Grid file can be any of the following formats, ESRI, 
+  ASCII or TMDL toolkit binary grids. 
+  
+
+<li>
+<b>Load existing (previously saved) project: </b>To open an existing Taudem
+Project (*.tdp) file.</li>
+</ul>
+
+<h4>
+<a NAME="Button"></a>Button Bar</h4>
+
+<blockquote>The tools in the button bar are used to navigate within the
+project, and to execute functions.</blockquote><!-- Created by CoffeeCup Image Mapper++ (www.coffeecup.com) --><!-- Created by CoffeeCup Image Mapper++ (www.coffeecup.com) --><!-- Beginning of CSIM --><!-- Beginning of CSIM --><IMG height=197 src="Buttonbar.jpg" width=776 useMap=#Buttonbar border=0 >
+<br><map NAME="Buttonbar"><area ONMOUSEOUT="window.status=''; return true" ALT="New" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#New" COORDS="20,86,61,175"><area ONMOUSEOUT="window.status=''; return true" ALT="Open" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#New" COORDS="81,27,136,128"><area ONMOUSEOUT="window.status=''; return true" ALT="Save" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#New" COORDS="159,79,204,173"><area ONMOUSEOUT="window.status=''; return true" ALT="Zoom to full extents" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Ztoextents" COORDS="194,21,330,21,330,39,257,38,256,79,278,79,278,130,234,130,234,78,246,78,246,39,195,39,195,20"><area ONMOUSEOUT="window.status=''; return true" ALT="Zoom in" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Zoomin" COORDS="283,78,324,78,324,129,304,129,304,155,331,155,330,172,271,172,271,154,294,154,294,128,284,128,284,79,325,81"><area ONMOUSEOUT="window.status=''; return true" ALT="Zoom Out" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Zoomout" COORDS="305,14,337,14,337,81,328,79,328,127,371,127,371,80,346,80,347,15,374,15,374,0,307,0,307,13"><area ONMOUSEOUT="window.status=''; return true" ALT="Zoom to previous" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Ztoprevious" COORDS="376,79,415,79,415,128,395,128,395,158,451,157,451,189,335,190,335,154,385,154,385,128,377,127,376,77"><area ONMOUSEOUT="window.status=''; return true" ALT="Pan" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#Pan" COORDS="420,26,464,129"><area ONMOUSEOUT="window.status=''; return true" ALT="Select Cursor" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#SelectCursor" COORDS="480,78,529,78,529,127,507,127,506,155,553,155,553,172,457,172,457,155,498,155,498,127,479,127,479,79"
+><area ONMOUSEOUT="window.status=''; return true" ALT="Add layer" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Addlayer" COORDS="538,1,615,2,615,38,568,38,567,79,583,79,583,127,546,127,544,79,559,79,559,38,539,38,539,0"><area ONMOUSEOUT="window.status=''; return true" ALT="Remove layer" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#RemoveLayer" COORDS="591,78,634,78,634,127,615,127,615,158,667,158,667,193,570,192,570,157,603,157,603,128,591,127,591,77,635,78"><area ONMOUSEOUT="window.status=''; return true" ALT="Clear all layer" ONMOUSEOVER="window.status=''; return true" SHAPE="POLY" HREF="#Clearalllayers" COORDS="632,1,782,2,781,37,660,37,660,78,686,78,688,126,640,124,640,78,651,77,651,40,631,39,630,1"></map><!-- End of CSIM --><!-- End of CSIM -->
+<br><a NAME="New"></a><b>New, Open and Save</b>
+<p>These buttons start a new TauDEM project, open an exsiting project from
+a *.tdp file or save the current project in a *.tdp file.
+<p><a NAME="Ztoextents"></a><b>Zoom to full extents</b>
+<p>This button scales the map window to the extents of the current project.
+<p><a NAME="Zoomin"></a><b>Zoom in</b>
+<p>This tool allows the user to view a smaller region of the map in greater
+depth. Click in the map window on the region of study. When the zoom in
+feature is selected, a left mouse click will zoom in, and a right mouse
+click will zoom out. To zoom to a specific area, left click and drag the
+mouse to enclose the area. The view will then zoom to those extents.
+<p><a NAME="Zoomout"></a><b>Zoom out</b>
+<p>When selected, this tool will show more of the map in less detail. A
+left click will zoom out; a right click will reverse the process.
+<p><a NAME="Ztoprevious"></a><b>Zoom to previous extents</b>
+<p>This will get back the last position of the map on the map window. It
+can be used along with Zoom-in and Zoom-out to get the desired view of
+the map. When the user zooms in/out mistakenly, he can use this tool to
+get back at his previous view.
+<p><a NAME="Pan"></a><b>Pan</b>
+<p>This tool moves the portion of the map on display in the map window.
+Click on a region of the map and drag the mouse; dragging to the left will
+display the map to the right, and vice versa.
+<p><a NAME="SelectCursor"></a><b>Select Cursor</b>
+<p>This tool is used to select grid cells or graphical objects.&nbsp; At
+present this is used for the selection of outlet points.
+<p><a NAME="Addlayer"></a><b>Add layer</b>
+<p>This button allows users to add a new layer in the project. At present
+bitmap images and shape files are the only data formats supported.&nbsp;
+Data layers added should have consistent geographic projections.
+<p><a NAME="RemoveLayer"></a><b>Remove Selected Layer</b>
+<p>This tool will remove the selected layer from the project.&nbsp; Layers
+may be selected by clicking in the layer list window.
+<p><a NAME="Clearalllayers"></a><b>Clear all layers</b>
+<p>To remove all the layers from the map window.
+<p><b>Layer Order arrows</b>
+<p>These arrows control the order in which layers are displayed.&nbsp;
+Layers at the top in the legend are displayed on top of lower layers.
+<p><a NAME="BM_Layerorder"></a><IMG height=167 src="OrderArrows.jpg" width=387 useMap=#OrderArrows border=0 >
+<p><a NAME="Menu"></a>
+<h3>
+Menu Bar</h3><!-- Created by CoffeeCup Image Mapper++ (www.coffeecup.com) --><!-- Created by CoffeeCup Image Mapper++ (www.coffeecup.com) --><!-- Beginning of CSIM --><!-- Beginning of CSIM --><IMG height=80 src="MenuBar.jpg" width=609 useMap=#MenuBar border=0 ><map NAME="MenuBar"><area ONMOUSEOUT="window.status=''; return true" ALT="File Menu" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#Filemenu" COORDS="5,43,61,73"><area ONMOUSEOUT="window.status=''; return true" ALT="DEM Menu" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#DEMmenu" COORDS="71,42,126,73"><area ONMOUSEOUT="window.status=''; return true" ALT="River Network and Watersheds" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#RiverNetworkmenu" COORDS="142,43,445,74"><area ONMOUSEOUT="window.status=''; return true" ALT="Model Setup" ONMOUSEOVER="window.status=''; return true" SHAPE="RECT" HREF="#ModelSetup" COORDS="459,42,596,73"></map><!-- End of CSIM --><!-- End of CSIM -->
+<br>&nbsp;
+<h3>
+<a NAME="Filemenu"></a>File menu options</h3>
+
+<ul>
+<li>
+<b>Prepare Connected Reach Network From Shape File:</b> This launches a 'Network Builder' form that will take any 
+  polyline shape file and build a connected reach network file. 
+  
+
+<li>
+<b>This Select Existing Connected Reach Network File:</b> This MUST have
+as input a reach file created previously by the 'Network Builder'.</li>
+</ul>
+
+<h3>
+<a NAME="DEMmenu"></a>DEM menu options</h3>
+
+<ul>
+<li>
+<b>Do all preprocessing:</b> This 
+  runs the commands given below in sequence 
+  
+
+<li>
+<b>Convert connected reach network to forced flow direction grid:</b> This takes as input a network river reach 
+  file from the network builder and outputs a grid of flow directions along the 
+  rivers to enforce drainage along delineated river channels.&nbsp; These flow 
+  directions are in a file with suffix 'fdr' and are used by Flood if the option 
+  to use them under River Network and Watersheds/Method Options is set. 
+  
+
+<li>
+<b>Fill pits and nondraining hollows:</b> This takes as input an elevation data grid and outputs a grid 
+  file 'fel' with pits filled, using the flooding algorithm.&nbsp; The river 
+  flow enforcement direction grid is an optional input, and if input, pits will 
+  be filled consistent with drainage along existing streams. 
+  
+
+<li>
+<b>Compute D8 flow directions:</b> 
+  This takes as input pit filled elevation data file 'fel' and outputs D8 flow 
+  directions 'p' and slopes 'sd8' for each grid cell. The following coding is 
+  used for direction of flow from a pixel to ONE of its eight neighbors: 
+
+<br>4 3 2
+<br>5&nbsp;&nbsp;&nbsp; 1
+<br>6 7 8
+<br>In flat areas flow directions are assigned away from higher ground
+and towards lower ground using the method of Garbrecht and Martz (1997).&nbsp;
+The river flow enforcement direction grid is an optional input, and if
+input, directions will be set consistent with drainage along existing streams.
+<li>
+<b>Compute Dinf flow directions:</b> The Dinf approach assigns a flow direction based on steepest 
+  slope on a triangular facet (Tarboton, 1997). This is saved as an angle 'ang' 
+  in radians anti-clockwise from east. In flat areas the D8 flow directions are 
+  converted to angles and used. 
+  
+
+<li>
+<b>Compute drainage area by D8 method:</b> This takes as input a D8 flow
+directions file 'p' and outputs the contributing area. The result is the
+number of grid cells draining through each grid cell.&nbsp; By default
+the program checks for <A href="#contarea">edge contamination</a>.&nbsp; 
+  The edge contamination checking may be overridden with an option in the River 
+  Network and Watersheds/Method Options form. 
+  
+
+<li>
+<b>Compute specific catchment area by Dinf method:</b> This takes as input
+a Dinf angle file 'ang' and outputs the specific catchment area. Specific
+catchment area is defined as contributing area per unit contour length.&nbsp;
+Here the contour length is taken as the grid cell size.&nbsp; The result
+has length units the same as grid cell size.&nbsp; By default the program
+checks for <A href="#contarea">edge contamination</a>.&nbsp; 
+  The edge contamination checking may be overridden with an option in the River 
+  Network and Watersheds/Method Options form. 
+  
+
+<li>
+<b>Compute grid network order, Upslope total flow length, Upslope longest
+flow length:</b> This takes as 
+  input a D8 flow directions file 'p' and outputs three grid files: 
+
+<br>'plen'&nbsp; Each grid cell contains the path length from the furthest
+cell that drains to each cell.
+<br>'tlen'&nbsp; Each grid cell contains the total length of all paths
+draining to each cell.
+<br>'gord'&nbsp; Each grid cell contains the Strahler order associated
+with that cell for a flow network defined using the D8 flow directions
+and including each grid cell.&nbsp; Strahler order is defined as follows.
+Cells that don't have any other grid cells draining in to them are order
+1.&nbsp; When two (or more) flow paths of different order join the order
+of the downstream flow path is the order of the highest incoming flow path.&nbsp;
+When two (or more) flow paths of equal order join the downstream flow path
+is increased by 1.&nbsp; Algorithmically this is implemented as:
+<br>Order =  Max(Highest incoming flow path order, Second highest incoming
+flow path order + 1)
+<br>These outputs are used by netsetup in some of the options
+for mapping channel networks.</li>            
+ </ul>
+
+<h3>
+<a NAME="RiverNetworkmenu"></a>River Networks and Watersheds menu options</h3>
+
+<ul>
+<li>
+<b>Do all watershed and network delineation steps:</b> This runs the commands given below in the correct 
+  sequence. 
+  
+
+<li>
+<b>Specify outlets:</b>&nbsp; 
+  Brings up a form that allows you to click on the map to identify outlets. 
+  
+
+<li>
+<b>Set or Change Method Options...:</b> This brings up a form to toggle various method options and 
+  control network delineation methods. 
+  
+
+<li>
+<b>River Network Raster (Full):</b>&nbsp; This uses the network delineation parameters to define a 
+  grid of the river network, useful for identifying outlets.&nbsp; Valid outlet 
+  points are only those on the 'src' grid produced here. 
+  
+
+<li>
+<b>River Network Raster (Upstream of Outlets):</b>&nbsp; This uses the network delineation parameters to define 
+  a grid of the river network, upstream of the outlets.&nbsp; This is necessary 
+  for the creation of networks and subwatersheds. 
+  
+
+<li>
+<b>Drop Analysis:</b> This brings 
+  up a table of stream drops useful for identifying the correct channel network 
+  identification threshold. 
+  
+
+<li>
+<b>Create Network and Sub-Watersheds:</b>&nbsp; This converts the grid of river network cells into a 
+  shapefile with attributes for each reach.&nbsp; Local watersheds draining to 
+  each reach are also delineated as a grid and shape file. 
+  
+
+<li>
+<b>Compute distance to streams: </b>This computes a grid where the value
+in each grid cell location is the distance along the flow path to the nearest
+stream (as delineated by the Create Network and Sub-Watersheds function).</li>
+</ul>
+These functions work together.&nbsp; The "<b>set or change method options...</b>"
+command brings up the following window.
+<br><IMG height=392 src="options.jpg" width=548>
+<br>This controls the algorithm used to delineate streams, the threshold
+and parameters associated with the algorithm, and whether a stream drop
+analysis is to be used to decide on the threshold.&nbsp; The methods for
+defining channel networks are:
+<br><b>Use existing streams.</b>&nbsp; To use this method existing streams
+need to have been "burned in" to the flow direction grid with the command
+"Convert connected reach network to forced flow direction grid"&nbsp; The
+channel network raster is then defined from these flow directions.&nbsp;
+No parameters are required.
+<br><b>DEM curvature based.</b>&nbsp; The DEM is first smoothed by a kernel
+with the weights at the center, sides and diagonals as specified.&nbsp;
+The Peuker and Douglas (1975) method (also explained in Band, 1986) is
+then used to identify upwards curved grid cells.&nbsp; Briefly this method
+flags the entire grid, then examines in a single pass each quadrant of
+4 grid cells and unflags the highest.&nbsp; The remaining flagged cells
+are deemed "upwards curved" and if viewed resemble a channel network, although
+sometimes lacking connectivity, or requiring thinning, issues that were
+discussed in detail by Band (1986).&nbsp; The thinning and connecting of
+these grid cells is achieved here by computing the contributing area using
+only these upwards curved cells.&nbsp; An accumulation threshold on the
+number of these cells is used to map the channel network.
+<br><b>Contributing area threshold.&nbsp;</b>&nbsp; A threshold on the
+contributing area (in number of cells) computed by the D8 (suffix ad8)
+method is used to delineate streams.
+<br><b>Grid order threshold.</b>&nbsp; A threshold on the network order
+grid (suffix gord) is used to delineate streams.&nbsp; This is the network
+pruning by order approach suggested by Peckham (1995) and used in <a href="http://www.rsinc.com/rivertools/index.cfm">RiverTools</a>.
+<br><b>Area and slope threshold.</b>&nbsp; A threshold is applied to the
+product A S<sup>y</sup> with the threshold and exponent specified.&nbsp;
+A is the Dinf specific catchment area (suffix sca) and S is the specific
+catchment area (suffix slp).&nbsp; This method was suggested by Montgomery
+and Dietrich (1992).&nbsp; (They used the exponent y = 2 and threshold
+C = 200 m in their study).
+<br><b>Area and length threshold.</b>&nbsp; This is an experimental method that
+might be justified by searching for a departure from Hack's law.&nbsp; Streams
+are mapped as initiating when A &gt;  M L<sup>y</sup> .&nbsp; Here A is the D8 contributing area (suffix 
+ad8) and L the longest upstream flowpath (suffix plen).&nbsp; In branching 
+systems, Hack's law suggests that L =  
+             
+          
+1/M A<sup>1/y</sup> with 1/y = 0.6 (or 0.56) (y about 1.7).&nbsp; In parallel
+flow systems L is proportional to A (y about 1).&nbsp; This method tries
+to identify the transition by using an exponent y somewhere inbetween (y
+about 1.3)
+<p>If drop analysis is checked, then the threshold is searched between
+the lowest and highest values given, using the number of steps given on
+a log scale.&nbsp; For the science behind the drop analysis see Tarboton
+et al. (1991, 1992), Tarboton and Ames (2001).&nbsp; The smallest threshold
+in the set searched with absolute value of the t statistic less than 2
+is selected.&nbsp; This is done automatically during the River Network
+Raster (Upstream of Outlets) step.&nbsp; The threshold selected is saved
+in the threshold variable so may be inspected afterwards by viewing the
+options window.
+<p>The "<b>Drop Analysis</b>" command displays a table showing the information
+used in the drop analysis, as follows
+<br><IMG height=198 src="dropan.jpg" width=672>
+<br>The columns are:
+<br>Threshold:&nbsp; The threshold used in the network delineation algorithm.
+<br>Dd:&nbsp; The drainage density (inverse length units - typically m)
+of the resulting network.
+<br>n1:&nbsp; Number of first order streams (Strahler ordering) in network
+with specified threshold.
+<br>nh:&nbsp; Number of higher order streams (Sequential segments of the
+same order are counted as one Strahler stream) in network with specified
+threshold.
+<br>md1:&nbsp; Mean drop (elevation difference between start and end) of
+first order streams.
+<br>mdh:&nbsp; Mean drop of higher order streams.
+<br>sd1:&nbsp; Standard deviation of first order stream drops.
+<br>sdh:&nbsp; Standard deviation of higher order stream drops.
+<br>t: Students t statistic for the difference between the first order
+and higher order mean stream drops.
+<br><IMG height=85 src="teqn.gif" width=266>
+<br>The procedure suggested in Tarboton et al. (1991, 1992) and Tarboton
+and Ames (2001) is to select the smallest threshold for which the absolute
+value of the t statistic is less than 2.&nbsp; This selects the highest
+resolution network consistent with the "constant drop law".&nbsp; In the
+display above the threshold of 50 would be selected.&nbsp; It is worthwhile
+to view the drop analysis because the threshold steps are sometimes quite
+coarse, so the user may want to use the Specify Method Options command
+to change the number of intervals and lowest and highest values used in
+the search.&nbsp; Also it can occur that a large threshold is "correct"
+but a small threshold results in second or higher order streams also extending
+into the region that should not be streams.&nbsp; If these dominate the
+sample the following sequence of t statistics might result:
+<br>&lt;2, &lt;2, &lt;2, &gt;2, &gt;2, &lt;2, &lt;2, ...
+<br>The automatic procedure in these cases would pick the lowest threshold,
+but it is probably better (and this is admittedly subjective, unfortunately)
+to pick the 6th threshold.&nbsp; In making this judgement I feel that it
+is best to consider many things, like sample sizes (is the t statistic
+robust), the visual impression in comparison to contour crenulations, and
+the drainage density that would result from a Slope versus Area plot as
+discussed in Tarboton et al., (1991, 1992).&nbsp; The automated procedure
+is therefore not foolproof and some degree of judgement and subjectivity
+is required.
+<br>&nbsp;
+<h3>
+<a NAME="ModelSetup"></a>Model Setup menu options</h3>
+
+<h4>
+Topmodel Setup</h4>
+TauDEM includes the capability to create input files for TOPNET, a networked
+version of TOPMODEL used by David Tarboton and Ross Woods (NIWA, New Zealand).&nbsp;
+The result is a very specific model specification file 'modelspc.dat'.&nbsp;
+The TOPNET model we plan to include with TauDEM at some point in the future,
+but currently is in a form that is rather complicated to use.
+<p><IMG height=659 src="topsetup.jpg" width=754 useMap=#topsetup border=0 >
+<p>The variables under 'Parameter' and 'Initial Conditions' can be assigned
+a fixed value or be set to be read from a look-up table associated with
+a variable classification grid by selecting the radio buttons. If the option
+of look-up table is chosen the user has to load the appropriate grid-table
+pair. Also, the user has to assign each variable the corresponding grid-table
+pair and the field in the table, from which the value has to be read. Combo
+boxes under 'Value from the look up table' help in making the selections.
+The lookup table should be a comma delimited text file with one header
+row and first column giving the key to associate parameters in the table
+with classification values in the corresponding grid.&nbsp; Following is
+an example of a lookup table:<IMG height=291 src="gtable.jpg" width=840 useMap=#gtable border=0 >
+<blockquote>Soil_type_number,f (m^-1),k(m/h),dth1,dth2,soil name,depth(metres)
+<br>1,1.82,0.0026,0.084,0.131,ANS,1.1
+<br>2,2,0.0054,0.123,0.106,C1,1
+<br>3,1,1,0.1,0.1,N/A,0.72
+<br>4,3.33,0.001,0.087,0.158,KR,0.6
+<br>5,1.92,0.03,0.111,0.26,MT,1.04
+<br>6,1,1,0.1,0.1,N/A,0.72
+<br>7,1,1,0.1,0.1,N/A,0.9
+<br>8,2.67,0.001,0.099,0.138,PBuH,0.75
+<br>9,2.22,0.0004,0.117,0.107,WA/WAH,0.9
+<br>10,3.33,0.0066,0.113,0.16,WF/WO,0.6
+<br>...</blockquote>
+Parameter values in each model element are computed by averaging over all
+the grid cells for that model element based on table lookups above.&nbsp;
+In case the grid associate with a lookup table has no data at a location
+within a model element the fixed parameter value is used at that location.&nbsp;
+Therefore the fixed value parameters serve as defaults, even when table
+lookup is being used.
+<p>The checkboxes on the right (under calibration) control whether resulting
+model element parameters can be calibrated by multiplying by a factor to
+retain the spatial patterns provided through the GIS information in the
+classification grid.
+<p>Rain Coordinate file and Flow Coordinate file are the files required
+by the module to generate the output files, that are Model Specification
+file and Basin Parameter file. Rain Coordinate file is a shape file (extension
+'.shp') that contains the raingage point locations.&nbsp; The flow coordinate
+file has not been implemented yet.
+<p>Topmodel uses a histogram discretization of the topographic wetness
+index (ln(a/S) from the wetness index function above).&nbsp; The parameters
+in the right pane control the bin size associated with this histogram.&nbsp;
+Topmodel also uses a histogram discretization of overland flow distances
+to channels (computed with the distance to stream function above).&nbsp;
+The parameters in the right pane control the bin size associated with this
+histogram.
+<p>The kinematic wave flow routing part of TOPNET needs channel widths.&nbsp;
+These are estimated based on geomorphology using the drainage area and
+the hydraulic geometry function with parameters in the right pane.
+<p>Topmodel estimates the rainfall input to each model element using weights
+based upon delauney triangles.&nbsp; The delayney triangle check box controls
+the output of a grid depicting these triangles so that they may be displayed.
+<h3>
+
+<hr ALIGN="right"></h3>
+
+<h3>
+Background on working with Digital Elevation Models</h3>
+The data storage structures available to digitally encode topography comprise:
+(1) Grid Digital Elevation Models (DEMs); (2) Triangular irregular networks
+(TINs); and (3) contour based storage structures. Grid DEMs consist of
+a matrix data structure with the topographic elevation of each pixel stored
+in a matrix node. TINs store the X-Y location as well as elevation at irregularly
+spaced nodes. Contour based data structures store vector data along contour
+lines. Grid DEMs are readily available and simple to use and hence have
+seen widespread application to the analysis of hydrologic problems. Slope,
+flow directions, and contributing area are the primary hydrologic quantities
+derived from DEMs. Other useful quantities are derived from these three.
+Here grid DEM are used due to their availability and simplicity. The grid
+DEM processing routines used are based upon methods described by O'Callaghan
+and Mark (1984), Marks et al. (1984), Band (1986), Jenson and Domingue
+(1988), Tarboton (1989, 1997) and Garbrecht and Martz (1997). The steps
+involved are: (1) Pit filling corrections, (2) Computation of slopes and
+flow directions; (3) Computation of contributing area and specific catchment
+area and (4) Channel network extraction and computation of other quantities.
+Pit Filling Corrections
+<p>Pits in digital elevation data are defined as grid elements or sets
+of grid elements surrounded by higher terrain that, in terms of the DEM,
+do not drain. These are rare in natural topography and generally assumed
+to be artifacts arising due to the discrete nature and data errors in the
+preparation of the DEM. They are eliminated here using a 'flooding' approach.
+This raises the elevation of each pit grid cell within the DEM to the elevation
+of the lowest pour point on the perimeter of the pit . Slopes and Flow
+Directions
+<p>Working with grid DEMs slope may be computed as the difference in elevation
+between two adjacent cells divided by the distance between them. In dealing
+with flow this is usually done in a forward downwards direction. The slope
+associated with a cell is the slope from the cell to a downslope neighbor.
+This makes sense because it is where water will go. Radiation computations
+sometimes use slope based upon central finite difference methods. The earliest
+and simplest method for specifying flow directions is to assign flow from
+each grid cell to one of its eight neighbors, either adjacent or diagonally,
+in the direction with steepest downward slope. This method, designated
+D8 (8 flow directions), was introduced by O'Callaghan and Mark (1984) and
+has been widely used. The D8 approach has disadvantages arising from the
+discretization of flow into only one of eight possible directions, separated
+by 45<sup>o</sup>deg; . These have motivated the development of other methods
+comprising multiple flow direction methods , random direction methods and
+grid flow tube methods . Tarboton (1997) discusses the relative merits
+of these.
+<p>In the D<font face="Symbol">¥</font> method, the flow direction
+angle measured counter clockwise from east is represented as a continuous
+quantity between 0 and 2<font face="Symbol">p</font>. This angle is determined
+as the direction of the steepest downward slope on the eight triangular
+facets formed in a 3 x 3 grid cell window centered on the grid cell of
+interest as illustrated in figure 1. A block-centered representation is
+used with each elevation value taken to represent the elevation of the
+center of the corresponding grid cell. Eight planar triangular facets are
+formed between each grid cell and its eight neighbors. Each of these has
+a downslope vector which when drawn outwards from the center may be at
+an angle that lies within or outside the 45<sup>o </sup>(<font face="Symbol">p</font>/4
+radian) angle range of the facet at the center point. If the slope vector
+angle is within the facet angle, it represents the steepest flow direction
+on that facet. If the slope vector angle is outside a facet, the steepest
+flow direction associated with that facet is taken along the steepest edge.
+The slope and flow direction associated with the grid cell is taken as
+the magnitude and direction of the steepest downslope vector from all eight
+facets. This is implemented using equations given in Tarboton (1997).
+<center>
+<p><IMG height=324 src="tardemfig.gif" width=416>
+<p>Figure 1. Flow direction defined as steepest downward slope on planar
+triangular facets on a block centered grid.</center>
+
+<p>In the case where no slope vectors are positive (downslope), the flow
+direction is set using the method of Garbrecht and Martz (1997) for the
+determination of flow across flat areas. This makes flat areas drain away
+from high ground and towards low ground. The D<font face="Symbol">¥</font>
+method is preferred for the computation of flow directions on hillslopes
+where D8 grid bias is significant in the calculation of specific catchment
+area. D8 is still used for the definition of channel networks because we
+can not (have not yet learned to) work with channel networks that bifurcate
+in a downwards direction.
+<h4>
+<a NAME="contarea"></a>Contributing Area</h4>
+Upslope area (counted in terms of the number of grid cells) is calculated
+for both single and multiple flow directions using a recursive procedure
+that is an extension of the very efficient recursive algorithm for single
+directions (Mark, 1988). The upslope area of each grid cell is taken as
+its own area (one) plus the area from upslope neighbors that have some
+fraction draining to it. The flow from each cell either all drains to one
+neighbor, if the angle falls along a cardinal (0, <font face="Symbol">p</font>/2,
+<font face="Symbol">p</font>,
+3<font face="Symbol">p</font>/2) or diagonal (<font face="Symbol"> p</font>/4,
+3<font face="Symbol">p</font>/4, 5<font face="Symbol">p</font> /4, 7<font face="Symbol">p</font>/4)
+direction, or is on an angle falling between the direct angle to two adjacent
+neighbors. In the latter case the flow is proportioned between these two
+neighbor pixels according to how close the flow direction angle is to the
+direct angle to those pixels, as illustrated in Figure 1. Specific catchment
+area, a, is then upslope area per unit contour length, taken here as the
+number of cells times grid cell size (cell area divided by cell size).
+This assumes that grid cell size is the effective contour length, b, in
+the definition of specific catchment area and does not distinguish any
+difference in contour length dependent upon the flow direction.
+<p>The contributing area programs check for <b><i>edge contamination</i></b>
+.&nbsp; This is defined as the possibility that a contributing area value
+may be underestimated due to grid cells outside of the domain not being
+counted.&nbsp; This occurs when drainage is inwards from the boundaries
+or areas with no data values for elevation.&nbsp; The algorithm recognizes
+this and reports no data for the contributing area.&nbsp; It is common
+to see streaks of no data values extending inwards from boundaries along
+flow paths that enter the domain at a boundary.&nbsp; This is the desired
+effect and indicates that contributing area for these grid cells is unknown
+due to it being dependent on terrain outside of the domain of data available.&nbsp;
+The edge contamination checking may be overridden with an option in the
+<b>River
+Network and Watersheds/Method Options</b> form in cases where you know
+this is not an issue or want to ignore these problems, if for example the
+DEM has been clipped along a watershed outline.
+<h4>
+Channel Networks</h4>
+When a map of contributing area is viewed using a threshold, the channel
+networks stand out as those cells with contributing area greater than a
+threshold of contributing area. It is an issue to decide the most appropriate
+threshold, or whether some other quantity such as slope should be part
+of the threshold. This is discussed at length in my research papers, Tarboton
+et al. (1991, 1992). One approach that has some theoretical justification
+is to look for a break in the plot of slope versus contributing area. Once
+a threshold has been established the channel network can be defined (mapped)
+as all those grid cells with contributing area greater than the threshold.
+<p>
+<hr>
+<h3>
+<a NAME="Data"></a>Data formats</h3>
+Grid data
+<br>The programs are written to access the ESRI, ASCII or TMDL toolkit
+binary grid formats. The programs can access ASCII grid data files in the
+format used by ESRI for export of files from ArcView and Arc/Info and a
+direct access binary grid format we have defined.&nbsp; The ASCII grid
+data file format comprises a few lines of header data followed by lists
+of cell values. The header data includes the following keywords and values:
+<ul>
+<li>
+ncols - number of columns in the data set. 
+  
+
+<li>
+nrows - number of rows in the data set. 
+  
+
+<li>
+xllcenter or xllcorner - x-coordinate of the center or 
+  lower-left corner of the lower-left cell. 
+  
+
+<li>
+yllcenter or yllcorner - y-coordinate of the center or 
+  lower-left corner of the lower-left cell. 
+  
+
+<li>
+cellsize - cell size for the data set. 
+  
+
+<li>
+nodata_value - value in the file assigned to cells whose value is unknown.
+This keyword and value is optional. The nodata_value defaults to -9999.</li>
+</ul>
+For example,
+<pre>ncols 480
+nrows 450
+xllcorner 378923
+yllcorner 4072345
+cellsize 30
+nodata_value -32768
+43 3 45 7 3 56 2 5 23 65 34 6 32 etc
+35 45 65 34 2 6 78 4 38 44 89 3 2 7 etc
+etc</pre>
+The first row of data is at the top of the data set, moving from left to
+right. Cell values should be delimited by spaces. No carriage returns are
+necessary at the end of each row in the data set. The number of columns
+in the header is used to determine when a new row begins. The number of
+cell values must be equal to the number of rows times the number of columns.
+<p><u>Grid naming convention.</u>
+<p>The following default naming convention is suggested and used by the
+software.&nbsp; Any file names may be used with interactive input, but
+I suggest sticking to this convention to avoid confusion.&nbsp; File names
+are:
+<br>nnnnsss[.asc]
+<br>nnnn comprises the name of the dataset. Maximum length is operating
+system dependent.
+<br>sss comprises the suffix used to designate the data type as follows:
+<table BORDER =1 CELLSPACING=0>
+<tr>
+<td VALIGN=top>no suffix.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">Elevation data.</td>
+
+<td VALIGN=top COLSPAN="3">&nbsp;</td>
+</tr>
+
+<tr>
+<td VALIGN=top>fel</td>
+
+<td VALIGN=top COLSPAN="2">Pit filled elevation data.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by Fill pits and nondraining hollows</td>
+</tr>
+
+<tr>
+<td VALIGN=top>p</td>
+
+<td VALIGN=top COLSPAN="2">D8 drainage directions.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by D8 flow directions</td>
+</tr>
+
+<tr>
+<td VALIGN=top>sd8</td>
+
+<td VALIGN=top COLSPAN="2">D8 slopes.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by D8 flow directions</td>
+</tr>
+
+<tr>
+<td VALIGN=top>ad8&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">D8 contributing area&amp;rsquo;s, units are
+number of grid cells.</td>
+
+<td VALIGN=top COLSPAN="3">produced by D8 drainage area</td>
+</tr>
+
+<tr>
+<td VALIGN=top>slp</td>
+
+<td VALIGN=top COLSPAN="2">Dinf slopes.</td>
+
+<td VALIGN=top COLSPAN="3">produced by Dinf flow directions</td>
+</tr>
+
+<tr>
+<td VALIGN=top>ang&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">Dinf flow directions.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by Dinf flow directions</td>
+</tr>
+
+<tr>
+<td VALIGN=top>sca&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">Dinf contributing area, units are specific catchment
+area, i.e. number of grid cells times cell size.</td>
+
+<td VALIGN=top COLSPAN="3">produced by Dinf drainage area</td>
+</tr>
+
+<tr>
+<td VALIGN=top>plen&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">Longest path length to each grid point along
+D8 directions.</td>
+
+<td VALIGN=top COLSPAN="3">produced by Grid network order, Upslope total
+flow length, Upslope longest path length function</td>
+</tr>
+
+<tr>
+<td VALIGN=top>tlen&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">Total path length to each grid point along D8
+directions.</td>
+
+<td VALIGN=top COLSPAN="3">produced by Grid network order, Upslope total
+flow length, Upslope longest path length function</td>
+</tr>
+
+<tr>
+<td VALIGN=top>gord&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">Strahler order for grid network defined from
+D8 flow directions.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by Grid network order, Upslope total
+flow length, Upslope longest path length function</td>
+</tr>
+
+<tr>
+<td VALIGN=top>src</td>
+
+<td VALIGN=top COLSPAN="2">Network mask based on channel source rules.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by RiverNetwork Raster</td>
+</tr>
+
+<tr>
+<td VALIGN=top>ord&nbsp;</td>
+
+<td VALIGN=top COLSPAN="2">Grid with Strahler order for mapped stream network.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by River Network Raster</td>
+</tr>
+
+<tr>
+<td VALIGN=top>w</td>
+
+<td VALIGN=top COLSPAN="2">Subbasins mapped using subbasinsetup.&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced Create Network and Sub-Watersheds</td>
+</tr>
+
+<tr>
+<td VALIGN=top>fdr</td>
+
+<td VALIGN=top COLSPAN="2">Flow directions enforced to follow the existing
+stream network&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by Convert Connected Reach Network
+to Forced Flow Direction Grid</td>
+</tr>
+
+<tr>
+<td VALIGN=top>fdrn</td>
+
+<td VALIGN=top COLSPAN="2">Flow directions enforced to follow the existing
+stream network after cleaning to remove any loops&nbsp;</td>
+
+<td VALIGN=top COLSPAN="3">produced by flood</td>
+</tr>
+</table>
+The .asc extension is used if the data is ASCII. The .bgd extension is
+used for a direct access binary grid file.&nbsp; Otherwise it is assumed
+to be ESRI's proprietary grid format.
+<p><b>Vector Data</b>
+<p>The following files are used to represent channel networks.
+<p><u>Network connectivity file, nnnntree.dat.</u>
+<br>This is essentially a list of links comprising a channel network. It
+is text with 7 columns as follows:
+<blockquote>1 LINK NUMBER
+<br>2 START POINT NUMBER IN COORD
+<br>3 END POINT NUMBER IN COORD
+<br>4 NEXT (DOWNSTREAM) LINK NUMBER IN CNET
+<br>5&amp;6 PREVIOUS (UPSTREAM) LINK NUMBERS IN CNET
+<br>7 STRAHLER ORDER OF LINK IN CNET</blockquote>
+This file is produced by the 'Create Network and Sub-Watersheds' command.
+The second and third columns refer to point coordinates, vectors along
+each link, from upstream to downstream, stored on the network coordinate,
+or 'coord.dat', file.
+<p><u>Network coordinate file, nnnncoord.dat.</u>
+<br>This is a list of coordinates defining the points along each channel
+link. It is text with 5 coulmns of data as follows:
+<blockquote>1 X COORDINATE (metres)
+<br>2 Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "
+<br>3 DISTANCE ALONG CHANNELS TO GAUGE (metres or whatever units grid size
+is in)
+<br>4 ELEVATION (metres or whatever units the DEM is in)
+<br>5 CONTRIBUTING AREA (meter<sup>2</sup> or whatever units grid size
+is in)</blockquote>
+This file is produced by the 'Create Network and Sub-Watersheds' command.&nbsp;
+The coordinates are based on the coordinate system (and projection) implicit
+in the header bounding box information in the raster grid file. Coordinates
+are the centers of grid elements (pixels) corresponding to each channel
+network link. This file is only useful in conjunction with the 'tree' file
+which gives the start and end position (line or record) in this file of
+each channel network link.
+<p><u>Shape Files</u>
+<br>This is an open ESRI data format that stores vector data in DBF files.&nbsp;
+It is described in a <a href="http://gdal.velocet.ca/projects/shapelib/shapefile.pdf">white
+paper</a>.&nbsp; TauDEM reads EPA reach files in Shape file format to enforce
+flow directions to follow existing streams where desired.&nbsp; TauDEM
+also outputs the delineated channel network and reach subwatersheds in
+Shape file format.&nbsp; The attribute table information associated with
+these shapefiles is as follows:
+<h3>
+*net.shp</h3>
+
+<table BORDER=3 CELLSPACING=3 CELLPADDING=3 >
+<tr>
+<td>LINKNO</td>
+
+<td>Link Number.&nbsp; A unique number associated with each link (segmentof
+channel between junctions)</td>
+</tr>
+
+<tr>
+<td>DSLINKNO</td>
+
+<td>Link Number of the downstream link.&nbsp; -1 indicates that this does
+not exist.</td>
+</tr>
+
+<tr>
+<td>USLINKNO1</td>
+
+<td>Link Number of first upstream link</td>
+</tr>
+
+<tr>
+<td>USLINKNO2</td>
+
+<td>Link Number of second upstream link.</td>
+</tr>
+
+<tr>
+<td>Order</td>
+
+<td>Strahler Stream Order</td>
+</tr>
+
+<tr>
+<td>Length</td>
+
+<td>Length of the link</td>
+</tr>
+
+<tr>
+<td>Magnitude</td>
+
+<td>Shreve Magnitude of the link.&nbsp; This is the total number of sources
+upstream&nbsp;</td>
+</tr>
+
+<tr>
+<td>DS_Cont_Ar</td>
+
+<td>Drainage area at the downstream end of the link. Generally this is
+one grid cell upstream of the downstream end because the drainage area
+at the downstream end grid cell includes the area of the stream being joined.</td>
+</tr>
+
+<tr>
+<td>Drop</td>
+
+<td>Drop in elevation from the start to the end of the link</td>
+</tr>
+
+<tr>
+<td>Slope</td>
+
+<td>Average slope of the link (computed as drop/length)</td>
+</tr>
+
+<tr>
+<td>Straight_L</td>
+
+<td>Straight line distance from the start to the end of the link</td>
+</tr>
+
+<tr>
+<td>US_Cont_Ar</td>
+
+<td>Drainage area at the upstream end of the link</td>
+</tr>
+
+<tr>
+<td>WSNO</td>
+
+<td>Watershed number.&nbsp; Cross reference to the *w.shp and *w grid files
+giving the identification number of the watershed draining directly to
+the link.</td>
+</tr>
+
+<tr>
+<td>DOUT_END</td>
+
+<td>Distance to the outlet from the downstream end of the link</td>
+</tr>
+
+<tr>
+<td>DOUT_START</td>
+
+<td>Distance to the outlet from the upstream end of the link</td>
+</tr>
+
+<tr>
+<td>DOUT_MID</td>
+
+<td>Distance to the outlet from the midpoint of the link</td>
+</tr>
+</table>
+
+<h4>
+*w.shp</h4>
+The only attribute of this shapefile is polygon_id, identifier.&nbsp; This
+corresponds with the WSNO watershed number in the *net.shp file.
+<br>&nbsp;
+<p>
+<hr><u>Test data.</u> The enclosed file <A href="test.asc">test.asc</a>
+is a small test grid dataset.&nbsp; The illustrative data given above is
+from the Grey River watershed on the west coast of the South Island of
+New Zealand, based on contours supplied by Land Information New Zealand.&nbsp;
+<hr>
+<h3>
+History and Old Versions</h3>
+This is version 1.0a - released July 13, 2001 (Friday the 13'th).&nbsp;
+This fixes quite a few bugs and problems with the initial release that
+was posted on May 21, 2001.&nbsp; This also adds TopSetup capability (although
+we still sometimes have problems with this).
+<p>This is the first Graphic User Interface version.&nbsp; Older command
+line software may be accessed at <a href="http://www.engineering.usu.edu/dtarb/tardem.html">http://www.engineering.usu.edu/dtarb/tardem.html</a>.&nbsp;
+<hr>
+<h3>
+Acknowledgements</h3>
+These have been developed during the course of my research over the years
+with support from a variety of sponsors, whose support is gratefully acknowledged.
+Specific sponsors include:
+<br>1. Massachusetts Institute of Technology, research assistantship under
+Rafael Bras, for my Sc.D. research where this all got started. Some remnants
+of the code from this work still remain.
+<br>2. National Science Foundation grant EAR-9318977 for the development
+of the D<font face="Symbol">¥ </font>approach (Tarboton, D. G., 1997).
+<br>3. Forest Renewal of British Columbia, for the development of <A href="../sinmap/sinmap.htm">Terrain
+Stability Mapping methodology</a> and Arcview Implementation, in a collaborative
+project involving Canadian Forest Products Ltd., Vancouver, British Columbia,
+Terratech Consulting Ltd., British Columbia (Bob Pack), and Craig Goodwin.
+<br>4. National Science Foundation grant INT-9724720 and NIWA New Zealand
+for the work on <a href="http://www.engineering.usu.edu/cee/faculty/dtarb/agu98dem/">methods
+for mapping and identification of flow methods from digital elevation data</a>.
+<br>5. Idaho National Engineering and Environmental Laboratory for work
+on the adaptation of these codes for use with the TMDL Toolkit, and integration
+of flow with existing channel networks.
+<p>
+<hr>
+<h3>
+References</h3>
+Band, L. E., (1986), "Topographic partition of watersheds with digital
+elevation models," Water Resources Research, 22(1): l5-24.
+<p>Garbrecht, J. and L. W. Martz, (1997), "The Assignment of Drainage Direction
+Over Flat Surfaces in Raster Digital Elevation Models," Journal of Hydrology,
+193: 204-213.
+<p>Jenson, S. K. and J. O. Domingue, (1988), "Extracting Topographic Structure
+from Digital Elevation Data for Geographic Information System Analysis,"
+Photogrammetric Engineering and Remote Sensing, 54(11): 1593-1600.
+<p>Mark, D. M., (1988), "Network models in geomorphology," Chapter 4 in
+Modelling in Geomorphological Systems, Edited by M. G. Anderson, John Wiley.,
+p.73-97.
+<p>Marks, D., J. Dozier and J. Frew, (1984), "Automated Basin Delineation
+From Digital Elevation Data," Geo. Processing, 2: 299-311.
+<p>Montgomery, D. R. and W. E. Dietrich, (1992), "Channel Initiation and
+the Problem of Landscape Scale," Science, 255: 826-830.
+<p>O'Callaghan, J. F. and D. M. Mark, (1984), "The Extraction of Drainage
+Networks From Digital Elevation Data," Computer Vision, Graphics and Image
+Processing, 28: 328-344.
+<p>Peckham, S. D., (1995), "Self-Similarity in the Three-Dimensional Geometry
+and Dynamics of Large River Basins," PhD Thesis, Program in Geophysics,
+University of Colorado.
+<p>Peuker, T. K. and D. H. Douglas, (1975), "Detection of surface-specific
+points by local parallel processing of discrete terrain elevation data,"
+Comput. Graphics Image Process., 4: 375-387.
+<p>Tarboton, D. G., (1989), "The analysis of river basins and channel networks
+using digital terrain data," Sc.D. Thesis, M.I.T., Cambridge, MA, (Also
+available as Tarboton D. G., R. L. Bras and I. Rodriguez-Iturbe, (Same
+title), Technical report no 326, Ralph M. Parsons Laboratory for Water
+resources and Hydrodynamics, Department of Civil Engineering, M.I.T., September
+1989).
+<p>Tarboton, D. G., R. L. Bras and I. Rodriguez-Iturbe, (1991), "On the
+Extraction of Channel Networks from Digital Elevation Data," Hydrologic
+Processes, 5(1): 81-100.
+<p>Tarboton, D. G., R. L. Bras and I. Rodriguez-Iturbe, (1992), "A Physical
+Basis for Drainage Density," Geomorphology, 5(1/2): 59-76.
+<p><a href="http://www.engineering.usu.edu/dtarb/dinf.pdf">Tarboton, D.
+G., (1997), "A New Method for the Determination of Flow Directions and
+Contributing Areas in Grid Digital Elevation Models," Water Resources Research,
+33(2): 309-319.</a>
+<p><a href="http://www.engineering.usu.edu/cee/faculty/dtarb/agu98dem/">Tarboton,
+D. G. and U. Shankar, (1998), "The Identification and Mapping of Flow Networks
+from Digital Elevation Data," Invited Presentation at AGU Fall Meeting,
+San Francisco, December 6 to 10.</a>
+<p>Tarboton, D. G. and D. P. Ames, (2001),"Advances in the mapping of flow
+networks from digital elevation data," in <a href="http://www.asce.org/conferences/wwercongress/">World
+Water and Environmental Resources Congress</a>, Orlando, Florida, May 20-24,
+ASCE. [<a href="http://www.engineering.usu.edu/dtarb/asce2001.pdf"> PDF
+(0.5MB)</a>]
+<br>&nbsp;
+<br>&nbsp;</p>
+</body>
+</html>

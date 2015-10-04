@@ -1,0 +1,5 @@
+TauDEM (Terrain analysis using Digital Elevation Models)
+This is software for the extraction of channel networks and hydrologic analysis of digital elevation data.
+David Tarboton
+http://www.engineering.usu.edu/dtarb
+Utah State University

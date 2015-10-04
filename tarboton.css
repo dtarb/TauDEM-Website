@@ -1,0 +1,190 @@
+/* General */
+body { background-color:White; margin:8px; padding: 0px; font:80% Arial,Helvetica,sans-serif; color:#555555}
+form { margin:0 }
+/*  ul { list-style-image: url(images/bullet.gif); margin-top: -10px }
+li { padding-top: 3px }  DGT removed to allow indented bullets to not be on top of each other */
+
+/* Header */
+.logodiamond { position:absolute; top:8px; left:180px; text-align:center; z-index:5 }
+.titlelogo { position:absolute; top:40px; left:200px; text-align:center; z-index:5 }
+.mainHeader { background-color:#003466; margin-bottom:1px }
+.wordmark { float:left }
+.topNav { height:56px; background:#003466 url(/images/tarboton.gif) no-repeat top right; text-align:center; font:Arial,Helvetica,sans-serif }
+.topNav ul { margin:0; padding-top:10px }
+.topNav ul li { display:inline; padding-right:8px }
+.topNav ul li a { text-decoration:none; color:#A0AED7 }
+.topNav ul li a:hover { color:White }
+.mainNav { height:23px; background-color:#295D91; margin-bottom:4px }
+.signIn { float:right; margin:4px 6px 0px 0px; color:White; font:Arial,Helvetica,sans-serif }
+.signIn a { color:White }
+.signIn a:hover { color:White }
+
+/* Sections */
+.leftLine { background-color:#EBEBEB }
+.main { width:100% }
+.gutter { background:transparent url(images/shadow.gif) repeat-y top left }
+.panel { background-color:#EEEFF1 }
+.content { padding:10px 20px 0px 20px }
+
+/* Banner */
+.banner { height:140px; background:#00381B no-repeat top left }
+.banner table { width:100%; height:125px }
+.banner table td { text-align:right; vertical-align:bottom; padding-right:10px; color:White; font:270% 'Times New Roman',Times,Georgia,serif }
+
+/* Navigation Trail */
+.navTrail { background-color:#6E757E; text-align:right; padding:3px 10px 0 0; height:20px; color:White; font:Arial,Helvetica,sans-serif }
+.navTrail a { color:White }
+.navTrail a:hover { color:#A0AED7; text-decoration:none }
+.print { float:left; padding-left:6px }
+
+/* Footer */
+.footer { background:transparent url(images/footer.gif) repeat-x top left; vertical-align:top; padding-top: 52px; text-align: center; color:#A0AED7; font:80% Arial,Helvetica,sans-serif }
+.footer ul { list-style-type:none; display:inline}
+.footer ul li {display:inline; padding-left:20px; padding-right:20px  }
+.footer ul li a { color: #A0AED7}
+.footer ul li a:hover { color:White; text-decoration:none }
+.footerRight {}
+
+/* Headings */
+h1 { color:#4A5EA2; font:240% "Times New Roman",Times,serif }
+h2 { color:#4A5EA2; font:bold 160% "Times New Roman",Times,serif }
+h3 { color:#4A5EA2; font:bold 100% Arial,Helvetica,sans-serif; letter-spacing:2px; text-transform:uppercase }
+span.tag { color:#003463; font:120% 'Times New Roman', Georgia, Serif }
+
+/* Content */
+.content {}
+
+/* Detail */
+.detail { font:80% Arial,Helvetica,sans-serif; color:Black }
+
+/* Images */
+img.leftImage { float:left; margin-right:20px; margin-bottom:15px }
+img.rightImage { float:right; margin-left:20px; margin-bottom:15px }
+
+/* Links */
+a { color:#8095D1; text-decoration:none }
+a:hover { color:#4A5EA2; text-decoration:underline }
+
+/* Menu */
+.menuHeading { background-color:#295D91; border-top:4px solid White; padding:4px 6px 4px 6px; color:White; font:bold 120% "Times New Roman",Times,serif }
+.menuHeading a { color:White }
+.menuHeading a:hover { color:#D0E5F8; text-decoration:none }
+.menu { padding:6px 10px 10px 10px }
+.nav, .navOn, .navIndented, .navIndentedOn { color:#555555; padding-bottom:6px }
+.navOn, .navIndentedOn { font-weight:bold }
+.navIndented, .navIndentedOn { font-size:80%; background:url(/images/bullet.gif) no-repeat 13px -3px; padding-left:25px }
+.nav a, .navIndented a { color:#555555 }
+.nav a:hover, .navIndented a:hover { color:#8095D1; text-decoration:none }
+
+/* Announcement Box */
+.announce { vertical-align: top; width: 25%; background-color: #EEEFF1; text-align: left; border-right: #295D91 thin solid; border-top: #295D91 thin solid; border-left: #295D91 thin solid;border-bottom: #295D91 thin solid }
+.annHeading { background-color:#295D91; padding:4px 6px 4px 6px; color:White; font:bold 120% "Times New Roman",Times,serif }
+.annItems { padding: 8px 8px 8px 8px}
+.annItems li { padding-top: 8px; margin-left: -12px }
+.annItems ul li a { color:#555555 }
+.annItems ul li a:hover { color:#A0AED7; text-decoration:none }
+
+/* Conference Box */
+.conference { vertical-align: top; width: 25%; background-color: #EEEFF1; text-align: left; border-right: #295D91 thin solid; border-top: #295D91 thin solid; border-left: #295D91 thin solid;border-bottom: #295D91 thin solid }
+.conHeading { background-color:#295D91; padding:4px 6px 4px 6px; color:White; font:bold 120% "Times New Roman",Times,serif }
+.conItems { padding: 8px 8px 8px 8px}
+.conItems li { padding-top: 8px; margin-left: -12px }
+.conItems ul li a { color:#A0AED7 }
+.conItems ul li a:hover { color:#A0AED7; text-decoration:underline }
+
+/* Forms */
+table.form { border-collapse:separate } 
+td.required, td.optional { text-align:right; padding:7px 5px 0px 10px; vertical-align:top }
+td.required { font-weight: bold }
+td.element { padding:3px 0px 3px 5px; vertical-align: top; }
+.error { color:Red; font:bold 80% Arial,Helvetica,sans-serif }
+.errorMessage { color:Red; font:90% Arial,Helvetica,sans-serif }
+
+/* Tables */
+table { border-collapse: collapse }
+table.datagrid { width:100%; margin-top:8px }
+tr.item { vertical-align:top; background-color:#EFEFF7 }
+tr.alternatingItem { vertical-align:top; background-color:White }
+th, td.header, td.headerres1, td.headerCenter, td.headerRight { font:normal 80% Arial,Helvetica,sans-serif; color:Black; letter-spacing:2px; text-transform:uppercase;	padding:0px 8px 3px 8px; white-space:nowrap; text-align:left }
+td.headerres1 { width:25%}
+td.headerCenter { text-align:center }
+td.headerRight { text-align:right }
+td.dgCellLeft, td.dgCellRight, td.dgCellCenter { padding:3px 8px 3px 8px }
+td.dgCellRight { text-align:right }
+td.dgCellCenter { text-align:center }
+td { padding:0 }
+
+/* Button */
+a.button, a.adminButton, a.button:visited { position:relative; top:8px; font-family:Arial,Helvetica,sans-serif; font-size:90%; color:#4A5DA5; text-decoration:none; background:url(images/arrow.gif) left no-repeat; background-position:5px 7px; background-color:#EFEFF7; border:solid 1px #4A5DA5; padding:3px 6px 3px 16px }
+a.button:hover { color:#EFEFF7; background-color:#4A5DA5; text-decoration:none }
+a.adminButton, a.adminButton:visited { color:#3A1919; background:url(images/adminarrow.gif) left no-repeat; background-position:5px 7px; background-color:#EDE3DC; border:solid 1px #3A1919 }
+a.adminButton:hover { color:#EDE3DC; background-color:#3A1919; text-decoration:none }
+.buttonBar { float:right; margin-top:5px }
+.buttonBar ul { margin:0 }
+.buttonBar ul li { display:inline }
+
+/* Hidden */
+.hiddenLink, a.hiddenLink:visited { font-weight:bold; color:#555555; text-decoration:none }
+a.hiddenLink:hover { color:Red; text-decoration:none }
+
+/* Calendar */
+table.calendar { width:100%; border:solid 1px #295D94; border-collapse:separate; border-spacing:1px }
+td.calendar, td.date, td.inactiveDate, td.today, td.day { border:solid 1px #295D94 }
+td.calendar { text-align:center; padding:8px }
+td.date, td.inactiveDate, td.today { height:80px; font-family:Arial,Helvetica,sans-serif; font-size:80%; vertical-align:top; padding:2px }
+td.inactiveDate { background-color:#EFEFF7 }
+td.today { background-color:#F5F5DD }
+td.day { width:14%; background-color:#295D94; text-align:center; font-family:Arial,Helvetica,sans-serif; font-size:90%; font-weight:bold; color:White; padding:3px }
+.month { font-family:Arial,Helvetica,sans-serif; font-size:160%; font-weight:bold; color:#295D94 }
+.monthAdvance {	font:bold 90% Arial,Helvetica,sans-serif; color:#295D94; text-decoration:none }
+a.monthAdvance:visited { color:#295D94 }
+a.monthAdvance:hover { color:Red; text-decoration:none }
+
+/* Events */
+a.event1, a.event1:visited, a.event1:hover { color:#990000 }
+a.event2, a.event2:visited, a.event2:hover { color:#000099 }
+a.event3, a.event3:visited, a.event3:hover { color:#006600 }
+a.event4, a.event4:visited, a.event4:hover { color:#666600 }
+a.event1, a.event2, a.event3, a.event4 { text-decoration:none }
+
+/* Event Categories */
+.ecSeminars, .ecSeminarsSelected, .ecTalks, .ecTalksSelected, .ecEvents, .ecEventsSelected, .ecOther, .ecOtherSelected, .ecAll, .ecAllSelected { font-family:Arial,Helvetica,sans-serif; font-size:90%; padding:2px; border:solid 1px White }
+.ecSeminars { color:#990000 }
+.ecSeminarsSelected { color:#990000; border-color:#990000 }
+a.ecSeminars:visited { color:#990000; }
+a.ecSeminars:hover { color:White; background-color:#990000; border-color:#990000 }
+.ecTalks { color:#000099 }
+.ecTalksSelected { color:#000099; border-color:#000099 }
+a.ecTalks:visited { color:#000099 }
+a.ecTalks:hover { color:White; background-color:#000099; border-color:#000099 }
+.ecEvents { color:#006600 }
+.ecEventsSelected { color:#006600; border-color:#006600 }
+a.ecEvents:visited { color:#006600 }
+a.ecEvents:hover { color:White; background-color:#006600; border-color:#006600 }
+.ecOther { color:#666600 }
+.ecOtherSelected { color:#666600; border-color:#666600 }
+a.ecOther:visited { color:#666600 }
+a.ecOther:hover { color:White; background-color:#666600; border-color:#666600 }
+.ecAll { color:#555555 }
+.ecAllSelected { color:#555555; border-color:#555555 }
+a.ecAll:visited { color:#555555 }
+a.ecAll:hover {	color:White; background-color:#555555; border-color:#555555 }
+a.ecSeminars:hover, a.ecTalks:hover, a.ecEvents:hover, a.ecOther:hover, a.ecAll:hover {	text-decoration:none; }
+
+/* Pop-up Calendar */
+.cpYearNavigation, .cpMonthNavigation { background-color:#003463; text-align:center; vertical-align:middle; text-decoration:none; color:White; font-weight:bold }
+a.cpMonthNavigation:visited, a.cpMonthNavigation:hover, a.cpYearNavigation:visited, a.cpMonthNavigation:hover {	color:White }
+.cpDayColumnHeader, .cpYearNavigation, .cpMonthNavigation, .cpCurrentMonthDate, .cpCurrentMonthDateDisabled, .cpOtherMonthDate, .cpOtherMonthDateDisabled, .cpCurrentDate, .cpCurrentDateDisabled, .cpTodayText, .cpTodayTextDisabled, .cpText	{ font-family:Arial,Helvetica,sans-serif; font-size:80% }
+td.cpDayColumnHeader { text-align:right; border:solid thin Black; border-width:0px 0px 1px 0px }
+.cpCurrentMonthDate, .cpOtherMonthDate, .cpCurrentDate { text-align:right; text-decoration:none }
+.cpCurrentMonthDateDisabled, .cpOtherMonthDateDisabled, .cpCurrentDateDisabled { color:#D0D0D0; text-align:right; text-decoration:line-through }
+.cpCurrentMonthDate, a.cpCurrentMonthDate:visited, a.cpCurrentMonthDate:hover { color:#003463; font-weight:bold }
+.cpCurrentDate, a.cpCurrentDate:visited, a.cpCurrentDate:hover { color:#FFFFFF; font-weight:bold }
+.cpOtherMonthDate, a.cpOtherMonthDate:visited, a.cpOtherMonthDate:hover { color:#808080 }
+td.cpCurrentDate { color:White; background-color:#003463 }
+td.cpCurrentDateDisabled { border-width:1px; border:solid 1px #FFAAAA }
+td.cpTodayText, td.cpTodayTextDisabled { border:solid thin #003463; border-width:1px 0px 0px 0px }
+a.cpTodayText, span.cpTodayTextDisabled { text-decoration:none; font-size:80%; height:20px }
+a.cpTodayText, a.cpTodayText:visited, a.cpTodayText:hover { color:#003463 }
+span.cpTodayTextDisabled { color:#D0D0D0 }
+.cpBorder { border:solid thin #003463 }

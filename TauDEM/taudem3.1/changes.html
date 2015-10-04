@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>TauDEM Changes</title>
+</head>
+
+<body>
+<h3>Log of TauDEM changes following version 3.0 release. </h3>
+<p>Version 3.01.0000 release May 2005. <br>
+  Version 
+3.01.0001. 1/6/06. </p>
+<ul>
+  <li>Bug fix to slope/area method in tktaudem.dll. Set some default parameters for slope/area method in agtaudem.dll </li>
+</ul>
+<p>Version 3.01.0002. 
+  6/26/06. </p>
+<ul>
+  <li>Bug fix to ShapefileToArrays in agtaudem. X and Y coordinates were long &ndash; made double.</li>
+</ul>
+<p>Unnumbered. 9/21/07. </p>
+<ul>
+  <li>Bug fix to dparea. No data values along edges could impact the results when edge contamination was turned off. This had the appearance of doing edge contamination checking for weighted contributing area calculations when edge contamination checking was turned off. </li>
+  <li>Fixed memory leaks in sourcedef and dropan. Fixed incorrect slp file being used with dropan.</li>
+</ul>
+<p>Unnumbered. 
+  10/20/07. </p>
+<ul>
+  <li>Fixed memory freeing bug in transport limited accumulation.</li>
+</ul>
+<p>Version 3.1.0.3. 
+9/12/08. </p>
+<ul>
+  <li>Fixed bug in contributing area due to numerical rounding of flow directions. The imprecise numerical representation of the angle that defines flow direction could result in artificial loops that combined with the recursive evaluation method implemented resulted in incomplete contributing areas. This was resolved by, in the code, finding all  occurrences of if(p&gt;0) and replacing it by if(p&gt;1e-6) in deciding which grid cells contribute to another grid cell. This was done in all Dinf accumulation functions (not only AreaDinf contributing area).</li>
+</ul>
+<blockquote>
+  <p>Explanation of this issue.</p>
+  <p><img src="AreaDinfBugFix.jpg" width="463" height="263"> <br>
+    <br>
+    If it happens in the evaluation of contributing areas that cell C is encountered first. It proceeds to evaluate its contributing area by summing contributions from neighbors in the order 1, 2, 3, 4, &hellip; 8 indicated (red numbers). There are contributions from 1, 5 and 8. When direction 5 (cell B) is being evaluated, cell A is inspected to see if it drains to cell B. The angle is 3.926991, which due to numerical rounding is slightly bigger than 5/4pi=3.9269908 so a small fraction of A flows to B. The contributing area of A is then evaluated, but it receives a lot of its contributing area from C. The value for contributing area at C has not been completely summed yet &ndash; because neighbors 6, 7 and 8 have not been evaluated yet. So an incomplete contributing area from C is used to evaluate the contributing area at A. Then some small fraction of this contributes to B which contributes to C, then the remainder of area contributing to C is evaluated, so the contributing area of C ends up being correct, but A was evaluated with an incomplete C so is incorrect. The fix was to use a threshold and only count contribution from grid cells where the proportion was greater than the threshold in the accumulation of contributing area.  A threshold of 1 E-6 was chosen. <br>
+  </p>
+</blockquote>
+</body>
+</html>

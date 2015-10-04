@@ -1,0 +1,2392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>David Tarboton: Hydrology Research Group-Terain Analysis Using Digital Elevation Models (TauDEM)</title>
+	<meta name="description" content="David Tarboton: Hydrology Research Group - Terain Analysis Using Digital Elevation Models (TauDEM)" />
+
+<meta name="author" content="Utah State Unversity, David Tarboton Hydrologic Research Group - 2006-2007" />
+	<meta name="language" content="en" />
+	<meta name="robots" content="follow, all" />
+	<meta name="revisit-after" content="5 days" />
+
+  	<link href="/images/favicon.ico" rel="shortcut icon" />
+	<link href="/tarboton.css" rel="stylesheet" type="text/css"/>
+  </head>
+<body>
+	<span class="wordmark"><a href="http://www.usu.edu/"><img src="/images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
+	<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="/images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
+	<div class="mainHeader">
+		<div class="wordmark"></div>
+		<div class="topNav">
+			<ul>
+				<li>
+					<a href="http://www.usu.edu/">USU home</a>
+				<li>
+					<a href="http://www.usu.edu/search/">A-Z index</a>
+				<li>
+					<a href="http://www.usu.edu/calendar/">calendars</a>
+				<li>
+					<a href="http://www.usu.edu/myusu/">MyUSU</a>
+				<li>
+					<a href="http://www.usu.edu/contact/">contact</a>
+				<li>
+					<a href="http://www.usu.edu/directory/">directory</a>
+                <li> 
+                	<a href="http://www.usu.edu/search/">search USU</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mainNav">
+		<div class="signIn">
+		</div>
+	</div>
+	
+<table width="100%">
+		<tr valign="top">
+			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+			<td class="main">
+				<div class="banner" style="background-image:url(/images/taudemlogo2.gif);">
+					<table>
+						<tr>
+							<td>TauDEM Ver. 3.1</td>
+						</tr>
+					</table>
+				</div>
+				<div class="navTrail">
+					<div class="print">
+					</div>
+				</div>
+				<div class="content">
+				<strong><font color="#FF0000">This is an archive of an old version of TauDEM. For the latest version see <a href="http://hydrology.usu.edu/taudem">http://hydrology.usu.edu/taudem</a></font></strong>  
+			<H3 class=Section1>Terrain Analysis Using Digital Elevation Models (TauDEM)</H3>
+
+
+			<table width="780" border="0">
+              <tr>
+                <td width="412">David G. Tarboton<BR>
+				Utah State University<BR>
+				4110 Old Main Hill<BR> 
+				Logan, UT 84322-8200 <BR>
+				USA<BR></td>
+                <td width="358" valign="top"><A href="http://www.engineering.usu.edu/dtarb/">http://www.engineering.usu.edu/dtarb/</A><BR>
+			email: david.tarboton&lt;at symbol&gt;usu.edu</td>
+              </tr>
+            </table>
+				<p>September 2008 <BR>
+			        </p>
+				<P class=Section1>TauDEM (Terrain Analysis Using Digital Elevation Models) is a set of tools for 
+				the analysis of terrain using digital elevation models.&nbsp; It incorporates 
+				programs and digital elevation model (DEM) analysis functions developed over 
+				several years of research.&nbsp; TauDEM is currently packaged as an extendable 
+				component (toolbar plugin) to both <A href="http://www.esri.com/">ESRI</A> ArcGIS (8.x&nbsp;and 9.0) and <a href="http://www.mapwindow.org/">MapWindow</a> Open Source  GIS.
+			</P>
+            <DIV class=Section1>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#copy">Distribution and Copyright</A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+				<A href="#intall">Download and installation</A>                
+				<LI class="MsoNormal"><A href="#notes"><strong>* Usage Notes and Limitations * </strong></A>
+                <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#Overview">Overview</A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#interface">Interface</A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#tutorial">A tutorial example to get started</A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#thefunctions">The functions and what they do</A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#dataformats">Data formats and file naming conventions</A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+				  <A href="#faq"><b>* Frequently Asked Questions *</b></A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#history">Updates, history and command line versions</A>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l50 level1 lfo3">
+					<A href="#acknowledgements">Acknowledgements</A>				</LI>
+			</UL>
+    </DIV>
+<DIV class="MsoNormal" style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+	</DIV>
+			<H4><A name="copy"></A>Distribution and Copyright</H4>
+			<P class="MsoNormal">Copyright (C) 2004&nbsp;
+					Utah
+					State
+					University</P>
+			<P>This program is free software; you can redistribute it and/or modify it under 
+				the terms of the GNU General Public License version 2, 1991 as published by the 
+				Free Software Foundation.
+			</P>
+			<P>This program is distributed in the hope that it will be useful, but WITHOUT ANY 
+				WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+				PARTICULAR PURPOSE.&nbsp; See the GNU General Public License for more details.
+			</P>
+			<P>A copy of the full GNU General Public License is included in file <A href="gpl.htm" target=_top>
+					gpl.html</A>. This is also available at:
+				<BR>
+				<A href="http://www.gnu.org/copyleft/gpl.html" target="_top">http://www.gnu.org/copyleft/gpl.html</A>
+				<BR>
+				or from:
+				<BR>
+				The Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+				<BR>
+				Boston, MA&nbsp; 02111-1307, USA.
+			</P>
+			<P>If you wish to use or incorporate this program (or parts of it) into other 
+				software that does not meet the GNU General Public License conditions contact 
+				the author to request permission.
+				<BR>
+				<ST1:PLACE>
+					<ST1:PLACENAME>David</ST1:PLACENAME>
+					<ST1:PLACENAME>G.</ST1:PLACENAME>
+					<ST1:PLACENAME>Tarboton</ST1:PLACENAME>
+					<BR>
+					<ST1:PLACENAME>Utah</ST1:PLACENAME>
+					<ST1:PLACETYPE>State</ST1:PLACETYPE>
+					<ST1:PLACETYPE>University</ST1:PLACETYPE> </ST1:PLACE><BR>
+				4110 Old Main Hill
+				<BR>
+				Logan, UT 84322-4110
+				<BR>
+				USA
+				<BR>
+				<A href="http://www.engineering.usu.edu/dtarb/">http://www.engineering.usu.edu/dtarb/</A>
+				<BR>
+			email:&nbsp; david.tarboton&lt;at symbol&gt;usu.edu			</P>
+			<DIV class="MsoNormal" style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+			</DIV>
+			<H4><A name="intall"></A>Download and Installation</H4>
+			<P class="MsoNormal">System Requirements.&nbsp; Windows 2000 or higher.&nbsp; To 
+				use the <A href="http://www.esri.com">ESRI </A>ArcMAP toolbar you will need 
+				ArcGIS. The spatial 
+				analyst extension is not required for TauDEM to function, but is useful to work 
+				with the results.
+	To use the <a href="http://www.mapwindow.org">MapWindow</a> plugin you will need MapWindow 3.0 or higher.&nbsp; </P>
+			<H4>Downloads</H4>
+            <strong><font color="#FF0000">This is an archive of an old version of TauDEM. For the latest version see <a href="http://hydrology.usu.edu/taudem">http://hydrology.usu.edu/taudem</a></font></strong>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l80 level1 lfo6">
+				TauDEM Setup package for <A 
+  href="83info.htm">ArcGIS 8.3</A>                 
+				<LI class="MsoNormal">TauDEM Setup package for <A href="90info.htm">ArcGIS 9.0-9.3</A>
+				<LI class="MsoNormal">TauDEM Setup package for <a href="mwinfo.htm">MapWindow</a>.
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l80 level1 lfo6">
+					Source codes <A href="TauDEMsource.zip">TauDEMsource.zip</A>. 
+  [2.8 Mb] This only includes the source for the TauDEM toolbar and plugin. ESRI ArcGIS 
+  required to run this software is not available for me to distribute. </LI>    
+				                   
+				  
+	            <LI class="MsoNormal">Link to <a href="http://www.mapwindow.org">download MapWindow</a>. MapWindow source code is available from <a href="http://www.mapwindow.org">www.mapwindow.org</a>. </LI>
+	</UL>
+			<H4>Installation</H4>
+			<P class="MsoNormal">Execute the 
+installation file  to install 
+				the necessary libraries and components.&nbsp; For ArcGIS, open ArcMap.&nbsp; Click on tools/customize.&nbsp; 
+				At the Customize dialog click on add from file ....&nbsp; Browse to c:\program 
+				files\TauDEM\agtaudem.dll then click Open.&nbsp; Click OK to added 
+				objects.&nbsp; The entry "Terrain Analysis using digital elevation models 
+				(TauDEM)" should appear under Toolbars.&nbsp; Check this (if not already 
+				checked) and close the customize dialog.&nbsp; The TauDEM toolbar should now be 
+				present in the ArcMap environment.&nbsp; If it does not appear the first time, 
+				close and reopen ArcMap.
+	For MapWindow click on Plugins and select TauDEM. The TauDEM menu should appear. If it does not check that the folder taudem created by the install is in the correct location, which is by default c:\program files\mapwindow\plugins.         
+			<HR align="center" width="100%" SIZE="2">
+
+<P></P>
+			<H4><A name="notes"></A>Usage Notes and Limitations</H4>
+			<ol>
+            <li>Grid File and Path Names: Spaces are not allowed in file names or paths (e.g. "My 
+            Documents" has a space, and so will not work). File names must be 13 
+            characters or less.</li>
+            <li>Grid Size: Grids must be smaller than 7000 x 7000 cells.</li>
+            <li>Grid Spatial Reference/Size: All input grids are assumed to be the same size, shape, 		
+            and in the same spatial reference.  This is sometimes checked by the program, but not 
+            consistantly.
+            </ol>
+	<HR align="center" width="100%" SIZE="2">
+
+<P></P>
+			<H4><A name="Overview"></A>Overview</H4>
+			<P class="MsoNormal">TauDEM (Terrain Analysis Using Digital Elevation Models) 
+				incorporates the Digital Elevation Model (DEM) analysis tools and functions 
+				developed by David Tarboton over the years with support from a variety of sponsors, whose support is 
+				gratefully acknowledged.
+			</P>
+			<P>The TauDEM plug-in currently provides the following capability:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l33 level1 lfo9">
+				Pit removal by flooding to ensure hydraulic connectivity 
+  within the watershed
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l33 level1 lfo9">
+				           
+				Computation of flow directions and slopes
+			  <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l33 level1 lfo9">
+				Contributing area using single and multiple flow direction methods
+			  <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l33 level1 lfo9">
+				Multiple methods for the delineation of channel networks 
+  including curvature-based methods sensitive to spatially variable drainage 
+  density
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l33 level1 lfo9">
+				         
+				       
+				Objective methods for determination of the channel network delineation 
+				threshold based on stream dropsStream ordering
+			  <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l33 level1 lfo9">
+				Delineation of watersheds and subwatersheds draining to each stream segment and 
+				association between watershed and segment attributes for setting up hydrologic 
+				models.
+			  <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l33 level1 lfo9">
+					Specialized functions for terrain analysis, including:
+					<UL type="circle">
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+						Wetness index
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+						Distance to streams
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+						Downslope influence function to map locations downslope that may be influenced 
+						by activities in an area
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+						Upslope dependence function to map the locations upslope where activities have 
+						an effect on a downslope location
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+						Decaying accumulation that evaluates upslope contribution subject to decay or 
+						attenuation
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+						Concentration limited accumulation
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+						Transport limited accumulation
+						<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list 1.0in; mso-list: l33 level2 lfo9">
+							Reverse accumulation
+						</LI>
+					</UL>
+			  </LI>
+			</UL>
+			<DIV class="MsoNormal" style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+			</DIV>
+			<H4><A name="interface"></A>Interface</H4>
+<P class=MsoNormal>The TauDEM plugin consists of the following three menus. </P>
+<UL>
+  <LI>
+  <DIV class=MsoNormal>Basic Grid Analysis </DIV>
+  <LI>
+  <DIV class=MsoNormal>Network Analysis </DIV>
+  <LI>
+  <DIV class=MsoNormal>Specialized Grid Analysis</DIV>
+  <LI>
+  <DIV class=MsoNormal>Utilities</DIV></LI></UL>
+			<P>Basic Grid Analysis contains the functions that are core to most basic Digital 
+				Elevation Model (DEM) analyses, and provide inputs to many other 
+				functions.&nbsp; The general order in which they should be executed is top to 
+				bottom.
+			</P>
+			<P>Network Analysis contains the functions required to delineate channel networks 
+				and subwatersheds.&nbsp; Again the sequence is top to bottom.
+			</P>
+			<P>Specialized Grid Analysis contains more advanced functions that can be invoked 
+				as needed.
+			</P>
+			<P>The section below on <A href="#thefunctions">the functions and what they do</A> below 
+				describes in detail how each function works.&nbsp; Generally each time a menu 
+				item is selected a dialog box appears showing the inputs and outputs for a 
+				particular function.&nbsp; Once a base DEM has been selected the file names for 
+				most inputs and outputs are populated following the default file naming 
+				convention.&nbsp; You are free to change these, but working with the defaults 
+				saves some typing.&nbsp; [A side effect of this, is that if a new base DEM is 
+				selected, all file names are reset back to their defaults.]&nbsp; Before 
+				running each function you should ensure that all necessary input information 
+				exists, or expect an error.&nbsp; Help on the individual files is available by 
+				clicking on the label to the left of the field where file names can be changed.
+			</P>
+			<DIV class="MsoNormal" style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+			</DIV>
+			<H4><A name="tutorial"></A>A tutorial example to get started</H4>
+			<P class="MsoNormal">Download and unzip the files in <A href="tutorial.zip">tutorial.zip</A> into a convenient place for you 
+				to work.
+</P>
+			<P class="MsoNormal">A. ArcMap</P>
+			<OL type=1>
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					Use ArcToolbox | Import to Raster | ASCII to grid to 
+  import the file "demo.asc" as a grid named "demo"<BR>
+				<IMG id=_x0000_i1033 height=164 src="asciitogrid.jpg" width=538 align=textTop
+					 border=0 ><BR>
+				Use the float option for Grid type.
+				<BR>&nbsp; 
+  
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					Open ArcMAP and add the TauDEM toolbar.&nbsp; [Click on 
+  tools | Customize | Add from file and select the file c:\program 
+  files\Taudem\agtaudem.dll]<BR><IMG alt="" src="FilePath.jpg" >
+					         
+              
+  <BR>
+				You should get a toolbar that looks like
+				<BR>
+				<IMG alt="" src="toolbar.jpg"><BR>
+				This may be docked.
+				<BR>&nbsp; 
+  
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					Use Add Data&nbsp;<IMG id=_x0000_i1035 height=25 src="adddata.gif" width=24 border=0> to load the grid named "demo".&nbsp; [OK to the 
+  message about missing spatial reference information.] 
+  
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					From Basic Grid Analysis "Select Base DEM grid" and click 
+  OK with the Base DEM layer as "demo".<BR>
+				<IMG id=_x0000_i1036 height=123 src="basedem.gif" width=507 border=0><BR>
+				This identifies this as the Base DEM and sets up default file names for all 
+				other inputs.
+				<BR>&nbsp; 
+  
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					Invoke the functions in Basic Grid Analysis in sequence 
+  from top to bottom, starting with "Fill Pits".<BR>
+				<IMG id=_x0000_i1037 height=352 src="fillpits.gif" width=473 border=0><BR>
+				then "D8 flow directions"
+				<BR>
+				<IMG id=_x0000_i1038 height=336 src="d8.gif" width=483 border=0><BR>
+				and so on.&nbsp; Examine the output at each step.&nbsp; You could have done 
+				this all at once with the function "Do All".
+				<BR>&nbsp; 
+  
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					The layer named "demosrc" that results from "Full River 
+  Network Raster" is a rasterized version of channel network to be mapped.&nbsp; 
+  This provides a background for the positioning of outlets on the 
+  streams.&nbsp; <BR>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">Use 
+  ArcCatalog to create a new point shapefile named "myoutlets".&nbsp; Open 
+  ArcCatalog.&nbsp; Right Click on the folder where you are working and select 
+  'New/Shapefile...'.&nbsp; Set the name 'outlet' and set the feature class to 
+  point.&nbsp; [If desired click 'Edit...' to set the coordinate system to the 
+  same as the DEM you are using.]&nbsp; Click OK to create the shapefile.&nbsp; 
+  Switch back to ArcMap and add the shapefile 'outlet'.&nbsp; It has no data 
+  yet.&nbsp; Display the editor toolbar (View/Toolbars/Editor) and select 
+  Editor/Start Editing.&nbsp; Select the folder that contains the shapefile 
+  'outlet.shp', and set this as the target layer.&nbsp; Set the Editor task to 
+  'create new feature' and use the create new feature button&nbsp;<IMG 
+  id=_x0000_i1050 height=23 src="newfeat.jpg" width=28 border=0>
+					         
+              
+        to carefully locate a point 
+  at the outlet of the watershed you want to work 
+  with.&nbsp; Use the layer *src to ensure that you are locating 
+  a point on a stream path. Select Editor/Stop Editing and Save edits.&nbsp; This is 
+  now a one point shapefile.&nbsp; More points for multiple channel networks can be added if 
+  desired.&nbsp;<BR>
+					             
+					           
+					           
+					            
+					             
+					               
+					       &nbsp;<IMG id=_x0000_i1039 style="LEFT: 423px; TOP: 5057px" height=354 src="myoutlet.gif" width=747 border=0 >
+				     
+				<BR>&nbsp; 
+  
+  <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					From "Network Delineation" menu "Select outlets shapefile 
+  ..." and select the file "myoutlets.shp".&nbsp; If you have trouble creating 
+  this you may use the "demooutlet.shp" file provided.<BR>
+				<IMG id=_x0000_i1040 height=128 src="outletsel.gif" width=445 border=0><BR>&nbsp; 
+  
+  <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">
+					From "Network Delineation" menu invoke functions in 
+  sequence from top to bottom, or select "Do All Network and Watershed 
+  Delineation Steps" and examine the output. If outlets are not selected, 
+  "Network Delineation" delineates all streams in 
+					the domain, and all watersheds draining to these streams.&nbsp; The methods 
+					and parameters for stream delineation are adjusted on the "River Network Raster 
+			  ..."&nbsp; dialog.</LI>
+  </OL>
+			<p>B. MapWindow</p>
+			<OL type=1>
+              <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">  Open ArcMAP and activate the TauDEM plugin. <br>
+              <img src="mapwin1.jpg" width="380" height="220">              <br>
+              <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15"> From Basic Grid Analysis "Select Base DEM grid". <BR>
+      <img src="mapwin2.jpg" width="512" height="109"><BR>
+    and browse to open the file "demo.asc or demo.bgd ". This identifies this as the Base DEM and sets up default file names for all other inputs. <BR>
+				&nbsp;
+              <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15"> Invoke the functions in DEM Processing Functions in sequence from top to bottom, starting with "Fill Pits".<BR>
+      <img src="fillmw.jpg" width="472" height="360"><BR>
+    then "D8 flow directions" <BR>
+    <img src="d8mw.JPG" width="483" height="344"><BR>
+    and so on.&nbsp; Examine the output at each step.&nbsp; You could have done this all at once with the function "Do All". <BR>
+				&nbsp;
+              <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15"> The layer named "demosrc.bgd" that results from "Full River Network Raster" is a rasterized version of channel network to be mapped.&nbsp; This provides a background for the positioning of outlets on the streams.&nbsp; <BR>
+              <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15">Use the MapWindow shape editor plugin to create a new point shapefile named "myoutlets".&nbsp;                   <br>
+                    <img src="moutlets.JPG" width="523" height="163"><br>
+              <LI class=MsoNormal>The shapefile when created has no data yet.&nbsp; Use the shapefile editor to carefully place a new point on a stream path where you want an outlet. Multiple points for multiple channel networks can be added if desired.&nbsp;<BR>
+&nbsp;<img src="moutlets2.JPG" width="646" height="416"> <BR>
+&nbsp;
+              <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15"> FromTauDEM menu "Select outlets shapefile ..." and select the file "myoutlets.shp".&nbsp; If you have trouble creating this you may use the "demooutlet.shp" file provided.<BR>
+      <img src="moutlets3.JPG" width="446" height="136"><BR>
+  &nbsp;
+              <LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l53 level1 lfo15"> From TauDEM menu invoke functions in the Network and Watershed Processing Functions group in sequence from top to bottom, or select "Do All Network and Watershed Delineation Steps" and examine the output. If outlets are not selected, "Network Delineation" delineates all streams in the domain, and all watersheds draining to these streams.&nbsp; The methods and parameters for stream delineation are adjusted on the "River Network Raster ..."&nbsp; dialog. <br>
+              <img src="moutlets4.JPG" width="835" height="326">              </LI>
+    </OL>
+			<p>&nbsp; </p>
+			<P class="MsoNormal">
+	<HR align="center" width="100%" SIZE="2">
+
+<P></P>
+			<H3><A name="thefunctions"></A>The functions and what they do</H3>
+			<P class="MsoNormal">Each function is described below.&nbsp; Optional inputs are 
+				shown in [], with file name suffixes that refer to the table in the <A href="#dataformats">
+					data formats section below</A> given in ().&nbsp; <B>TauDEM assumes implicitly 
+					that all grids used have the same grid cell size and extent.&nbsp;</B> This 
+				assumption is checked in some places, but not consistently so where data is 
+				obtained from diverse sources it needs to be converted to a consistent grid 
+				cell size and extent (and the same projection) for use with TauDEM.
+			</P>
+			<H4>Fill Pits</H4>
+			<P class="MsoNormal">Input:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l79 level1 lfo32">
+				Base Elevation grid.
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l79 level1 lfo32">
+					[Flow path grid (fdr).]
+				</LI>
+			</UL>
+			<P class="MsoNormal">Output:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l93 level1 lfo35">
+				Pit filled Elevation grid (fel).
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l93 level1 lfo35">
+					[Verified flow path grid (fdrn)]
+				</LI>
+			</UL>
+			<P class="MsoNormal">Method:&nbsp; This identifies all pits in the DEM and raises 
+				their elevation to the level of the lowest pour point around their edge.&nbsp; 
+				Pits are low elevation areas in digital elevation models (DEMs) that are 
+				completely surrounded by higher terrain.&nbsp; They are generally taken to be 
+				artifacts that interfere with the routing of flow across DEMs, so are removed 
+				by raising their elevation to the point where they drain off the edge of the 
+				DEM.&nbsp; The pour point is the lowest point on the boundary of the 
+				"watershed" draining to the pit.&nbsp; This step is not essential if you have 
+				reason to believe that the pits in your DEM are real.&nbsp; This step can be 
+				circumvented by copying the raw DEM source data onto the file with suffix "fel" 
+				that is the output of "Fill Pits".&nbsp; Also if a few isolated pits are known, 
+				but others need to be filled, the isolated pits should have "no data" elevation 
+				values inserted at their lowest point.&nbsp; "no data" values serve to define 
+				edges in the domain, and elevations are only raised to where flow is off an 
+				edge, so an internal "no data" value will stop a pit from being filled if 
+				necessary.
+			</P>
+			<P>The flow path grid to enforce drainage along existing streams is an optional 
+				input.&nbsp; The flow directions in the flow path grid grid take precedence 
+				over flow directions determined from the DEM and where these are uphill, the 
+				elevations along these flow paths are lowered, rather than upflow elevations 
+				raised.&nbsp; The verified flow path grid output when the optional flow path 
+				grid is used has loops and ambiguities present in the original flow path grid 
+				removed.
+			</P>
+			<P>The enforcing of flow along a flow path should be used when the stream data 
+				source is deemed to be better than the DEM.&nbsp; The input flow path grid uses 
+				the D8 direction encoding, i.e. 1 - East, 2 - North East, 3 - North, 4 - North 
+				West, 5 - West, 6 - South West, 7 - South, 8 - South East. No data values 
+				indicate off stream locations.&nbsp;&nbsp; The flow path grid can be created by 
+				the network editor plugin in MapWindow or in ArcGIS by burning in a stream 
+				feature dataset using the following steps.
+				<BR>
+				1. Convert features to raster retaining the same cell size and extent as the 
+				target DEM. Call the resulting grid strgrd.
+				<BR>
+				2. Use raster calculator to subtract a large number from each elevation value 
+				that corresponds to a stream. This results in a temporary DEM with deep canyons 
+				along the streams. Call the resulting grid demcanyon.
+				<BR>
+				3. Use "Fill Pits" and "D8 flow directions" to calculate flow directions on 
+				demcanyon. The flow directions calculated will be demcanyonp.
+				<BR>
+				4. Use raster calculator to evaluate demcanyonp/strgrd. This will result in no 
+				data values off the stream raster due to a divide by 0, but will retain flow 
+				directions calculated on the stream raster. The convention for naming the 
+				result is to use the suffix fdr. This is the grid input to the "Fill pits 
+				function" to enforce stream flow directions.
+			</P>
+			<H4 style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+			</H4>
+			<H4>D8 Flow Directions</H4>
+			<P class="MsoNormal">Input:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l91 level1 lfo38">
+				Pit Filled Elevation grid.
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l91 level1 lfo38">
+					[Verified flow path grid (fdrn).]
+				</LI>
+			</UL>
+			<P class="MsoNormal">Output:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l27 level1 lfo41">
+				D8 flow direction grid (p).
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l27 level1 lfo41">
+					D8 slope grid (sd8).
+				</LI>
+			</UL>
+			<P class="MsoNormal">Method: The flow direction from each grid cell to one of its 
+				adjacent or diagonal neighbors is calculated using steepest descent.&nbsp; The 
+				encoding is shown
+				<BR>
+				<IMG id=_x0000_i1053 height=113 src="d8index.gif" width=120 border=0>, 
+				i.e. 1 - East, 2 - North East, 3 - North, 4 -
+				<ST1:STATE>
+					<ST1:PLACE>North West</ST1:PLACE> </ST1:STATE>, 5 - West, 6 - South West, 7 - South, 8 - South East.&nbsp;&nbsp; 
+				Slope is evaluated in the direction of steepest descent and is reported as 
+				drop/distance, i.e. tan of the angle.&nbsp; Flow direction is reported as "no 
+				data" for any grid cell adjacent to the edge of the DEM domain, or adjacent to 
+				a no data value in the DEM.&nbsp; In flat areas flow directions are assigned 
+				away from higher ground and towards lower ground using the method of <A href="#references">
+					Garbrecht and Martz (1997)</A>.&nbsp; The flow path grid to enforce 
+				drainage along existing streams is an optional input, and if input, takes 
+				precedence over elevations for the setting of flow directions.&nbsp; The D8 
+				flow direction algorithm may be applied to a DEM that has not had pits filled, 
+				but will then result in no data values for flow direction and slope associated 
+				with the lowest point of the pit.
+			</P>
+			<H4 style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+			</H4>
+			<H4>Dinf Flow Directions</H4>
+			<P class="MsoNormal">Input:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l18 level1 lfo44">
+				Pit Filled Elevation grid.
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l18 level1 lfo44">
+					[Verified flow path grid (fdrn).]
+				</LI>
+			</UL>
+			<P class="MsoNormal">Output:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l17 level1 lfo47">
+				Dinf flow direction grid (ang).
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l17 level1 lfo47">
+					Dinf slope grid (slp).
+				</LI>
+			</UL>
+			<P class="MsoNormal"><A name="dinffigure"></A>Method:&nbsp; The Dinf approach 
+				assigns a flow direction based on steepest slope on a triangular facet 
+				(Tarboton, 1997).
+			</P>
+			<TABLE class="MsoNormalTable" id="Table1" style="BORDER-RIGHT: 1.5pt outset; BORDER-TOP: 1.5pt outset; BORDER-LEFT: 1.5pt outset; BORDER-BOTTOM: 1.5pt outset; mso-cellspacing: 1.5pt; mso-padding-alt: 1.5pt 1.5pt 1.5pt 1.5pt"
+				 cellPadding="0" border="1">
+				<TR style="mso-yfti-irow: 0; mso-yfti-lastrow: yes">
+					<TD>
+						<P class="MsoNormal" style="TEXT-ALIGN: center" align="center"><IMG id=_x0000_i1055 height=325 src="tardemfig.gif" width=416 border=0><BR>
+							Flow direction defined as steepest downward slope on planar triangular facets 
+							on a block centered grid.</P>
+					</TD>
+				</TR>
+			</TABLE>
+			<P class="MsoNormal">Flow direction is encoded as an angle 'ang' in radians 
+				counter-clockwise from east as a continuous (floating point) quantity between 0 
+				and 2 pi. The flow direction angle is determined as the direction of the 
+				steepest downward slope on the eight triangular facets formed in a 3 x 3 grid 
+				cell window centered on the grid cell of interest. A block-centered 
+				representation is used with each elevation value taken to represent the 
+				elevation of the center of the corresponding grid cell. Eight planar triangular 
+				facets are formed between each grid cell and its eight neighbors. Each of these 
+				has a downslope vector which when drawn outwards from the center may be at an 
+				angle that lies within or outside the 45<SUP>o</SUP> (pi/4 radian) angle range 
+				of the facet at the center point. If the slope vector angle is within the facet 
+				angle, it represents the steepest flow direction on that facet. If the slope 
+				vector angle is outside a facet, the steepest flow direction associated with 
+				that facet is taken along the steepest edge. The slope and flow direction 
+				associated with the grid cell is taken as the magnitude and direction of the 
+				steepest downslope vector from all eight facets. Slope is measured as 
+				drop/distance, i.e. tan of the slope angle.&nbsp; In the case where no slope 
+				vectors are positive (downslope), the flow direction is set using the method of 
+				Garbrecht and Martz (1997) for the determination of flow across flat areas. 
+				This makes flat areas drain away from high ground and towards low ground. The 
+				flow path grid to enforce drainage along existing streams is an optional input 
+				and if used, takes precedence over elevations for the setting of flow 
+				directions.&nbsp; The Dinf flow direction algorithm may be applied to a DEM 
+				that has not had pits filled, but will then result in no data values for Dinf 
+				flow direction and slope associated with the lowest point of the pit.
+			</P>
+			<H4 style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+			</H4>
+			<H4>D8 Contributing Area</H4>
+			<P class="MsoNormal">Input:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l30 level1 lfo50">
+				D8 Flow Direction grid (p).
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l30 level1 lfo50">
+				[Outlets Shapefile.]
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l30 level1 lfo50">
+					[Weights grid.]
+				</LI>
+			</UL>
+			<P class="MsoNormal">Output:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l38 level1 lfo53">
+					D8 Contributing Area grid (ad8).
+				</LI>
+			</UL>
+			<P class="MsoNormal">Method:&nbsp; Contributing area counted in terms of the number 
+				of grid cells (or summation of weights) is calculated using a recursive 
+				procedure due to (Mark, 1988). The contribution at each grid cell is taken as 
+				one (or from the weight grid when the optional weight grid input is 
+				used).&nbsp; The contributing area for each grid cell is taken as its own 
+				contribution plus the contribution from upslope neighbors that drain in to it. 
+				This is evaluated recursively starting from points (outlets) in the outlets 
+				shapefile, or when this is not input at each point in the grid.&nbsp; Starting 
+				the recursive evaluation at outlet points results in only the contributing area 
+				that drains to the designated outlets being evaluated.
+			</P>
+			<P>The contributing area programs check for edge contamination.&nbsp; This is 
+				defined as the possibility that a contributing area value may be underestimated 
+				due to grid cells outside of the domain not being counted.&nbsp; This occurs 
+				when drainage is inwards from the boundaries or areas with no data values for 
+				elevation.&nbsp; The algorithm recognizes this and reports no data for the 
+				contributing area.&nbsp; It is common to see streaks of no data values 
+				extending inwards from boundaries along flow paths that enter the domain at a 
+				boundary.&nbsp; This is the desired effect and indicates that contributing area 
+				for these grid cells is unknown due to it being dependent on terrain outside of 
+				the domain of data available.&nbsp; Edge contamination checking may be 
+				overridden in cases where you know this is not an issue or want to ignore these 
+				problems, if for example the DEM has been clipped along a watershed outline.
+			</P>
+			<H4 style="TEXT-ALIGN: center" align="center">
+				<HR align="center" width="100%" SIZE="2">
+			</H4>
+			<H4>Dinf Contributing Area</H4>
+			<P class="MsoNormal">Input:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l59 level1 lfo56">
+				Dinf Flow Direction grid (ang).
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l59 level1 lfo56">
+				[Outlets Shapefile.]
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l59 level1 lfo56">
+					[Weights grid.]
+				</LI>
+			</UL>
+			<P class="MsoNormal">Output:
+			</P>
+			<UL type="disc">
+				<LI class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l20 level1 lfo59">
+					Dinf Contributing Area grid (sca).
+				</LI>
+			</UL>
+<P class=MsoNormal>Method:&nbsp; Contributing area counted 
+in terms of the number of grid cells (or summation of weights)&nbsp; is 
+calculated for the multiple flow direction Dinf approach using a recursive 
+procedure that is an extension of the very efficient recursive algorithm for 
+single directions (Mark, 1988). The contribution at each grid cell is taken 
+initially as one (or from the weight grid when the optional weight grid input is 
+used).&nbsp; The contributing area of each grid cell is then taken as its own 
+contribution plus the contribution from upslope neighbors that have some 
+fraction draining to it. The flow from each cell either all drains to one 
+neighbor, if the angle falls along a cardinal (0, <SPAN 
+style="FONT-FAMILY: Symbol">p</SPAN>/2, <SPAN 
+style="FONT-FAMILY: Symbol">p</SPAN>, 3<SPAN 
+style="FONT-FAMILY: Symbol">p</SPAN>/2) or diagonal (<SPAN 
+style="FONT-FAMILY: Symbol">p</SPAN>/4, 3<SPAN 
+style="FONT-FAMILY: Symbol">p</SPAN>/4, 5<SPAN 
+style="FONT-FAMILY: Symbol">p</SPAN>/4, 7<SPAN 
+style="FONT-FAMILY: Symbol">p</SPAN>/4) direction, or is on 
+an angle falling between the direct angle to two adjacent neighbors. In the 
+latter case the flow is proportioned between these two neighbor pixels according 
+to how close the flow direction angle is to the direct angle to those pixels, as 
+illustrated in the <A href="#dinffigure" >Dinf flow direction figure above</A>. </P>
+<P>Where no weight grid is used as input, the result is 
+reported in terms of specific catchment area, the upslope area per unit contour 
+length, taken here as the number of cells times grid cell size (cell area 
+divided by cell size). This assumes that grid cell size is the effective contour 
+length, in the definition of specific catchment area and does not distinguish 
+any difference in contour length dependent upon the flow direction. Where a 
+weight grid is used the result is reported directly as a summation of weights, 
+without any scaling. </P>
+<P>Contributing area is evaluated recursively starting from 
+points (outlets) in the outlets shapefile, or when this is not input at each 
+point in the grid.&nbsp; Starting the recursive evaluation at outlet points 
+results in only the contributing area that drains to the designated outlets 
+being evaluated. </P>
+<P>The contributing area programs check for edge 
+contamination.&nbsp; This is defined as the possibility that a contributing area 
+value may be underestimated due to grid cells outside of the domain not being 
+counted.&nbsp; This occurs when drainage is inwards from the boundaries or areas 
+with no data values for elevation.&nbsp; The algorithm recognizes this and 
+reports no data for the contributing area.&nbsp; It is common to see streaks of 
+no data values extending inwards from boundaries along flow paths that enter the 
+domain at a boundary.&nbsp; This is the desired effect and indicates that 
+contributing area for these grid cells is unknown due to it being dependent on 
+terrain outside of the domain of data available.&nbsp; Edge contamination 
+checking may be overridden in cases where you know this is not an issue or want 
+to ignore these problems, if for example the DEM has been clipped along a 
+watershed outline. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Grid Network Order and Flow Path Lengths</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l10 level1 lfo62" 
+  >D8 Flow Direction grid (p). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l10 level1 lfo62" 
+  >[Raster grid and threshold value.] 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l10 level1 lfo62" 
+  >[Outlets shapefile.] </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l107 level1 lfo65" 
+  >Strahler Network order grid (gord) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l107 level1 lfo65" 
+  >Longest Upslope Length grid (plen). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l107 level1 lfo65" 
+  >Total Upslope Length grid (tlen). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; The D8 flow direction grid 
+defines a grid network that extends to each grid cell.&nbsp; This function 
+orders this network according to the Strahler ordering system.&nbsp; Cells that 
+don't have any other grid cells draining in to them are order 1.&nbsp; When two 
+(or more) flow paths of different order join the order of the downstream flow 
+path is the order of the highest incoming flow path.&nbsp; When two (or more) 
+flow paths of equal order join the downstream flow path is increased by 1.&nbsp; 
+Algorithmically this is implemented as: <BR>Order = 
+Max(Highest incoming flow path order, Second highest incoming flow path order + 
+1).&nbsp; This generalizes the common definition to cases where more than two 
+flow paths join at a point. </P>
+<P>The longest upslope length is the length of the flow 
+path from the furthest cell that drains to each cell.&nbsp;&nbsp;&nbsp; The 
+total upslope path length is the length of the entire grid network upslope of 
+each grid cell.&nbsp; Lengths are measured between cell centers taking into 
+account cell size and whether the direction is adjacent or diagonal. </P>
+<P>Where the optional raster grid and threshold value are 
+input, the function is evaluated only considering grid cells that lie in the 
+domain with raster grid value greater than or equal to the threshold 
+value.&nbsp; Source (first order) grid cells are taken as those that do not have 
+any other grid cells from inside the domain draining in to them, and only when 
+two of these flow paths join is order propagated according to the ordering 
+rules.&nbsp; Lengths are also only evaluated counting paths within the domain 
+greater than or equal to the threshold. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>River Network Raster Function</H4>
+<P class=MsoNormal>This function is invoked by both the 
+"Full River Network Raster" menu item under "Basic Grid Analysis" and "River 
+Network Raster Upstream of Outlets" menu item inder "Network Delineation" <BR>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >Pit Filled Elevation grid (fel). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >D8 Flow Direction grid (p). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >D8 Contributing Area grid (ad8). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >Dinf Slope Grid (slp). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >Dinf Contributing Area grid (sca). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >Network Order grid (gord) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >Longest Upslope Length grid (plen) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >Verified Flow Path grid (fdrn) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l97 level1 lfo68" 
+  >Outlets Shapefile </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l82 level1 lfo71" 
+  >Stream Raster Grid (src) </LI></UL>
+<P class=MsoNormal>Methods:&nbsp; The output is a grid 
+indicating streams, by the grid cell value 1 on streams and 0 off streams. Six 
+stream delineation methods are provided each with their own parameters that may 
+be adjusted on the interface.&nbsp; These methods are: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l6 level1 lfo74" 
+  >Use existing streams.&nbsp; To use this method existing 
+  streams need to have been "burned in" by using an enforced flow path grid 
+  (fdr) with "Fill Pits" and "D8 Flow Directions" functions. The stream network 
+  raster is then defined from these flow directions.&nbsp; No parameters are 
+  required. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l6 level1 lfo74" 
+  >DEM curvature based.&nbsp; The DEM is first smoothed by a 
+  kernel with the weights at the center, sides and diagonals as specified.&nbsp; 
+  The Peuker and Douglas (1975) method (also explained in Band, 1986) is then 
+  used to identify upwards curved grid cells.&nbsp; This method flags the entire 
+  grid, then examines in a single pass each quadrant of 4 grid cells and unflags 
+  the highest.&nbsp; The remaining flagged cells are deemed "upwards curved" and 
+  if viewed resemble a channel network, although sometimes lacking connectivity, 
+  or requiring thinning, issues that were discussed in detail by Band 
+  (1986).&nbsp; The thinning and connecting of these grid cells is achieved here 
+  by computing the contributing area using only these upwards curved 
+  cells.&nbsp; An accumulation threshold on the number of these cells is used to 
+  map the channel network. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l6 level1 lfo74" 
+  >Contributing area threshold.&nbsp;&nbsp; A threshold on 
+  the contributing area (in number of cells) computed by the D8 (suffix ad8) 
+  method is used to delineate streams. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l6 level1 lfo74" 
+  >Grid order threshold.&nbsp; A threshold on the network 
+  order grid (suffix gord) is used to delineate streams.&nbsp; This is the 
+  network pruning by order approach suggested by Peckham (1995) and used in <A 
+  href="http://www.rivertools.com/">RiverTools</A>. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l6 level1 lfo74" 
+  >Area and slope threshold.&nbsp; A threshold is applied to 
+  the product A S<SUP>y</SUP> with the threshold and 
+  exponent specified.&nbsp; A is the Dinf specific catchment area (suffix sca) 
+  and S is the Dinf slope (suffix slp).&nbsp; This method was suggested by 
+  Montgomery and Dietrich (1992).&nbsp; (They used the exponent y = 2 and 
+  threshold C = 200 m in their study). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l6 level1 lfo74" 
+  >Area and length threshold.&nbsp; This is an experimental 
+  method that might be justified by searching for a departure from Hack's 
+  law.&nbsp; Streams are mapped as initiating when A &gt; M L<SUP 
+  >y</SUP> .&nbsp; Here A is the D8 contributing area 
+  (suffix ad8) and L the longest upstream flowpath (suffix plen).&nbsp; In 
+  branching systems, Hack's law suggests that L = 1/M A<SUP 
+  >1/y</SUP> with 1/y = 0.6 (or 0.56) (y about 1.7).&nbsp; 
+  In parallel flow systems L is proportional to A (y about 1).&nbsp; This method 
+  tries to identify the transition by using an exponent y somewhere inbetween (y 
+  about 1.3) </LI></UL>
+<P class=MsoNormal>If drop analysis is checked, then the 
+threshold is searched between the lowest and highest values given, using the 
+number of steps given on a log scale.&nbsp; For the science behind the drop 
+analysis see Tarboton et al. (1991, 1992), Tarboton and <ST1:CITY><ST1:PLACE>Ames</ST1:PLACE> 
+</ST1:CITY>(2001).&nbsp; The smallest threshold in the set searched with 
+absolute value of the t statistic less than 2 is selected.&nbsp; This is done 
+automatically during the River Network Raster (Upstream of Outlets) step.&nbsp; 
+The threshold selected is saved in the threshold variable so may be inspected 
+afterwards by viewing the function interface following completion.&nbsp; Drop 
+analysis is only possible when outlets have been specified, because if an entire 
+grid domain is analyzed, as the threshold varies, shorter streams draining off 
+the edge may not meeth the threshold criterion and be excluded from the 
+analysis.&nbsp; This makes defining drainage density difficult and it is 
+somewhat inconsistent to compare statistics evaluated over differing domains. 
+</P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Stream Order Grid and Network Function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l86 level1 lfo77" 
+  >Pit Filled Elevation grid (fel). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l86 level1 lfo77" 
+  >D8 Flow Direction grid (p). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l86 level1 lfo77" 
+  >D8 Contributing Area grid (ad8). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l86 level1 lfo77" 
+  >Stream Raster Grid (src). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l86 level1 lfo77" 
+  >Outlets Shapefile. </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l40 level1 lfo80" 
+  >Network Order grid (ord). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l40 level1 lfo80" 
+  >Network Tree (tree). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l40 level1 lfo80" 
+  >Network Coordinates (coord). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function produces a 
+vector network from the Stream Raster grid by tracing down from each source grid 
+cell.&nbsp; The network topological connectivity is stored in the Stream Network 
+Tree file, and coordinates and attributes from each grid cell along the network 
+in the Stream Network Coordinates file.&nbsp; The Stream Raster grid is used as 
+the source for the stream network, with Flow Direction Grid used to facilitate 
+tracing down the flow paths.&nbsp; Elevations and Contributing Area are used to 
+determine the Coordinate elevation and contributing area attributes.&nbsp; 
+Points in the Outlets Shapefile are used to logically split stream reaches to 
+facilitate representing watersheds upstream and downstream of monitoring 
+points.&nbsp; The program has an option to trace downslope from outlet points 
+until the stream reach network is first encountered to accommodate situations 
+where gage locations are not accurately registered with respect to the stream 
+network.&nbsp; The program looks for an attribute field "id" in the Outlets 
+Shapefile and if found uses the numbers therein as identifiers in the Tree file. 
+</P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Stream Shapefile and Watershed Grid Function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l94 level1 lfo83" 
+  >D8 Flow Direction grid (p). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l94 level1 lfo83" 
+  >Network Tree (tree). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l94 level1 lfo83" 
+  >Network Coordinates (coord). </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l90 level1 lfo86" 
+  >Stream Reach Shapefile (net.shp). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l90 level1 lfo86" 
+  >Watershed Grid (w). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function translates 
+the text file vector network representation in the Network Tree and Coordinates 
+files into a Shape file.&nbsp; Further attributed are also evaluated.&nbsp; The 
+subwatershed draining to each stream segment (reach) is delineated and an 
+labeled with the value identifier that corresponds to WSNO in the Stream Shape 
+File.&nbsp; The program has an option to delineate a single watershed comprising 
+the entire area draining to the Stream Network. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Watershed Grid to Shapefile Function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l48 level1 lfo89" 
+  >D8 Flow Direction grid (p). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l48 level1 lfo89" 
+  >Watershed Grid (w). </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l21 level1 lfo92" 
+  >Watershed Shapefile (w.shp). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function translates 
+the grid watershed representation into a polygon shapefile.&nbsp; The Flow 
+Direction grid is used to resolve ambiguities and prevent slivers of missing 
+area between watersheds.&nbsp; Each shape in the Watershed Shapefile is assigned 
+an identifier the same as the value identifier in the grid from which it was 
+created, that in turn maps back to WSNO in the Stream Shape File. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Drop Analysis Function</H4>
+<P class=MsoNormal>The "Drop Analysis" command does not 
+have any formal input parameters.&nbsp; Rather it takes its parameters from 
+those set by the River Network Raster function.&nbsp; The following is 
+displayed: <BR><IMG id=_x0000_i1064 height=337 src="dropan.gif" width=865 border=0 ><BR>The columns are: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >The threshold used in the network delineation algorithm. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >The drainage density (inverse length units - typically m) 
+  of the resulting network. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >Number of first order streams (Strahler ordering) in 
+  network with specified threshold. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >Number of higher order streams (Sequential segments of 
+  the same order are counted as one Strahler stream) in network with specified 
+  threshold. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >Mean drop (elevation difference between start and end) of 
+  first order streams. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >Mean drop of higher order streams. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >Standard deviation of first order stream drops. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >Standard deviation of higher order stream drops. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l12 level1 lfo95" 
+  >Students t statistic for the difference between the first 
+  order and higher order mean stream drops. </LI></UL>
+<P class=MsoNormal style="MARGIN-LEFT: 0.5in"><BR><IMG id=_x0000_i1065 height=85 src="teqn.gif" width=266 border=0 ></P>
+<P class=MsoNormal>The procedure suggested in Tarboton et 
+al. (1991, 1992) and Tarboton and <ST1:CITY><ST1:PLACE>Ames</ST1:PLACE> </ST1:CITY>(2001) is to select the 
+smallest threshold for which the absolute value of the t statistic is less than 
+2.&nbsp; This selects the highest resolution network consistent with the 
+"constant drop law".&nbsp; In the display above the threshold of 14 would be 
+selected.&nbsp; It is worthwhile to view the drop analysis because the threshold 
+steps are sometimes quite coarse, so the user may want to use the River Network 
+Raster function to change the number of intervals and lowest and highest values 
+used in the search.&nbsp; Also it can occur that a large threshold is "correct" 
+but a small threshold results in second or higher order streams also extending 
+into the region that should not be streams.&nbsp; If these dominate the sample 
+the following sequence of t statistics might result: <BR>&lt;2, &lt;2, &lt;2, &gt;2, &gt;2, &lt;2, &lt;2, ... <BR>The automatic procedure in these cases would pick the 
+lowest threshold, but it is probably better (and this is admittedly subjective, 
+unfortunately) to pick the 6th threshold.&nbsp; In making this judgement I feel 
+that it is best to consider many things, like sample sizes (is the t statistic 
+robust), the visual impression in comparison to contour crenulations, and the 
+drainage density that would result from a Slope versus Area plot as discussed in 
+Tarboton et al., (1991, 1992).&nbsp; The automated procedure is therefore not 
+foolproof and some degree of judgement and subjectivity is required. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Slope/Area (Wetness Index) function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l105 level1 lfo98" 
+  >Dinf Slope grid (slp). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l105 level1 lfo98" 
+  >DInf Specific Catchment Area grid (sca). </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l70 level1 lfo101" 
+  >Wetness Index grid (atanb). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function takes the 
+ratio Slope/(Specific Catchment area).&nbsp; This is algebraically related to 
+the more common ln(a/tan beta) wetness index, but contributing area is in the 
+denominator to avoid divide by 0 errors when slope is 0. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Flow Distance to Streams function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l7 level1 lfo104" 
+  >D8 Flow Directions grid (p). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l7 level1 lfo104" 
+  >Stream Raster grid (src). </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l65 level1 lfo107" 
+  >Distance to Stream grid (dist). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function computes the 
+distance from each grid cell moving downstream until a stream grid cell as 
+defined by the Stream Raster grid is encountered. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Downslope Influence function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l89 level1 lfo110" 
+  >Dinf Flow Direction grid (ang). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l89 level1 lfo110" 
+  >Disturbance grid (dg). </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l73 level1 lfo113" 
+  >Downslope Influence grid (di). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; The Downslope Influence 
+function (or influence zone) of a set y within the domain is <BR>I(x;y) = A[i(x;y)] <BR>where A[] is 
+the weighted accumulation operator evaluated using the Dinf Contributing Area 
+function.&nbsp; I(x;y) says what the contribution from the set of points y is at 
+each point x in the map.&nbsp; i(x;y) is an indicator (1,0) function on the set 
+y and I is evaluated using the weighted contributing area function only on 
+points in the set y.&nbsp; The disturbance grid is used to encode the indicator 
+function and must be 1 inside the zone y and 0 over the rest of the domain. <BR><IMG id=_x0000_i1069 height=372 src="influence.gif" width=803 border=0 ><BR>This may be useful for example to track where sediment or 
+contaminant moves. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Upslope Dependence function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l4 level1 lfo116" 
+  >Dinf Flow Direction grid (ang). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l4 level1 lfo116" 
+  >Disturbance grid (dg). </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l34 level1 lfo119" 
+  >Upslope Dependence grid (dep). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function quantifies 
+the amount a point x contributes to the point or zone y.&nbsp;&nbsp; It is the 
+inverse of the downslope influence function <BR>&nbsp;D(x;y) = I(y;x) <BR><IMG id=_x0000_i1071 height=495 src="dependence.gif" width=800 border=0 ><BR>This is useful for example to track where a contaminant may 
+come from. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Decaying Accumulation function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l45 level1 lfo122" 
+  >Dinf Flow Direction grid (ang). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l45 level1 lfo122" 
+  >Decay Multiplier grid. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l45 level1 lfo122" 
+  >[Weight grid]. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l45 level1 lfo122" 
+  >[Outlets Shapefile] </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l32 level1 lfo125" 
+  >Decayed Specific Catchment Area grid (dsca). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; A decayed accumulation 
+operator DA[.] takes as input a mass loading field m(x) expressed at each grid 
+location as m(i, j) that is assumed to move with the flow field but is subject 
+to first order decay in moving from cell to cell.&nbsp; The output is the 
+accumulated mass at each location DA(x).&nbsp; The accumulation of m at each 
+grid cell can be numerically evaluated. <BR><IMG id=_x0000_i1073 height=89 src="decayeqn.gif" width=776 border=0 ><BR>Here 
+d(x) = d(i ,j) is a decay multiplier giving the fractional (first order) 
+reduction in mass in moving from grid cell x to the next downslope cell.&nbsp; 
+If travel (or residence) times t(x) associated with flow between cells are 
+available d(x) may be evaluated as exp(-<SPAN style="FONT-FAMILY: Symbol">l</SPAN>t(x))&nbsp; where <SPAN style="FONT-FAMILY: Symbol">l</SPAN> is a first order decay parameter.&nbsp; The weight 
+grid is used to represent the mass loading m(x).&nbsp; If not specified this is 
+taken as 1.&nbsp; If the outlets shapefile is used the function is only 
+evaluated on that part of the domain that contributes flow to the locations 
+given by the shapefile. <BR><IMG id=_x0000_i1074 height=594 src="decay.gif" width=569 border=0 ><BR>Useful for a tracking 
+contaminant or compound subject to decay or attenuation. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Concentration Limited Accumulation function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l98 level1 lfo128" 
+  >Dinf Flow Direction grid (ang). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l98 level1 lfo128" 
+  >Weight grid 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l98 level1 lfo128" 
+  >Decay Multiplier grid. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l98 level1 lfo128" 
+  >Indicator grid (dg). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l98 level1 lfo128" 
+  >Concentration threshold 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l98 level1 lfo128" 
+  >[Outlets Shapefile] </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l78 level1 lfo131" 
+  >Concentration grid (cla). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l78 level1 lfo131" 
+  >Weighted accumulation grid (q). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function applies to 
+the situation where an unlimited supply of a substance is loaded into flow at a 
+concentration or solubility threshold C<SUB>sol</SUB> over 
+a set of points y.&nbsp; The indicator grid (dg) is used to delineate the area 
+of the substance supply denoted using the (0,1) indicator function i(x;y).&nbsp; 
+A[] denotes the weighted accumulation operator evaluated using the Dinf 
+Contributing Area function. The weight grid gives the loading for the supply to 
+the flow (e.g. the excess rainfall if this is overland flow) denoted as 
+w(x).&nbsp; The specific discharge is then given by <BR>&nbsp;&nbsp;&nbsp; Q(x)=A[w(x)] <BR>Over the substance supply area concentration is at the 
+threshold (the threshold is a saturation or solubility limit). <BR>If i(x; y) = 1 <BR>&nbsp;&nbsp;&nbsp; 
+C(x) = C<SUB>sol</SUB> <BR>&nbsp;&nbsp;&nbsp; L(x) = C<SUB>sol</SUB> Q(x) <BR>Where L(x) denotes 
+the load being carried by the flow. <BR>At remaining 
+locations the load is determined by load accumulation and the concentration by 
+dilution <BR><IMG id=_x0000_i1076 height=106 src="claeqn.gif" width=534 border=0 ></P>
+<P>Here d(x) = d(i ,j) is a decay multiplier giving the 
+fractional (first order) reduction in mass in moving from grid cell x to the 
+next downslope cell.&nbsp; If travel (or residence) times t(x) associated with 
+flow between cells are available d(x) may be evaluated as exp(-<SPAN 
+style="FONT-FAMILY: Symbol">l</SPAN>t(x))&nbsp; where <SPAN 
+style="FONT-FAMILY: Symbol">l</SPAN> is a first order decay 
+parameter.&nbsp; The Concentration grid output is C(x).&nbsp; The weighted 
+accumulation grid output is Q(x).&nbsp; If the outlets shapefile is used the 
+function is only evaluated on that part of the domain that contributes flow to 
+the locations given by the shapefile. <BR><IMG id=_x0000_i1077 height=637 src="clafig.gif" width=612 border=0 ><BR>Useful 
+for a tracking a contaminant released or partitioned to flow at a fixed 
+threshold concentration. </P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Transport Limited Accumulation function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l39 level1 lfo134" 
+  >Dinf Flow Direction grid (ang). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l39 level1 lfo134" 
+  >Supply grid (sup). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l39 level1 lfo134" 
+  >Transport Capacity grid (tc). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l39 level1 lfo134" 
+  >[Concentration in supply grid (cs).] 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l39 level1 lfo134" 
+  >[Outlets Shapefile] </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l13 level1 lfo137" 
+  >Transport Limited Accumulation grid (tla). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l13 level1 lfo137" 
+  >Deposition grid (tdep). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l13 level1 lfo137" 
+  >[Concentration grid (ctpt).] </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This function applies to 
+the situation where there is a supply of substance (e.g. erosion) and capacity 
+for transport of the substance (e.g. sediment transport capacity).&nbsp;&nbsp; 
+This function accumulates the substance flux subject to the rule that the 
+transport out of any grid cell is the minimum of the transport in to that grid 
+cell and the transport capacity.&nbsp; There is then deposition in the amount of 
+the difference. <BR><IMG id=_x0000_i1079 height=119 src="tlaeqn.gif" width=323 border=0 ><BR>Here E is the supply (sup) 
+and T<SUB>cap</SUB> the transport capacity (tc).&nbsp; 
+T<SUB>out</SUB> at each grid cell becomes T<SUB>in </SUB>for downslope grid cells and is reported as 
+Transport limited accumulation (tla).&nbsp; D is deposition (tdep).&nbsp; The 
+function provides the option to evaluate concentration of a compound 
+(contaminant) adhered to the transported substance.&nbsp; This is evaluated as 
+follows <BR><IMG id=_x0000_i1080 height=66 src="tlaceqn1.gif" width=191 border=0 ><BR>Where L<SUB>in</SUB> is the total incoming compound loading and C<SUB>in</SUB> and T<SUB>in</SUB> refer to 
+the Concentration and Transport entering from each upslope grid cell. <BR>If&nbsp;<IMG id=_x0000_i1081 height=57 src="tlaceqn2.gif" width=140 align=ABSCENTER border=0 > then there is no erosion from the cell, so <BR><IMG id=_x0000_i1082 height=57 src="tlaceqn3.gif" width=274 border=0 ><BR>else <BR><IMG id=_x0000_i1083 height=49 src="tlaceqn4.gif" width=338 border=0 ><BR>where C<SUB>s</SUB> is the concentration supplied locally and the 
+difference in the second term on the right represents the additional supply from 
+the local grid cell.&nbsp; Then <BR><IMG id=_x0000_i1084 height=47 src="tlaceqn5.gif" width=198 border=0 ><BR>C<SUB>out</SUB> at each grid cell comprises is the concentration 
+grid output from this function.&nbsp; If the outlets shapefile is used the 
+function is only evaluated on that part of the domain that contributes flow to 
+the locations given by the shapefile.&nbsp; Transport limited accumulation is 
+useful for modeling erosion and sediment delivery, including the spatial 
+dependence of sediment delivery ratio and contaminant that adheres to sediment. 
+</P>
+<H4 style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4>Reverse Accumulation function</H4>
+<P class=MsoNormal>Input: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l43 level1 lfo140" 
+  >Dinf Flow Direction grid (ang). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l43 level1 lfo140" 
+  >Weight grid. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l43 level1 lfo140" 
+  >Weight threshold </LI></UL>
+<P class=MsoNormal>Output: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l47 level1 lfo143" 
+  >Reverse Accumulation grid (racc). 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l47 level1 lfo143" 
+  >Maximum Downslope grid (dmax). </LI></UL>
+<P class=MsoNormal>Method:&nbsp; This works in a similar 
+way to evaluation of weighted Contributing area, except that the accumulation is 
+by propagating the weight loadings upslope along the reverse of the flow 
+directions to accumulate the quantity of weight loading downslope from each grid 
+cell.&nbsp; The function accumulates loading from the weight grid in excess of a 
+weight threshold.&nbsp; The function also reports the maximum value of the 
+weight loading downslope from each grid cell in the Maximum Downslope grid. <BR><IMG id=_x0000_i1086 height=522 src="raccfig.gif" width=839 border=0 ><BR>This function is designed to evaluate and map the hazard 
+due to activities that may have an effect downslope.&nbsp; The example is land 
+management activities that increase runoff.&nbsp; Runoff is sometimes a trigger 
+for landslides or debris flows, so the weight grid here could be taken as a 
+terrain stability map.&nbsp; Then the reverse accumulation provides a measure of 
+the amount of unstable terrain downslope from each grid cell, as an indicator of 
+the danger of activities that may increase runoff, even though there may be no 
+potential for any local impact. </P>
+<DIV class=MsoNormal style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</DIV>
+<H4>Grid Converter</H4>
+<P><IMG style="WIDTH: 523px; HEIGHT: 217px" height=217 alt="" hspace=0 src="GridConverter.jpg" width=523 useMap="" border=0 ></P>
+<P><FONT size=3>The GridConverter 
+(Utilities) Dialog helps to convert one grid format to another. Input grid 
+format can be an ESRI, ASCII or Binary and&nbsp;this function 
+converts&nbsp;between these formats. Also the tool allows the user to convert 
+the grid to different grid datatypes (Short,Integer or Float). 
+</FONT></P></SPAN>
+<HR align=center width="100%" SIZE=2>
+<A name=dataformats></A>
+<H3>Data formats and file naming conventions</H3>
+<P></P><STRONG>Grid file 
+formats</STRONG> 
+<P></P>
+<P class=MsoNormal>The programs are written to access 
+following grid file formats. </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l58 level1 lfo146" 
+  >ESRI proprietary grid format.&nbsp; The file is a 
+  "folder" on the computer comprising multiple parts. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l58 level1 lfo146" 
+  >ASCII format.&nbsp; A file with extension .asc. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l58 level1 lfo146" 
+  >Binary grid format.&nbsp; A file with extension .bgd. 
+  </LI></UL>
+<P class=MsoNormal>The ASCII grid format is that used by 
+ESRI for export of files from ArcView and Arc/Info and comprises lines of header 
+data followed by lists of cell values. The header data includes the following 
+keywords and values: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l3 level1 lfo149" 
+  >ncols - number of columns in the data set. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l3 level1 lfo149" 
+  >nrows - number of rows in the data set. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l3 level1 lfo149" 
+  >xllcenter or xllcorner - x-coordinate of the center or 
+  lower-left corner of the lower-left cell. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l3 level1 lfo149" 
+  >yllcenter or yllcorner - y-coordinate of the center or 
+  lower-left corner of the lower-left cell. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l3 level1 lfo149" 
+  >cellsize - cell size for the data set. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l3 level1 lfo149" 
+  >nodata_value - value in the file assigned to cells whose 
+  value is unknown. This keyword and value is optional. The nodata_value 
+  defaults to -9999. </LI></UL>
+<P class=MsoNormal>For example an ASCII grid file looks 
+like, </P><PRE>ncols 480<BR>nrows 450<BR>xllcorner 378923<BR>yllcorner 4072345<BR>cellsize 30<BR>nodata_value -32768<BR>43 3 45 7 3 56 2 5 23 65 34 6 32 etc<BR>35 45 65 34 2 6 78 4 38 44 89 3 2 7 etc<BR>etc</PRE>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">The first row of data is at the top of the data set, moving 
+from left to right. Cell values should be delimited by spaces. No carriage 
+returns are necessary at the end of each row in the data set. The number of 
+columns in the header is used to determine when a new row begins. The number of 
+cell values must be equal to the number of rows times the number of columns. 
+</P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">The ESRI and binary grid file formats are not defined 
+here.&nbsp; They are only accessed through the grid object that is part of the 
+software.&nbsp; This uses the gridio application programmers interface to access 
+ESRI binary grids, and provides a standard interface for accessing all the 
+grids. </P>
+<H4 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Grid defintions and naming conventions</H4>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">To manage the variety of grid data used by TauDEM, a naming 
+convention relying on suffixes appended to the body of file names has been 
+developed to identify the contents of the files used.&nbsp; This convention is 
+not required, but makes things a lot easier and is used to set up default file 
+names.&nbsp; Each type of file is associated with a 1-4 character suffix that is 
+appended to the main part of the file name, before the extension used by the 
+computer system.&nbsp; If the Base Elevation grid name is "nnnn[.asc/.bgd]" then the 
+remaining file names will be "nnnnsss[.asc/.bgd]" where sss is the suffix.&nbsp; The 
+table below gives DEM grids used by TauDEM with these suffixes, and also 
+indicates the functions in which the grids are used, as input or output.&nbsp; 
+If the file is an ESRI grid, then there will be no extension (no part in []) 
+because ESRI grids are folders.&nbsp; To access ESRI grids in a file open dialog 
+in MapWindow TauDEM it is necessary to open the sta.adf file inside the ESRI 
+grid folder.&nbsp; However do not be tempted to move these files or folders 
+around using Windows Explorer, because all the files in the folder, as well as 
+some in an info folder comprise the grid dataset.&nbsp; There are utilities for 
+moving these files as part of ArcGIS. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Table of TauDEM grid types <O:P></O:P></P>
+<TABLE class=MsoNormalTable id=Table6 
+style="mso-cellspacing: 1.5pt; mso-padding-alt: 0in 5.4pt 0in 5.4pt" cols=5 
+cellPadding=0 border=1>
+  
+  <TR style="mso-yfti-irow: 0">
+    <TD>
+      <P class=MsoNormal>Name&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Suffix&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Input to&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Output from&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Description&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 1">
+    <TD>
+      <P class=MsoNormal>Base Elevation grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>dem&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Fill Pits&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Digital elevation model (DEM) grid 
+      to serve as the base input for the terrain analysis and stream 
+      delineation.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 2">
+    <TD>
+      <P class=MsoNormal>Pit Filled Elevation 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>fel&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>D8 Flow Directions, Dinf Flow 
+      Directions, River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Fill Pits&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Grid of elevation values with pits 
+      filled. This is usually the output of the "Fill pits" function in which 
+      case it is elevations with pits removed.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 3">
+    <TD>
+      <P class=MsoNormal>Flow Path Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>fdr&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Fill Pits&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving flow directions used 
+      to impose existing streams into the system. This uses the D8 direction 
+      encoding, i.e. 1 - East, 2 - North East, 3 - North, 4 - North West, 5 - 
+      West, 6 - South West, 7 - South, 8 - South East. No data values should 
+      indicate off stream locations.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 4">
+    <TD>
+      <P class=MsoNormal>Verified Flow Path 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>fdrn&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>D8 Flow Directions, Dinf Flow 
+      Directions, River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Fill Pits&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving flow directions used 
+      to impose existing streams into the system. This uses the D8 flow 
+      direction encoding, i.e. 1 - east, 2 - North east, 3 - North, 4 - North 
+      west, 5 - West, 6 - South West, 7 - South, 8 - South east. No data values 
+      indicate off stream locations.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 5">
+    <TD>
+      <P class=MsoNormal>D8 Flow Direction 
+Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>p&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>D8 Contributing Area, Flow 
+      Distance to Streams, Grid Network Order and Flow Path Lengths, Stream 
+      Order Grid and Network Files, River Network Raster, Stream Shapefile and 
+      Watershed Grid, Watershed Grid to Shapefile&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>D8 Flow Direction&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving flow direction by 
+      the D8 method. The encoding is 1 - east, 2 - North east, 3 - North, 4 - 
+      North west, 5 - West, 6 - South West, 7 - South, 8 - South 
+    east.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 6">
+    <TD>
+      <P class=MsoNormal>D8 Slope Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>sd8&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>D8 Flow Directions&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving slope in the D8 flow 
+      direction. This is measured as drop/distance.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 7">
+    <TD>
+      <P class=MsoNormal>D-Inf Flow direction 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>ang&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Dinf Contributing Area, Decaying 
+      Accumulation, Upslope Depencence, Downslope Influence, Reverse 
+      Accumulation, Concentration Limited Accumulation, Transport Limited 
+      Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Dinf Flow Directions&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving flow direction by 
+      the Dinfinity method. Flow direction is measured in radians, counter 
+      clockwise from east. This is created by the function "Dinf flow 
+      directions".&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 8">
+    <TD>
+      <P class=MsoNormal>D-Inf Slope Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>slp&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Slope/Area (Wetness Indicator), 
+      River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Dinf Flow Directions&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid of slope evaluated using 
+      the Dinfinity method.</P></TD></TR>
+  <TR style="mso-yfti-irow: 9">
+    <TD>
+      <P class=MsoNormal>D8 Contributing Area 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>ad8&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Stream Order Grid and Network 
+      Files, River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>D8 Contributing Area&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the contributing 
+      area evaluated by accumulating the area or weight loading upslope of each 
+      location, measured as a number of pixels or sum of weight loadings. This 
+      is created by the function "D8 contributing area"&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 10">
+    <TD>
+      <P class=MsoNormal>D-inf Specific Catchment Area 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>sca&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Slope/Area (Wetness indicator), 
+      River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Dinf Contributing 
+Area&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the contributing 
+      area evaluated by accumulating the area or weight loading upslope of each 
+      location, using the Dinf algorithm.&nbsp; If weights are not specified 
+      this is measured in specific catchment area units, i.e. area per unit 
+      contour width, using grid cell as the unit width and grid cell size 
+      squared as grid cell area. Created by the function "Dinf contributing 
+      area"&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 11">
+    <TD>
+      <P class=MsoNormal>Strahler Network Order 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>gord&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Grid Network Order and Flow Path 
+      Lengths&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the Strahler stream 
+      order for each flow path. Strahler order is defined as follows. Source 
+      streams (or flow paths) are first order. When two or more flow paths of 
+      the same order join the outgoing path has order one higher. When high 
+      order paths flow in to low order paths the order remains the 
+      same.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 12">
+    <TD>
+      <P class=MsoNormal>Total Upslope Length 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>tlen&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Grid Network order and Flow Path 
+      Lengths&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid that gives the total length 
+      of upslope flow paths terminating at each grid cell.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 13">
+    <TD>
+      <P class=MsoNormal>Longest Upslope length 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>plen&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Grid Network order and Flow Path 
+      Lengths&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid that gives the length of 
+      the longest upslope flow path terminating at each grid 
+  cell.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 14">
+    <TD>
+      <P class=MsoNormal>Stream Raster Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>src&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Stream Order Grid and Network 
+      Files, Flow Distance to Streams&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>River Network Raster&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid indicating streams, by the 
+      grid cell value 1 on streams and 0 off streams. This is created by the 
+      function "Full river network raster" or "River network raster upstream of 
+      outlets"&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 15">
+    <TD>
+      <P class=MsoNormal>Network Order Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>ord&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Stream Order Grid and Network 
+      Files&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the Strahler stream 
+      order for each delineated stream grid cell.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 16">
+    <TD>
+      <P class=MsoNormal>Watershed Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>w&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Watershed Grid to 
+      Shapefile&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Stream Shapefile and Watershed 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid demarcating each reach 
+      watershed. This is created by the function "Stream Shapefile and Watershed 
+      Grid"&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 17">
+    <TD>
+      <P class=MsoNormal>Concentration Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>ctpt&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>frmSllAccum&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Concentration Limited 
+      Accumulation, Transport Limited Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the concentration of 
+      a compound of interest. This is created by either of the functions 
+      "Concentration Limited Accumulation" or "Transport Limited Accumulation". 
+      In the "Concentration Limited Accumulation" case this is concentration in 
+      the flow. In the "Transport Limited Accumulation" case it represents the 
+      concentration "bound" to the material being transported (e.g. 
+      sediment).&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 18">
+    <TD>
+      <P class=MsoNormal>Concentration in supply 
+      grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>cs&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Transport Limited 
+      Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the concentration of 
+      a compound of interest in the supply to the transport limited accumulation 
+      function. In the application to erosion, this grid would give the 
+      concentration of say nitrogen in the eroded sediment.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 19">
+    <TD>
+      <P class=MsoNormal>Decayed Specific Catchment Area 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>dsca&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Decaying Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Specific catchment area calculated 
+      by accumulating area but using the decay multipliers. If a weight grid is 
+      specified the result is the decayed accumulation of the weights. Otherwise 
+      weights are taken as linear grid cell size to give a per unit width 
+      accumulation.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 20">
+    <TD>
+      <P class=MsoNormal>Deposition Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>tdep&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Transport Limited 
+      Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the deposition 
+      resulting from the transport limited accumulation. This is the residual 
+      from the transport in to each grid cell minus the transport capacity out 
+      of the grid cell.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 21">
+    <TD>
+      <P class=MsoNormal>Distance to Stream 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>dist&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Flow Distance to 
+    Streams&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the distance along 
+      flow paths defined by D8 flow directions to the streams in the stream 
+      raster grid.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 22">
+    <TD>
+      <P class=MsoNormal>Disturbance Indicator 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>dg&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Upslope Dependence, Downslope 
+      Influence, Concentration Limited Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>An indicator grid that marks the 
+      target domain for various functions (upslope depencence, downslope 
+      influence, concentration limited accumulation). This should be a grid of 
+      ones inside the target domain and 0 outside the domain. Most functions 
+      permit no data outside the target domain. "Downslope influence" does not, 
+      because it is based on a weighted contributing area 
+    evaluation.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 23">
+    <TD>
+      <P class=MsoNormal>Downslope influence 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>di&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Downslope Influence&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>This quantifies the influence of 
+      grid cells in the indicator grid on contributing area at each grid cell. 
+      It is evaluated using a weighted accumulation (without edge contamination 
+      turned off).&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 24">
+    <TD>
+      <P class=MsoNormal>Maximum Downslope 
+    Grid.&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>dmax&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Reverse Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>The grid giving the maximum of the 
+      weight loading grid downslope from each grid cell&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 25">
+    <TD>
+      <P class=MsoNormal>Reverse Accmulation 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>racc&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Reverse Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>The grid giving the result of the 
+      "Reverse Accumulation" function. This works in a similar way to evaluation 
+      of weighted Contributing area, except that the accumulation is by 
+      propagating the weight loadings upslope along the reverse of the flow 
+      directions to accumulate the quantity of loading downslope from each grid 
+      cell.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 26">
+    <TD>
+      <P class=MsoNormal>Supply Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>tsup&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Transport Limited 
+      Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the supply (loading) 
+      of material to a transport limited accumulation function. In the 
+      application to erosion, this grid would give the erosion detachment, or 
+      sediment supplied at each grid cell.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 27">
+    <TD>
+      <P class=MsoNormal>Tansport Capacity 
+Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>tc&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Transport Limited 
+      Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the transport 
+      capacity at each grid cell for the transport limited accumulation 
+      function. In the application to erosion this grid would give the transport 
+      capacity of the carrying flow.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 28">
+    <TD>
+      <P class=MsoNormal>Transport Limited Accumulation 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>tla&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Transport Limited 
+      Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the result from the 
+      transport limited accumulation. This grid is the weighted accumulation of 
+      supply accumulated respecting the limitations in transport 
+      capacity.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 29">
+    <TD>
+      <P class=MsoNormal>Upslope Dependence 
+    Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>dep&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Upslope Dependence&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>This gives at each grid cell the 
+      fraction of flow that contributes to any part of the target disturbance 
+      grid. This is created by the function "Upslope Dependence"&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 30">
+    <TD>
+      <P class=MsoNormal>Weighted Accumulation 
+      Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>q</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Concentration Limited 
+      Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>The grid giving the specific 
+      discharge of the flow carrying the constituent being loaded at the 
+      concentration threshold specified.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 31">
+    <TD>
+      <P class=MsoNormal>Wetness Index Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>atanb&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Slope/Area (Wetness 
+      indicator)&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the ratio: 
+      Slope/Contributing Area. This is algebraically related to the more common 
+      ln(a/tan beta) wetness index, but contributing area is in the denominator 
+      to avoid divide by 0 errors when slope is 0.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 32">
+    <TD>
+      <P class=MsoNormal>Decay Multiplier Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Decaying Accumulation, 
+      Concentration limited Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving the factor by which 
+      flow leaving each grid cell is multiplied before accumulation on downslope 
+      grid cells. This may be used to simulate the movement of an attenuating 
+      substance.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 33">
+    <TD>
+      <P class=MsoNormal>Raster Grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Grid Network Order and Flow Path 
+      Lengths&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Any raster grid that a threshold 
+      can logically be applied to define a channel network or domain for the 
+      function to work within. If a contributing area grid and threshold is used 
+      then the results pertain to the channel network mapped from contributing 
+      area with the given threshold. This grid does not have to be supplied, in 
+      which case the results will pertain to flow paths originating in each grid 
+      cell.&nbsp;</P></TD></TR>
+  <TR style="mso-yfti-irow: 34; mso-yfti-lastrow: yes">
+    <TD>
+      <P class=MsoNormal>Weight grid&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>Dinf Contributing Area, D8 
+      Contributing Area,Decaying Accumulation, Eeverse Accumulation, 
+      Concentration Limited Accumulation&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>&nbsp;</P></TD>
+    <TD>
+      <P class=MsoNormal>A grid giving weights (loadings) 
+      to be used in the accumulation.&nbsp;</P></TD></TR></TABLE>
+<H4 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Other file formats</H4>
+<H4 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Shape files</H4>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Shape files are open ESRI data format that stores vector 
+data as described in a <A 
+href="http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf">white paper</A>.&nbsp; Shape files are used  for the 
+following purposes in TauDEM: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l75 level1 lfo152" 
+  >Outlets Shapefile.&nbsp; A point shapefile giving the 
+  location of outlets or internal monitoring points.&nbsp; The attribute "id" 
+  may be used to specify an identifier (e.g. stream flow recorder number) 
+  associated with these monitoring points.&nbsp; The value -1 is reserved to 
+  indicate "no identifier". 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l75 level1 lfo152" 
+  >Stream Reach Shapefile.&nbsp; A polyline shapefile giving 
+  the links in a stream network.&nbsp; This is created by&nbsp; the "Stream 
+  Shapefile and Watershed Grid" function and has attributes tabulated 
+  below.&nbsp; The default file suffix for this shapefile is net.shp. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l75 level1 lfo152" 
+  >Watershed Shapefile.&nbsp; A polygon shapefile 
+  demarcating each reach watershed.&nbsp; This is created by the function 
+  "Watershed grid to shapefile". The only attribute of this shapefile is 
+  polygon_id, identifier.&nbsp; This corresponds with the WSNO watershed number 
+  in the *net.shp file.&nbsp; The default file suffix for this shapefile is 
+  w.shp. </LI></UL>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Table of Stream Reach Shapefile Attributes </P>
+<TABLE class=MsoNormalTable id=Table7 
+style="BORDER-RIGHT: 2.25pt outset; BORDER-TOP: 2.25pt outset; BORDER-LEFT: 2.25pt outset; BORDER-BOTTOM: 2.25pt outset; mso-cellspacing: 2.2pt; mso-padding-alt: 2.25pt 2.25pt 2.25pt 2.25pt" 
+cellSpacing=3 cellPadding=0 border=1>
+  
+  <TR style="mso-yfti-irow: 0">
+    <TD>
+      <P class=MsoNormal>LINKNO</P></TD>
+    <TD>
+      <P class=MsoNormal>Link Number.&nbsp; A unique number 
+      associated with each link (segmentof channel between junctions)</P></TD></TR>
+  <TR style="mso-yfti-irow: 1">
+    <TD>
+      <P class=MsoNormal>DSLINKNO</P></TD>
+    <TD>
+      <P class=MsoNormal>Link Number of the downstream 
+      link.&nbsp; -1 indicates that this does not exist.</P></TD></TR>
+  <TR style="mso-yfti-irow: 2">
+    <TD>
+      <P class=MsoNormal>USLINKNO1</P></TD>
+    <TD>
+      <P class=MsoNormal>Link Number of first upstream 
+      link</P></TD></TR>
+  <TR style="mso-yfti-irow: 3">
+    <TD>
+      <P class=MsoNormal>USLINKNO2</P></TD>
+    <TD>
+      <P class=MsoNormal>Link Number of second upstream 
+      link.</P></TD></TR>
+  <TR style="mso-yfti-irow: 4">
+    <TD>
+      <P class=MsoNormal>DSNODEID</P></TD>
+    <TD>
+      <P class=MsoNormal>Node identifier for node at 
+      downstream end of stream reach. This identifier corresponds to the "id" 
+      attribute from the Outlets shapefile used to designate nodes.</P></TD></TR>
+  <TR style="mso-yfti-irow: 5">
+    <TD>
+      <P class=MsoNormal>Order</P></TD>
+    <TD>
+      <P class=MsoNormal>Strahler Stream Order</P></TD></TR>
+  <TR style="mso-yfti-irow: 6">
+    <TD>
+      <P class=MsoNormal>Length</P></TD>
+    <TD>
+      <P class=MsoNormal>Length of the link</P></TD></TR>
+  <TR style="mso-yfti-irow: 7">
+    <TD>
+      <P class=MsoNormal>Magnitude</P></TD>
+    <TD>
+      <P class=MsoNormal>Shreve Magnitude of the 
+      link.&nbsp; This is the total number of sources upstream</P></TD></TR>
+  <TR style="mso-yfti-irow: 8">
+    <TD>
+      <P class=MsoNormal>DS_Cont_Ar</P></TD>
+    <TD>
+      <P class=MsoNormal>Drainage area at the downstream 
+      end of the link. Generally this is one grid cell upstream of the 
+      downstream end because the drainage area at the downstream end grid cell 
+      includes the area of the stream being joined.</P></TD></TR>
+  <TR style="mso-yfti-irow: 9">
+    <TD>
+      <P class=MsoNormal>Drop</P></TD>
+    <TD>
+      <P class=MsoNormal>Drop in elevation from the start 
+      to the end of the link</P></TD></TR>
+  <TR style="mso-yfti-irow: 10">
+    <TD>
+      <P class=MsoNormal>Slope</P></TD>
+    <TD>
+      <P class=MsoNormal>Average slope of the link 
+      (computed as drop/length)</P></TD></TR>
+  <TR style="mso-yfti-irow: 11">
+    <TD>
+      <P class=MsoNormal>Straight_L</P></TD>
+    <TD>
+      <P class=MsoNormal>Straight line distance from the 
+      start to the end of the link</P></TD></TR>
+  <TR style="mso-yfti-irow: 12">
+    <TD>
+      <P class=MsoNormal>US_Cont_Ar</P></TD>
+    <TD>
+      <P class=MsoNormal>Drainage area at the upstream end 
+      of the link</P></TD></TR>
+  <TR style="mso-yfti-irow: 13">
+    <TD>
+      <P class=MsoNormal>WSNO</P></TD>
+    <TD>
+      <P class=MsoNormal>Watershed number.&nbsp; Cross 
+      reference to the *w.shp and *w grid files giving the identification number 
+      of the watershed draining directly to the link.</P></TD></TR>
+  <TR style="mso-yfti-irow: 14">
+    <TD>
+      <P class=MsoNormal>DOUT_END</P></TD>
+    <TD>
+      <P class=MsoNormal>Distance to the outlet from the 
+      downstream end of the link</P></TD></TR>
+  <TR style="mso-yfti-irow: 15">
+    <TD>
+      <P class=MsoNormal>DOUT_START</P></TD>
+    <TD>
+      <P class=MsoNormal>Distance to the outlet from the 
+      upstream end of the link</P></TD></TR>
+  <TR style="mso-yfti-irow: 16; mso-yfti-lastrow: yes">
+    <TD>
+      <P class=MsoNormal>DOUT_MID</P></TD>
+    <TD>
+      <P class=MsoNormal>Distance to the outlet from the 
+      midpoint of the link</P></TD></TR></TABLE>
+<H4 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Text files</H4>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Text files are used to store the Stream Network Tree and 
+Stream Network Coordinate files. giving network topological connectivity and 
+coordinates and attributes associated with points on the stream network. <BR><U>Stream Network Tree file.</U> <BR>This defines the topological linkage of the stream 
+network.&nbsp; Columns are as follows: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l83 level1 lfo155" 
+  >1 Link Number (Indexed from 0) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l83 level1 lfo155" 
+  >2 Start Point Number In Coord.dat (Indexed from 0) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l83 level1 lfo155" 
+  >3 End Point Number In Coord.dat (Indexed from 0) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l83 level1 lfo155" 
+  >4 Next (Downstream) Link Number (-1 indicates no links 
+  downstream, i.e. a terminal link) 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l83 level1 lfo155" 
+  >5&amp;6 Previous (Upstream) Link Numbers.&nbsp; 0 
+  indicates no upstream links.&nbsp; Because of this choice the first link with 
+  link number 0 must be a terminal link, i.e. not have any links downstream of 
+  it.&nbsp; Where only one of these is 0, it indicates an internal monitoring 
+  point where the reach is logically split, but does not bifurcate. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l83 level1 lfo155" 
+  >7 Strahler Order of Link 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l83 level1 lfo155" 
+  >8 Monitoring point identifier at downstream end of 
+  link.&nbsp; -1 indicates downstream end is not a monitoring point. </LI></UL>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">By convention (not required) this file is named 
+nnnntree.dat.&nbsp; The Tree file is created by the function "Stream order grid 
+and network files". </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><U>Stream Network Coordinate file.</U> 
+<BR>This defines coordinates and attributes of points along 
+the stream network.&nbsp; Columns are as follows: </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l23 level1 lfo158" 
+  >1 X coordinate 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l23 level1 lfo158" 
+  >2 Y Coordinate 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l23 level1 lfo158" 
+  >3 Distance along channels to the downstream end of a 
+  terminal link. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l23 level1 lfo158" 
+  >4 Elevation 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l23 level1 lfo158" 
+  >5 Contributing area </LI></UL>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">By convention (not required) this file is named 
+nnnncoord.dat.&nbsp; The Coordinate file is created by the function "Stream 
+order grid and network files". </P>
+<HR align=center width="100%" SIZE=2>
+<A name=faq></A>
+<h3>Frequently Asked Questions</H3>
+
+<OL><li><b>I got the following error message: "-2147467259Automation error Unspecified error." What should I do?</b></li>
+
+  <p>Check for a corrupt or unrecognized file in the folder where you are
+    working.  This error often occurs when the program is 
+    checking for existing grids that need to be deleted. If it encounters something unexpected while parsing 
+    the folder,   it gives this error.  
+  As a workaround, you can try moving just the data you need to a new folder. </p>
+  <p>Also check for spaces in file names - <a href="#notes">see limitations above</a>. </p>
+  <p>Try reboot the computer. </p>
+  <p>If the above do not help, you may need to uninstall and reinstall TauDEM. After uninstallation, delete all files in c:\program files\taudem before reinstalling..</p>
+  <li><b>I have tried to install TauDEM, but 
+  in the &quot;customize&quot; window, after adding the file &quot;agtaudem.dll&quot;, I get a window telling me which objects have been added but no new entry in the toolbars-tab. What could be the reason?
+  </b>
+  <p>Make sure that  you have administrator priveleges (necessary to add entries to the registry) and are running ArcMap as an administrator. This is most commonly an issue in Window's Vista. To run as administrator right click on ArcMap in the start menu and select Run as ... Administrator, entering the password if necessary. This should only be necessary the first time you register the TauDEM toolbar. </p>
+  </li>
+  <li><b>I got the error: &quot;runflood: out of stack space&quot;, even though the DEM is well within the size limits.</b></li>
+  <p>Response: This error occurs with some data that requires deep recursions and overflows the stack, which, by default, is quite small.  The solution is to increase the stack space of the calling program.  One command that does this is:</p>
+  <p>C:\Program Files\Microsoft Visual Studio\VC98\Bin\editbin /stack:10000000 &quot;c:\program files\arcgis\bin\arcmap.exe&quot;</p>
+  <p>This command uses the editbin function that is part of Microsoft Visual Studio to alter the stack size allotted to Arcmap, because TauDEM runs as an extension under Arcmap.  This function seems to need to be done on the ArcGIS exe to work. Using it on the TauDEM dll does not seem to work. The editbin function is part of visual studio.</p>
+  <p>If Microsoft&rsquo;s EditBin utility cannot be accessed, use ESRI's utility provided here: http://downloads.esri.com/support/TechArticles/Editbin.zip. Download the .zip file, and extract it to a folder, for example, &lt;temp&gt;. Open a command prompt and navigate to the &lt;temp&gt; folder. To increase the stack space, issue the following command: </p>
+  <p>EditBin.exe &lt;path_to_arcmap.exe&gt; &lt;stack_size_in_bytes&gt;</p>
+  <p>For example, the following command increases the stack size to 10,000,000 bytes: </p>
+  <p>EditBin.exe &quot;c:\program files\arcgis\bin\arcmap.exe&quot; 10000000</p>
+  
+  <li><b>How does the TauDEM Fill Pits function differ from the Fill function provided by ArcGIS?</b></li>
+  <p>Response: Both functions should give exactly the same results except when burning in existing flow directions, a capability that the TauDEM function provides that the ArcGIS one does not. Realize that ArcHydro also provides burning in functionality, but it uses a different approach from the one in TauDEM. The ArcGIS implementation of is more efficient than the TauDEM one, using less cpu time.<br>
+  </p>
+</ol>
+<HR align=center width="100%" SIZE=2>
+<A name=history></A>
+<h3>Updates, history and command line versions</H3>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">This is version 3.1, released&nbsp; May 2005.&nbsp; This adds support for MapWindow and fixes some bugs. There have been periodic bug fix updates to this version. Latest, September 2008. <a href="changes.html">List of changes</a>. </P>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><a href="../taudem3.0/">Link to Version 3.0 released August 2004</a>. Version 3.0 was a restructuring of the grid data access functionality to avoid dependence on 
+  the MapWindow tkgrid utility that had problems reading the Windows 
+  registry and an upgrade to work with ArcGIS 9.0.&nbsp; </P>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><A href="../taudem2.0/taudem.html" >Link to Version 2.0 released September 
+2002</A> .&nbsp; This&nbsp;was a restructuring of the packaging of TauDEM.&nbsp; 
+Instead of a standalone executable that had MapWindow inserted as a control, 
+TauDEM has now been made into a Plugin, that can work with both MapWindow and 
+ArcGIS.&nbsp; Substantial additional functionality has been added and quite a 
+few bugs removed. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><A href="../taudem1.0/taudem.html" >Link to July 13, 2001 version 1.0a 
+TauDEM GUI version.</A>&nbsp; I do not recommend using this old version. <BR>Even older command line versions of this software may be 
+accessed at my web site <A href="http://www.engineering.usu.edu/dtarb/">http://www.engineering.usu.edu/dtarb/</A> under 
+Software/TARDEM. </P>
+<DIV class=MsoNormal 
+style="TEXT-ALIGN: center; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" 
+align=center>
+<HR align=center width="100%" SIZE=2>
+</DIV>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><BR><A name=acknowledgements></A>
+<h3>Acknowledgements: </H3>
+<P></P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">This software has been developed with support from the 
+following.&nbsp; This support is greatly appreciated. </P>
+<UL type=disc>
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l0 level1 lfo161" 
+  >Massachusetts Institute of Technology, research 
+  assistantship under Rafael Bras, for my Sc.D. research where this all got 
+  started. Some remnants of the code from this work still remain. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l0 level1 lfo161" 
+  >National Science Foundation grant EAR-9318977 for the 
+  development of the D<SPAN style="FONT-FAMILY: Symbol">¥ 
+  </SPAN>approach <A href="#References" >(Tarboton, D. G., 1997)</A>. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l0 level1 lfo161" 
+  >Forest Renewal of British Columbia, for the development 
+  of <A href="http://www.engineering.usu.edu/dtarb/sinmap.htm" 
+  >Terrain Stability Mapping methodology</A> and Arcview 
+  Implementation, in a collaborative project involving Canadian Forest Products 
+  Ltd., Vancouver, British Columbia, Bob Pack at Terratech Consulting Ltd., 
+  British Columbia and Craig Goodwin. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l0 level1 lfo161" 
+  >National Science Foundation grant INT-9724720 and NIWA 
+  New Zealand for the work on <A 
+  href="http://www.engineering.usu.edu/cee/faculty/dtarb/agu98dem/" target=_top 
+  >methods for mapping and identification of flow methods 
+  from digital elevation data</A>. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l0 level1 lfo161" 
+  >Idaho National Engineering and Environmental Laboratory 
+  for work on the adaptation of these codes for use with the TMDL Toolkit, and 
+  integration of flow with existing channel networks. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l0 level1 lfo161" 
+  >United States Geological Survey and Utah Water Research 
+  Laboratory, Source Water Protection project, for the development of 
+  specialized analysis functions for water quality analysis. 
+  <LI class=MsoNormal 
+  style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; tab-stops: list .5in; mso-list: l0 level1 lfo161" 
+  >Bob Pack for the development of the Reverse Accumulation 
+  function. </LI>
+  <LI class=MsoNormal 
+  >Dan Ames, HydroMap consulting for the MapWindow port. </LI>
+</UL>
+<H4 
+style="TEXT-ALIGN: center; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" 
+align=center>
+<HR align=center width="100%" SIZE=2>
+</H4>
+<H4 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><A name=references></A>References</H4>
+<P class=MsoNormal 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Band, L. E., (1986), "Topographic partition of watersheds 
+with digital elevation models," Water Resources Research, 22(1): l5-24. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Garbrecht, J. and L. W. Martz, (1997), "The Assignment of 
+Drainage Direction Over Flat Surfaces in Raster Digital Elevation Models," 
+Journal of Hydrology, 193: 204-213. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Jenson, S. K. and J. O. Domingue, (1988), "Extracting 
+Topographic Structure from Digital Elevation Data for Geographic Information 
+System Analysis," Photogrammetric Engineering and Remote Sensing, 54(11): 
+1593-1600. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Mark, D. M., (1988), "Network models in geomorphology," 
+Chapter 4 in Modelling in Geomorphological Systems, Edited by M. G. Anderson, 
+John Wiley., p.73-97. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Marks, D., J. Dozier and J. Frew, (1984), "Automated Basin 
+Delineation From Digital Elevation Data," Geo. Processing, 2: 299-311. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Montgomery, D. R. and W. E. Dietrich, (1992), "Channel 
+Initiation and the Problem of Landscape Scale," Science, 255: 826-830. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">O'Callaghan, J. F. and D. M. Mark, (1984), "The Extraction 
+of Drainage Networks From Digital Elevation Data," Computer Vision, Graphics and 
+Image Processing, 28: 328-344. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Peckham, S. D., (1995), "Self-Similarity in the 
+Three-Dimensional Geometry and Dynamics of Large River Basins," PhD Thesis, 
+Program in Geophysics, University of <ST1:STATE><ST1:PLACE>Colorado</ST1:PLACE> </ST1:STATE>. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Peuker, T. K. and D. H. Douglas, (1975), "Detection of 
+surface-specific points by local parallel processing of discrete terrain 
+elevation data," Comput. Graphics Image Process., 4: 375-387. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Tarboton, D. G., (1989), "The analysis of river basins and 
+channel networks using digital terrain data," Sc.D. Thesis, M.I.T., Cambridge, 
+MA, (Also available as Tarboton D. G., R. L. Bras and I. Rodriguez-Iturbe, (Same 
+title), Technical report no 326, Ralph M. Parsons Laboratory for Water resources 
+and Hydrodynamics, Department of Civil Engineering, M.I.T., September 1989). 
+</P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Tarboton, D. G., R. L. Bras and <ST1:PLACE>I.</ST1:PLACE> Rodriguez-Iturbe, (1991), "On the Extraction 
+of Channel Networks from Digital Elevation Data," Hydrologic Processes, 5(1): 
+81-100. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Tarboton, D. G., R. L. Bras and <ST1:PLACE>I.</ST1:PLACE> Rodriguez-Iturbe, (1992), "A Physical Basis 
+for Drainage Density," Geomorphology, 5(1/2): 59-76. </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><A href="http://www.engineering.usu.edu/dtarb/dinf.pdf">Tarboton, D. G., (1997), "A New Method for the 
+Determination of Flow Directions and Contributing Areas in Grid Digital 
+Elevation Models," Water Resources Research, 33(2): 309-319.</A> </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt"><A 
+href="http://www.engineering.usu.edu/cee/faculty/dtarb/agu98dem/">Tarboton, D. G. and U. Shankar, (1998), "The Identification 
+and Mapping of Flow Networks from Digital Elevation Data," Invited Presentation 
+at AGU Fall Meeting, San Francisco, December 6 to 10.</A> </P>
+<P 
+style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt">Tarboton, D. G. and D. P. Ames, (2001),"Advances in the 
+mapping of flow networks from digital elevation data," in World Water and 
+Environmental Resources Congress, Orlando, Florida, May 20-24, ASCE. [<A 
+href="http://www.engineering.usu.edu/dtarb/asce2001.pdf"> 
+PDF (0.5MB)</A>] <BR>&nbsp; </P>
+		  	  </div>
+			</td>
+			<td class="gutter"><img src="/images/shadow_top.gif" width="8" height="8" alt=""></td>
+			<td class="panel">
+				<script type="text/javascript">
+					var path='../../' <!--this sets the addressing for getting to the root --> 
+				</script>
+				<script src="/contents.js" type="text/javascript"> </script>
+				<script type="text/javascript" language="JavaScript">menu_software();</script>
+				<!--<div class="menuHeading"></div>
+				<div class="menu">
+					<div class="nav"></div>
+					<div class="nav"></div>
+					<div class="nav"></div>
+				</div> -->
+			</td>
+		</tr>
+		<tr>
+			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1"></td>
+			<td class="footer"><ul>
+				<li>
+					&copy; 2006-2009 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+				<li>
+					<a href="mailto:dtarb@usu.edu">webmaster</a></li></ul>
+			</td>
+			<td class="footerRight"><img src="/images/shadow_footer.gif" width="8" height="67" alt=""></td>
+			<td class="footerRight"><img src="/images/footer_right.gif" width="168" height="67" alt=""></td>
+		</tr>
+	</table>
+
+</body>
+</html>

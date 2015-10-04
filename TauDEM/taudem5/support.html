@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>David Tarboton: Hydrology Research Group-Terain Analysis Using Digital Elevation Models (TauDEM)</title>
+<meta name="description" content="David Tarboton: Hydrology Research Group - Terain Analysis Using Digital Elevation Models (TauDEM)" />
+<meta name="keywords" content="David Tarboton: Hydrology Research Group, Utah State Unversity, USU, hydrology, research, academic, higher education, terain, elevation, digital elevation models, DEM, ArcGIS, toolbar, geoprocessing" />
+<meta name="author" content="Utah State Unversity, David Tarboton Hydrologic Research Group - 2006-2007" />
+<meta name="language" content="en" />
+<meta name="robots" content="follow, all" />
+<meta name="revisit-after" content="5 days" />
+<link href="/images/favicon.ico" rel="shortcut icon" />
+<link href="/tarboton.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<ul>
+  <li><span class="wordmark"><a href="http://www.usu.edu/"><img src="/images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
+  </li>
+</ul>
+<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="/images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
+<div class="mainHeader">
+    <div class="wordmark"></div>
+    <div class="topNav">
+			<ul>
+			  <li><a href="http://www.usu.edu/">USU home</a>
+		      </li>
+			  <li><a href="http://www.usu.edu/search/">A-Z index</a>
+		      </li>
+			  <li><a href="http://www.usu.edu/calendar/">calendars</a>
+		      </li>
+			  <li><a href="http://www.usu.edu/myusu/">MyUSU</a>
+		      </li>
+			  <li><a href="http://www.usu.edu/contact/">contact</a>
+		      </li>
+			  <li><a href="http://www.usu.edu/directory/">directory</a>
+		      </li>
+			  <li><a href="http://www.usu.edu/search/">search USU</a></li>
+	  </ul>
+	</div>
+</div>
+<div class="mainNav">
+    <div class="signIn"> </div>
+</div>
+<span class="wordmark"></span>
+<table width="100%">
+    <tr valign="top">
+        <td class="leftLine"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+        <td class="main"><div class="banner"  >
+                <table  >
+                    <tr>
+                        <td width="360px"><img src="/images/taudem5logo.gif" alt="TauDEM 5 logos" width="350" height="74" style="float:left"/></td>
+                        <td rowspan="2">TauDEM Version 5</td>
+                    </tr>
+                    <tr>
+                        <td style="margin-right: 20px;  padding: 6px; padding-left: 10px; text-align: left "><span style="font-size: 14px; font-weight: bold; font-style:italic">Hydrologic terrain analysis  with parallel processing<br />
+                            developed with  support from the US Army Corps of<br />
+                            Engineers, System Wide Water Resources Program</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="navTrail">
+                <div class="menu3" align="center" style="font-weight:bold">
+                    <table width="98%">
+                        <tr>
+                             <td align="center"><a href=".">Home</a></td>           
+                            <td align="center"><a href="downloads.html">Downloads</a></td>
+                            <td align="center"><a href="documentation.html">Documentation</a></td>
+                            <td align="center"  bgcolor="#6666CC"><a href="support.html"></a>Support</td>
+                            <td align="center"><a href="license.html">License</a></td>
+                            <td align="center"><a href="publications.html">Publications</a></td>
+                            <td align="center"><a href="../versions.html">Previous Versions</a></td>
+                           <td align="center"><a href="acknowledge.html">Acknowledgements</a></td>
+                            
+                        </tr>
+                    </table>
+                </div>
+                <div class="print"> </div>
+            </div>
+            <div class="content">
+                <h3>Use Notes</h3>
+                <ol>
+                    <li><a href="troubleshooting.html">Troubleshooting</a>. See here if installation did not go smoothly or you need to troubleshoot.</li>
+                    <li>Grid File Types: TauDEM 5.1 only supports TIFF (.tif) files. Not all TIFF formats are supported. GeoTIFF files created using  the <a href="http://www.gdal.org/">GDAL Translate Utilit</a>y and ArcGIS that are not compressed can be used. Other grid formats including formats that otherwise will work with ArcGIS will not work with TauDEM 5.1. </li>
+                    <li>The GeoTIFF format supports grids up to 4 GB allowing for about 32000 rows x 32000 columns.</li>
+                    <li>Grid Spatial Reference/Size: All input grids are assumed to be the same size, shape, and in the same spatial reference.</li>
+                </ol>
+              <h3>Need help</h3>
+                <p align="left">There is no formal ongoing support for this freely distributed   open source software. However, I do do my best to respond to emails and help with problems as time permits. Feel free to contact me if you need to. It is most helpful if you include with your message screen shots of the error you are having and the input dialog immediately prior to occurrence of the error so that I can see what your inputs are. </p>
+                <p align="left">David Tarboton email:    david.tarboton&lt;at symbol&gt;usu.edu</p>
+                
+                 <h3>TauDEM 5 Update Notes</h3>
+              <p><strong>Version 5.1.2</strong> (Version compiled to use shapelib). (Released 1/25/14)</p>
+              <ul>
+                <li>1/25/14.  Switched from old shapefile code to shapelib 1.3.0 from <a href="http://download.osgeo.org/shapelib">http://download.osgeo.org/shapelib</a>/ for reading and writing of shapefiles. This resolved errors associated with memory leaks and shapefiles not displaying on later versions of ArcGIS.</li>
+                <li>1/25/14. Add GageWatershed function. (C++ executable had been there a while but now there is a python script in Toolbox).</li>
+                <li>10/23/13. Add  define projection code to StreamReachAndWatershed.py and MoveOutletsToStreams.py  code so that shapefiles retain projection information.</li>
+              </ul>
+              <p><strong>Version 5.1.1</strong> (Version compiled to use Microsoft HPC  Pack 2012 MS-MPI Redistributable Package). (Released 8/20/13)</p>
+              <ul>
+                <li>6/26/12.  Fixed memory  leaks by inserting delete statements</li>
+                <li>4/30/13.  Fixed an  issue with word length in shape.cpp that inhibited correct display of  shapefiles in ArcGIS 10.1 and autodesk.</li>
+                <li>4/30/13.  Fixed a few  shape library memory leak issues</li>
+                <li>6/2/13.  Fixed an  issue in the validation code for transport limited accumulation.  Changed label on input concentration to input  supply concentration.</li>
+                <li>7/24/13.  Fixed issue  in tiffio when an entire partition was within a tiffio strip that caused array  overflow and crashing.</li>
+                <li>8/18/13.  Removed  spurious PitRemove script validation code that was preventing help from  displaying in ArcGIS 10.1.  </li>
+                <li>8/8/13.  Added  capability in tiffio to read double precision files.</li>
+                <li>8/18/13.  Disconnected  help from CHM file that is obsoleted and no longer distributed.</li>
+                <li>8/18/13.  Built using  Visual Studio 2010 and Microsoft HPC Pack 2012 MS-MPI from <a href="http://www.microsoft.com/en-us/download/details.aspx?id=36045">http://www.microsoft.com/en-us/download/details.aspx?id=3604</a>. </li>
+              </ul>
+              <p><strong>Version 5.1</strong> (Version with GUI Toolbox for ArcGIS 10.0). (Released 2/2/12)</p>
+              <ul>
+                <li>11/01/11. Switched to Python programming language to code the TauDEM ArcGIS Graphical User Interface (GUI) instead of the Visual Basic 6.0 language used in earlier versions of TauDEM.              </li>
+              </ul>
+              <p><strong>Version 5.0.6</strong> (Released 2/2/12)</p>
+              <ul>
+                <li> 10/15/11.  Changed  warning on encountering no data flow direction during the evaluation of  contributing area to identify the possibility of an outlet being placed at a  location where flow direction is no data.</li>
+                <li> 10/19/11.  Changed  object type for TIFF Image width and length tags 256 and 257 from 3 to 4 to  indicate these are 32 bytes to accommodate more than 2^16 rows or columns.  </li>
+                <li> 10/23/11.  Added  capability to do 4 way comparisons in Pit Remove </li>
+              </ul>
+              <p><b>Version 5.0.5</b> (Released 6/12/11)</p>
+              <ul>
+                <li>9/3/10 - Fixed bug in Pitremove involving a process jumping to the end if there we no pits to fill after first pass then getting ahead of other processes which hung. </li>
+                <li>9/3/10 - Fixed bug to release memory in Drop Analysis to avoid crashing due to memory overflow when a large number of stream delineation thresholds are evaluated. </li>
+                <li>11/18/10 - Fixed file name overflow error in shapefile that resulted in failure to open some shape files </li>
+                <li>12/30/10 - Fixed bug in partition border initialization </li>
+                <li>2/26/11 - Improved TiffIO data typing to better handle large grids and improved error trapping for invalid flow directions </li>
+                <li>3/20/11 - Fixed broken links in compiled help file for &quot;Length Area Stream Source&quot; and &quot;Slope Area Stream Definition&quot; functions.              </li>
+              </ul>
+              <p><b>Version 5.0.4</b></p>
+              <ul>
+                <li>8/27/10 - Added capability to replicate geotiff tag 34736 so that spatial reference information is more likely to be replicated from input to output files. </li>
+              </ul>
+                <p><b>Version 5.0.3</b></p>
+                <ul>
+                  <li>7/8/10 - Fixed bug where a tiled TIFF file was incorrectly read if the total width was an even multiple of the tile width.</li>
+                  <li>7/25/10 - Added code to trap memory allocation errors on partition creation and provide an informative error message.</li>
+                  <li>7/25/10 - Added stderr output to all functions to provide run time estimates.</li>
+                  <li>7/29/10 - Updated ArcGIS interface to show executable window.</li>
+                </ul>
+                <p>&nbsp;</p>
+          </div>
+        </td>
+      <td class="gutter">&nbsp;</td>
+        <td class="panel"><script type="text/javascript">
+					var path='../../' <!--this sets the addressing for getting to the root --> 
+				</script>
+            <script src="/contents.js" type="text/javascript"> </script>
+            <script type="text/javascript" language="JavaScript">menu_software();</script>
+            <!--<div class="menuHeading"></div>
+				<div class="menu">
+					<div class="nav"></div>
+					<div class="nav"></div>
+					<div class="nav"></div>
+				</div> --></td>
+    </tr>
+    <tr>
+        <td class="leftLine"><img src="/images/spacer.gif" width="1" height="1"></td>
+        <td class="footer"><ul>
+                <li> &copy; 2006-2013 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+                <li> <a href="mailto:dtarb@usu.edu">webmaster</a></li>
+            </ul></td>
+        <td class="footerRight"><img src="/images/shadow_footer.gif" width="8" height="67" alt=""></td>
+        <td class="footerRight"><img src="/images/footer_right.gif" width="168" height="67" alt=""></td>
+    </tr>
+</table>
+</body>
+</html>

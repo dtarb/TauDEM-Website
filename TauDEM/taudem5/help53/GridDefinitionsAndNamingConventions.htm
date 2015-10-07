@@ -1,0 +1,187 @@
+﻿<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="styles/81Help.css">
+<script type="text/javascript" language="JavaScript" src="scripts/81Help.js"></script>
+<script language="JavaScript1.2"></script>
+<title></title>
+</head>
+<body>
+<table style="margin-top:-1em; margin-bottom:0; padding:0; margin-left:-1em">
+    <tr>
+        <td style="background:white"><img width="875" height="70" alt="TauDEM Toolbox banner" src="images/AHBanner_TauDEMToolbox.gif"></td>
+    </tr>
+</table>
+<h1>Grid Defintions and Naming Conventions</h1>
+<p></p>
+<p>To manage the variety of data, especially grid data, used by TauDEM, a naming convention relying on suffixes appended to the body of file names has been developed to identify the contents of the files used. This convention is not required, but makes things a lot easier and is used to set up default file names. Each type of file is associated with a suffix that is appended to the main part of the file name, before the extension used by the computer system. If the Base Elevation grid name is "nnnn[.tif]" then the remaining file names will be "nnnnsss[.tif/shp/txt]" where sss is the suffix. The table below gives DEM grids used by TauDEM with these suffixes.</p>
+<h3>Table of TauDEM grid types</h3>
+<table width="95%" border="0" cellpadding="5">
+        <tr>
+            <th><b>Suffix </b></td>
+            <th><b>Description</b></td>
+        </tr>
+    <tr>
+        <td class="info"><b>ad8</b></td>
+        <td class="info">D8 contributing area grid (area measured as number of grid cells)</td>
+    </tr>
+    <tr>
+        <td class="info"><b>ang</b></td>
+        <td class="info">D-infinity flow direction grid (flow direction grid measured in radians, counter clockwise from east)</td>
+    </tr>
+    <tr>
+        <td class="info"><b>ass</b></td>
+        <td class="info">Avalanche source site grid, a required input for D-infinity avalanche runout</td>
+    </tr>
+    <tr>
+        <td class="info"><b>cs</b></td>
+        <td class="info">Concentration in supply grid, a grid giving the concentration of a compound of interest in the supply to the transport limited accumulation function</td>
+    </tr>
+    <tr>
+        <td class="info"><b>ctpt</b></td>
+        <td class="info">Concentration grid, a grid giving the concentration of a compound of interest</td>
+    </tr>
+    <tr>
+        <td class="info"><b>dd</b></td>
+        <td class="info">D-infinity distance to stream which can be average, minimum or maximum of horizontal, vertical, surface or Pythagoras distances to the stream.</td>
+    </tr>
+    <tr>
+        <td class="info"><b>dep</b></td>
+        <td class="info">Upslope dependence grid, a grid giving at each grid cell the fraction of flow that contributes to any part of the target disturbance grid</td>
+    </tr>
+    <tr>
+        <td class="info"><b>dfs</b></td>
+        <td class="info">Distance from source grid </td>
+    </tr>
+    <tr>
+        <td class="info"><b>dg</b></td>
+        <td class="info">Disturbance indicator grid, an indicator grid that marks the target domain for various functions </td>
+    </tr>
+    <tr>
+        <td class="info"><b>di</b></td>
+        <td class="info">Downslope influence grid that quantifies the influence of grid cells in the indicator grid on contributing area at each grid cell</td>
+    </tr>
+    <tr>
+        <td class="info"><b>dist</b></td>
+        <td class="info">D8 distance to stream grid</td>
+    </tr>
+    <tr>
+        <td class="info"><b>dm</b></td>
+        <td class="info">Decay multiplier grid, a grid giving the factor by which flow leaving each grid cell is multiplied before accumulation on downslope grid cells.  This may be used to simulate the movement of an attenuating substance.</td>
+    </tr>
+    <tr>
+        <td class="info"><b>dmax</b></td>
+        <td class="info">Maximum downslope grid, a grid giving the maximum of the weight loading grid downslope from each grid cell</td>
+    </tr>
+    <tr>
+        <td class="info"><b>dsca</b></td>
+        <td class="info">Decayed specific catchment area grid (specific catchment area calculated by accumulating area but using the decay multipliers)</td>
+    </tr>
+    <tr>
+        <td class="info"><b>du</b></td>
+        <td class="info">D-infinity distance to ridge which can be average, minimum or maximum of horizontal, vertical, surface or Pythagoras distances to the ridge.</td>
+    </tr>
+    <tr>
+        <td class="info"><b>fel</b></td>
+        <td class="info">Hydrologically correct elevation grid with pits removed either by filling or carving</td>
+    </tr>
+    <tr>
+        <td class="info"><b>gord</b></td>
+        <td class="info">Stahler network order grid (Strahler order for grid network defined from D8 flow directions)</td>
+    </tr>
+    <tr>
+        <td class="info"><b>gw</b></td>
+        <td class="info">Gage watershed.  The grid cells draining directly to a stream gage without flowing through any other stream gage</td>
+    </tr>
+    <tr>
+        <td class="info"><b>ord</b></td>
+        <td class="info">Network order grid, a grid giving the Strahler stream order for each delineated stream grid cell</td>
+    </tr>
+    <tr>
+        <td class="info"><b>p</b></td>
+        <td class="info">D8 flow direction grid obtained either from the D8 flow direction or carving functions</td>
+    </tr>
+    <tr>
+        <td class="info"><b>plen</b></td>
+        <td class="info">Longest upslope length grid, a grid that gives the length of the longest upslope flow path terminating at each grid cell</td>
+    </tr>
+    <tr>
+        <td class="info"><b>q</b></td>
+        <td class="info">Specific discharge of the flow carrying the constituent being loaded at the concentration threshold specified</td>
+    </tr>
+    <tr>
+        <td class="info"><b>racc</b></td>
+        <td class="info">Reverse accumulation grid, a grid giving the result of the &quot;Reverse Accumulation&quot; function</td>
+    </tr>
+    <tr>
+        <td class="info"><b>rz</b></td>
+        <td class="info">Runout zone grid, a runout zone indicator grid with value 0 to indicate that this grid cell is not in the runout zone and value &gt; 0 to indicate that this grid cell is in the runout zone.</td>
+    </tr>
+    <tr>
+        <td class="info"><b>sa</b></td>
+        <td class="info">Slope-Area function output grid containing slope and area combined using S<sup>m</sup>A<sup>n</sup></td>
+    </tr>
+    <tr>
+        <td class="info"><b>sar</b></td>
+        <td class="info">Slope/Area ratio grid used to evaluate wetness index</td>
+    </tr>
+    <tr>
+        <td class="info"><b>sca</b></td>
+        <td class="info">D-infinity contributing area grid (units in specific catchment area, i.e. area per unit contour width, using grid cell as the unit width and grid cell size squared as grid cell area)</td>
+    </tr>
+    <tr>
+        <td class="info"><b>sd8</b></td>
+        <td class="info">D8 slope grid (slope measured as drop/distance)</td>
+    </tr>
+    <tr>
+        <td class="info"><b>slp</b></td>
+        <td class="info">D-infinity slope grid </td>
+    </tr>
+    <tr>
+        <td class="info"><b>slpd</b></td>
+        <td class="info">D8 averaged slope distance grid, a grid of slope averaged over downslope distance</td>
+    </tr>
+    <tr>
+        <td class="info"><b>src</b></td>
+        <td class="info">Computed stream raster grid, a grid indicating streams, grid cell value 1 on streams and 0 off streams</td>
+    </tr>
+    <tr>
+        <td class="info"><b>ss</b></td>
+        <td class="info">A stream source grid derived through application of a function to identify potential stream sources to a set of inputs.  Values should be 0 on non potential stream sources and &gt;0, with a value that has relevance to the method being used for potential stream sources.</td>
+    </tr>
+    <tr>
+        <td class="info"><b>ssa</b></td>
+        <td class="info">An accumulated stream source grid derived from <span
+  class=GramE>a ss grid and is suitable for drop analysis.  This needs to have the property that it is monotonically increasing downslope along D8 flow directions.  This may be from an accumulation or maximum upslope function.</td>
+    </tr>
+    <tr>
+        <td class="info"><b>tc</b></td>
+        <td class="info">Transport capacity grid, a grid giving the transport capacity at each grid cell for the transport limited accumulation function</td>
+    </tr>
+    <tr>
+        <td class="info"><b>tdep</b></td>
+        <td class="info">Deposition grid, a grid giving the deposition resulting from the transport limited accumulation</td>
+    </tr>
+    <tr>
+        <td class="info"><b>tla</b></td>
+        <td class="info">Transport limited accumulation grid</td>
+    </tr>
+    <tr>
+        <td class="info"><b>tlen</b></td>
+        <td class="info">Total upslope length grid, a grid that gives the total length of upslope flow paths terminating at each grid cell</td>
+    </tr>
+    <tr>
+        <td class="info"><b>tsup</b></td>
+        <td class="info">Transport supply grid, a grid giving the supply (loading) of material to a transport limited accumulation function</td>
+    </tr>
+    <tr>
+        <td class="info"><b>w</b></td>
+        <td class="info">Watershed grid demarcating each reach watershed mapped using netsetup function </td>
+    </tr>
+    <tr>
+        <td class="info"><b>wg</b></td>
+        <td class="info">Flag used to show weight grid, with the name of the weight grid as argument.</td>
+    </tr>
+</table>
+</body>
+</html>

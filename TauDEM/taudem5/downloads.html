@@ -84,32 +84,24 @@
 					<ul>
 					<li>Programs
 					  <ul>
-					    <li>For ArcGIS 10
+					    <li>For ArcGIS 10.2.2
 				          <ul>
-				            <li><A href="TauDEM512.exe">TauDEM 5.1.2  Self extracting zip file install package</A></li>
-				            <li><A href="TauDEM512.zip">TauDEM 5.1.2 Zip file for customized installation</A></li>
-				            <li><a href="TauDEM512Exex86.zip">TauDEM 5.1.2 Command Line Executables for 32 bit Windows PC</a></li>
-				            <li><a href="TauDEM512Exex64.zip">TauDEM 5.1.2 Command Line Executables for 64 bit Windows PC</a></li></ul></li>
-					    <li>TauDEM Multi-File (This version does not have an ArcGIS graphical user interface)
-					      <ul>
-                            <li><a href="TauDEM5MFExex86.zip">TauDEM 5.2 Command Line Executables for 32 bit Windows PC</a></li>
-                            <li><a href="TauDEM5MFExex64.zip">TauDEM 5.2 Command Line Executables for 64 bit Windows PC</a></li>
-                          </ul>
-                        </li>
+				            <li><A href="TauDEM512.exe">TauDEM 5.3  Self extracting zip file install package</A></li>
+				            <li><A href="TauDEM512.zip">TauDEM 5.3 Zip file for customized installation</A></li>
+				            <li><a href="TauDEM53exeWin32.zip">TauDEM 5.3 Command Line Executables for 32 bit Windows PC</a></li>
+				            <li><a href="TauDEM53exeWin64.zip">TauDEM 5.3 Command Line Executables for 64 bit Windows PC</a></li></ul></li>
 				      </ul>
 					</li>
 					<li>Source Code                     
 					  <ul>
-					    <li>For TauDEM 5.1.2
+					    <li>For TauDEM 5.3
 				          <ul>
-				            <li><a href="TauDEM5PCsrc_512.zip">C++ source files</a></li>
-				            <li><a href="Taudem5PCVS2010Soln_512.zip">Visual Studio 2010 Solution Folders</a></li>
+				            <li><a href="TauDEM53src.zip">C++ source files</a></li>
+				            <li><a href="TauDEM53_VS_Solution_Folder.zip">Visual Studio 2010 Solution Folders</a></li>
 			              </ul>
-					    </li>
-					    <li>For TauDEM 5.2 (Multi-File)
-                          <ul>
-                            <li><a href="https://github.com/dtarb/TauDEM">GitHub repository</a><a href="TauDEM5MFVisualStudioSoln_52.zip"></a></li>
-                          </ul>
+				          <ul>
+				            <li><a href="https://github.com/dtarb/TauDEM">GitHub repository</a><a href="TauDEM5MFVisualStudioSoln_52.zip"></a></li>
+			              </ul>
 					    </li>
 				      </ul>                    
 					<li>Data
@@ -119,13 +111,13 @@
 					</li>
 					<li>TauDEM Model Builder Models  Toolbox
 				      <ul>
-				        <li><a href="TauDEMModels_51.tbx">For ArcGIS 10 </a>(Save this file in the location that TauDEM was installed e.g. C:\Program Files\TauDEM\TauDEM5Arc)				         </li>
+				        <li><a href="TauDEMModels_51.tbx">For ArcGIS 10.2.2 </a>(Save this file in the location that TauDEM was installed e.g. C:\Program Files\TauDEM\TauDEM5Arc)				         </li>
 				      </ul>
 					</li>
 					</ul>
 			  <h3>Installation Instructions</h3>
 					<ol>
-						<li>TauDEM 5.1.2 may be run in command line standalone mode or with ArcGIS 10. It has been tested with ArcGIS version 10.0,10.1 and 10.2. For ArcGIS 9.3.1 use <a href="downloads5.0.html">TauDEM 5.0</a>. </li>
+						<li>TauDEM 5.3 may be run in command line standalone mode or with ArcGIS 10.2.2. It has been tested with ArcGIS version 10.2.2 and 10.3.1. For ArcGIS 9.3.1 use <a href="downloads5.0.html">TauDEM 5.0</a>. </li>
 						<li>Automatic Install. Run TauDEM512.exe and the installer will install the necessary Microsoft HPC Pack 2012 MS-MPI and runtime redistributable libraries.</li>
 					  <li>Manual Install. Unzip TauDEM512.zip.  This contains the Microsoft HPC Pack 2012 MS-MPI installer mpi_x64.msi or mpi_x86.msi. These were obtained from http://www.microsoft.com/en-us/download/details.aspx?id=36045.  This also contains Visual Studio 2010 C++ runtime libraries vcredist_x86_2010.exe and vcredist_x64_2010.exe.  The files here are SP1 from http://www.microsoft.com/en-us/download/details.aspx?id=8328 and http://www.microsoft.com/en-us/download/details.aspx?id=13523</li>
 						<li>To manually install on a 32 bit system install                            
@@ -163,13 +155,6 @@
 						    <li>The TauDEM Models Toolbox should now be visible in the list of toolboxes.</li>
 						    <li>If you wish to save this configuration, right click on ArcToolbox, select Save to Default.</li>
 						    <li>This needs to be done for each user who wishes to use TauDEM.						</li>
-					      </ol>
-						</li>
-						<li>To use the Multifile Versions (version 5.2)
-						  <ol>
-						    <li>Download and unzip the executables for your platform. Set a path to the location they are saved.</li>
-						    <li>Install the   Microsoft HPC Pack 2012 MS-MPI library for your platform. This can be done from the TauDEM 5.1.2 zip file.</li>
-						    <li>Use similar to the single file command line version, except wherever you would normally specify a DEM grid file as input or output, specify a folder. The folder may contain multiple tif files all of which will be read and treated as a single logical DEM grid.</li>
 					      </ol>
 						</li>
 					</ol>

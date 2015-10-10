@@ -64,12 +64,14 @@
                             <td align="center" bgcolor="#6666CC">Home</td>
                             <td align="center"><a href="downloads.html">Downloads</a></td>
                             <td align="center"><a href="documentation.html">Documentation</a></td>
-                            <td align="center"><a href="support.html">Support</a></td>
-                            <td align="center"><a href="license.html">License</a></td>
-                            <td align="center"><a href="publications.html">Publications</a></td>
+                            <td align="center"><a href="support.html"></a>Support</td>
+                            <td align="center"><a href="updates.html">Updates</a></td>
                             <td align="center"><a href="../versions.html">Previous Versions</a></td>
+                            <td align="center"><a href="license.html">License</a></td>
+                            <td align="center"><a href="publications.html">Publications</a></td>                           
                             <td align="center"><a href="acknowledge.html">Acknowledgements</a></td>
-                        </tr>
+
+                            </tr>
                     </table>
                 </div>
                 <div class="print"> </div>
@@ -78,7 +80,7 @@
                 <h3>Terrain Analysis Using Digital Elevation Models (TauDEM)</h3>
                 <p><b>TauDEM</b> (<b>T</b>errain <b>A</b>nalysis <b>U</b>sing <b>D</b>igital <b>E</b>levation <b>M</b>odels) is a  suite of Digital Elevation Model (DEM) tools for the extraction and analysis of hydrologic information from topography as represented by a DEM. TauDEM  provides the following capability: </p>
                 <ul>
-                    <li>Development of hydrologically correct (pit removed) DEMs using the  flooding approach</li>
+                    <li>Development of hydrologically conditioned (pit removed) DEMs using the  flooding approach</li>
                     <li>Calculates flow paths (directions) and slopes</li>
                     <li>Calculates contributing area using single and multiple flow direction methods</li>
                     <li>Multiple methods for the delineation of stream networks including topographic form-based methods sensitive to spatially variable drainage density</li>
@@ -97,39 +99,20 @@
                         </ul>
                     </li>
                 </ul>
-                <h4>What's New in Version 5 of TauDEM</h4>
-                <ul>
-                  <li>Restructured into a parallel processing implementation of the TauDEM suite of tools</li>
-                    <li>Works on  Windows PCs, laptops and UNIX clusters</li>
-                    <li>Multiple processes are not required, the parallel approach  can run as multiple processes within a single processor</li>
-                    <li>Restructured into a set of standalone command line executable programs and an ArcGIS toolbox Graphical User Interface (GUI)</li>
-                    <li>Command line executables are:
-                        <ul>
-                            <li>Written in C++ using Argonne National Laboratory's MPICH2 library to implement message passing between multiple processes</li>
-                            <li>Based on single set of source code for the command line execuables that is platform independent and can be compiled for both Window's PC's and UNIX clusters</li>
-                        </ul>
-                    </li>
-                    <li>The ArcGIS toolbox GUI:
-                        <ul>
-                            <li>Makes system calls to the command line executables to allow users to access the tools as standard ArcGIS toolbox tools</li>
-                            <li>Versions up to 5.0.6 runs under ArcGIS version 9.3.1 on a Windows PC</li>
-                            <li>Versions 5.1.x user interface written in Python for ArcGIS version 10</li>
-                        </ul>
-                    </li>
-                    <li>Pre-compiled versions of TauDEM 5 are available in both 32-bit and 64-bit versions</li>
-                    <li>Runs under Windows XP, Windows Vista and Windows 7
-                    <li>UNIX makefiles are included in the source code for Unix users to  compile the execuables for their systems</li>
-                    <li>TauDEM versions up to 5.1 requires that Argonne National Laboratory's MPICH2 library be seperately installed. Version 5.1.1+ compiled to use Microsoft HPC  Pack 2012 MS-MPI Redistributable Package</li>
-                    <li>The GeoTiff file format is used for all grid input and output files to:
-                        <ul>
-                            <li>Permit generation of output grids on a system (e.g.  cluster) that does not have ArcGIS installed</li>
-                            <li>Allow for additional visualization options
-                              
-                            </li>
-                        </ul>
-                    </li>
+                <h4>Features</h4>
+              <ul>
+                  <li> Uses the GDAL library for Input/Output to accommodate a broad class of raster files.</li>
+                    <li> Performs computations in geographic (latitude and longitude) as well as projected (planar) coordinates.</li>
+                    <li> Partitions domain into stripes to take advantage of parallel processing using message passing interface (MPI).</li>
+                    <li> Works on Windows PCs, laptops and UNIX clusters.</li>
+                    <li> Includes a set of standalone command line executable programs and an ArcGIS toolbox Graphical User Interface (GUI).</li>
+                    <li> Command line executables are based on single set of source code   for the command line execuables that is platform independent and can be   compiled for both Window's PC's and UNIX clusters and does not require ArcGIS to run.</li>
+                    <li> The ArcGIS toolbox GUI makes system calls to the command line   executables to allow users to access the tools as standard ArcGIS   toolbox tools.</li>
+                    <li> Pre-compiled versions of TauDEM are available in both 32-bit and 64-bit versions.</li>
+                    <li> UNIX makefiles are included in the source code for Unix users to compile the execuables for their systems.</li>
                 </ul>
-                <p>Translation -<a href="http://science.webhostinggeeks.com/analiza-terena">Serbo-Croatian</a></p>
+              
+                <p>Translation of earlier version of this page into <a href="http://science.webhostinggeeks.com/analiza-terena">Serbo-Croatian</a></p>
       </div></td>
       <td class="gutter">&nbsp;</td>
         <td class="panel"><script type="text/javascript">
@@ -147,7 +130,7 @@
     <tr>
         <td class="leftLine"><img src="/images/spacer.gif" width="1" height="1"></td>
         <td class="footer"><ul>
-                <li> &copy; 2006-2013 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+                <li> &copy; 2006-2015 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
                 <li> <a href="mailto:dtarb@usu.edu">webmaster</a></li>
             </ul></td>
         <td class="footerRight"><img src="/images/shadow_footer.gif" width="8" height="67" alt=""></td>

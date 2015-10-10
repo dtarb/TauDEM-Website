@@ -11,12 +11,12 @@
 	<meta name="robots" content="follow, all" />
 	<meta name="revisit-after" content="5 days" />
 
-  	<link href="/images/favicon.ico" rel="shortcut icon" />
-	<link href="/tarboton.css" rel="stylesheet" type="text/css"/>
+  	<link href="../images/favicon.ico" rel="shortcut icon" />
+	<link href="../tarboton.css" rel="stylesheet" type="text/css"/>
   </head>
 <body>
-	<span class="wordmark"><a href="http://www.usu.edu/"><img src="/images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
-	<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="/images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
+	<span class="wordmark"><a href="http://www.usu.edu/"><img src="../images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
+	<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="../images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
 	<div class="mainHeader">
 		<div class="wordmark"></div>
 		<div class="topNav">
@@ -45,9 +45,9 @@
 	
 <table width="100%">
 		<tr valign="top">
-			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+			<td class="leftLine"><img src="../images/spacer.gif" width="1" height="1" alt=""></td>
 			<td class="main">
-				<div class="banner" style="background-image:url(/images/taudemlogo2.gif);">
+				<div class="banner" style="background-image:url(../images/taudemlogo2.gif);">
 					<table>
 						<tr>
 							<td>TauDEM/TARDEM Versions</td>
@@ -61,12 +61,17 @@
 				<div class="content">
 				  
             <h3> TauDEM/TARDEM Versions</h3>
+            <p>See <a href="taudem5/updates.html">Update Notes</a> for additional details on each version. </p>
             <ul>
-            	<li><a href="taudem5/downloads5.2.html">TauDEM 5.2</a> (January 2014) &mdash;Switched from old shapefile code to shapelib 1.3.0 from <a href="http://download.osgeo.org/shapelib">http://download.osgeo.org/shapelib</a>/ for reading and writing of shapefiles.
-            	<li><a href="taudem5/downloads5.2.html" class="content">TauDEM 5.1</a> (August 2013) &mdash;                User interface written in Python for ArcGIS version 10. Compiled to use Microsoft HPC Pack 2012 MS-MPI Redistributable Package.
+            	<li><a href="taudem5/index.html">TauDEM 5.3</a> (October 2015)  &mdash; Uses GDAL library for rasters.  Adds functionality to perform calculations in geographic coordinates.               
+          	  Version 5.3 combines the separate code bases that were present to support version 5.1.x (single files) and 5.2 (multiple files).
+           	  <li><a href="https://github.com/dtarb/TauDEM/releases/tag/5MF.0.0">TauDEM 5.2</a> (August 2014) &mdash;                
+            	Multifile version released from GItHub. This approach has been discontinued and this version deprecated in favor of using GDAL starting with version 5.3.  GDAL accommodates large files (including BigTIFF GeoTIFF and several others).
+       	      <li><a href="taudem5/downloads5.1.html">TauDEM 5.1.1 (August 2013), 5.1.2 (January 2014) and Multifile (August 2013)</a> &mdash;                Compiled to use Microsoft HPC Pack 2012 MS-MPI Redistributable Package (5.1.1), switched from old shapefile code to shapelib 1.3.0 from <a href="http://download.osgeo.org/shapelib">http://download.osgeo.org/shapelib</a>/ for reading and writing of shapefiles (5.1.2). Multifile version (5.2) released as command line executables.  This overcame the 4 GB GeoTIFF file size limit by breaking the domain into multiple files that collectively represented the grid.  Folders containing multiple files were provided as input arguments instead of files.
                 
-       	      <li><a href="taudem5/downloads5.0.html">TauDEM 5.0</a> (June 2010) &mdash; Uses the MPI approach for parallel processing and contains both individual command line .exe's as well as an ArcGIS Toolbox user interface.
-          	  <li><a href="taudem4.0/index.html">TauDEM 4.0</a> (July 2009) &mdash; Provides support for ArcGIS Geoprocessing through the TauDEM Tools geoprocessing toolbox.  Adds functionality through this toolbox.  Requires ArcGIS 9.3 or later.</li>
+       	      <li><a href="taudem5/downloads5.0.html">TauDEM 5.0 (June 2010) and 5.1 (February 2012) </a>&mdash; Uses the MPI approach for parallel processing and contains both individual command line .exe's as well as an ArcGIS Toolbox user interface.
+          	  Version 5.0 is the latest version that supports ArcGIS 9.3.x. Version 5.1 introduced user interface written in Python to support ArcGIS version 10. 
+       	      <li><a href="taudem4.0/index.html">TauDEM 4.0</a> (July 2009) &mdash; Provides support for ArcGIS Geoprocessing through the TauDEM Tools geoprocessing toolbox.  Adds functionality through this toolbox.  Requires ArcGIS 9.3 or later.</li>
 				<li><a href="taudem3.1/index.html">TauDEM 3.1</a>  (First released May 2005, periodic upgrades till September 2008) &mdash;  Adds support for MapWindow and fixes some bugs. 
 			  </li>
 			  <li>Archive versions [No longer recommended]
@@ -83,7 +88,7 @@
 
 		  	  </div>
 			</td>
-			<td class="gutter"><img src="/images/shadow_top.gif" width="8" height="8" alt=""></td>
+			<td class="gutter"><img src="../images/shadow_top.gif" width="8" height="8" alt=""></td>
 			<td class="panel">
 				<script type="text/javascript">
 					var path='../../' <!--this sets the addressing for getting to the root --> 
@@ -99,15 +104,15 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1"></td>
+			<td class="leftLine"><img src="../images/spacer.gif" width="1" height="1"></td>
 			<td class="footer"><ul>
 				<li>
-					&copy; 2006-2013 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+					&copy; 2006-2015 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
 				<li>
 					<a href="mailto:dtarb@usu.edu">webmaster</a></li></ul>
 			</td>
-			<td class="footerRight"><img src="/images/shadow_footer.gif" width="8" height="67" alt=""></td>
-			<td class="footerRight"><img src="/images/footer_right.gif" width="168" height="67" alt=""></td>
+			<td class="footerRight"><img src="../images/shadow_footer.gif" width="8" height="67" alt=""></td>
+			<td class="footerRight"><img src="../images/footer_right.gif" width="168" height="67" alt=""></td>
 		</tr>
 	</table>
 </body>

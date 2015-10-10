@@ -1247,9 +1247,10 @@
 </div>
 <h2 class="gp" xmlns="">Syntax</h2>
 <div xmlns="">
-  <p style="margin-top: -1.2em">PitRemove (Input Elev, {Fill_Considering_only_for_4_way_neighbours}, {Input_Depression_Mask_Grid}, Input_Number_of_Processes, Output_Pit_Removed_Elevation_Grid) <br />
-    <br />
-  </p>
+<p style="margin-top: -1.2em">PitRemove (Input Elev, 
+{Fill_Considering_only_4_way_neighbors}, {Input_Depression_Mask_Grid}, 
+Input_Number_of_Processes, Output_Pit_Removed_Elevation_Grid) <br><br>
+</p>
   <table width="100%" border="0" cellpadding="5">
     <tbody>
       <tr>
@@ -1272,15 +1273,14 @@
       </tr>
       <tr>
         <td class="info">Fill_Considering_only_for_4_way_neighbours (Optional) </td>
-        <td class="info" align="left"><span style="font-weight: bold">Dialog Reference</span><br />
-          <div style="text-align:Left;">
-            <div>
-              <p><span>Fill Considering only for four way neighbours</span></p>
-            </div>
-          </div>
-          <p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-        <td class="info" align="left">Boolean</td>
-      </tr>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><div><p><span>If
+ this option is selected Fill ensures that the grid is hydrologically 
+conditioned with cell to cell connectivity in only 4 directions (N, S, E
+ or W neighbors).  Each grid cell is conditioned to drain to one of 
+these adjacent, but not diagonal neighbors.</span></p></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Boolean</td>
+</tr>
       <tr>
         <td class="info">Input_Depression_Mask_Grid (Optional) </td>
         <td class="info" align="left"><span style="font-weight: bold">Dialog Reference</span><br />

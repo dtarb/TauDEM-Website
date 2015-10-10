@@ -11,12 +11,12 @@
 	<meta name="robots" content="follow, all" />
 	<meta name="revisit-after" content="5 days" />
 
-  	<link href="/images/favicon.ico" rel="shortcut icon" />
-	<link href="/tarboton.css" rel="stylesheet" type="text/css"/>
+  	<link href="../../images/favicon.ico" rel="shortcut icon" />
+	<link href="../../tarboton.css" rel="stylesheet" type="text/css"/>
   </head>
 <body>
-	<span class="wordmark"><a href="http://www.usu.edu/"><img src="/images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
-	<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="/images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
+	<span class="wordmark"><a href="http://www.usu.edu/"><img src="../../images/wordmark.jpg" alt="Utah State University wordmark" width="225" height="56" border="0" href="../../images/favicon.ico" rel="shortcut icon" /></a></span>
+	<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="../../images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
 	<div class="mainHeader">
 		<div class="wordmark"></div>
 		<div class="topNav">
@@ -45,12 +45,12 @@
 	<span class="wordmark"></span>
 	<table width="100%">
 		<tr valign="top">
-			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+			<td class="leftLine"><img src="../../images/spacer.gif" width="1" height="1" alt=""></td>
 			<td class="main">
 				<div class="banner"  >
                 <table  >
                     <tr>
-                        <td width="360px"><img src="/images/taudem5logo.gif" alt="TauDEM 5 logos" width="350" height="74" style="float:left"/></td>
+                        <td width="360px"><img src="../../images/taudem5logo.gif" alt="TauDEM 5 logos" width="350" height="74" style="float:left"/></td>
                         <td rowspan="2">TauDEM Version 5</td>
                     </tr>
                     <tr>
@@ -68,10 +68,12 @@
                             <td align="center" bgcolor="#6666CC"><a href="downloads.html"></a>Downloads</td>
                             <td align="center"><a href="documentation.html">Documentation</a></td>
                             <td align="center"><a href="support.html">Support</a></td>
-                            <td align="center"><a href="license.html">License</a></td>
-                            <td align="center"><a href="publications.html">Publications</a></td>
+                            <td align="center"><a href="updates.html">Updates</a></td>
                             <td align="center"><a href="../versions.html">Previous Versions</a></td>
+                            <td align="center"><a href="license.html">License</a></td>
+                            <td align="center"><a href="publications.html">Publications</a></td>                           
                             <td align="center"><a href="acknowledge.html">Acknowledgements</a></td>
+
                         </tr>
                     </table>
                     </div>
@@ -82,82 +84,55 @@
 				<h3>Downloads</h3>
 			
 					<ul>
-					<li>Programs
+					<li><a href="TauDEM530.exe">TauDEM 5.3 Complete Windows installer </a>(This includes executables compiled for Windows, ArcGIS toobox and Python Scripts developed for ArcGIS 10.2 or higher, GDAL Library and Microsoft redistributables required to use MS-MPI HPC Pack. Note that installing this does not require ArcGIS so on a Windows system with or without ArcGIS the simplest way to get going is to run this installer. Without ArcGIS you will  be able to run all the functions from the command line, but will not be able to use the ArcGIS toolbox.)					  </li>
+					<li>Separate components
 					  <ul>
-					    <li>For ArcGIS 10.2.2
-				          <ul>
-				            <li><A href="TauDEM512.exe">TauDEM 5.3  Self extracting zip file install package</A></li>
-				            <li><A href="TauDEM512.zip">TauDEM 5.3 Zip file for customized installation</A></li>
-				            <li><a href="TauDEM53exeWin32.zip">TauDEM 5.3 Command Line Executables for 32 bit Windows PC</a></li>
-				            <li><a href="TauDEM53exeWin64.zip">TauDEM 5.3 Command Line Executables for 64 bit Windows PC</a></li></ul></li>
+					    <li><a href="TauDEM530exeWin32.zip">TauDEM 5.3 Command Line Executables for 32 bit Windows PC</a></li>
+					    <li><a href="TauDEM530exeWin64.zip">TauDEM 5.3 Command Line Executables for 64 bit Windows PC</a></li>
+					    <li>ArcGIS toolbox and Python Scripts (Developed for ArcGIS 10.2 or higher)</li>
 				      </ul>
 					</li>
-					<li>Source Code                     
-					  <ul>
-					    <li>For TauDEM 5.3
-				          <ul>
-				            <li><a href="TauDEM53src.zip">C++ source files</a></li>
-				            <li><a href="TauDEM53_VS_Solution_Folder.zip">Visual Studio 2010 Solution Folders</a></li>
-			              </ul>
-				          <ul>
-				            <li><a href="https://github.com/dtarb/TauDEM">GitHub repository</a><a href="TauDEM5MFVisualStudioSoln_52.zip"></a></li>
-			              </ul>
-					    </li>
-				      </ul>                    
-					<li>Data
-                      <ul>
-                        <li><a href="../taudemdata">Folder with data for testing TauDEM</a>					</li>
-                      </ul>
-					</li>
-					<li>TauDEM Model Builder Models  Toolbox
-				      <ul>
-				        <li><a href="TauDEMModels_51.tbx">For ArcGIS 10.2.2 </a>(Save this file in the location that TauDEM was installed e.g. C:\Program Files\TauDEM\TauDEM5Arc)				         </li>
-				      </ul>
-					</li>
+					<li>Dependencies</li>
+					<ul>
+					  <li>GDAL 111 (MSVC 2010) for 32 bit Windows PC</li>
+					  <li>GDAL 111 (MSVC 2010 Win 64) for 64 bit Windows PC</li>
+					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=36045">Microsoft HPC Pack 2012 MS-MPI Redistributable Package</a></li>
+					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=8328">Microsoft Visual C++ 2010 SP1 Redistributable Package (x86)</a></li>
+					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=13523">Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)</a></li>
+					  </ul>
+					<li><a href="https://github.com/dtarb/TauDEM">Source Code                     in GitHub</a><li><a href="../taudemdata">Folder with data for testing TauDEM</a></li>
 					</ul>
 			  <h3>Installation Instructions</h3>
 					<ol>
-						<li>TauDEM 5.3 may be run in command line standalone mode or with ArcGIS 10.2.2. It has been tested with ArcGIS version 10.2.2 and 10.3.1. For ArcGIS 9.3.1 use <a href="downloads5.0.html">TauDEM 5.0</a>. </li>
-						<li>Automatic Install. Run TauDEM512.exe and the installer will install the necessary Microsoft HPC Pack 2012 MS-MPI and runtime redistributable libraries.</li>
-					  <li>Manual Install. Unzip TauDEM512.zip.  This contains the Microsoft HPC Pack 2012 MS-MPI installer mpi_x64.msi or mpi_x86.msi. These were obtained from http://www.microsoft.com/en-us/download/details.aspx?id=36045.  This also contains Visual Studio 2010 C++ runtime libraries vcredist_x86_2010.exe and vcredist_x64_2010.exe.  The files here are SP1 from http://www.microsoft.com/en-us/download/details.aspx?id=8328 and http://www.microsoft.com/en-us/download/details.aspx?id=13523</li>
-						<li>To manually install on a 32 bit system install                            
-						  <ul>
-						    <li>mpi_x86.msi</li>
-						    <li>vcredist_x86_2010.exe</li>
-						    <li>TaudemSetup_x86.msi</li>
-					      </ul>
-				      </li>
-						<li>To manually install on a 64 bit system install
-						  <ul>
-						    <li>mpi_x64.msi</li>
-						    <li>vcredist_x86_2010.exe</li>
-						    <li>vcredist_x64_2010.exe</li>
-						    <li>TaudemSetup_x64.msi					  </li>
-						  </ul>
-					  </li>
+						<li>If you are using a Windows computer it is easiest to download and run the <a href="TauDEM530.exe">Complete Windows Installer</a>. This will Install TauDEM and all its dependencies. The ArcGIS toolbox is included and should work for ArcGIS 10.2 or higher (tested from 10.2 up to 10.3.1). Note that installing this does not require ArcGIS. Without ArcGIS you will  be able to run all the functions from the command line, but will not be able to use the ArcGIS toolbox.</li>
 						<li>To activate the TauDEM Toolbox in ArcGIS:
-						  <ol>
-							  <li>Open ArcMap. If the ArcToolbox Window is not open, click on the "Show/Hide ArcToolbox Window" icon in the Standard Toolbar.</li>
-							  <li>Right click on ArcToolbox at the top of the window. Select Add Toolbox... .</li>
-							  <li>Browse to the TauDEM install directory (C:\Program Files\TauDEM\).</li>
-							  <li>Click on the TauDEM_Tools.tbx file, and click Open.</li>
-							  <li>The TauDEM Toolbox should now be visible in the list of toolboxes.</li>
-							  <li>If you wish to save this configuration, right click on ArcToolbox, select Save to Default.</li>
-							  <li>This needs to be done for each user who wishes to use TauDEM.</li>
-					      </ol>
+                          <ol>
+                            <li>Open ArcMap. If the ArcToolbox Window is not open, click on the &quot;Show/Hide ArcToolbox Window&quot; icon in the Standard Toolbar.</li>
+                            <li>Right click on ArcToolbox at the top of the window. Select Add Toolbox... .</li>
+                            <li>Browse to the TauDEM install directory (e.g. C:\Program Files\TauDEM\).</li>
+                            <li>Click on the TauDEM_Tools.tbx file, and click Open.</li>
+                            <li>The TauDEM Toolbox should now be visible in the list of toolboxes.</li>
+                            <li>If you wish to save this configuration, right click on ArcToolbox, select Save to Default.</li>
+                            <li>This needs to be done for each user who wishes to use TauDEM.</li>
+                          </ol>
 						</li>
-						<li>To use the Model Builder Workflows
-						  <ol>
-						    <li>Download the file appropriate for your ArcGIS version (see above) and save in the location that TauDEM was installed (e.g. C:\Program Files\TauDEM\TauDEM5Arc) so that the relative paths to TauDEM tools are correct.</li>
-						    <li>Open ArcMap. If the ArcToolbox Window is not open, click on the &quot;Show/Hide ArcToolbox Window&quot; icon in the Standard Toolbar.</li>
-						    <li>Right click on ArcToolbox at the top of the window. Select Add Toolbox... .</li>
-						    <li>Locate the file TauDEM Models.tbx that you downloaded and select it. </li>
-						    <li>The TauDEM Models Toolbox should now be visible in the list of toolboxes.</li>
-						    <li>If you wish to save this configuration, right click on ArcToolbox, select Save to Default.</li>
-						    <li>This needs to be done for each user who wishes to use TauDEM.						</li>
-					      </ol>
-						</li>
+						<li>If you are using a Linux computer you will need to download the source code from GitHub and compile for your system. The ArcGIS toolbox is only available for Windows Systems with ArcGIS.						</li>
+						<ul>
+						  <li>You will need to install and link to the GDAL Library.</li>
+						  <li>You will need to do install and link to an MPI library such as MPICH2.</li>
+				      </ul>
+						<li>If you have an earlier version of ArcGIS (pre 10.2) and want to use the ArcGIS toolbox you will need to download an <a href="../versions.html">earlier version of TauDEM</a>. The command line executables with this version produce files that can be used with any version of ArcGIS.</li>
+					  <li>To install components separately:					    </li>
+						<ul>
+						  <li>Download and install the version of the GDAL library valid for your system.</li>
+						  <li>Download and install the Microsoft Visual C++ Redistrbutable packages appropriate for your system. 64 bit systems require both x86 and x64 redistributables.</li>
+						  <li>Download and install the Microsoft HPC Pack 2012 MS-MPI Redistributable Package.</li>
+						  <li>Download TauDEM 5.3 Command Line Executables for your system.</li>
+						  <li>Download ArcGIS toolbox and python scripts if desired.</li>
+						  <li>Set paths on your system to the locations of GDAL components (e.g. C:\GDAL;C:\Program Files\GDAL), MPI programs (e.g. C:\Program Files\Microsoft HPC Pack 2012\Bin\) and TauDEM programs (e.g. C:\Program Files\TauDEM\TauDEM5Exe).</li>
+					  </ul>
 					</ol>
+					
 			</div>
 			</td>
 <td class="gutter">&nbsp;</td>
@@ -176,15 +151,15 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="leftLine"><img src="/images/spacer.gif" width="1" height="1"></td>
+			<td class="leftLine"><img src="../../images/spacer.gif" width="1" height="1"></td>
 			<td class="footer"><ul>
 				<li>
-					&copy; 2006-2013 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+					&copy; 2006-2015 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
 				<li>
 					<a href="mailto:dtarb@usu.edu">webmaster</a></li></ul>
 			</td>
-			<td class="footerRight"><img src="/images/shadow_footer.gif" width="8" height="67" alt=""></td>
-			<td class="footerRight"><img src="/images/footer_right.gif" width="168" height="67" alt=""></td>
+			<td class="footerRight"><img src="../../images/shadow_footer.gif" width="8" height="67" alt=""></td>
+			<td class="footerRight"><img src="../../images/footer_right.gif" width="168" height="67" alt=""></td>
 		</tr>
 	</table>
 </body>

@@ -10,15 +10,15 @@
 <meta name="language" content="en" />
 <meta name="robots" content="follow, all" />
 <meta name="revisit-after" content="5 days" />
-<link href="/images/favicon.ico" rel="shortcut icon" />
-<link href="/tarboton.css" rel="stylesheet" type="text/css"/>
+<link href="../../images/favicon.ico" rel="shortcut icon" />
+<link href="../../tarboton.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <ul>
-  <li><span class="wordmark"><a href="http://www.usu.edu/"><img src="/images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
+  <li><span class="wordmark"><a href="http://www.usu.edu/"><img src="../../images/wordmark.jpg" width="225" height="56" border="0" alt="Utah State University wordmark" /></a></span>
   </li>
 </ul>
-<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="/images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
+<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="../../images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
 <div class="mainHeader">
     <div class="wordmark"></div>
     <div class="topNav">
@@ -45,11 +45,11 @@
 <span class="wordmark"></span>
 <table width="100%">
     <tr valign="top">
-        <td class="leftLine"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
+        <td class="leftLine"><img src="../../images/spacer.gif" width="1" height="1" alt=""></td>
         <td class="main"><div class="banner"  >
                 <table  >
                     <tr>
-                        <td width="360px"><img src="/images/taudem5logo.gif" alt="TauDEM 5 logos" width="350" height="74" style="float:left"/></td>
+                        <td width="360px"><img src="../../images/taudem5logo.gif" alt="TauDEM 5 logos" width="350" height="74" style="float:left"/></td>
                         <td rowspan="2">TauDEM Version 5</td>
                     </tr>
                     <tr>
@@ -67,78 +67,109 @@
                             <td align="center"><a href="downloads.html">Downloads</a></td>
                             <td align="center"><a href="documentation.html">Documentation</a></td>
                             <td align="center"  bgcolor="#6666CC"><a href="support.html"></a>Support</td>
-                            <td align="center"><a href="license.html">License</a></td>
-                            <td align="center"><a href="publications.html">Publications</a></td>
+                            <td align="center"><a href="updates.html">Updates</a></td>
                             <td align="center"><a href="../versions.html">Previous Versions</a></td>
-                           <td align="center"><a href="acknowledge.html">Acknowledgements</a></td>
+                          <td align="center"><a href="license.html">License</a></td>
+                            <td align="center"><a href="publications.html">Publications</a></td>                           
+                          <td align="center"><a href="acknowledge.html">Acknowledgements</a></td>
+
                             
-                        </tr>
+                      </tr>
                     </table>
                 </div>
                 <div class="print"> </div>
             </div>
             <div class="content">
-                <h3>Use Notes</h3>
-                <ol>
-                    <li><a href="troubleshooting.html">Troubleshooting</a>. See here if installation did not go smoothly or you need to troubleshoot.</li>
-                    <li>Grid File Types: TauDEM 5.1 only supports TIFF (.tif) files. Not all TIFF formats are supported. GeoTIFF files created using  the <a href="http://www.gdal.org/">GDAL Translate Utilit</a>y and ArcGIS that are not compressed can be used. Other grid formats including formats that otherwise will work with ArcGIS will not work with TauDEM 5.1. </li>
-                    <li>The GeoTIFF format supports grids up to 4 GB allowing for about 32000 rows x 32000 columns.</li>
-                    <li>Grid Spatial Reference/Size: All input grids are assumed to be the same size, shape, and in the same spatial reference.</li>
-                </ol>
-              <h3>Need help</h3>
-                <p align="left">There is no formal ongoing support for this freely distributed   open source software. However, I do do my best to respond to emails and help with problems as time permits. Feel free to contact me if you need to. It is most helpful if you include with your message screen shots of the error you are having and the input dialog immediately prior to occurrence of the error so that I can see what your inputs are. </p>
+                <h3>Need help</h3>
+                <p align="left">While there is no formal ongoing support for this freely distributed   open source software, I do do my best to respond to emails and help with problems as time permits. Feel free to contact me if you need to. It is most helpful if you include with your message screen shots of the error you are having and the input dialog immediately prior to occurrence of the error so that I can see what your inputs are. I prefer that you enter help requests as issues in the <a href="https://github.com/dtarb/TauDEM/issues">TauDEM GitHub repository</a>. Use the label &quot;Question&quot;. When the question is answered, the label &quot;Answered&quot; will be attached. By doing this answers to questions will be publically available minimizing repetition, and others are welcome to also help answer questions.</p>
                 <p align="left">David Tarboton email:    david.tarboton&lt;at symbol&gt;usu.edu</p>
                 
-                 <h3>TauDEM 5 Update Notes</h3>
-              <p><strong>Version 5.1.2</strong> (Version compiled to use shapelib). (Released 1/25/14)</p>
-              <ul>
-                <li>1/25/14.  Switched from old shapefile code to shapelib 1.3.0 from <a href="http://download.osgeo.org/shapelib">http://download.osgeo.org/shapelib</a>/ for reading and writing of shapefiles. This resolved errors associated with memory leaks and shapefiles not displaying on later versions of ArcGIS.</li>
-                <li>1/25/14. Add GageWatershed function. (C++ executable had been there a while but now there is a python script in Toolbox).</li>
-                <li>10/23/13. Add  define projection code to StreamReachAndWatershed.py and MoveOutletsToStreams.py  code so that shapefiles retain projection information.</li>
-              </ul>
-              <p><strong>Version 5.1.1</strong> (Version compiled to use Microsoft HPC  Pack 2012 MS-MPI Redistributable Package). (Released 8/20/13)</p>
-              <ul>
-                <li>6/26/12.  Fixed memory  leaks by inserting delete statements</li>
-                <li>4/30/13.  Fixed an  issue with word length in shape.cpp that inhibited correct display of  shapefiles in ArcGIS 10.1 and autodesk.</li>
-                <li>4/30/13.  Fixed a few  shape library memory leak issues</li>
-                <li>6/2/13.  Fixed an  issue in the validation code for transport limited accumulation.  Changed label on input concentration to input  supply concentration.</li>
-                <li>7/24/13.  Fixed issue  in tiffio when an entire partition was within a tiffio strip that caused array  overflow and crashing.</li>
-                <li>8/18/13.  Removed  spurious PitRemove script validation code that was preventing help from  displaying in ArcGIS 10.1.  </li>
-                <li>8/8/13.  Added  capability in tiffio to read double precision files.</li>
-                <li>8/18/13.  Disconnected  help from CHM file that is obsoleted and no longer distributed.</li>
-                <li>8/18/13.  Built using  Visual Studio 2010 and Microsoft HPC Pack 2012 MS-MPI from <a href="http://www.microsoft.com/en-us/download/details.aspx?id=36045">http://www.microsoft.com/en-us/download/details.aspx?id=3604</a>. </li>
-              </ul>
-              <p><strong>Version 5.1</strong> (Version with GUI Toolbox for ArcGIS 10.0). (Released 2/2/12)</p>
-              <ul>
-                <li>11/01/11. Switched to Python programming language to code the TauDEM ArcGIS Graphical User Interface (GUI) instead of the Visual Basic 6.0 language used in earlier versions of TauDEM.              </li>
-              </ul>
-              <p><strong>Version 5.0.6</strong> (Released 2/2/12)</p>
-              <ul>
-                <li> 10/15/11.  Changed  warning on encountering no data flow direction during the evaluation of  contributing area to identify the possibility of an outlet being placed at a  location where flow direction is no data.</li>
-                <li> 10/19/11.  Changed  object type for TIFF Image width and length tags 256 and 257 from 3 to 4 to  indicate these are 32 bytes to accommodate more than 2^16 rows or columns.  </li>
-                <li> 10/23/11.  Added  capability to do 4 way comparisons in Pit Remove </li>
-              </ul>
-              <p><b>Version 5.0.5</b> (Released 6/12/11)</p>
-              <ul>
-                <li>9/3/10 - Fixed bug in Pitremove involving a process jumping to the end if there we no pits to fill after first pass then getting ahead of other processes which hung. </li>
-                <li>9/3/10 - Fixed bug to release memory in Drop Analysis to avoid crashing due to memory overflow when a large number of stream delineation thresholds are evaluated. </li>
-                <li>11/18/10 - Fixed file name overflow error in shapefile that resulted in failure to open some shape files </li>
-                <li>12/30/10 - Fixed bug in partition border initialization </li>
-                <li>2/26/11 - Improved TiffIO data typing to better handle large grids and improved error trapping for invalid flow directions </li>
-                <li>3/20/11 - Fixed broken links in compiled help file for &quot;Length Area Stream Source&quot; and &quot;Slope Area Stream Definition&quot; functions.              </li>
-              </ul>
-              <p><b>Version 5.0.4</b></p>
-              <ul>
-                <li>8/27/10 - Added capability to replicate geotiff tag 34736 so that spatial reference information is more likely to be replicated from input to output files. </li>
-              </ul>
-                <p><b>Version 5.0.3</b></p>
-                <ul>
-                  <li>7/8/10 - Fixed bug where a tiled TIFF file was incorrectly read if the total width was an even multiple of the tile width.</li>
-                  <li>7/25/10 - Added code to trap memory allocation errors on partition creation and provide an informative error message.</li>
-                  <li>7/25/10 - Added stderr output to all functions to provide run time estimates.</li>
-                  <li>7/29/10 - Updated ArcGIS interface to show executable window.</li>
-                </ul>
-                <p>&nbsp;</p>
+                 <h3>Troubleshooting</h3>
+                  
+				              
+			              
+					<p>Following are suggestions for addressing  issues that sometimes arise.					</p>
+					<ol>
+					<li>
+					  <p>Language setting issue. A user in Spain reported that they were getting errors related to NoData not being defined. This was traced to the language settings on the computer.  The no data value      in the output file is stored as a text string -3.40283E+038.       However a computer with Spain language settings (and possibly other countries too) expects a comma (e.g. -3,40283E+038) so      it does not recognize the no data and displays the large negative      values.  In other respects the results are correct.  Unfortunately I      do not know how to fix this.  You may be able to use the &quot;Calculate Statistics&quot; tool in ArcGIS to help with no data values.  A work around, which I recognize is not ideal for non US users is to change the computer regional settings to English (United      States), or at least change the decimal symbol to &quot;.&quot;.  </p>
+		              <p><img src="LanguageSetting.png" width="939" height="546" alt="Language Setting Image" /></p>
+	              </li></ol>
+				  <p>Common issues with TauDEM 5.0.x and 5.1. Many of these have been resolved with the switch to Microsoft   HPC Pack 2012 MS-MPI  redistributable libraries.</p>
+					<ol>
+					  <li>You get the error &quot;Failed to Execute&quot;. This is most commonly due to MPICH2 not being installed from the administrator command prompt or administrator account (which is distinct from a user account with administrator priveleges). See the <a href="downloads.html">downloads</a> page Install MPICH2 using Administrator priveleges step (3.2). If you think this was done right this issue is best debugged using a command prompt.			          
+					    <blockquote>
+					      <p>Open a windows command prompt (Start-&gt;All  Programs-&gt;Accessories-&gt;Command Prompt) and type the following command to  run the pitremove function (replace ... by your path  information and dem by your rile name).<br />
+					        mpiexec -n 8 pitremove -z &quot;...\dem.tif&quot; -fel  &quot;...\demfel.tif&quot;</p>
+				        </blockquote>
+				      </li>
+					  
+					  <blockquote>
+					    <p>Based on what happens you should be able to identify one  of the following problems</p>
+				      </blockquote>
+					  <ol type="a">
+					    <li> If you get  mpiexec not found it means mpiexec is not on the path or not installed.  MPICH2 needs to be installed following the  steps for Download and install MPICH2 at <a href="downloads.html">downloads</a>. <a href="ToAddFolderPath.pdf">Detailed path editing instructions</a>.</li>
+					    <li>If you get an  error relating to smpd then it means MPICH2 was not installed correctly as an  administrator.  Check steps 3.2 at  <a href="downloads.html">downloads</a>.  It is important that you install MPICH2  either from an administrator account or a command prompt run as administrator.</li>
+					    <li>If pitremove is  not found you need to put the taudem path (usually C:\Program Files\TauDEM\TauDEM5Exe) on your path or check that box in the  taudem installer.</li>
+					    <li> If you are  asked for a password, then you need to run mpiexec -register				        </li>
+				      </ol>
+					  <li>Program hangs when OK is pushed for a tool.
+                        <ol type="a">
+		      <li>Check that you did mpiexec -register (and got the password correct), it may be waiting for you to enter the password.</li>
+					      <li>Check the file cmsgtmp.txt located in the same folder as your first output file. This may have informative messages. If this has the phrase &quot;Please specify an authentication passphrase for smpd&quot; then you need to uninstall and reinstall MPICH2 from an Administrator account.<br /></li>
+				        </ol>
+				      </li>
+					  <li>Taudem tool does not open and displays red X in ArcGIS toolbox.</li>
+					  <blockquote>
+					    <p>This is a symptom of the DLL's not having registered properly during the install. They may be manually registered using regsvr32.exe (usually located in c:\windows\system32) using commands such as (from an administrator cmd window - see above):</p>
+					    <p>cd C:\Program Files\Taudem<br />
+					      c:\windows\system32\regsvr32 protdvb.dll<br />
+				        c:\windows\system32\regsvr32 protdgpcom.dll</p>
+					    <p>This only applies to the ArcGIS 9.3.1 version of TauDEM as the version for ArcGIS 10 uses python scripts.<br />
+				        </p>
+				      </blockquote>
+					  <li>Program crashes when OK is pushed for a tool and gives error output indicating that commands failed.						</li>
+					  <blockquote>
+					    <p>Look at the cmsgtmp.txt file in  the same folder as your first output file to see if the error messages indicate the problem</p>
+					    <p>Type mpiexec at a cmd prompt to check that the path to mpiexec is (correctly) on the system, and correct if not. </p>
+					    <p>Try running some of the TauDEM programs from the command line, such as:</p>
+					    <p>cd c:\&lt;working directory with example logan.tif data&gt;<br />
+				        mpiexec -n 1 &quot;c:\program files\taudem\taudem5exe\pitremove&quot; logan.tif			          </p>
+				      </blockquote>
+					  <li>If you get a Windows firewall or security warning or error.					  </li>
+					  <blockquote>
+					    <p>At a command prompt run commands like the following to enable each function in the firewall.</p>
+					    <p>netsh firewall add allowedprogram &quot;C:\Program Files\Taudem\TauDEM5Exe\AreaD8.exe&quot; AreaD8 ENABLE<br />
+					      (Repeat for all TauDEM functions)
+				        </p>
+					    <p> It may be easiest to <a href="Firewall.txt">download this  file</a>, rename it as Firewall.bat and at a command prompt run Firewall.bat.<br />
+				        </p>
+				      </blockquote>
+					  <li>If you have a problem installing</li>
+					  <blockquote>
+					    <p>On Windows 7 it may occur that 
+				        the registry size is too small and you get an error when installing TauDEM (and possibly other Windows updates or programs). It may manifest by the TauDEM install hanging or giving an error &quot;Error 1935. An error occurred during the installation of assembly 'Microsoft.VC90.CRT, ...'&quot;. To resolve this follow the steps in the  <a href="http://social.technet.microsoft.com/Forums/en-US/w7itproui/thread/42e2a200-defe-4c6b-a1b3-606836dcfabb">blog posting</a> that explains this, which are briefly:</p>
+				      </blockquote>
+					  <ol type="a">
+					    <li>Use RegEdit to set</li>
+					    
+					    <blockquote>
+					      <p> HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control <br />
+					        Key: RegistrySizeLimit <br />
+					        Type: REG_DWORD <br />
+				          Value: ffffff (4294967295) </p>
+				        </blockquote>
+					    
+					    <li>Reboot</li>
+					    <li>As administrator run sfc /scannow</li>
+				      </ol>
+					  
+					  <li><p>You receive an error &quot;Error while connecting to host. No connection could be made because the target machine actively refused it.</li>
+					  <blockquote>
+					    <p>This occurs if the smpd utility used by MPICH2 has not been installed properly, usually because MPICH2 was not installed when logged in as Administrator (different from user with Administrator privileges). Open an administrator command prompt from Start-&gt;All Programs-&gt;Accessories-&gt;Command Prompt-&gt; Right click run as administrator. Click YES to the user account control about modifying the computer and make sure that the command window that opens says Administrator at the top. Verify that c:/program files/mpich2/bin is on your path (see installation instructions). In this prompt type smpd -install. You should receive confirmation that MPICH2 Process Manager, Argonne National Lab installed. Alternatively uninstall and reinstall MPICH2 when logged is as Administrator or see #1 above.</p>
+					  </blockquote>
+				  </ol>
+	      
+            
           </div>
         </td>
       <td class="gutter">&nbsp;</td>
@@ -155,13 +186,13 @@
 				</div> --></td>
     </tr>
     <tr>
-        <td class="leftLine"><img src="/images/spacer.gif" width="1" height="1"></td>
+        <td class="leftLine"><img src="../../images/spacer.gif" width="1" height="1"></td>
         <td class="footer"><ul>
-                <li> &copy; 2006-2013 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+                <li> &copy; 2006-2015 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
                 <li> <a href="mailto:dtarb@usu.edu">webmaster</a></li>
             </ul></td>
-        <td class="footerRight"><img src="/images/shadow_footer.gif" width="8" height="67" alt=""></td>
-        <td class="footerRight"><img src="/images/footer_right.gif" width="168" height="67" alt=""></td>
+        <td class="footerRight"><img src="../../images/shadow_footer.gif" width="8" height="67" alt=""></td>
+        <td class="footerRight"><img src="../../images/footer_right.gif" width="168" height="67" alt=""></td>
     </tr>
 </table>
 </body>

@@ -1,0 +1,8 @@
+Top level
+Files associated with this repo.
+
+Taudem folder.  Files replicated on the webserver http://hydrology.usu.edu/taudem.
+
+Documentation.  Folder with word files for documentation.  These are saved as PDF in the respective location for posting.
+
+tarboton.css and images.  Required for the website to display properly when editing locally. These are replicates of what is at the root level of the http://hydrology.usu.edu/ website.

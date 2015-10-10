@@ -1240,147 +1240,105 @@
 
 
 
-<h2 class="gp" xmlns="">Summary</h2><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>Identifies all pits in the DEM and raises their elevation to the level of the lowest pour point around their edge. Pits are low elevation areas in digital elevation models (DEMs) that are completely surrounded by higher terrain. They are generally taken to be artifacts that interfere with the routing of flow across DEMs, so are removed by raising their elevation to the point where they drain off the edge of the domain. The pour point is the lowest point on the boundary of the "watershed" draining to the pit. This step is not essential if you have reason to believe that the pits in your DEM are real. This step can be circumvented by copying the raw DEM source data onto the file with suffix "fel" to simulate the output of "Pit Remove" without actually removing the pits. Also, if a few pits actually exist and so should not be removed, while at the same time others are believed to be artifacts that need to be removed, the actual pits should have "no data" elevation values inserted at their lowest point. "No data" values serve to define edges in the domain, and elevations are only raised to where flow is off an edge, so an internal "no data" value will stop a pit from being removed, if necessary.</SPAN></P></DIV><br xmlns="" />
-
-
-
+<h2 class="gp" xmlns="">Summary</h2><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>Identifies all pits in the DEM and raises their elevation to the level of the lowest pour point around their edge. Pits are low elevation areas in digital elevation models (DEMs) that are completely surrounded by higher terrain. They are generally taken to be artifacts that interfere with the routing of flow across DEMs, so are removed by raising their elevation to the point where they drain off the edge of the domain. The pour point is the lowest point on the boundary of the "watershed" draining to the pit. This step is not essential if you have reason to believe that the pits in your DEM are real. This step can be circumvented by copying the raw DEM source data onto the file with suffix "fel" to simulate the output of "Pit Remove" without actually removing the pits. Also, if a few pits actually exist and so should not be removed, while at the same time others are believed to be artifacts that need to be removed, the actual pits should have "no data" elevation values inserted at their lowest point. "No data" values serve to define edges in the domain, and elevations are only raised to where flow is off an edge, so an internal "no data" value will stop a pit from being removed, if necessary.</SPAN></P></DIV>
+<h2 class="gp" xmlns="">Usage</h2>
+<div class="gpItemInfo" xmlns="">
+  <p><span class="noContent">There is no usage for this tool.</span></p>
+</div>
 <h2 class="gp" xmlns="">Syntax</h2>
-
-
-
-<div xmlns=""><span style="margin-top: -1.2em">PitRemove (Input Elev, Input_Number_of_Processes, Output_Pit_Removed_Elevation_Grid) </span><br /><br />
-
-
-
-<table width="100%" border="0" cellpadding="5">
-
-
-
-<tbody>
-
-
-
-<tr>
-
-
-
-<th width="30%">
-
-
-
-<b>Parameter</b>
-
-
-
-</th>
-
-
-
-<th width="50%">
-
-
-
-<b>Explanation</b>
-
-
-
-</th>
-
-
-
-<th width="20%">
-
-
-
-<b>Data Type</b>
-
-
-
-</th>
-
-
-
-</tr>
-
-
-
-<tr>
-
-
-
-<td class="info">Input Elev</td>
-
-
-
-<td class="info" align="left">
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN><SPAN>A digital elevation model (DEM) grid to serve as the base input for the terrain analysis and stream delineation.</SPAN></SPAN></P><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>Pits are generally assumed to be artifacts of the digitation process that interfere with the processing of flow across DEMs, and so are removed by raising their elevation to the point where they just drain. However, if a few actual pits are known, but others need to be removed, the actual pits should have "no data" elevation values inserted at their lowest point. "No data" values serve to define edges in the flow field, and elevations are only raised to where flow is off an edge, so an internal "no data" value will stop a pit from being removed, if necessary.</SPAN></P></DIV></td>
-
-
-
-<td class="info" align="left">Raster Layer </td>
-
-
-
-</tr>
-
-
-
-<tr>
-
-
-
-<td class="info">Input_Number_of_Processes</td>
-
-
-
-<td class="info" align="left">
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>The number of stripes that the domain will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes.</SPAN></P></DIV></td>
-
-
-
-<td class="info" align="left">Long</td>
-
-
-
-</tr>
-
-
-
-<tr>
-
-
-
-<td class="info">Output_Pit_Removed_Elevation_Grid</td>
-
-
-
-<td class="info" align="left">
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>A grid of elevation values with pits removed so that flow is routed off of the domain. Pits are low elevation areas in digital elevation models (DEMs) that are completely surrounded by higher terrain. They are generally taken to be artifacts of the digitation process that interfere with the processing of flow across DEMs. So, they are removed by raising their elevation to the point where they just drain.</SPAN></P></DIV></td>
-
-
-
-<td class="info" align="left">Raster Dataset</td>
-
-
-
-</tr>
-
-
-
-</tbody>
-
-
-
-</table>
+<div xmlns="">
+  <p style="margin-top: -1.2em">PitRemove (Input Elev, {Fill_Considering_only_for_4_way_neighbours}, {Input_Depression_Mask_Grid}, Input_Number_of_Processes, Output_Pit_Removed_Elevation_Grid) <br />
+    <br />
+  </p>
+  <table width="100%" border="0" cellpadding="5">
+    <tbody>
+      <tr>
+        <th> <b>Parameter</b> </th>
+        <th> <b>Explanation</b> </th>
+        <th> <b>Data Type</b> </th>
+      </tr>
+      <tr>
+        <td class="info">Input Elev</td>
+        <td class="info" align="left"><span style="font-weight: bold">Dialog Reference</span><br />
+          <div style="text-align:Left;">
+            <p style="font-size:16ptmargin:7 0 7 0;"><span><span>A digital elevation model (DEM) grid to serve as the base input for the terrain analysis and stream delineation.</span></span></p>
+            <p style="font-size:16ptmargin:7 0 7 0;"><span><span>Pits are generally assumed to be artifacts of the digitation process that interfere with the processing of flow across DEMs, and so are removed by raising their elevation to the point where they just drain. However, if a few actual pits are known, but others need to be removed, the actual pits should have &quot;no data&quot; elevation values inserted at their lowest point. &quot;No data&quot; values serve to define edges in the flow field, and elevations are only raised to where flow is off an edge, so an internal &quot;no data&quot; value will stop a pit from being removed, if necessary.</span></span></p>
+            <div>
+              <p><span /></span></p>
+            </div>
+          </div>
+          <p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+        <td class="info" align="left">Raster Layer</td>
+      </tr>
+      <tr>
+        <td class="info">Fill_Considering_only_for_4_way_neighbours (Optional) </td>
+        <td class="info" align="left"><span style="font-weight: bold">Dialog Reference</span><br />
+          <div style="text-align:Left;">
+            <div>
+              <p><span>Fill Considering only for four way neighbours</span></p>
+            </div>
+          </div>
+          <p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+        <td class="info" align="left">Boolean</td>
+      </tr>
+      <tr>
+        <td class="info">Input_Depression_Mask_Grid (Optional) </td>
+        <td class="info" align="left"><span style="font-weight: bold">Dialog Reference</span><br />
+          <div style="text-align:Left;">
+            <div>
+              <p><span>Indicator grid to identify cells that are real sinks and should not be filled</span></p>
+            </div>
+          </div>
+          <p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+        <td class="info" align="left">Raster Layer</td>
+      </tr>
+      <tr>
+        <td class="info">Input_Number_of_Processes</td>
+        <td class="info" align="left"><span style="font-weight: bold">Dialog Reference</span><br />
+          <div style="text-align:Left;">
+            <div>
+              <div>
+                <p><span>The number of stripes that the domain will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes.</span></p>
+              </div>
+            </div>
+          </div>
+          <p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+        <td class="info" align="left">Long</td>
+      </tr>
+      <tr>
+        <td class="info">Output_Pit_Removed_Elevation_Grid</td>
+        <td class="info" align="left"><span style="font-weight: bold">Dialog Reference</span><br />
+          <div style="text-align:Left;">
+            <p style="font-size:16ptmargin:7 0 7 0;"><span><span>A grid of elevation values with pits removed so that flow is routed off of the domain. Pits are low elevation areas in digital elevation models (DEMs) that are completely surrounded by higher terrain. They are generally taken to be artifacts of the digitation process that interfere with the processing of flow across DEMs. So, they are removed by raising their elevation to the point where they just drain.</span></span></p>
+            <div>
+              <p><span /></span></p>
+            </div>
+          </div>
+          <p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+        <td class="info" align="left">Raster Dataset</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br xmlns="" />
+
+
+
+<h2 class="gp" xmlns="">Code Samples</h2>
+<div class="gpItemInfo" xmlns="">
+  <p><span class="noContent">There are no code samples for this tool.</span></p>
+</div>
+<h2 class="gp" xmlns="">Tags</h2>
+<div class="gpItemInfo" xmlns="">
+  <p> <span class="noContent">There are no tags for this item.</span> </p>
+</div>
+<h2 class="gp" xmlns="">Credits</h2>
+<div class="gpItemInfo" xmlns="">
+  <p><span class="noContent">There are no credits for this item.</span></p>
+</div>
+<h2 class="gp" xmlns="">Use limitations</h2>
+<div class="gpItemInfo" xmlns="">
+  <p><span class="noContent">There are no use limitations for this item.</span></p>
 </div>
 
 

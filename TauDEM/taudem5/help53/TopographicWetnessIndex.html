@@ -1240,7 +1240,11 @@
 
 
 
-<h2 class="gp" xmlns="">Summary</h2><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;">Calculates the ratio of the the specific catchment area (contributing area) to slope. This provides an indication of depth to water table.</P>
+<h2 class="gp" xmlns="">Summary</h2><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;">Calculates the 
+ratio of the natural log of the specific catchment area (contributing 
+area) to slope, ln(a/S), or ln(a/tan (beta)). This provides an 
+indication of depth to water table.  No data values occur in locations 
+where slope is 0 (flat).</P>
 </DIV><br xmlns="" />
 
 
@@ -1318,7 +1322,16 @@
 
 
 
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;">A grid giving the contributing area value for each cell taken as its own contribution plus the contribution from upslope neighbors that drain in to it. Contributing area is counted in terms of the number of grid cells (or summation of weights). This grid can be generated using either the &quot;D8 Contributing Area&quot; tool or the &quot;D-Infinity Contributing Area&quot; tool.</P>
+<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;">A
+ grid of specific catchment area which is the contributing area per unit
+ contour length.  This should have units of length (area per contour 
+width).  It may be the output of the multiple flow direction D-Infinity 
+contributing area function in which case the function by default 
+(without an input weight grid) scales the contributing area in number of
+ cells by the cell size to produce specific catchment area.</span></p><p><span>If
+ D8 or some other contributing area evaluated using the number of cells 
+is used here it should first be scaled by cell size to give specific 
+catchment area in length units.</P>
 </DIV></td>
 
 
@@ -1393,7 +1406,8 @@
 
 
 
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;">A grid of the ratio of specific catchment area (contributing area) to slope.</P>
+<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;">A grid of the natural log of the ratio of specific catchment area (contributing area) to slope, ln(a/S).</span></p><p><span></span></p></div></div></div><p><span class="noContent">There is no python reference for this parameter.
+</P>
 </DIV></td>
 
 

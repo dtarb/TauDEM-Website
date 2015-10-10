@@ -94,8 +94,8 @@
 					</li>
 					<li>Dependencies</li>
 					<ul>
-					  <li>GDAL 111 (MSVC 2010) for 32 bit Windows PC</li>
-					  <li>GDAL 111 (MSVC 2010 Win 64) for 64 bit Windows PC</li>
+					  <li><a href="download.gisinternals.com/sdk/downloads/release-1600-gdal-1-11-1-mapserver-6-4-1/gdal-111-1600-core.msi">GDAL 111 (MSVC 2010) for 32 bit Windows PC</a></li>
+					  <li><a href="download.gisinternals.com/sdk/downloads/release-1600-x64-gdal-1-11-1-mapserver-6-4-1/gdal-111-1600-x64-core.msi">GDAL 111 (MSVC 2010 Win 64) for 64 bit Windows PC</a></li>
 					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=36045">Microsoft HPC Pack 2012 MS-MPI Redistributable Package</a></li>
 					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=8328">Microsoft Visual C++ 2010 SP1 Redistributable Package (x86)</a></li>
 					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=13523">Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)</a></li>
@@ -104,34 +104,49 @@
 					</ul>
 			  <h3>Installation Instructions</h3>
 					<ol>
-						<li>If you are using a Windows computer it is easiest to download and run the <a href="TauDEM530.exe">Complete Windows Installer</a>. This will Install TauDEM and all its dependencies. The ArcGIS toolbox is included and should work for ArcGIS 10.2 or higher (tested from 10.2 up to 10.3.1). Note that installing this does not require ArcGIS. Without ArcGIS you will  be able to run all the functions from the command line, but will not be able to use the ArcGIS toolbox.</li>
-						<li>To activate the TauDEM Toolbox in ArcGIS:
-                          <ol>
-                            <li>Open ArcMap. If the ArcToolbox Window is not open, click on the &quot;Show/Hide ArcToolbox Window&quot; icon in the Standard Toolbar.</li>
-                            <li>Right click on ArcToolbox at the top of the window. Select Add Toolbox... .</li>
-                            <li>Browse to the TauDEM install directory (e.g. C:\Program Files\TauDEM\).</li>
-                            <li>Click on the TauDEM_Tools.tbx file, and click Open.</li>
-                            <li>The TauDEM Toolbox should now be visible in the list of toolboxes.</li>
-                            <li>If you wish to save this configuration, right click on ArcToolbox, select Save to Default.</li>
-                            <li>This needs to be done for each user who wishes to use TauDEM.</li>
-                          </ol>
-						</li>
-						<li>If you are using a Linux computer you will need to download the source code from GitHub and compile for your system. The ArcGIS toolbox is only available for Windows Systems with ArcGIS.						</li>
+						<li>If you are using a Windows computer it is easiest to download and run the <a href="TauDEM530.exe">Complete Windows Installer</a>. During the install you will need to do the following:</li>
 						<ul>
-						  <li>You will need to install and link to the GDAL Library.</li>
-						  <li>You will need to do install and link to an MPI library such as MPICH2.</li>
-				      </ul>
-						<li>If you have an earlier version of ArcGIS (pre 10.2) and want to use the ArcGIS toolbox you will need to download an <a href="../versions.html">earlier version of TauDEM</a>. The command line executables with this version produce files that can be used with any version of ArcGIS.</li>
-					  <li>To install components separately:					    </li>
-						<ul>
-						  <li>Download and install the version of the GDAL library valid for your system.</li>
-						  <li>Download and install the Microsoft Visual C++ Redistrbutable packages appropriate for your system. 64 bit systems require both x86 and x64 redistributables.</li>
-						  <li>Download and install the Microsoft HPC Pack 2012 MS-MPI Redistributable Package.</li>
-						  <li>Download TauDEM 5.3 Command Line Executables for your system.</li>
-						  <li>Download ArcGIS toolbox and python scripts if desired.</li>
-						  <li>Set paths on your system to the locations of GDAL components (e.g. C:\GDAL;C:\Program Files\GDAL), MPI programs (e.g. C:\Program Files\Microsoft HPC Pack 2012\Bin\) and TauDEM programs (e.g. C:\Program Files\TauDEM\TauDEM5Exe).</li>
+						  <li>Click yes to the licensing agreements associated with the dependencies.</li>
+						  <li>When prompted to Choose Setup Type for GDAL, choose “Typical”. </li>
 					  </ul>
-					</ol>
+					
+					
+					  <p>Note that the redistributables listed above will only be installed if they are required for your platform and are not already installed. Note that the installer will also add firewall exceptions to allow TauDEM programs to run. These allow MPI interprocess communication used in the parallel computations.  This is communication within your computer and not over any external network.   The file <a href="https://github.com/dtarb/TauDEM/blob/master/WindowsInstaller/Firewall.bat">Firewall.bat</a> shows the exceptions being set. The installer will also add the following path entries: </p>
+			          <ul>
+			            <li>C:\Program Files\Microsoft HPC Pack 2012\Bin\ </li>
+			            <li>C:\GDAL </li>
+			            <li>C:\Program Files\GDAL </li>
+			            <li>C:\Program Files\TauDEM\TauDEM5Exe </li>
+		              </ul>
+			  <p>The TauDEM Tools.tbx ArcGIS toolbox is included with the install and should work for ArcGIS 10.2 or higher (tested from 10.2 up to 10.3.1). Note that the installation does not require ArcGIS. Without ArcGIS you will  be able to run all the functions from the command line, but will not be able to use the ArcGIS toolbox.</p>
+					
+					  <li>To activate the TauDEM Toolbox in ArcGIS:
+				      </li>
+			  		  <ol>
+					    <li>Open ArcMap. If the ArcToolbox Window is not open, click on the &quot;Show/Hide ArcToolbox Window&quot; icon in the Standard Toolbar.</li>
+					    <li>Right click on ArcToolbox at the top of the window. Select Add Toolbox... .</li>
+					    <li>Browse to the TauDEM install directory (e.g. C:\Program Files\TauDEM\).</li>
+					    <li>Click on the TauDEM_Tools.tbx file, and click Open.</li>
+					    <li>The TauDEM Toolbox should now be visible in the list of toolboxes.</li>
+					    <li>If you wish to save this configuration, right click on ArcToolbox, select Save to Default.</li>
+					    <li>This needs to be done for each user who wishes to use TauDEM.</li>
+				      </ol>
+					  <li>If you are using a Linux computer you will need to download the source code from GitHub and compile for your system. The ArcGIS toolbox is only available for Windows Systems with ArcGIS.						</li>
+					  <ul>
+					    <li>You will need to install and link to the<a href="http://www.gdal.org/"> GDAL Library</a>. We have successfully used <a href="http://download.osgeo.org/gdal/gdal-1.9.2.tar.gz">http://download.osgeo.org/gdal/gdal-1.9.2.tar.gz</a></li>
+					    <li>You will need to do install and link to an MPI library such as <a href="https://www.open-mpi.org/">Open MPI</a>. We have sucessfully used <a href="https://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.1.tar.gz">https://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.1.tar.gz.</a>.</li>
+				      </ul>
+					  <li>If you have an earlier version of ArcGIS (pre 10.2) and want to use the ArcGIS toolbox you will need to download an <a href="../versions.html">earlier version of TauDEM</a>. The command line executables with this version produce files that can be used with any version of ArcGIS.</li>
+					  <li>To install components separately:					    </li>
+					  <ul>
+					    <li>Download and install the version of the GDAL library valid for your system.</li>
+					    <li>Download and install the Microsoft Visual C++ Redistrbutable packages appropriate for your system. 64 bit systems require both x86 and x64 redistributables.</li>
+					    <li>Download and install the Microsoft HPC Pack 2012 MS-MPI Redistributable Package.</li>
+					    <li>Download TauDEM 5.3 Command Line Executables for your system.</li>
+					    <li>Download ArcGIS toolbox and python scripts if desired.</li>
+					    <li>Set paths on your system to the locations of GDAL components (e.g. C:\GDAL;C:\Program Files\GDAL), MPI programs (e.g. C:\Program Files\Microsoft HPC Pack 2012\Bin\) and TauDEM programs (e.g. C:\Program Files\TauDEM\TauDEM5Exe).</li>
+				      </ul>
+			  </ol>
 					
 			</div>
 			</td>

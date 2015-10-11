@@ -61,8 +61,12 @@
         <TD class="info">Moves outlet points that are off a stream raster grid, downslope along the D8 flow direction until a stream raster grid is encountered.  Input is a flow direction grid, a stream raster grid and an outlets shapefile.  Output is a new outlets shapefile where each point has been moved to coincide with the stream raster grid, if possible.  A field 'dist_moved' is added to the new outlets shapefile to indicate the changes made to each point.  Points that are already on the stream raster (src) grid are not moved and their 'dist_moved' field is assigned a value 0.  Points that are initially not on the stream raster grid are moved by sliding them downslope along the D8 flow direction until one of the following occurs: a.) A stream raster grid cell is encountered before traversing the max_dist number of grid cells.  In which case, the point is moved and the 'dist_moved' field is assigned a value indicating how many grid cells the point was moved. b.) More than the max_number of grid cells are traversed, or the traversal ends up going out of the domain (i.e., a no data D8 flow direction value is encountered). In which case, the point is not moved and the 'dist_moved' field is assigned a value of -1.</TD>
     </TR>
     <TR>
-        <TD class="info">Stream Reach and Watershed</TD>
-        <TD class="info">This function produces a vector network and shapefile from the stream raster grid. The flow direction grid is used to connect flow paths along the stream raster.  The Strahler order of each stream segment is computed.  The subwatershed draining to each stream segment (reach) is also delineated and labeled with the value identifier that corresponds to the WSNO (watershed number) attribute in the stream reach shapefile.</TD>
+      <TD class="info">Stream Reach and Watershed</TD>
+      <TD class="info">This function produces a vector network and shapefile from the stream raster grid. The flow direction grid is used to connect flow paths along the stream raster.  The Strahler order of each stream segment is computed.  The subwatershed draining to each stream segment (reach) is also delineated and labeled with the value identifier that corresponds to the WSNO (watershed number) attribute in the stream reach shapefile.</TD>
+    </TR>
+    <TR>
+      <TD class="info">Gage Watershed</TD>
+      <TD class="info">Calculates Gage watersheds grid. Each grid cell is labeled with the identifier (from column id) of the gage to which it drains directly without passing through any other gages.</TD>
     </TR>
     <TR>
         <TD class="info">Watershed Grid to Shapefile</TD>

@@ -1,7 +1,7 @@
 <% Response.Buffer=true  %>
 <html>
 <head>
-<TITLE>TauDEM GP Toolbox Download</TITLE>
+<TITLE>TauDEM Download</TITLE>
 </head>
 <body bgcolor="#FFFFFF">
 <%

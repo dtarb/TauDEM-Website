@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>David Tarboton: Hydrology Research Group-Terain Analysis Using Digital Elevation Models (TauDEM)</title>
+	<meta name="description" content="David Tarboton: Hydrology Research Group - Terain Analysis Using Digital Elevation Models (TauDEM)" />
+	<meta name="keywords" content="David Tarboton: Hydrology Research Group, Utah State Unversity, USU, hydrology, research, academic, higher education, terain, elevation, digital elevation models, DEM, ArcGIS, toolbar, geoprocessing" />
+	<meta name="author" content="Utah State Unversity, David Tarboton Hydrologic Research Group - 2006-2007" />
+	<meta name="language" content="en" />
+	<meta name="robots" content="follow, all" />
+	<meta name="revisit-after" content="5 days" />
+
+  	<link href="../../images/favicon.ico" rel="shortcut icon" />
+	<link href="../../tarboton.css" rel="stylesheet" type="text/css"/>
+  </head>
+<body>
+	<span class="wordmark"><a href="http://www.usu.edu/"><img src="../../images/wordmark.jpg" alt="Utah State University wordmark" width="225" height="56" border="0" href="../../images/favicon.ico" rel="shortcut icon" /></a></span>
+	<div class="titlelogo"><a href="http://www.neng.usu.edu/dtarb"><img src="../../images/dthrgword.gif" alt="David Tarboton: Hydrology Research Group Wordmark" width="360" height="48" border="0" align="left"></a></div>
+	<div class="mainHeader">
+		<div class="wordmark"></div>
+		<div class="topNav">
+			<ul>
+				<li>
+					<a href="http://www.usu.edu/">USU home</a>
+				<li>
+					<a href="http://www.usu.edu/search/">A-Z index</a>
+				<li>
+					<a href="http://www.usu.edu/calendar/">calendars</a>
+				<li>
+					<a href="http://www.usu.edu/myusu/">MyUSU</a>
+				<li>
+					<a href="http://www.usu.edu/contact/">contact</a>
+				<li>
+					<a href="http://www.usu.edu/directory/">directory</a>
+                <li> 
+                	<a href="http://www.usu.edu/search/">search USU</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="mainNav">
+		<div class="signIn">
+		</div>
+	</div>
+	<span class="wordmark"></span>
+	<table width="100%">
+		<tr valign="top">
+			<td class="leftLine"><img src="../../images/spacer.gif" width="1" height="1" alt=""></td>
+			<td class="main">
+				<div class="banner"  >
+                <table  >
+                    <tr>
+                        <td width="360px"><img src="../../images/taudem5logo.gif" alt="TauDEM 5 logos" width="350" height="74" style="float:left"/></td>
+                        <td rowspan="2">TauDEM Version 5</td>
+                    </tr>
+                    <tr>
+                        <td style="margin-right: 20px;  padding: 6px; padding-left: 10px; text-align: left "><span style="font-size: 14px; font-weight: bold; font-style:italic">Hydrologic terrain analysis  with parallel processing<br />
+                            developed with  support from the US Army Corps of<br />
+                            Engineers, System Wide Water Resources Program</span></td>
+                    </tr>
+                </table>
+				</div>
+				<div class="navTrail">
+                	<div class="menu3" align="center" style="font-weight:bold">
+                    <table width="98%">
+                        <tr>
+                            <td align="center"><a href=".">Home</td>
+                            <td align="center"><a href="downloads.html">Downloads</a></td>
+                            <td align="center"><a href="documentation.html">Documentation</a></td>
+                            <td align="center"><a href="support.html">Support</a></td>
+                            <td align="center"><a href="updates.html">Updates</a></td>
+                            <td align="center"><a href="../versions.html">Previous Versions</a></td>
+                            <td align="center"><a href="license.html">License</a></td>
+                            <td align="center"><a href="publications.html">Publications</a></td>                            <td align="center"><a href="acknowledge.html">Acknowledgements</a></td>
+
+                        </tr>
+                    </table>
+                    </div>
+					<div class="print">
+					</div>
+			</div>
+			<div class="content">
+				<h3>Downloads</h3>
+			
+					<ul>
+					<li><a href="TauDEM530_prerelease.exe">TauDEM 5.3 Complete Windows installer </a>(This includes executables compiled for Windows, ArcGIS toobox and Python Scripts developed for ArcGIS 10.0 or higher, GDAL Library and Microsoft redistributables required to use MS-MPI HPC Pack. Note that installing this does not require ArcGIS so on a Windows system with or without ArcGIS the simplest way to get going is to run this installer. Without ArcGIS you will  be able to run all the functions from the command line, but will not be able to use the ArcGIS toolbox.)					  </li>
+					<li>Separate components
+					  <ul>
+					    <li><a href="TauDEM530exeWin32.zip">TauDEM 5.3 Command Line Executables for 32 bit Windows PC</a></li>
+					    <li><a href="TauDEM530exeWin64.zip">TauDEM 5.3 Command Line Executables for 64 bit Windows PC</a></li>
+					    <li><a href="pyfiles.zip">ArcGIS toolbox and Python Scripts (Developed for ArcGIS 10.0 or higher)</a></li>
+				      </ul>
+					</li>
+					<li>Dependencies</li>
+					<ul>
+					  <li><a href="http://download.gisinternals.com/sdk/downloads/release-1600-gdal-1-11-1-mapserver-6-4-1/gdal-111-1600-core.msi">GDAL 111 (MSVC 2010) for 32 bit Windows PC</a></li>
+					  <li><a href="http://download.gisinternals.com/sdk/downloads/release-1600-x64-gdal-1-11-1-mapserver-6-4-1/gdal-111-1600-x64-core.msi">GDAL 111 (MSVC 2010 Win 64) for 64 bit Windows PC</a></li>
+					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=36045">Microsoft HPC Pack 2012 MS-MPI Redistributable Package</a></li>
+					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=8328">Microsoft Visual C++ 2010 SP1 Redistributable Package (x86)</a></li>
+					  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=13523">Microsoft Visual C++ 2010 SP1 Redistributable Package (x64)</a></li>
+					  </ul>
+					<li><a href="https://github.com/dtarb/TauDEM">Source Code                     in GitHub</a><li><a href="../taudemdata">Folder with data for testing TauDEM</a></li>
+					</ul>
+			  <h3>Installation Instructions</h3>
+					<ol>
+						<li>If you are using a Windows computer it is easiest to download and run the <a href="TauDEM530_prerelease.exe">Complete Windows Installer</a>. During the install you will need to do the following:</li>
+						<ul>
+						  <li>Click yes to the licensing agreements associated with the dependencies.</li>
+						  <li>When prompted to Choose Setup Type for GDAL, choose “Typical”. </li>
+					  </ul>
+					
+					
+					  <p>Note that the redistributables listed above will only be installed if they are required for your platform and are not already installed. Note that the installer will also add firewall exceptions to allow TauDEM programs to run. These allow MPI interprocess communication used in the parallel computations.  This is communication within your computer and not over any external network.   The file <a href="https://github.com/dtarb/TauDEM/blob/master/WindowsInstaller/Firewall.bat">Firewall.bat</a> shows the exceptions being set. The installer will also add the following path entries: </p>
+			          <ul>
+			            <li>C:\Program Files\Microsoft HPC Pack 2012\Bin\ </li>
+			            <li>C:\GDAL </li>
+			            <li>C:\Program Files\GDAL </li>
+			            <li>C:\Program Files\TauDEM\TauDEM5Exe </li>
+		              </ul>
+			  <p>The TauDEM Tools.tbx ArcGIS toolbox is included with the install and should work for ArcGIS 10.0 or higher (tested on 10.0, 10.2.2 and 10.3.1). Note that the installation does not require ArcGIS. Without ArcGIS you will  be able to run all the functions from the command line, but will not be able to use the ArcGIS toolbox.</p>
+					
+					  <li>To activate the TauDEM Toolbox in ArcGIS:
+				      </li>
+			  		  <ol>
+					    <li>Open ArcMap. If the ArcToolbox Window is not open, click on the &quot;Show/Hide ArcToolbox Window&quot; icon in the Standard Toolbar.</li>
+					    <li>Right click on ArcToolbox at the top of the window. Select Add Toolbox... .</li>
+					    <li>Browse to the TauDEM install directory (e.g. C:\Program Files\TauDEM\).</li>
+					    <li>Click on the TauDEM_Tools.tbx file, and click Open.</li>
+					    <li>The TauDEM Toolbox should now be visible in the list of toolboxes.</li>
+					    <li>If you wish to save this configuration, right click on ArcToolbox, select Save to Default.</li>
+					    <li>This needs to be done for each user who wishes to use TauDEM.</li>
+				      </ol>
+					  <li>If you are using a Linux computer you will need to download the source code from GitHub and compile for your system. The ArcGIS toolbox is only available for Windows Systems with ArcGIS.						</li>
+					  <ul>
+					    <li>You will need to install and link to the<a href="http://www.gdal.org/"> GDAL Library</a>. We have successfully used <a href="http://download.osgeo.org/gdal/gdal-1.9.2.tar.gz">http://download.osgeo.org/gdal/gdal-1.9.2.tar.gz</a></li>
+					    <li>You will need to do install and link to an MPI library such as <a href="https://www.open-mpi.org/">Open MPI</a>. We have sucessfully used <a href="https://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.1.tar.gz">https://www.open-mpi.org/software/ompi/v1.8/downloads/openmpi-1.8.1.tar.gz.</a>.</li>
+				      </ul>
+					  <li>If you have an earlier version of ArcGIS (pre 10.0) and want to use the ArcGIS toolbox you will need to download an <a href="../versions.html">earlier version of TauDEM</a>. The command line executables with this version produce files that can be used with any version of ArcGIS.</li>
+					  <li>To install components separately:					    </li>
+					  <ul>
+					    <li>Download and install the version of the GDAL library valid for your system.</li>
+					    <li>Download and install the Microsoft Visual C++ Redistrbutable packages appropriate for your system. 64 bit systems require both x86 and x64 redistributables.</li>
+					    <li>Download and install the Microsoft HPC Pack 2012 MS-MPI Redistributable Package.</li>
+					    <li>Download TauDEM 5.3 Command Line Executables for your system.</li>
+					    <li>Download ArcGIS toolbox and python scripts if desired.</li>
+					    <li>Set paths on your system to the locations of GDAL components (e.g. C:\GDAL;C:\Program Files\GDAL), MPI programs (e.g. C:\Program Files\Microsoft HPC Pack 2012\Bin\) and TauDEM programs (e.g. C:\Program Files\TauDEM\TauDEM5Exe).</li>
+				      </ul>
+			  </ol>
+					
+			</div>
+			</td>
+<td class="gutter">&nbsp;</td>
+			<td class="panel">
+				<script type="text/javascript">
+					var path='../../' <!--this sets the addressing for getting to the root --> 
+				</script>
+				<script src="/contents.js" type="text/javascript"> </script>
+            <script type="text/javascript" language="JavaScript">menu_software();</script>
+				<!--<div class="menuHeading"></div>
+				<div class="menu">
+					<div class="nav"></div>
+					<div class="nav"></div>
+					<div class="nav"></div>
+				</div> -->
+			</td>
+		</tr>
+		<tr>
+			<td class="leftLine"><img src="../../images/spacer.gif" width="1" height="1"></td>
+			<td class="footer"><ul>
+				<li>
+					&copy; 2006-2015 &mdash; <a href="http://www.neng.usu.edu/cee/faculty/dtarb/"></a>David Tarboton Hydrology Research Group, <a href="http://www.usu.edu/">Utah State University</a>
+				<li>
+					<a href="mailto:dtarb@usu.edu">webmaster</a></li></ul>
+			</td>
+			<td class="footerRight"><img src="../../images/shadow_footer.gif" width="8" height="67" alt=""></td>
+			<td class="footerRight"><img src="../../images/footer_right.gif" width="168" height="67" alt=""></td>
+		</tr>
+	</table>
+</body>
+</html>

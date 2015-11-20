@@ -69,6 +69,10 @@
       <TD class="info">Calculates Gage watersheds grid. Each grid cell is labeled with the identifier (from column id) of the gage to which it drains directly without passing through any other gages.</TD>
     </TR>
     <TR>
+      <TD class="info">ConnectDown</TD>
+      <TD class="info">For each zone in a raster entered (e.g. HUC converted to grid) it identifies the point with largest AreaD8. This is taken to be the outlet. A shapefile is created.Using flow directions each outlet is moved downflow a specified number of grid cells which is user controllable (Default is 1). The ID of the location the point has moved to is taken as iddown. Two shapefiles are created one with the initial points and one with the moved points. Both contain id, iddown and AreaD8. </TD>
+    </TR>
+    <TR>
         <TD class="info">Watershed Grid to Shapefile</TD>
         <TD class="info">Translates the grid watershed representation into a polygon shapefile. Each shape in the Watershed Shapefile is assigned an identifier the same as the value identifier in the grid from which it was created, that in turn maps back to WSNO in the Stream Shape File.</TD>
     </TR>

@@ -63,9 +63,11 @@
             <h3> TauDEM/TARDEM Versions</h3>
             <p>See <a href="taudem5/updates.html">Update Notes</a> for additional details on each version. </p>
             <ul>
-            	<li><a href="taudem5/index.html">TauDEM 5.3</a> (October 2015)  &mdash; Uses GDAL library for rasters.  Adds functionality to perform calculations in geographic coordinates.               
-          	  Version 5.3 combines the separate code bases that were present to support version 5.1.x (single files) and 5.2 (multiple files).
-           	  <li><a href="https://github.com/dtarb/TauDEM/releases/tag/5MF.0.0">TauDEM 5.2</a> (August 2014) &mdash;                
+           	  <li><a href="taudem5/index.html">TauDEM 5.3.1</a> (November 2015)  &mdash; Uses OGR library for vectors.  
+                
+            	<li><a href="taudem5/index.html">TauDEM 5.3.0</a> (October 2015)  &mdash; Uses GDAL library for rasters.  Adds functionality to perform calculations in geographic coordinates.               
+            	  Version 5.3 combines the separate code bases that were present to support version 5.1.x (single files) and 5.2 (multiple files).
+          	  <li><a href="https://github.com/dtarb/TauDEM/releases/tag/5MF.0.0">TauDEM 5.2</a> (August 2014) &mdash;                
             	Multifile version released from GItHub. This approach has been discontinued and this version deprecated in favor of using GDAL starting with version 5.3.  GDAL accommodates large files (including BigTIFF GeoTIFF and several others).
        	      <li><a href="taudem5/downloads5.1.html">TauDEM 5.1.1 (August 2013), 5.1.2 (January 2014) and Multifile (August 2013)</a> &mdash;                Compiled to use Microsoft HPC Pack 2012 MS-MPI Redistributable Package (5.1.1), switched from old shapefile code to shapelib 1.3.0 from <a href="http://download.osgeo.org/shapelib">http://download.osgeo.org/shapelib</a>/ for reading and writing of shapefiles (5.1.2). Multifile version (5.2) released as command line executables.  This overcame the 4 GB GeoTIFF file size limit by breaking the domain into multiple files that collectively represented the grid.  Folders containing multiple files were provided as input arguments instead of files.
                 

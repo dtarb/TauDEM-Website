@@ -1,0 +1,73 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="styles/81Help.css">
+<script type="text/javascript" language="JavaScript" src="scripts/81Help.js"></script>
+<script language="JavaScript1.2"></script>
+<title></title>
+</head>
+<body>
+<table style="margin-top:-1em; margin-bottom:0; padding:0; margin-left:-1em">
+    <tr>
+        <td style="background:white"><img width="875" height="70" alt="TauDEM Toolbox banner" src="images/AHBanner_TauDEMToolbox.gif"></td>
+    </tr>
+</table>
+<h1>Specialized Grid Analysis Toolset</h1>
+<p></p>
+<p>The Specialized Grid Analysis toolset contains more advanced functions that can be invoked as needed. The following table lists the tools in the toolset followed by a brief description of each.</p>
+<Table width="95%" border="0" cellpadding="5">
+    <TR>
+        <TH>Tool</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Avalanche Runout</TD>
+        <TD class="info">Identifies an avalanche's affected area and the flow path length to each cell in that affected area.  All cells downslope from each source area cell, up to the point where the slope from the source to the affected area is less than a threshold angle called the Alpha Angle can be in the affected area.   This tool uses the D-infinity multiple flow direction method for determining flow direction.  This will likely cause very small amounts of flow to be dispersed to some downslope cells that might overstate the affected area, so a threshold proportion can be set to avoid this excess dispersion.  The flow path length is the distance from the cell in question to the source cell that has the highest angle.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Concentration Limited Accumulation</TD>
+        <TD class="info">Creates a grid of the concentration of a substance at each location in the domain, where the supply of substance from a supply area is loaded into the flow at a concentration or solubility threshold.  The flow is first calculated as a D-infinity weighted contributing area of an input Effective Runoff Weight Grid (notionally excess precipitation). The concentation of substance over the supply area (indicator grid) is at the concentration threshold. As the substance moves downslope with the D-infinity flow field, it is subject to first order decay in moving from cell to cell as well as dilution due to changes in flow. The decay multiplier grid gives the fractional (first order) reduction in quantity in moving from grid cell x to the next downslope cell.  If the outlets shapefile is used, the tool only evaluates the part of the domain that contributes flow to the locations given by the shapefile.  This is useful for a tracking a contaminant or compound from an area with unlimited supply of that compound that is loaded into a flow at a concentration or solubility threshold over a zone and flow from the zone may be subject to decay or attenuation.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Decaying Accumulation</TD>
+        <TD class="info">Creates a grid of the accumulated quantity at each location in the domain where the quantity accumulates with the D-infinity flow field, but is subject to first order decay in moving from cell to cell. By default, the quantity contribution of each grid cell is the cell length to give a per unit width accumulation, but can optionally be expressed with a weight grid. The decay multiplier grid gives the fractional (first order) reduction in quantity in accumulating from grid cell x to the next downslope cell.  If the outlets feature is used the function is only evaluated on that part of the domain that contributes flow to the locations given by the feature.  Useful for a tracking contaminant or compound subject to decay or attenuation.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Distance Down</TD>
+        <TD class="info">Calculates the distance downslope to a stream using the D-infinity flow model. The D-infinity flow model is a multiple flow direction model, because the outflow from each grid cell is proportioned between up to 2 downslope grid cells.  As such, the distance from any grid cell to a stream is not uniquely defined.  Flow that originates at a particular grid cell may enter the stream at a number of different cells.  The statistical method may be selected as the longest, shortest or weighted average of the flow path distance to the stream.  Also one of several ways of measuring distance may be selected: the total straight line path (Pythagoras), the horizontal component of the straight line path, the vertical component of the straight line path, or the total surface flow path.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Distance Up</TD>
+        <TD class="info">Calculates the distance from each grid cell up to the ridge cells along the reverse D-infinity flow directions. Ridge cells are defined to be grid cells that have no contribution from grid cells further upslope. Given the convergence of multiple flow paths at any grid cell, any given grid cell can have multiple upslope ridge cells. There are three statictical methods that this tool can use: maximum distance, minimum distance and waited flow average over these flow paths. A variant on the above is to consider only grid cells that contribute flow with a proportion greater than a user specified threshold (t) to be considered as upslope of any given grid cell. Setting t=0.5 would result in only one flow path from any grid cell and would give the result equivalent to a D8 flow model, rather than D-infinity flow model, where flow is proportioned between two downslope grid cells.  Finally there are several different optional paths that can be measured:  the total straight line path (Pythagoras), the horizontal component of the straight line path, the vertical component of the straight line path, or the total surface flow path.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Reverse Accumulation</TD>
+        <TD class="info">This tool works in a similar way to evaluation of weighted Contributing area, except that the accumulation is by propagating the weight loadings upslope along the reverse of the flow directions to accumulate the quantity of weight loading downslope from each grid cell.  The function also reports the maximum value of the weight loading downslope from each grid cell in the Maximum Downslope grid.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Transport Limited Accumulation</TD>
+        <TD class="info">Calculates the transport and deposition of a substance (e.g. sediment) that may be limited by both supply and the capacity of the flow field to transport it.  This function accumulates substance flux (e.g. sediment transport) subject to the rule that transport out of any grid cell is the minimum between supply and transport capacity, Tcap.  The total supply at a grid cell is calculated as the sum of the transport in from upslope grid cells, Tin, plus the local supply contribution, E (e.g. erosion).  This function also outputs deposition, D, calculated as total supply minus actual transport.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D-Infinity Upslope Dependence</TD>
+        <TD class="info">Quantifies the amount each grid cell in the domain contributes to a destination set of grid cells.  D-Infinity flow directions proportion flow from each grid cell between multiple downslope grid cells.  Following this flow field downslope the amount of flow originating at each grid cell that reaches the destination zone is defined.</TD>
+    </TR>
+    <TR>
+        <TD class="info">D8 Distance to Streams</TD>
+        <TD class="info">Computes the horizontal distance to stream for each grid cell, moving downslope according to the D8 flow model, until a stream grid cell is encountered.</TD>
+    </TR>
+    <TR>
+        <TD class="info">Slope Average Down</TD>
+        <TD class="info">Computes slope in a D8 downslope direction averaged over a user selected distance.</TD>
+    </TR>
+    <TR>
+      <TD class="info">Slope Over Area Ratio</TD>
+      <TD class="info">Calculates the ratio of the slope to the specific catchment area (contributing area).  This is algebraically related to the more common ln(a/tan beta) wetness index, but contributing area is in the denominator to avoid divide by 0 errors when slope is 0.</TD>
+    </TR>
+    <TR>
+      <TD class="info">Topographic Wetness Index</TD>
+      <TD class="info">Calculates the  ratio of the natural log of the specific catchment area (contributing  area) to slope, ln(a/S), or ln(a/tan (beta)). This provides an  indication of depth to water table.  No data values occur in locations  where slope is 0 (flat).</TD>
+    </TR>
+</table>
+</body>
+</html>

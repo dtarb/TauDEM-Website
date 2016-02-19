@@ -1,0 +1,239 @@
+body
+		{
+  color: #000000;
+  background: #FFFFFF;
+  font-size: 72%;
+  font-family: Verdana, Arial, Helvetica, Sans Serif;
+  margin-left: 4%;
+}
+
+a:link
+		{
+	color: #000066;
+}
+	
+a:visited
+		{ color: #006633; }
+
+a:active
+		{
+	color: #666666;
+}
+
+a:hover
+		{
+	color: #9C3000 ;
+}
+
+/*These links are for the letters in the glossary*/
+A.gloss:LINK {
+	color : navy;
+	text-decoration: none;
+}
+A.gloss:VISITED {
+	color : navy;
+	text-decoration:none;
+}
+
+A.gloss:HOVER { 
+color: #006633; }
+/* link styles for popup glossary words */
+A.popup:link {
+	text-decoration: none;
+	color: navy;
+	font-weight: bold;
+}
+
+A.popup:visited {
+	text-decoration: none;
+	color: navy;
+	font-weight: bold;
+}
+
+A.popup:hover { 
+font-weight: bold;
+text-decoration: underline; }
+
+/*link styles for navbar in welcome page*/
+A.navbar:link
+{
+	font: bold 90% Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color : White;
+	text-decoration : none;
+}
+
+A.navbar:visited
+{
+	font: bold 90% Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-decoration : none;
+	color: White;
+}
+A.navbar:hover
+{
+	color: Yellow;
+	text-decoration : underline;
+}
+
+/* Topic headings */
+h1
+		{
+	font-size: 150%;
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, Sans Serif;
+	margin-bottom: .25em;
+	margin-top: -.01em;
+}
+h1.blue
+	{
+	color:navy
+}
+
+/* Subheadings */
+h2
+		{
+	font-family: Verdana, Arial, Helvetica, Sans Serif;
+	font-size: 120%;
+	font-weight: bold;
+	margin-top: 1.1 em;
+	margin-bottom: .5 em;
+}
+
+/* For headings used in graphic callouts */
+h2.callout
+		{margin-left:.5em;
+	margin-right:.5em;
+	color:navy;
+}
+
+.glossheading
+	{
+	border-top: solid;
+}
+
+/* For tip headings and and third-level headings */
+h3		{
+    font-family: Verdana, Arial, Helvetica, Sans Serif;
+	font-size: 100%;
+	margin-top: 2%;
+	margin-bottom: 1%;
+}
+
+p
+		{font-family: Verdana, Arial, Helvetica, Sans Serif;
+		 margin-top: .6em; 
+		margin-bottom: .6em; }
+		
+P.Break
+		{line-height: 1em;}
+		
+		
+/**used for graphic callouts **/	
+p.callout
+		{font-family: Verdana, Arial, Helvetica, Sans Serif;
+		 margin-top: .6em; 
+		margin-bottom: .6em; 
+		color: Navy;
+		margin-left:0.5em;	
+		margin-right:0.5em;
+}
+
+		
+/**used for Related topics links **/
+p.reltopics
+ 	{font-family: Verdana, Arial, Helvetica, Sans Serif;	
+	 margin-top : 0;
+	margin-bottom : 0.5em;}
+	
+p.button
+{
+	margin-bottom:-0.75em;
+}
+	
+p.arcinfo
+	{
+	font-family: Verdana, Arial, Helvetica, Sans Serif;
+	font-size: 90%;
+	font-weight: bold;
+	margin-top: 0;
+	color: #9C3000 
+}
+span.arcinfo
+	{
+	font-size: 82%;
+	font-style: italic; 
+}
+
+/* for procedures and numbered lists within concepts */
+ol
+		{ margin-top: .5em; 
+		margin-bottom: 0em; 
+		margin-left: 2em }
+
+/* for any bulleted lists including tips and notes */
+ul
+		{ margin-top: .6em; 	
+		margin-bottom: 0em;
+		margin-left: 1.5em; 
+		list-style-type: disc; }
+
+li
+		{ margin-bottom: .7em;
+		margin-left: 0em; }
+
+/*definition lists*/
+dd
+		{ margin-bottom: 0em; 
+		margin-left: 1.5em; } 
+
+
+dt
+		{
+	margin-top: 2em;
+	font-weight : bold;
+}
+
+pre
+		{ margin-top: 0em;
+		margin-bottom: 1.5em; }
+
+/* must add table parameters in tag. For tips, use the following: <table width="85%" border="0" cellpadding="5">. For regular data/informational tables, use: <table width="95%" border="0" cellpadding="5">*/
+table
+		{
+	font-family: Verdana, Arial, Helvetica, Sans Serif;	
+	font-size: 100%;
+	margin-top: .75em;
+	margin-bottom: .75em;
+	padding: 5pt 8pt;
+}
+		
+tr
+		{ vertical-align: top; }
+		
+		
+/* use for tip boxes only */
+td
+		{
+	background: #ECF3FF;
+	vertical-align: top;
+}
+
+/* use for informational tables (grey) */
+td.info
+		{  
+	background: #EEEEEE;
+	color: black;
+}
+
+/* use for information table headings (darkish grey) */
+th
+		{
+	text-align: left;
+	background: #dddddd;
+	vertical-align: bottom;
+}
+
+PRE.code
+		{
+	margin-top: 1.5em;  
+	margin-bottom: 0em;
+}

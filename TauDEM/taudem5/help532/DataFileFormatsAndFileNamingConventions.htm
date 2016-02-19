@@ -30,7 +30,7 @@ However, TauDEM5.3  writes output result only in TIFF format.
 <H2>OGR files</H2>
 <P>TauDEM5.3.2 supports OGR format files which  are used  for the following purposes: </P>
 <UL>
-    <LI>Outlets file - A point feature giving the location of outlets or internal monitoring points. The attribute "id" may be used to specify an identifier (e.g. stream flow recorder number) associated with these monitoring points. The value -1 is reserved to indicate "no identifier". There is no default filename for outlet shapefiles.</LI>
+    <LI>Outlets file - A point feature giving the location of outlets or internal monitoring points. The attribute "id" may be used to specify an identifier (e.g. stream flow recorder number) associated with these monitoring points. The value -1 is reserved to indicate "no identifier". There is no default filename for outlet files.</LI>
     <LI>Stream Reach file - A polyline file giving the links in a stream network.&nbsp; This is created by&nbsp; the "Stream Shapefile and Watershed Grid" function and has attributes tabulated below.&nbsp; The default filename for this shapefile is "*net.shp", where * is the base DEM name. </LI>
     <LI>Watershed Shapefile - A polygon shapefile demarcating each reach watershed.&nbsp; This is created by the function "Watershed grid to shapefile". The only attribute of this shapefile is polygon_id, identifier.&nbsp; This corresponds with the WSNO watershed number in the *net.shp file.&nbsp; The default filename for this shapefile is "*w.shp", where * is the base DEM name. </LI>
 </UL>

@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<!-- saved from url=(0016)http://localhost -->
-<head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<style type="text/css" id="internalStyle" xmlns="">
+﻿<!DOCTYPE HTML>
+<!--?xml version="1.0" encoding="UTF-8"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><!-- saved from url=(0016)http://localhost --><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<STYLE id="internalStyle" type="text/css" xmlns="">
 		body {
 		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
 		  font-size: 0.8em;
@@ -317,100 +317,184 @@
 		td.description {
 		  background: white;
 		}
-	  </style>
-</head>
-<body oncontextmenu="return true">
-<h1 class="gpHeading" xmlns="">ConnectDown</h1>
-<h2 class="gp" xmlns="">Title 
-		<span class="gpsubtitle">ConnectDown</span>
-</h2>
-<h2 class="gp" xmlns="">Summary</h2>
-<div class="gpItemInfo" xmlns="">
-<p><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>For each zone in a raster entered (e.g. HUC converted to grid) it identifies the point with largest AreaD8. This is taken to be the outlet. A shapefile is created.Using flow directions each outlet is moved downflow a specified number of grid cells which is user controllable (Default is 1). The ID of the location the point has moved to is taken as iddown. Two shapefiles are created one with the initial points and one with the moved points. Both contain id, iddown and AreaD8. </SPAN></P><P><SPAN /></P></DIV></DIV></DIV></p><br />
-</div>
-<h2 class="gp" xmlns="">Usage</h2>
-<div class="gpItemInfo" xmlns="">
-<p><span class="noContent">There is no usage for this tool.</span></p>
-</div>
-<h2 class="gp" xmlns="">Syntax</h2>
-<div xmlns="">
-<p style="margin-top: -1.2em">ConnectDown (Input_D8_Flow_Direction_Grid, Input_D8Contributing_Area_Grid, Input_Watershed_Grid, Input_Number_of_Grid_Cells, Input_Number_of_Processes, Output_Outlets_Shapefile, Output_MovedOutlets_Shapefile) <br /><br />
-</p>
-<table width="100%" border="0" cellpadding="5">
-<tbody>
-<tr>
-<th width="30%">
-<b>Parameter</b>
-</th>
-<th width="50%">
-<b>Explanation</b>
-</th>
-<th width="20%">
-<b>Data Type</b>
-</th>
-</tr>
-<tr>
-<td class="info">Input_D8_Flow_Direction_Grid</td>
-<td class="info" align="left">
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN><SPAN>This input is a grid of flow directions that are encoded using the D8 method where all flow from a cells goes to a single neighboring cell in the direction of steepest descent. </SPAN></SPAN></P><P><SPAN /></P></DIV></DIV></DIV><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-<td class="info" align="left">Raster Layer</td>
-</tr>
-<tr>
-<td class="info">Input_D8Contributing_Area_Grid</td>
-<td class="info" align="left">
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>A grid giving the contributing area value in terms of the number of grid cells (or the summation of weights) for each cell taken as its own contribution plus the contribution from upslope neighbors that drain in to it using the D8 algorithm. This is usually the output of the "D8 Contributing Area" tool.</SPAN></P></DIV></DIV></DIV><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-<td class="info" align="left">Raster Layer</td>
-</tr>
-<tr>
-<td class="info">Input_Watershed_Grid</td>
-<td class="info" align="left">
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>Watershed grid delineated from gage watershed function or streamreachwatershed function. Other watershed  (e.g. HUC) raster also can be used as watershed grid.</SPAN></P><P><SPAN /></P></DIV></DIV></DIV><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-<td class="info" align="left">Raster Layer</td>
-</tr>
-<tr>
-<td class="info">Input_Number_of_Grid_Cells</td>
-<td class="info" align="left">
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>Number of grid cells move to downstream based on flow directions.</SPAN></P></DIV></DIV></DIV><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-<td class="info" align="left">Long</td>
-</tr>
-<tr>
-<td class="info">Input_Number_of_Processes</td>
-<td class="info" align="left">
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>This input indicates the number of stripes that the domain will be divided into and the number of MPI parallel processes that will be spawned to evaluate each piece of the domain.</SPAN></P></DIV></DIV></DIV><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-<td class="info" align="left">Long</td>
-</tr>
-<tr>
-<td class="info">Output_Outlets_Shapefile</td>
-<td class="info" align="left">
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>Point shapefile where each point is created from watershed grid having the largest contributing area for each zone.</SPAN></P></DIV></DIV></DIV><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-<td class="info" align="left">Shapefile</td>
-</tr>
-<tr>
-<td class="info">Output_MovedOutlets_Shapefile</td>
-<td class="info" align="left">
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>Moved point shapefile where each outlet is moved downflow a specified number of grid cells using flow directions. </SPAN></P></DIV></DIV></DIV><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
-<td class="info" align="left">Shapefile</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 class="gp" xmlns="">Code Samples</h2>
-<div class="gpItemInfo" xmlns="">
-<p><span class="noContent">There are no code samples for this tool.</span></p>
-</div>
-<h2 class="gp" xmlns="">Tags</h2>
-<div class="gpItemInfo" xmlns="">
-<p>
-<span class="noContent">There are no tags for this item.</span>
-</p>
-</div>
-<h2 class="gp" xmlns="">Credits</h2>
-<div class="gpItemInfo" xmlns="">
-<p><span class="noContent">There are no credits for this item.</span></p>
-</div>
-<h2 class="gp" xmlns="">Use limitations</h2>
-<div class="gpItemInfo" xmlns="">
-<p><span class="noContent">There are no use limitations for this item.</span></p>
-</div>
-</body>
-</html>
+	  </STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.9600.17496"></HEAD> 
+<BODY oncontextmenu="return true">
+<H1 class="gpHeading" xmlns="">ConnectDown</H1>
+<H2 class="gp" xmlns="">Title 		 <SPAN class="gpsubtitle">ConnectDown</SPAN> 
+</H2>
+<H2 class="gp" xmlns="">Summary</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P>
+<DIV style="text-align: left;">
+<DIV>
+<DIV>
+<P><SPAN>For each zone in a raster entered (e.g. HUC converted to grid) it 
+identifies the point with largest AreaD8. This is taken to be the outlet. A OGR 
+file is created.Using flow directions each outlet is moved downflow a specified 
+number of grid cells which is user controllable (Default is 1). The ID of the 
+location the point has moved to is taken as iddown. Two OGR files are created 
+one with the initial points and one with the moved points. Both contain id, 
+iddown and AreaD8. </SPAN></P>
+<P><SPAN></SPAN></P></DIV></DIV></DIV>
+<P></P><BR></DIV>
+<H2 class="gp" xmlns="">Usage</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P>
+<DIV style="text-align: left;">
+<DIV>
+<DIV>
+<P><SPAN>Command Prompt Syntax:</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>mpiexec -n &lt;number of processes&gt; </SPAN><SPAN style="font-style: italic;">ConnectDown</SPAN><SPAN><SPAN 
+style="font-weight: bold;">-p </SPAN><SPAN>&lt;pfile&gt; </SPAN><SPAN style="font-weight: bold;">-ad8 
+</SPAN><SPAN>&lt;ad8file&gt; </SPAN><SPAN style="font-weight: bold;">-w 
+</SPAN><SPAN>&lt;wfile&gt; </SPAN><SPAN style="font-weight: bold;">-o 
+</SPAN><SPAN>&lt;</SPAN><SPAN 
+style="font-style: italic; font-weight: bold;">outletfile</SPAN><SPAN>&gt; [ 
+</SPAN><SPAN style="font-weight: bold;">-olyr </SPAN><SPAN>outletlayername] 
+</SPAN><SPAN style="font-weight: bold;">-od </SPAN><SPAN>&lt;</SPAN><SPAN style="font-style: italic; font-weight: bold;">moved 
+outletfile</SPAN><SPAN>&gt; [ </SPAN><SPAN style="font-weight: bold;">-odlyr 
+</SPAN><SPAN>moved outlet layer name] [ </SPAN><SPAN 
+style="font-weight: bold;">-d</SPAN><SPAN>] </SPAN></SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>pfile: Input flow directions grid</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>ad8file: Input contributing area grid</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>wfile: Input Watershed grid </SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>outletfile: Output outlets file (OGR writeable dataset)</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>moved outletfile: Output moved outlets file (OGR writeable 
+dataset)</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>outletlayername: OGR layer name in outletfile (optional)</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>moved outlet layer name: OGR layer name in moved outletfile 
+(optional)</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN>d: number of grid cells move to downstream</SPAN></P>
+<P><SPAN></SPAN></P></DIV></DIV></DIV>
+<P></P><BR></DIV>
+<H2 class="gp" xmlns="">Syntax</H2>
+<DIV xmlns="">
+<P style="margin-top: -1.2em;">ConnectDown (Input_D8_Flow_Direction_Grid, 
+Input_D8Contributing_Area_Grid, Input_Watershed_Grid, 
+Input_Number_of_Grid_Cells, Input_Number_of_Processes, Output_Outlets_file, 
+Output_MovedOutlets_file) <BR><BR></P>
+<TABLE width="100%" border="0" cellpadding="5">
+  <TBODY>
+  <TR>
+    <TH width="30%"><B>Parameter</B> </TH>
+    <TH width="50%"><B>Explanation</B> </TH>
+    <TH width="20%"><B>Data Type</B> </TH></TR>
+  <TR>
+    <TD class="info">Input_D8_Flow_Direction_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN><SPAN>This input is a grid of flow directions that are encoded 
+      using the D8 method where all flow from a cells goes to a single 
+      neighboring cell in the direction of steepest descent. </SPAN></SPAN></P>
+      <P><SPAN></SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_D8Contributing_Area_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>A grid giving the contributing area value in terms of the number 
+      of grid cells (or the summation of weights) for each cell taken as its own 
+      contribution plus the contribution from upslope neighbors that drain in to 
+      it using the D8 algorithm. This is usually the output of the "D8 
+      Contributing Area" tool.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_Watershed_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>Watershed grid delineated from gage watershed function or 
+      streamreachwatershed function. Other watershed  (e.g. HUC) raster also can 
+      be used as watershed grid.</SPAN></P>
+      <P><SPAN></SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_Number_of_Grid_Cells</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>Number of grid cells move to downstream based on flow 
+      directions.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Long</TD></TR>
+  <TR>
+    <TD class="info">Input_Number_of_Processes</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>This input indicates the number of stripes that the domain will 
+      be divided into and the number of MPI parallel processes that will be 
+      spawned to evaluate each piece of the domain.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Long</TD></TR>
+  <TR>
+    <TD class="info">Output_Outlets_file</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>This output is point a OGR file where each point is created from 
+      watershed grid having the largest contributing area for each 
+      zone.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">File</TD></TR>
+  <TR>
+    <TD class="info">Output_MovedOutlets_file</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>This output is a point OGR file where each outlet is moved 
+      downflow a specified number of grid cells using flow 
+      directions.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">File</TD></TR></TBODY></TABLE></DIV>
+<H2 class="gp" xmlns="">Code Samples</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no code samples for this 
+tool.</SPAN></P></DIV>
+<H2 class="gp" xmlns="">Tags</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no tags for this item.</SPAN> </P></DIV>
+<H2 class="gp" xmlns="">Credits</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no credits for this item.</SPAN></P></DIV>
+<H2 class="gp" xmlns="">Use limitations</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no use limitations for this 
+item.</SPAN></P></DIV></BODY></HTML>

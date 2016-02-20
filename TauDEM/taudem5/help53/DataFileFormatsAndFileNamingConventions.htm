@@ -17,7 +17,7 @@
 <p>The TauDEM Toolbox uses 3 general types of input and output data files for it's various tools:
 <ul>
     <li>Grid Files</li>
-    <li>Shapefile</li>
+    <li>OGR files</li>
     <li>Text Files</li>
 </ul>
 <p>Also TauDEM, by default, uses a file naming convention that has been developed to assist in organizing the numerous files that are often involved in terrain analysis.</p>
@@ -27,11 +27,11 @@
 However, TauDEM5.3  writes output result only in TIFF format.
 <p>For a table listing the TauDEM grid defintions and naming conventions table click <a href="GridDefinitionsAndNamingConventions.htm">here</a>.</p>
 <p>&nbsp;</p>
-<H2>Shapefiles</H2>
-<P>Shapefiles are an open ESRI data format that stores vector data as described in a <A href="http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf">white paper</A>. Shapefiles are used  for the following purposes in TauDEM: </P>
+<H2>OGR files</H2>
+<P>TauDEM5.3.2 supports OGR format files which  are used  for the following purposes: </P>
 <UL>
-    <LI>Outlets Shapefile - A point shapefile giving the location of outlets or internal monitoring points. The attribute "id" may be used to specify an identifier (e.g. stream flow recorder number) associated with these monitoring points. The value -1 is reserved to indicate "no identifier". There is no default filename for outlet shapefiles.</LI>
-    <LI>Stream Reach Shapefile - A polyline shapefile giving the links in a stream network.&nbsp; This is created by&nbsp; the "Stream Shapefile and Watershed Grid" function and has attributes tabulated below.&nbsp; The default filename for this shapefile is "*net.shp", where * is the base DEM name. </LI>
+    <LI>Outlets file - A point feature giving the location of outlets or internal monitoring points. The attribute "id" may be used to specify an identifier (e.g. stream flow recorder number) associated with these monitoring points. The value -1 is reserved to indicate "no identifier". There is no default filename for outlet files.</LI>
+    <LI>Stream Reach file - A polyline file giving the links in a stream network.&nbsp; This is created by&nbsp; the "Stream Shapefile and Watershed Grid" function and has attributes tabulated below.&nbsp; The default filename for this shapefile is "*net.shp", where * is the base DEM name. </LI>
     <LI>Watershed Shapefile - A polygon shapefile demarcating each reach watershed.&nbsp; This is created by the function "Watershed grid to shapefile". The only attribute of this shapefile is polygon_id, identifier.&nbsp; This corresponds with the WSNO watershed number in the *net.shp file.&nbsp; The default filename for this shapefile is "*w.shp", where * is the base DEM name. </LI>
 </UL>
 <h3>Stream Reach Shapefile Attributes</h3>

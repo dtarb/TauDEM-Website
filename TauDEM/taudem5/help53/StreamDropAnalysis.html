@@ -1,3189 +1,606 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-
-
-
-
-
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-
-
-
-
-
-
-<!-- saved from url=(0016)http://localhost -->
-
-
-
-
-
-
-
-<head>
-
-
-
-
-
-
-
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
-
-
-
-
-
-
-<style type="text/css" id="internalStyle" xmlns="">
-
-
-
-
-
-
-
+﻿<!DOCTYPE HTML>
+<!--?xml version="1.0" encoding="UTF-8"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><!-- saved from url=(0016)http://localhost --><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<STYLE id="internalStyle" type="text/css" xmlns="">
 		body {
-
-
-
-
-
-
-
 		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
-
-
-
-
-
-
-
 		  font-size: 0.8em;
-
-
-
-
-
-
-
 		  font-weight: 500;
-
-
-
-
-
-
-
 		  color: #000020;
-
-
-
-
-
-
-
 		  background-color: #FFFFFF;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		div.itemDescription {
-
-
-
-
-
-
-
 		  margin-right: 2em;
-
-
-
-
-
-
-
 		  margin-bottom: 2em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		h1 {
-
-
-
-
-
-
-
 		  font-size: 1.5em;
-
-
-
-
-
-
-
 		  margin-top: 0;
-
-
-
-
-
-
-
 		  margin-bottom: 5px;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		h1.idHeading {
-
-
-
-
-
-
-
 		  color: #008FAF;
-
-
-
-
-
-
-
 		  text-align: center;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		h1.gpHeading {
-
-
-
-
-
-
-
 		  color: black;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		span.idHeading {
-
-
-
-
-
-
-
 		  color: #007799;
-
-
-
-
-
-
-
 		  font-weight: bold;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.center {
-
-
-
-
-
-
-
 		  text-align: center;
-
-
-
-
-
-
-
 		  margin-top: 5px;
-
-
-
-
-
-
-
 		  margin-bottom: 5px;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		img {
-
-
-
-
-
-
-
 		  width: 210px;
-
-
-
-
-
-
-
 		  border-width: 1px;
-
-
-
-
-
-
-
 		  border-style: outset;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		img.center {
-
-
-
-
-
-
-
 		  text-align: center;
-
-
-
-
-
-
-
 		  display: block;
-
-
-
-
-
-
-
 		  border-color: #666666;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		img.enclosed {
-
-
-
-
-
-
-
 		  width: 60%;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		img.gp {
-
-
-
-
-
-
-
 		  width: auto;
-
-
-
-
-
-
-
 		  border-style: none;
-
-
-
-
-
-
-
+		  margin-top: -1.2em;
 		}
-
-
-
-
-
-
-
 		.noThumbnail {
-
-
-
-
-
-
-
 		  color: #888888;
-
-
-
-
-
-
-
 		  font-size: 1.2em;
-
-
-
-
-
-
-
-		  text-align: center;
-
-
-
-
-
-
-
-		  width: 210px;
-
-
-
-
-
-
-
-		  height: 140px;
-
-
-
-
-
-
-
 		  border-width: 1px;
-
-
-
-
-
-
-
 		  border-style: solid;
-
-
-
-
-
-
-
 		  border-color: black;
-
-
-
-
-
-
-
 		  padding: 3em 3em;
-
-
-
-
-
-
-
 		  position: relative;
-
-
-
-
-
-
-
-		  direction: ltr;
-
-
-
-
-
-
-
-		  left: 50%;
-
-
-
-
-
-
-
-		  right: auto;
-
-
-
-
-
-
-
-		  margin-left: -127px;
-
-
-
-
-
-
-
+		  text-align: center;
+		  width: 210px;
+		  height: 140px;
 		}
-
-
-
-
-
-
-
 		.noContent {
-
-
-
-
-
-
-
 		  color: #888888;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
+		.itemInfo p {
+		  margin-top: -0.1em;
+		}
+		.itemInfo img {
+		  width: auto;
+		  border: none;
+		}
+		.gpItemInfo p {
+		  margin-top: -1.2em;
+		}
 		div.box {
-
-
-
-
-
-
-
-		  border: thin inset #EEEEEE;
-
-
-
-
-
-
-
 		  margin-left: 1em;
-
-
-
-
-
-
-
-		  padding: 1em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
-		.box.arcgis {
-
-
-
-
-
-
-
-		  background-color: #F9FFFF;
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-
-		.box.fgdc {
-
-
-
-
-
-
-
-		  background-color: #F0F5FF;
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-
 		div.hide {
-
-
-
-
-
-
-
 		  display: none;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		div.show {
-
-
-
-
-
-
-
 		  display: block;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		span.hide {
-
-
-
-
-
-
-
 		  display: none;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		span.show {
-
-
-
-
-
-
-
 		  display: inline-block;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.backToTop a {
-
-
-
-
-
-
-
 		  color: #DDDDDD;
-
-
-
-
-
-
-
 		  font-style: italic;
-
-
-
-
-
-
-
+		  font-size: 0.85em;
 		}
-
-
-
-
-
-
-
 		h2 {
-
-
-
-
-
-
-
 		  font-size: 1.2em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		h2.gp {
-
-
-
-
-
-
-
 		  color: #00709C;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.gpsubtitle {
-
-
-
-
-
-
-
 		  color: black;
-
-
-
-
-
-
-
 		  font-size: 1.2em;
-
-
-
-
-
-
-
 		  font-weight: normal;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.gptags {
-
-
-
-
-
-
-
 		  color: black;
-
-
-
-
-
-
-
 		  font-size: 0.8em;
-
-
-
-
-
-
-
 		  font-weight: normal;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.head {
-
-
-
-
-
-
-
 		  font-size: 1.3em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
-		a:link, a:visited {
-
-
-
-
-
-
-
-		  color: #004457;
-
-
-
-
-
-
-
+		a:link {
+		  color: #098EA6;
 		  font-weight: normal;
-
-
-
-
-
-
-
 		  text-decoration: none;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
+		a:visited {
+		  color: #098EA6;
+		  text-decoration: none;
+		}
 		a:link:hover, a:visited:hover {
-
-
-
-
-
-
-
-		  background-color: #FFFFD3;
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-
-		h2.iso a {
-
-
-
-
-
-
-
 		  color: #007799;
-
-
-
-
-
-
-
-		  font-weight: bold;
-
-
-
-
-
-
-
+		  background-color: #C6E6EF;
 		}
-
-
-
-
-
-
-
+		h2.iso a {
+		  color: #007799;
+		  font-weight: bold;
+		}
+		.iso a:link {
+		  color: #007799;
+		  text-decoration: none;
+		}
+		.iso a:visited {
+		  color: #007799;
+		  text-decoration: none;
+		}
+		.iso a:link:hover, .iso a:visited:hover {
+		  color: #006688;
+		  background-color: #C6E6EF;
+		}
 		h2.fgdc a {
-
-
-
-
-
-
-
-		  color: #004080;
-
-
-
-
-
-
-
+		  color: #888888;
 		  font-weight: bold;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
+		.fgdc a:link {
+		  color: #888888;
+		  text-decoration: none;
+		}
+		.fgdc a:visited {
+		  color: #888888;
+		  text-decoration: none;
+		}
+		.fgdc a:link:hover, .fgdc a:visited:hover {
+		  color: #777777;
+		  background-color: #C6E6EF;
+		}
 		h3 {
-
-
-
-
-
-
-
 			font-size: 1em; 
-
-
-
-
-
-
-
 			color: #00709C;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.backToTop {
-
-
-
-
-
-
-
 		  color: #AAAAAA;
-
-
-
-
-
-
-
 		  margin-left: 1em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		p.gp {
-
-
-
-
-
-
-
 		  margin-top: .6em;
-
-
-
-
-
-
-
 		  margin-bottom: .6em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
-		ul .gp {
-
-
-
-
-
-
-
-		  margin-left: -1em;
-
-
-
-
-
-
-
+		ul ul {
+		  list-style-type: square;
 		}
-
-
-
-
-
-
-
 		ul li.iso19139heading {
-
-
-
-
-
-
-
 		  margin-left: -3em;
-
-
-
-
-
-
-
 		  list-style: none;
-
-
-
-
-
-
-
 		  font-weight: bold;
-
-
-
-
-
-
-
+		  color: #666666;
 		}
-
-
-
-
-
-
-
 		dl {
-
-
-
-
-
-
-
 		  margin: 0;
-
-
-
-
-
-
-
 		  padding: 0;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		dl.iso {
-
-
-
-
-
-
-
 		  background-color: #F2F9FF;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		dl.esri {
-
-
-
-
-
-
-
 		  background-color: #F2FFF9;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		dl.subtype {
-
-
-
-
-
-
-
 		  width: 40em;
-
-
-
-
-
-
-
 		  margin-top: 0.5em;
-
-
-
-
-
-
-
 		  margin-bottom: 0.5em;
-
-
-
-
-
-
-
 		  padding: 0;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		dt {
-
-
-
-
-
-
-
 		  margin-left: 0.6em;
-
-
-
-
-
-
-
 		  padding-left: 0.6em;
-
-
-
-
-
-
-
 		  clear: left;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.subtype dt {
-
-
-
-
-
-
-
 		  width: 60%;
-
-
-
-
-
-
-
 		  float: left;
-
-
-
-
-
-
-
 		  margin: 0;
-
-
-
-
-
-
-
 		  padding: 0.5em 0.5em 0 0.75em;
-
-
-
-
-
-
-
 		  border-top: 1px solid #006400;
-
-
-
-
-
-
-
 		  clear: none;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.subtype dt.header {
-
-
-
-
-
-
-
 		  padding: 0.5em 0.5em 0.5em 0;
-
-
-
-
-
-
-
 		  border-top: none;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		dd {
-
-
-
-
-
-
-
 		  margin-left: 0.6em;
-
-
-
-
-
-
-
 		  padding-left: 0.6em;
-
-
-
-
-
-
-
 		  clear: left;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.subtype dd {
-
-
-
-
-
-
-
 		  float: left;
-
-
-
-
-
-
-
 		  width: 25%;
-
-
-
-
-
-
-
 		  margin: 0;
-
-
-
-
-
-
-
 		  padding: 0.5em 0.5em 0 0.75em;
-
-
-
-
-
-
-
 		  border-top: 1px solid #006400;
-
-
-
-
-
-
-
 		  clear: none;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.subtype dd.header {
-
-
-
-
-
-
-
 		  padding: 0.5em 0.5em 0.5em 0;
-
-
-
-
-
-
-
 		  border-top: none;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.isoElement {
-
-
-
-
-
-
-
 		  font-variant: small-caps;
-
-
-
-
-
-
-
 		  font-size: 0.9em;
-
-
-
-
-
-
-
 		  font-weight: normal;
-
-
-
-
-
-
-
-		  color: #0000A0;
-
-
-
-
-
-
-
+		  color: #006688;
 		}
-
-
-
-
-
-
-
 		.esriElement {
-
-
-
-
-
-
-
 		  font-variant: small-caps;
-
-
-
-
-
-
-
 		  font-size: 0.9em;
-
-
-
-
-
-
-
 		  font-weight: normal;
-
-
-
-
-
-
-
-		  color: #006400;
-
-
-
-
-
-
-
+		  color: #006688;
 		}
-
-
-
-
-
-
-
 		.element {
-
-
-
-
-
-
-
 		  font-variant: small-caps;
-
-
-
-
-
-
-
 		  font-size: 0.9em;
-
-
-
-
-
-
-
 		  font-weight: normal;
-
-
-
-
-
-
-
-		  color: #444466;
-
-
-
-
-
-
-
+		  color: #666666;
 		}
-
-
-
-
-
-
-
 		unknownElement {
-
-
-
-
-
-
-
 		  font-variant: small-caps;
-
-
-
-
-
-
-
 		  font-size: 0.9em;
-
-
-
-
-
-
-
 		  font-weight: normal;
-
-
-
-
-
-
-
 		  color: #333333;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.sync {
-
-
-
-
-
-
-
 		  color: #006400;
-
-
-
-
-
-
-
 		  font-weight: bold;
-
-
-
-
-
-
-
 		  font-size: 0.9em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
+		.syncOld {
+		  color: #888888;
+		  font-weight: bold;
+		  font-size: 0.9em;
+		}
+		.textOld {
+		  color: #999999;
+		}
 		.code {
-
-
-
-
-
-
-
 		  font-family: monospace;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		pre.wrap {
-
-
-
-
-
-
-
 		  width: 96%;
-
-
-
-
-
-
-
 		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
-
-
-
-
-
-
-
 		  font-size: 1em;
-
-
-
-
-
-
-
 		  margin: 0 0 1em 0.6em;
-
-
-
-
-
-
-
 		  white-space: pre-wrap;       /* css-3 */
-
-
-
-
-
-
-
 		  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-
-
-
-
-
-
-
 		  white-space: -pre-wrap;      /* Opera 4-6 */
-
-
-
-
-
-
-
 		  white-space: -o-pre-wrap;    /* Opera 7 */
-
-
-
-
-
-
-
 		  word-wrap: break-word;       /* Internet Explorer 5.5+ */
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		pre.gp {
-
-
-
-
-
-
-
-		  font-family: Courier, Courier New, monospace;
-
-
-
-
-
-
-
+		  font-family: Courier New, Courier, monospace;
 		  line-height: 1.2em;
-
-
-
-
-
-
-
-		  white-space: nowrap;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		.gpcode {
-
-
-
-
-
-
-
 		  margin-left:15px;
-
-
-
-
-
-
-
 		  border: 1px dashed #ACC6D8;
-
-
-
-
-
-
-
 		  padding: 10px;
-
-
-
-
-
-
-
 		  background-color:#EEEEEE;
-
-
-
-
-
-
-
 		  height: auto;
-
-
-
-
-
-
-
 		  overflow: scroll; 
-
-
-
-
-
-
-
 		  width: 96%;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
-		pre.gpOld {
-
-
-
-
-
-
-
-		  font-family: Courier, Courier New, monospace;
-
-
-
-
-
-
-
-		  line-height: 1.2em;
-
-
-
-
-
-
-
-		}
-
-
-
-
-
-
-
 		tr {
-
-
-
-
-
-
-
 		  vertical-align: top;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		th {
-
-
-
-
-
-
-
 		  text-align: left;
-
-
-
-
-
-
-
 		  background: #dddddd;
-
-
-
-
-
-
-
 		  vertical-align: bottom;
-
-
-
-
-
-
-
 		  font-size: 0.8em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
 		td {
-
-
-
-
-
-
-
 		  background: #EEEEEE;
-
-
-
-
-
-
-
 		  color: black;
-
-
-
-
-
-
-
 		  vertical-align: top;
-
-
-
-
-
-
-
 		  font-size: 0.8em;
-
-
-
-
-
-
-
 		}
-
-
-
-
-
-
-
-	  </style>
-
-
-
-
-
-
-
-<script type="text/javascript" xmlns="">
-
-
-
-
-
-
-
-		/*  */
-
-
-
-
-
-
-
-			function hideShow(divID) {
-
-
-
-
-
-
-
-				var item = document.getElementById(divID);
-
-
-
-
-
-
-
-				var itemShow = document.getElementById(divID + 'Show');
-
-
-
-
-
-
-
-				var itemHide = document.getElementById(divID + 'Hide');
-
-
-
-
-
-
-
-				if (item) {
-
-
-
-
-
-
-
-					if (item.className == 'hide') {
-
-
-
-
-
-
-
-						item.className='show';
-
-
-
-
-
-
-
-						itemShow.className='hide';
-
-
-
-
-
-
-
-						itemHide.className='show';
-
-
-
-
-
-
-
-					}
-
-
-
-
-
-
-
-					else {
-
-
-
-
-
-
-
-						item.className='hide';
-
-
-
-
-
-
-
-						itemShow.className='show';
-
-
-
-
-
-
-
-						itemHide.className='hide';
-
-
-
-
-
-
-
-					}
-
-
-
-
-
-
-
-				}
-
-
-
-
-
-
-
-			}
-
-
-
-
-
-
-
-		/*  */
-
-
-
-
-
-
-
-		</script>
-
-
-
-
-
-
-
-</head>
-
-
-
-
-
-
-
-<body oncontextmenu="return true">
-
-
-
-
-
-
-
-<h1 class="gpHeading" xmlns=""><span style="background:white"><img src="images/AHBanner_TauDEMToolbox.gif" alt="TauDEM Toolbox banner" width="875" height="70" class="gp" /></span></h1>
-
-
-
-<h1 class="gpHeading" xmlns="">Stream Drop Analysis</h1>
-
-
-
-
-
-
-
-<h2 class="gp" xmlns="">Title 
-
-
-
-
-
-
-
-		<span class="gpsubtitle">Stream Drop Analysis</span>
-
-
-
-
-
-
-
-</h2>
-
-
-
-
-
-
-
-<h2 class="gp" xmlns="">Summary</h2><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>Applies a series of thresholds (determined from the input parameters) to the input accumulated stream source grid (*ssa) grid and outputs the results in the *drp.txt file the stream drop statistics table. This function is designed to aid in the determination of a geomorphologically objective threshold to be used to delineate streams. Drop Analysis attempts to select the right threshold automatically by evaluating a stream network for a range of thresholds and examining the constant drop property of the resulting Strahler streams. Basically it asks the question: Is the mean stream drop for first order streams statistically different from the mean stream drop for higher order streams, using a T-Test. Stream drop is the difference in elevation from the beginning to the end of a stream defined as the sequence of links of the same stream order. If the T test shows a significant difference then the stream network does not obey this "law" so a larger threshold needs to be chosen. The smallest threshold for which the T test does not show a significant difference gives the highest resolution stream network that obeys the constant stream drop "law" from geomorphology, and is the threshold chosen for the "objective" or automatic mapping of streams from the DEM. This function can be used in the development of stream network rasters, where the exact watershed characteristic(s) that were accumulated in the accumulated stream source grid vary based on the method being used to determine the stream network raster.</SPAN></P>
-  <P STYLE="font-size:16ptmargin:7 0 7 0;"><img src="images/StreamDrops.JPG" alt="Stream Drop Illustration" class="gp" /></P>
-  <p>Illustration of stream drops</p>
-  <p>The constant stream drop &quot;law&quot; was identified by Broscoe (1959). For the   science behind using this to determine a stream delineation threshold, see   Tarboton et al. (1991, 1992), Tarboton and Ames (2001).</p>
-  <p>Broscoe, A. J., (1959), &quot;Quantitative analysis of longitudinal stream   profiles of small watersheds,&quot; Office of Naval Research, Project NR 389-042,   Technical Report No. 18, Department of Geology, Columbia University, New   York.</p>
-  <p>Tarboton, D. G., R. L. Bras and I. Rodriguez-Iturbe, (1991), &quot;On the   Extraction of Channel Networks from Digital Elevation Data,&quot; Hydrologic   Processes, 5(1): 81-100.</p>
-  <p>Tarboton, D. G., R. L. Bras and I. Rodriguez-Iturbe, (1992), &quot;A Physical   Basis for Drainage Density,&quot; Geomorphology, 5(1/2): 59-76.</p>
-  <p>Tarboton, D. G. and D. P. Ames, (2001), &quot;Advances in the mapping of flow   networks from digital elevation data,&quot; World Water and Environmental Resources   Congress, Orlando, Florida, May 20-24, ASCE,   http://www.engineering.usu.edu/dtarb/asce2001.pdf.</p>
-</DIV><br xmlns="" />
-
-
-
-
-
-
-
-<h2 class="gp" xmlns="">Syntax</h2>
-
-
-
-
-
-
-
-<div xmlns=""><span style="margin-top: -1.2em">StreamDropAnalysis (Input_Pit_Filled_Elevation_Grid, Input_D8_Flow_Direction_Grid, Input_D8_Contributing_Area_Grid, Input_Accumulated_Stream_Source_Grid, Input_Outlets_Shapefile, Minimum_Threshold_Value, Maximum_Threshold_Value, Number_of_Threshold_Values, Use_logarithmic_spacing_for_threshold_values, Input_Number_of_Processes, Output_Drop_Analysis_Text_File) <br />
-</span><br /><br />
-
-
-
-
-
-
-
-<table width="100%" border="0" cellpadding="5">
-
-
-
-
-
-
-
-<tbody>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<th width="30%">
-
-
-
-
-
-
-
-<b>Parameter</b>
-
-
-
-
-
-
-
-</th>
-
-
-
-
-
-
-
-<th width="50%">
-
-
-
-
-
-
-
-<b>Explanation</b>
-
-
-
-
-
-
-
-</th>
-
-
-
-
-
-
-
-<th width="20%">
-
-
-
-
-
-
-
-<b>Data Type</b>
-
-
-
-
-
-
-
-</th>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Input_Pit_Filled_Elevation_Grid</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>A grid of elevation values. This is usually the output of the "Pit Remove" tool, in which case it is elevations with pits removed. Pits are low elevation areas in digital elevation models (DEMs) that are completely surrounded by higher terrain. They are generally taken to be artifacts of the digitation process that interfere with the processing of flow across DEMs. So they are removed by raising their elevation to the point where they just drain off the domain. This step is not essential if you have reason to believe that the pits in your DEM are real, but with drop analysis ensures that the elevation drop downstream along a stream is positive.</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Raster Layer </td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Input_D8_Flow_Direction_Grid</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>A grid of D8 flow directions which are defined, for each cell, as the direction of the one of its eight adjacent or diagonal neighbors with the steepest downward slope.</SPAN></P>
-  <P STYLE="font-size:16ptmargin:7 0 7 0;"><img src="images/d8index.gif" alt="D8 Flow Direction Encoding" class="gp" /></P>
-  <p>Flow Direction Coding: 1 -East, 2 - Northeast, 3 - North, 4 - Northwest, 5 -   West, 6 - Southwest, 7 - South, 8 - Southeast.</p>
-  <p>This grid can be obtained as the output of the &quot;D8 Flow Directions&quot; tool.</p>
-</DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Raster Layer </td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Input_D8_Contributing_Area_Grid</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>A grid of contributing area values for each cell that were calculated using the D8 algorithm. The contributing area for a cell is the sum of its own contribution plus the contribution from all upslope neighbors that drain to it, measured as a number of cells or the sum of weight loadings. This grid can be obtained as the output of the "D8 Contributing Area" tool. This grid is used in the evaluation of drainage density reported in the stream drop table.</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Raster Layer </td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Input_Accumulated_Stream_Source_Grid</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>This grid must be monotonically increasing along the downslope D8 flow directions. It it compared to a series of thresholds to determine the beginning of the streams. It is often generated by accumulating some characteristic or combination of characteristics of the watershed with the "D8 Contributing Area" tool, or using the maximum option of the "D8 Flow Path Extreme" tool. The exact method varies depending on the algorithm being used.</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Raster Layer </td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Input_Outlets_Shapefile</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>A point shapefile defining the outlets upstream of which drop analysis is performed.</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Shapefile</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Minimum_Threshold_Value</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>This parameter is the lowest end of the range searched for possible threshold values using drop analysis. This technique looks for the smallest threshold in the range where the absolute value of the t-statistic is less than 2. For the science behind the drop analysis see Tarboton et al. (1991, 1992), Tarboton and Ames (2001).</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Double</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Maximum_Threshold_Value</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>This parameter is the highest end of the range searched for possible threshold values using drop analysis. This technique looks for the smallest threshold in the range where the absolute value of the t-statistic is less than 2. For the science behind the drop analysis see Tarboton et al. (1991, 1992), Tarboton and Ames (2001).</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Double</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Number_of_Threshold_Values</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>The parameter is the number of steps to divide the search range into when looking for possible threshold values using drop analysis. This technique looks for the smallest threshold in the range where the absolute value of the t-statistic is less than 2. For the science behind the drop analysis see Tarboton et al. (1991, 1992), Tarboton and Ames (2001).</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Double</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Use_logarithmic_spacing_for_threshold_values</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>This checkbox indicates whether logarithmic or linear spacing should be used when looking for possible threshold values using drop ananlysis.</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Boolean</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Input_Number_of_Processes</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>The number of stripes that the domain will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes.</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Long</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-<tr>
-
-
-
-
-
-
-
-<td class="info">Output_Drop_Analysis_Text_File</td>
-
-
-
-
-
-
-
-<td class="info" align="left">
-
-
-
-
-
-
-
-<span style="font-weight: bold">Dialog Reference</span><br /><DIV STYLE="text-align:Left;"><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN><SPAN>This is a comma delimited text file with the following header line:</SPAN></SPAN></P><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN><SPAN>Threshold, DrainDen, NoFirstOrd, NoHighOrd, MeanDFirstOrd, MeanDHighOrd, StdDevFirstOrd, StdDevHighOrd, T</SPAN></SPAN></P><P STYLE="font-size:16ptmargin:7 0 7 0;"><SPAN>The file then contains one line of data for each threshold value examined, and then a summary line that indicates the optimum threshold value. This technique looks for the smallest threshold in the range where the absolute value of the t-statistic is less than 2. For the science behind the drop analysis, see Tarboton et al. (1991, 1992), Tarboton and Ames (2001).</SPAN></P></DIV></td>
-
-
-
-
-
-
-
-<td class="info" align="left">Text File</td>
-
-
-
-
-
-
-
-</tr>
-
-
-
-
-
-
-
-</tbody>
-
-
-
-
-
-
-
-</table>
-
-</div>
-
-
-
-
-
-
-
-<h2 class="gp" xmlns="">&nbsp;</h2>
-
-</body>
-
-
-
-
-
-
-
-</html>
-
-
-
-
-
-
-
+		td.description {
+		  background: white;
+		}
+	  </STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.9600.17496"></HEAD> 
+<BODY oncontextmenu="return true">
+<H1 class="gpHeading" xmlns="">Stream Drop Analysis</H1>
+<H2 class="gp" xmlns="">Title 		 <SPAN class="gpsubtitle">Stream Drop 
+Analysis</SPAN> </H2>
+<H2 class="gp" xmlns="">Summary</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P>
+<DIV style="text-align: left;">
+<DIV>
+<DIV>
+<P><SPAN>Applies a series of thresholds (determined from the input parameters) 
+to the input accumulated stream source grid (*ssa) grid and outputs the results 
+in the *drp.txt file the stream drop statistics table. This function is designed 
+to aid in the determination of a geomorphologically objective threshold to be 
+used to delineate streams. Drop Analysis attempts to select the right threshold 
+automatically by evaluating a stream network for a range of thresholds and 
+examining the constant drop property of the resulting Strahler streams. 
+Basically it asks the question: Is the mean stream drop for first order streams 
+statistically different from the mean stream drop for higher order streams, 
+using a T-Test. Stream drop is the difference in elevation from the beginning to 
+the end of a stream defined as the sequence of links of the same stream order. 
+If the T test shows a significant difference then the stream network does not 
+obey this "law" so a larger threshold needs to be chosen. The smallest threshold 
+for which the T test does not show a significant difference gives the highest 
+resolution stream network that obeys the constant stream drop "law" from 
+geomorphology, and is the threshold chosen for the "objective" or automatic 
+mapping of streams from the DEM. This function can be used in the development of 
+stream network rasters, where the exact watershed characteristic(s) that were 
+accumulated in the accumulated stream source grid vary based on the method being 
+used to determine the stream network raster.</SPAN></P></DIV></DIV></DIV>
+<P></P><BR></DIV>
+<H2 class="gp" xmlns="">Usage</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P>
+<DIV style="text-align: left;">
+<DIV>
+<DIV>
+<P><SPAN><SPAN>Command Prompt Syntax:</SPAN></SPAN></P>
+<P><SPAN>mpiexec -n &lt;number of processes&gt; </SPAN><SPAN style="font-style: italic;">DropAnalysis</SPAN><SPAN><SPAN 
+style="font-weight: bold;">  -fel </SPAN><SPAN>&lt;felfile&gt; </SPAN><SPAN 
+style="font-weight: bold;">-p </SPAN><SPAN>&lt;pfile&gt; </SPAN><SPAN style="font-weight: bold;">-ad8 
+</SPAN><SPAN>&lt;ad8file&gt; </SPAN><SPAN style="font-weight: bold;">-ssa 
+</SPAN><SPAN>&lt;ssafile&gt; </SPAN><SPAN style="font-weight: bold;">-drp 
+</SPAN><SPAN>&lt;</SPAN><SPAN 
+style="font-style: italic; font-weight: bold;">drpfile</SPAN><SPAN>&gt; 
+</SPAN><SPAN style="font-weight: bold;">-o </SPAN><SPAN>&lt;outletfile&gt; [ 
+</SPAN><SPAN style="font-weight: bold;">-lyrname </SPAN><SPAN>&lt;layer 
+name&gt;] [ </SPAN><SPAN style="font-weight: bold;">-lyrno 
+</SPAN><SPAN>&lt;layer number&gt;] [ </SPAN><SPAN 
+style="font-weight: bold;">-par</SPAN><SPAN>  5 500 10 0]</SPAN></SPAN></P>
+<P><SPAN>ad8file: File name for D8 contributing area grid 'ad8'</SPAN></P>
+<P><SPAN>pfile: File name for D8 flow direction grid 'p'</SPAN></P>
+<P><SPAN>felfile: File name for hydrologically correct elevation grid 
+'fel'</SPAN></P>
+<P><SPAN>ssafile: File name for an accumulated stream source grid suitable for 
+drop analysis. This needs to have</SPAN></P>
+<P><SPAN>the property that it is monotonically increasing downslope along D8 
+flow directions.</SPAN></P>
+<P><SPAN><SPAN>outletfile: input outlets file (OGR readable 
+dataset)</SPAN></SPAN></P>
+<P><SPAN>layer name: OGR layer name if outlets are not the first layer in 
+outletfile (optional)</SPAN></P>
+<P><SPAN><SPAN>layer number: OGR layer number if outlets are not the first layer 
+in outletfile (optional)</SPAN></SPAN></P>
+<P><SPAN><SPAN>Layer name and layer number should not both be 
+specified.</SPAN></SPAN></P>
+<P><SPAN><SPAN><SPAN>dropfile: File name where stream drop analysis output is to 
+be written as txt</SPAN></SPAN></SPAN></P>
+<P><SPAN>par: Array of parameters consisting of:</SPAN></P>
+<P><SPAN>- threshmin: Minimum value of threshold to be used in drop 
+analysis</SPAN></P>
+<P><SPAN>- threshmax: Maximum value of threshold to be used in drop 
+analysis</SPAN></P>
+<P><SPAN>- nthresh: Number of drop thresholds to be used in drop 
+analysis</SPAN></P>
+<P><SPAN>- steptype: Type of threshold step to be used in drop analysis (0 = 
+log, 1=arithmetic)</SPAN></P>
+<P><SPAN>The default parameter values of min=5, max=500, nthresh=10, steptype=0 
+are assumed unless -par is</SPAN></P>
+<P><SPAN>specified.</SPAN></P>
+<P><SPAN></SPAN></P>
+<P><SPAN></SPAN></P></DIV></DIV></DIV>
+<P></P><BR></DIV>
+<H2 class="gp" xmlns="">Syntax</H2>
+<DIV xmlns="">
+<P style="margin-top: -1.2em;">StreamDropAnalysis 
+(Input_Pit_Filled_Elevation_Grid, Input_D8_Flow_Direction_Grid, 
+Input_D8_Contributing_Area_Grid, Input_Accumulated_Stream_Source_Grid, 
+Input_Outlets, Minimum_Threshold_Value, Maximum_Threshold_Value, 
+Number_of_Threshold_Values, Use_logarithmic_spacing_for_threshold_values, 
+Input_Number_of_Processes, Output_Drop_Analysis_Text_File) <BR><BR></P>
+<TABLE width="100%" border="0" cellpadding="5">
+  <TBODY>
+  <TR>
+    <TH width="30%"><B>Parameter</B> </TH>
+    <TH width="50%"><B>Explanation</B> </TH>
+    <TH width="20%"><B>Data Type</B> </TH></TR>
+  <TR>
+    <TD class="info">Input_Pit_Filled_Elevation_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>A grid of elevation values. This is usually the output of 
+      the "Pit Remove" tool, in which case it is elevations with pits removed. 
+      Pits are low elevation areas in digital elevation models (DEMs) that are 
+      completely surrounded by higher terrain. They are generally taken to be 
+      artifacts of the digitation process that interfere with the processing of 
+      flow across DEMs. So they are removed by raising their elevation to the 
+      point where they just drain off the domain. This step is not essential if 
+      you have reason to believe that the pits in your DEM are real, but with 
+      drop analysis ensures that the elevation drop downstream along a stream is 
+      positive.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_D8_Flow_Direction_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>A grid of D8 flow directions which are defined, for each 
+      cell, as the direction of the one of its eight adjacent or diagonal 
+      neighbors with the steepest downward slope.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_D8_Contributing_Area_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>A grid of contributing area values for each cell that were 
+      calculated using the D8 algorithm. The contributing area for a cell is the 
+      sum of its own contribution plus the contribution from all upslope 
+      neighbors that drain to it, measured as a number of cells or the sum of 
+      weight loadings. This grid can be obtained as the output of the "D8 
+      Contributing Area" tool. This grid is used in the evaluation of drainage 
+      density reported in the stream drop table.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_Accumulated_Stream_Source_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>This grid must be monotonically increasing along the 
+      downslope D8 flow directions. It it compared to a series of thresholds to 
+      determine the beginning of the streams. It is often generated by 
+      accumulating some characteristic or combination of characteristics of the 
+      watershed with the "D8 Contributing Area" tool, or using the maximum 
+      option of the "D8 Flow Path Extreme" tool. The exact method varies 
+      depending on the algorithm being used.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_Outlets</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>A point feature defining the outlets upstream of which drop 
+      analysis is performed.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Feature Layer</TD></TR>
+  <TR>
+    <TD class="info">Minimum_Threshold_Value</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>This parameter is the lowest end of the range searched for 
+      possible threshold values using drop analysis. This technique looks for 
+      the smallest threshold in the range where the absolute value of the 
+      t-statistic is less than 2. For the science behind the drop analysis see 
+      Tarboton et al. (1991, 1992), Tarboton and Ames 
+      (2001).</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Double</TD></TR>
+  <TR>
+    <TD class="info">Maximum_Threshold_Value</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>This parameter is the highest end of the range searched for 
+      possible threshold values using drop analysis. This technique looks for 
+      the smallest threshold in the range where the absolute value of the 
+      t-statistic is less than 2. For the science behind the drop analysis see 
+      Tarboton et al. (1991, 1992), Tarboton and Ames 
+      (2001).</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Double</TD></TR>
+  <TR>
+    <TD class="info">Number_of_Threshold_Values</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>The parameter is the number of steps to divide the search range 
+      into when looking for possible threshold values using drop analysis. This 
+      technique looks for the smallest threshold in the range where the absolute 
+      value of the t-statistic is less than 2. For the science behind the drop 
+      analysis see Tarboton et al. (1991, 1992), Tarboton and Ames 
+      (2001).</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Double</TD></TR>
+  <TR>
+    <TD class="info">Use_logarithmic_spacing_for_threshold_values</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>This checkbox indicates whether logarithmic or linear spacing 
+      should be used when looking for possible threshold values using drop 
+      ananlysis.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Boolean</TD></TR>
+  <TR>
+    <TD class="info">Input_Number_of_Processes</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>The number of stripes that the domain will be divided into and 
+      the number of MPI parallel processes that will be spawned to evaluate each 
+      of the stripes.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Long</TD></TR>
+  <TR>
+    <TD class="info">Output_Drop_Analysis_Text_File</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>This is a comma delimited text file with the following 
+      header line:</SPAN></SPAN></P>
+      <P><SPAN><SPAN>Threshold, DrainDen, NoFirstOrd, NoHighOrd, MeanDFirstOrd, 
+      MeanDHighOrd, StdDevFirstOrd, StdDevHighOrd, T</SPAN></SPAN></P>
+      <P><SPAN><SPAN>The file then contains one line of data for each threshold 
+      value examined, and then a summary line that indicates the optimum 
+      threshold value. This technique looks for the smallest threshold in the 
+      range where the absolute value of the t-statistic is less than 2. For the 
+      science behind the drop analysis, see Tarboton et al. (1991, 1992), 
+      Tarboton and Ames (2001).</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">File</TD></TR></TBODY></TABLE></DIV>
+<H2 class="gp" xmlns="">Code Samples</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no code samples for this 
+tool.</SPAN></P></DIV>
+<H2 class="gp" xmlns="">Tags</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no tags for this item.</SPAN> </P></DIV>
+<H2 class="gp" xmlns="">Credits</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no credits for this item.</SPAN></P></DIV>
+<H2 class="gp" xmlns="">Use limitations</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no use limitations for this 
+item.</SPAN></P></DIV></BODY></HTML>

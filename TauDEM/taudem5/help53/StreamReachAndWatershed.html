@@ -661,7 +661,7 @@ Output_Stream_Reach_file, Output_Watershed_Grid) <BR><BR></P>
       reach. This identifier corresponds to the "id" attribute from the Outlets 
       shapefile used to designate nodes.</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>Order - Strahler Stream Order</SPAN></P>
+      <P><SPAN>strmOrder - Strahler Stream Order</SPAN></P>
       <P><SPAN></SPAN></P>
       <P><SPAN>Length - Length of the link. The units are the horizontal map 
       units of the underlying DEM grid.</SPAN></P>
@@ -669,35 +669,35 @@ Output_Stream_Reach_file, Output_Watershed_Grid) <BR><BR></P>
       <P><SPAN>Magnitude - Shreve Magnitude of the link. This is the total 
       number of sources upstream</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>DS_Cont_Ar - Drainage area at the downstream end of the link. 
+      <P><SPAN>DSContArea - Drainage area at the downstream end of the link. 
       Generally this is one grid cell upstream of the downstream end because the 
       drainage area at the downstream end grid cell includes the area of the 
       stream being joined.</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>Drop - Drop in elevation from the start to the end of the 
+      <P><SPAN>strmDrop - Drop in elevation from the start to the end of the 
       link</SPAN></P>
       <P><SPAN></SPAN></P>
       <P><SPAN>Slope - Average slope of the link (computed as 
       drop/length)</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>Straight_L - Straight line distance from the start to the end of 
+      <P><SPAN>StraightL - Straight line distance from the start to the end of 
       the link</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>US_Cont_Ar - Drainage area at the upstream end of the 
+      <P><SPAN>USContArea - Drainage area at the upstream end of the 
       link</SPAN></P>
       <P><SPAN></SPAN></P>
       <P><SPAN>WSNO - Watershed number. Cross reference to the *w.shp and *w 
       grid files giving the identification number of the watershed draining 
       directly to the link.</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>DOUT_END - Distance to the eventual outlet (i.e. the most 
+      <P><SPAN>DOUTEND - Distance to the eventual outlet (i.e. the most 
       downstream point in the stream network) from the downstream end of the 
       link.</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>DOUT_START - Distance to the eventual outlet from the upstream 
+      <P><SPAN>DOUTSTART - Distance to the eventual outlet from the upstream 
       end of the link</SPAN></P>
       <P><SPAN></SPAN></P>
-      <P><SPAN>DOUT_MID - Distance to the eventual outlet from the midpoint of 
+      <P><SPAN>DOUTMID - Distance to the eventual outlet from the midpoint of 
       the link</SPAN></P></DIV></DIV></DIV>
       <P><SPAN class="noContent">There is no python reference for this 
       parameter.</SPAN></P></TD>

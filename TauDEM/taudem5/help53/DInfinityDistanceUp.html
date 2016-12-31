@@ -335,16 +335,15 @@ cells along the reverse D-infinity flow directions. Ridge cells are defined to
 be grid cells that have no contribution from grid cells further upslope. Given 
 the convergence of multiple flow paths at any grid cell, any given grid cell can 
 have multiple upslope ridge cells. There are three statictical methods that this 
-tool can use: maximum distance, minimum distance and waited flow average over 
+tool can use: maximum distance, minimum distance and weighted flow average over 
 these flow paths. A variant on the above is to consider only grid cells that 
 contribute flow with a proportion greater than a user specified threshold (t) to 
 be considered as upslope of any given grid cell. Setting t=0.5 would result in 
 only one flow path from any grid cell and would give the result equivalent to a 
 D8 flow model, rather than D-infinity flow model, where flow is proportioned 
-between two downslope grid cells. Finally there are several different optional 
-paths that can be measured: the total straight line path (Pythagoras), the 
+between two downslope grid cells. There are several different options for the way distance can be measured: the total straight line path (Pythagoras), the 
 horizontal component of the straight line path, the vertical component of the 
-straight line path, or the total surface flow path.</SPAN></P></DIV></DIV></DIV>
+straight line path, or the total surface flow path.</SPAN> In the case of grids in a projected coordinate system, no unit conversions are done and the units are map units.  Horizontal distances will be in the  units of the grid cells and vertical distances in the units of the input elevation grid (fel). If these are inconsistent, then results will be incorrect for the case of mixed vertical and horizontal distances (Pythagoras, surface). In the case of grids in geograhic coordinates, a WGS84 spheroid is used to convert decimal degree cell sizes into meters for the computation of horizontal distances. Vertical distances remain in the units of the input elevation grid (fel), and mixed vertical and horizontal distances will be incorrect unless the vertical units are meters.</P></DIV></DIV></DIV>
 <P></P><BR></DIV>
 <H2 class="gp" xmlns="">Usage</H2>
 <DIV class="gpItemInfo" xmlns="">
@@ -529,7 +528,7 @@ Output_D-Infinity_Distance_Up_Grid) <BR><BR></P>
       <DIV>
       <P><SPAN>Creates a grid containing the distances up to the ridge 
       calculated using the D-infinity flow model and the statistical and path 
-      methods chosen</SPAN></P></DIV></DIV>
+      methods chosen</SPAN>. Units on the result are inherited from the horizontal or vertical units of the input grids used. See details in the summary.</P></DIV></DIV>
       <P><SPAN class="noContent">There is no python reference for this 
       parameter.</SPAN></P></TD>
     <TD align="left" class="info">Raster Dataset</TD></TR></TBODY></TABLE></DIV>

@@ -330,22 +330,22 @@ content="IE=11.0000" http-equiv="X-UA-Compatible">
 <DIV style="text-align: left;">
 <DIV>
 <DIV>
-<P><SPAN>Identifies all pits in the DEM and raises their elevation to the level 
-of the lowest pour point around their edge. Pits are low elevation areas in 
+<P><SPAN>This funciton identifies all pits in the DEM and raises their elevation to the level 
+of the lowest pour point around their edge. Pits, also referred to as depressions or sinks, are low elevation areas in 
 digital elevation models (DEMs) that are completely surrounded by higher 
 terrain. They are generally taken to be artifacts that interfere with the 
-routing of flow across DEMs, so are removed by raising their elevation to the 
-point where they drain off the edge of the domain. The pour point is the lowest 
-point on the boundary of the "watershed" draining to the pit. This step is not 
-essential if you have reason to believe that the pits in your DEM are real. This 
-step can be circumvented by copying the raw DEM source data onto the file with 
-suffix "fel" to simulate the output of "Pit Remove" without actually removing 
-the pits. Also, if a few pits actually exist and so should not be removed, while 
-at the same time others are believed to be artifacts that need to be removed, 
-the actual pits should have "no data" elevation values inserted at their lowest 
-point. "No data" values serve to define edges in the domain, and elevations are 
-only raised to where flow is off an edge, so an internal "no data" value will 
-stop a pit from being removed, if necessary.</SPAN></P></DIV></DIV></DIV>
+routing of flow across DEMs, so are removed by raising their elevationt, or filling them, to the point where they drain off the edge of the domain. The pour point is the lowest 
+point on the boundary of the "watershed" draining to the pit. </SPAN></P>
+<P>If there are specific pits that you do not wish to remove,  but do want to remove other pits, pits you want to retain can be marked using the optional depression mask input file (dempask). Elevation values from the input DEM corresponding to grid cells with depmask=1 will not be changed and if these mask cells are at the low points of internally draining depressions, the depression will be retained. </P>
+<P>&quot;No data&quot; values serve to define edges in the domain, and elevations are 
+  only raised to where flow is off an edge or to a grid cell with &quot;no data&quot;. An internal &quot;no data&quot; value can placed at the low point of internally draining depressions to stop it being raised by pit filling as an alternative to using a depression mask. </P>
+<P><SPAN>This pit removal step is not 
+  essential if you have reason to believe that all the pits in your DEM are real. This 
+  step can be circumvented by using the raw DEM as input to other TauDEM functions in the place where a filled DEM is used, such as by copying the raw DEM source data onto the file with 
+  suffix "fel" to simulate the output of "Pit Remove" without actually removing 
+  the pits. </SPAN></P>
+</DIV>
+</DIV></DIV>
 <P></P><BR></DIV>
 <H2 class="gp" xmlns="">Usage</H2>
 <DIV class="gpItemInfo" xmlns="">
@@ -388,12 +388,10 @@ Input_Number_of_Processes, Output_Pit_Removed_Elevation_Grid) <BR><BR></P>
       <P><SPAN>Pits are generally assumed to be artifacts of the digitation 
       process that interfere with the processing of flow across DEMs, and so are 
       removed by raising their elevation to the point where they just drain. 
-      However, if a few actual pits are known, but others need to be removed, 
-      the actual pits should have "no data" elevation values inserted at their 
+      However, if there are specific pits that ou do not wish to remove they can be marked using the separate depression mask input grid, or have  "no data" elevation values inserted at their 
       lowest point. "No data" values serve to define edges in the flow field, 
       and elevations are only raised to where flow is off an edge, so an 
-      internal "no data" value will stop a pit from being removed, if 
-      necessary.</SPAN></P></DIV></DIV>
+      internal "no data" value will stop a pit from being removed.</SPAN></P></DIV></DIV>
       <P><SPAN class="noContent">There is no python reference for this 
       parameter.</SPAN></P></TD>
     <TD align="left" class="info">Raster Layer</TD></TR>
@@ -419,8 +417,8 @@ Input_Number_of_Processes, Output_Pit_Removed_Elevation_Grid) <BR><BR></P>
       <DIV style="text-align: left;">
       <DIV>
       <DIV>
-      <P><SPAN>Indicator grid to identify cells that are real sinks and should 
-      not be filled</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN>Depression mask indicator grid (depmask) to identify cells that are real pits (or sinks or depressions) and should 
+      not be filled</SPAN>. Grid cells with a value of 1 (depmask=1) are not filled. Grid cells with any other value are filled.</P></DIV></DIV></DIV>
       <P><SPAN class="noContent">There is no python reference for this 
       parameter.</SPAN></P></TD>
     <TD align="left" class="info">Raster Layer</TD></TR>

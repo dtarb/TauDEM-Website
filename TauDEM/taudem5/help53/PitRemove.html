@@ -336,9 +336,12 @@ digital elevation models (DEMs) that are completely surrounded by higher
 terrain. They are generally taken to be artifacts that interfere with the 
 routing of flow across DEMs, so are removed by raising their elevationt, or filling them, to the point where they drain off the edge of the domain. The pour point is the lowest 
 point on the boundary of the "watershed" draining to the pit. </SPAN></P>
+<P>&nbsp;</P>
 <P>If there are specific pits that you do not wish to remove,  but do want to remove other pits, pits you want to retain can be marked using the optional depression mask input file (dempask). Elevation values from the input DEM corresponding to grid cells with depmask=1 will not be changed and if these mask cells are at the low points of internally draining depressions, the depression will be retained. </P>
+<P>&nbsp;</P>
 <P>&quot;No data&quot; values serve to define edges in the domain, and elevations are 
   only raised to where flow is off an edge or to a grid cell with &quot;no data&quot;. An internal &quot;no data&quot; value can placed at the low point of internally draining depressions to stop it being raised by pit filling as an alternative to using a depression mask. </P>
+<P>&nbsp;</P>
 <P><SPAN>This pit removal step is not 
   essential if you have reason to believe that all the pits in your DEM are real. This 
   step can be circumvented by using the raw DEM as input to other TauDEM functions in the place where a filled DEM is used, such as by copying the raw DEM source data onto the file with 

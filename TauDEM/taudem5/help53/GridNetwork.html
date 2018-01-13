@@ -381,32 +381,33 @@ style="font-style: italic; font-weight: bold;">gordfile</SPAN><SPAN>&gt; [
 </SPAN><SPAN style="font-weight: bold;">-lyrname </SPAN><SPAN>&lt;layer 
 name&gt;] [ </SPAN><SPAN style="font-weight: bold;">-lyrno 
 </SPAN><SPAN>&lt;layer number&gt;] [ </SPAN><SPAN 
-style="font-weight: bold;">-mask </SPAN><SPAN>&lt;maskfile&gt;] 
+style="font-weight: bold;">-mask </SPAN><SPAN>&lt;maskfile&gt; [-thresh &lt;threshold&gt;]] 
 </SPAN></SPAN></P>
-<P><SPAN>pfile: D8 flow directions input file</SPAN></P>
-<P><SPAN>plenfile: grid of longest flow length upstream of each point output 
-file</SPAN></P>
+<P>pfile: D8 flow directions input file</P>
+<P>plenfile: grid of longest flow length upstream of each point output 
+file</P>
 <P><SPAN>tlenfile: grid of total path length upstream of each point output 
 file</SPAN></P>
 <P><SPAN>gordfile: grid of strahler order output file</SPAN></P>
-<P><SPAN>maskfile: mask file(optional)</SPAN></P>
-<P><SPAN><SPAN>outletfile: input outlets file (OGR readable 
-dataset)</SPAN></SPAN></P>
-<P><SPAN>layer name: OGR layer name if outlets are not the first layer in 
-outletfile (optional)</SPAN></P>
-<P><SPAN><SPAN>layer number: OGR layer number if outlets are not the first layer 
-in outletfile (optional)</SPAN></SPAN></P>
-<P><SPAN><SPAN>Layer name and layer number should not both be 
-specified.</SPAN></SPAN></P>
-<P><SPAN></SPAN></P></DIV></DIV></DIV>
+<P><SPAN>outletfile: input outlets file (OGR readable dataset)</SPAN></P>
+<P><SPAN>layer name: OGR layer name if outlets are not the first layer in outletfile (optional)</SPAN></P>
+<P><SPAN>layer number: OGR layer number if outlets are not the first layer 
+in outletfile (optional)</SPAN></P>
+<P><SPAN>Layer name and layer number should not both be 
+specified.</SPAN></P>
+<P><SPAN>maskfile: mask file(optional)</SPAN></p>
+<P><SPAN>threshold: Where a maskfile is input, there is an additional option to specify a threshold.  This has to be immediately following the maskfile on the argument list.  The grid network is evaluated for grid cells where values of the maskfile grid read as 4 byte integers are &gt;= threshold.</SPAN></P>
+</DIV></DIV></DIV>
 <P></P><BR></DIV>
-<H2 class="gp" xmlns="">Syntax</H2>
+<H2 class="gp" xmlns="">ArcGIS Geoprocessing Syntax</H2>
 <DIV xmlns="">
 <P style="margin-top: -1.2em;">GridNetwork (Input_D8_Flow_Direction_Grid, 
 Input_Number_of_Processes, {Input_Outlets}, {Input_Mask_Grid}, 
 {Input_Mask_Threshold_Value}, Output_Strahler_Network_Order_Grid, 
 Output_Longest_Upslope_Length_Grid, Output_Total_Upslope_Length_Grid) 
-<BR><BR></P>
+<BR></P>
+<P style="margin-top: -1.2em;">Note that when ArcGIS Geoprocessing is used, some of the OGR layer name and layer number functionality may not be available and it is unknown whether this will work for outletfile anything other than a shapefile.<BR>
+</P>
 <TABLE width="100%" border="0" cellpadding="5">
   <TBODY>
   <TR>

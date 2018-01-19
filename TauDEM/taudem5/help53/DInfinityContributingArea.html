@@ -1,10 +1,8 @@
-﻿<!DOCTYPE HTML>
-<!--?xml version="1.0" encoding="UTF-8"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><HTML 
-xmlns="http://www.w3.org/1999/xhtml"><!-- saved from url=(0016)http://localhost --><HEAD><META 
-content="IE=11.0000" http-equiv="X-UA-Compatible">
- 
-<META http-equiv="content-type" content="text/html; charset=UTF-8"> 
-<STYLE id="internalStyle" type="text/css" xmlns="">
+﻿<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- saved from url=(005)local --><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css" id="internalStyle" xmlns="">
 		body {
 		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
 		  font-size: 0.8em;
@@ -36,11 +34,6 @@ content="IE=11.0000" http-equiv="X-UA-Compatible">
 		  text-align: center;
 		  margin-top: 5px;
 		  margin-bottom: 5px;
-		}
-		img {
-		  width: 210px;
-		  border-width: 1px;
-		  border-style: outset;
 		}
 		img.center {
 		  text-align: center;
@@ -317,194 +310,188 @@ content="IE=11.0000" http-equiv="X-UA-Compatible">
 		td.description {
 		  background: white;
 		}
-	  </STYLE>
- 
-<META name="GENERATOR" content="MSHTML 11.00.9600.17496"></HEAD> 
-<BODY oncontextmenu="return true">
-<H1 class="gpHeading" xmlns="">D-Infinity Contributing Area</H1>
-<H2 class="gp" xmlns="">Title 		 <SPAN class="gpsubtitle">D-Infinity 
-Contributing Area</SPAN> </H2>
-<H2 class="gp" xmlns="">Summary</H2>
-<DIV class="gpItemInfo" xmlns="">
-<P>
-<DIV style="text-align: left;">
-<DIV>
-<DIV>
-<P><SPAN>Calculates a grid of specific catchment area which is the contributing 
-area per unit contour length using the multiple flow direction D-infinity 
-approach. D-infinity flow direction is defined as steepest downward slope on 
-planar triangular facets on a block centered grid. The contribution at each grid 
-cell is taken as the grid cell length (or when the optional weight grid input is 
-used, from the weight grid). The contributing area of each grid cell is then 
-taken as its own contribution plus the contribution from upslope neighbors that 
-have some fraction draining to it according to the D-infinity flow model. The 
-flow from each cell either all drains to one neighbor, if the angle falls along 
-a cardinal (0, pi/2, pi, 3pi/2) or ordinal (pi/4, 3pi/4, 5pi/4, 7pi/4) 
-direction, or is on an angle falling between the direct angle to two adjacent 
-neighbors. In the latter case the flow is proportioned between these two 
-neighbor cells according to how close the flow direction angle is to the direct 
-angle to those cells. The contour length used here is the grid cell size. The 
-resulting units of the specific catchment area are length units the same as 
-those of the grid cell size.</SPAN></P></DIV></DIV></DIV>
-<P></P><BR></DIV>
-<H2 class="gp" xmlns="">Usage</H2>
-<DIV class="gpItemInfo" xmlns="">
-<P>
-<DIV style="text-align: left;">
-<DIV>
-<DIV>
-<P><SPAN><SPAN>Command Prompt Syntax:</SPAN></SPAN></P>
-<P><SPAN>mpiexec -n &lt;number of processes&gt; </SPAN><SPAN style="font-style: italic;">AreaDinf 
-</SPAN><SPAN><SPAN style="font-weight: bold;">  -ang </SPAN><SPAN>&lt; angfile 
-&gt; </SPAN><SPAN style="font-weight: bold;">-sca </SPAN><SPAN>&lt; </SPAN><SPAN 
-style="font-style: italic; font-weight: bold;">scafile</SPAN><SPAN>&gt; [ 
-</SPAN><SPAN style="font-weight: bold;">-o </SPAN><SPAN>&lt;outletfile&gt;] [ 
-</SPAN><SPAN style="font-weight: bold;">-wg </SPAN><SPAN>&lt;wgfile&gt;] [ 
-</SPAN><SPAN style="font-weight: bold;">-nc</SPAN><SPAN>] [ </SPAN><SPAN style="font-weight: bold;">-lyrname 
-</SPAN><SPAN>&lt;layer name&gt;] [ </SPAN><SPAN 
-style="font-weight: bold;">-lyrno </SPAN><SPAN>&lt;layer 
-number&gt;]</SPAN></SPAN></P>
-<P><SPAN>angfile: Input Dinfflow directions grid</SPAN></P>
-<P><SPAN>scafile: Output Dinf contributing area grid</SPAN></P>
-<P><SPAN><SPAN>outletfile: input outlets file (OGR readable 
-dataset)</SPAN></SPAN></P>
-<P><SPAN><SPAN>wgfile: Input weight grid (optional)</SPAN></SPAN></P>
-<P><SPAN><SPAN>nc: Flag for edge contamination</SPAN></SPAN></P>
-<P><SPAN><SPAN>layer name: OGR layer name if outlets are not the first layer in 
-outletfile (optional)</SPAN></SPAN></P>
-<P><SPAN><SPAN>layer number: OGR layer number if outlets are not the first layer 
-in outletfile (optional)</SPAN></SPAN></P>
-<P><SPAN><SPAN>Layer name and layer number should not both be 
-specified.</SPAN></SPAN></P>
-<P><SPAN></SPAN></P></DIV></DIV></DIV>
-<P></P><BR></DIV>
-<H2 class="gp" xmlns="">Syntax</H2>
-<DIV xmlns="">
-<P style="margin-top: -1.2em;">AreaDinf (Input_D-Infinity_Flow_Direction_Grid, 
-{Input_Outlets}, {Input_Weight_Grid}, Check_for_Edge_Contamination, 
-Input_Number_of_Processes, Output_D-Infinity_Specific_Catchment_Area_Grid) 
-<BR><BR></P>
-<TABLE width="100%" border="0" cellpadding="5">
-  <TBODY>
-  <TR>
-    <TH width="30%"><B>Parameter</B> </TH>
-    <TH width="50%"><B>Explanation</B> </TH>
-    <TH width="20%"><B>Data Type</B> </TH></TR>
-  <TR>
-    <TD class="info">Input_D-Infinity_Flow_Direction_Grid</TD>
-    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
-      Reference</SPAN><BR>
-      <DIV style="text-align: left;">
-      <P><SPAN><SPAN>A grid of flow directions based on the D-infinity flow 
-      method using the steepest slope of a triangular facet (Tarboton, 1997, "A 
-      New Method for the Determination of Flow Directions and Contributing Areas 
-      in Grid Digital Elevation Models," Water Resources Research, 33(2): 
-      309-319). Flow direction is determined as the direction of the steepest 
-      downward slope on the 8 triangular facets of a 3 x 3 block centered grid. 
-      Flow direction is encoded as an angle in radians, counter-clockwise from 
-      east as a continuous (floating point) quantity between 0 and 2 pi. The 
-      resulting flow in a grid is then usually interpreted as being proportioned 
-      between the two neighboring cells that define the triangular facet with 
-      the steepest downward slope.</SPAN></SPAN></P>
-      <DIV>
-      <P><SPAN></SPAN></P></DIV></DIV>
-      <P><SPAN class="noContent">There is no python reference for this 
-      parameter.</SPAN></P></TD>
-    <TD align="left" class="info">Raster Layer</TD></TR>
-  <TR>
-    <TD class="info">Input_Outlets (Optional) </TD>
-    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
-      Reference</SPAN><BR>
-      <DIV style="text-align: left;">
-      <DIV>
-      <DIV>
-      <P><SPAN>A point feature defining the outlets of interest. If this input 
-      is used, only the cells upslope of these outlet points are considered to 
-      be within the domain being evaluated.</SPAN></P>
-      <P><SPAN></SPAN></P></DIV></DIV></DIV>
-      <P><SPAN class="noContent">There is no python reference for this 
-      parameter.</SPAN></P></TD>
-    <TD align="left" class="info">Feature Layer</TD></TR>
-  <TR>
-    <TD class="info">Input_Weight_Grid (Optional) </TD>
-    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
-      Reference</SPAN><BR>
-      <DIV style="text-align: left;">
-      <P><SPAN><SPAN>A grid giving contribution to flow for each cell. These 
-      contributions (also sometimes referred to as weights or loadings) are used 
-      in the contributing area accumulation. If this input file is not used, the 
-      result is reported in terms of specific catchment area (the upslope area 
-      per unit contour length) taken as the number of cells times grid cell 
-      length (cell area divided by cell length).</SPAN></SPAN></P>
-      <DIV>
-      <P><SPAN></SPAN></P></DIV></DIV>
-      <P><SPAN class="noContent">There is no python reference for this 
-      parameter.</SPAN></P></TD>
-    <TD align="left" class="info">Raster Layer</TD></TR>
-  <TR>
-    <TD class="info">Check_for_Edge_Contamination</TD>
-    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
-      Reference</SPAN><BR>
-      <DIV style="text-align: left;">
-      <DIV>
-      <DIV>
-      <P><SPAN>A flag that indicates whether the tool should check for edge 
-      contamination. Edge contamination is defined as the possibility that a 
-      contributing area value may be underestimated due to the fact that grid 
-      cells outside of the domain have not been evaluated. This occurs when 
-      drainage is inwards from the boundaries or areas with "no data" values for 
-      elevation. The algorithm recognizes this and reports "no data" for the 
-      impated cells. It is common to see streaks of "no data" values extending 
-      inwards from boundaries along flow paths that enter the domain at a 
-      boundary. This is the desired effect and indicates that contributing area 
-      for these grid cells is unknown due to it being dependent on terrain 
-      outside of the domain of available data. Edge contamination checking may 
-      be turned off in cases where you know this is not an issue, or want to 
-      ignore these problems, if for example, the DEM has been clipped along a 
-      watershed outline.</SPAN></P></DIV></DIV></DIV>
-      <P><SPAN class="noContent">There is no python reference for this 
-      parameter.</SPAN></P></TD>
-    <TD align="left" class="info">Boolean</TD></TR>
-  <TR>
-    <TD class="info">Input_Number_of_Processes</TD>
-    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
-      Reference</SPAN><BR>
-      <DIV style="text-align: left;">
-      <DIV>
-      <DIV>
-      <P><SPAN>The number of stripes that the domain will be divided into and 
-      the number of MPI parallel processes that will be spawned to evaluate each 
-      of the stripes.</SPAN></P></DIV></DIV></DIV>
-      <P><SPAN class="noContent">There is no python reference for this 
-      parameter.</SPAN></P></TD>
-    <TD align="left" class="info">Long</TD></TR>
-  <TR>
-    <TD class="info">Output_D-Infinity_Specific_Catchment_Area_Grid</TD>
-    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
-      Reference</SPAN><BR>
-      <DIV style="text-align: left;">
-      <P><SPAN><SPAN>A grid of specific catchment area which is the contributing 
-      area per unit contour length using the multiple flow direction D-infinity 
-      approach. The contributing area of each grid cell is then taken as its own 
-      contribution plus the contribution from upslope neighbors that have some 
-      fraction draining to it according to the D-infinity flow 
-      model.</SPAN></SPAN></P>
-      <DIV>
-      <P><SPAN></SPAN></P></DIV></DIV>
-      <P><SPAN class="noContent">There is no python reference for this 
-      parameter.</SPAN></P></TD>
-    <TD align="left" class="info">Raster Dataset</TD></TR></TBODY></TABLE></DIV>
-<H2 class="gp" xmlns="">Code Samples</H2>
-<DIV class="gpItemInfo" xmlns="">
-<P><SPAN class="noContent">There are no code samples for this 
-tool.</SPAN></P></DIV>
-<H2 class="gp" xmlns="">Tags</H2>
-<DIV class="gpItemInfo" xmlns="">
-<P><SPAN class="noContent">There are no tags for this item.</SPAN> </P></DIV>
-<H2 class="gp" xmlns="">Credits</H2>
-<DIV class="gpItemInfo" xmlns="">
-<P><SPAN class="noContent">There are no credits for this item.</SPAN></P></DIV>
-<H2 class="gp" xmlns="">Use limitations</H2>
-<DIV class="gpItemInfo" xmlns="">
-<P><SPAN class="noContent">There are no use limitations for this 
-item.</SPAN></P></DIV></BODY></HTML>
+	  </style>
+</head>
+<body oncontextmenu="return true">
+<h1 class="gpHeading" xmlns="">D-Infinity Contributing Area</h1>
+<h2 class="gp" xmlns="">Title 
+		<span class="gpsubtitle">D-Infinity Contributing Area</span>
+</h2>
+<h2 class="gp" xmlns="">Summary</h2>
+<div class="gpItemInfo" xmlns="">
+<p></p><div style="text-align:Left;"><div><div><p><span>Calculates a 
+grid of specific catchment area which is the contributing area per unit 
+contour length using the multiple flow direction D-infinity approach. 
+D-infinity flow direction is defined as steepest downward slope on 
+planar triangular facets on a block centered grid. The contribution at 
+each grid cell is taken as the grid cell length (or when the optional 
+weight grid input is used, from the weight grid). The contributing area 
+of each grid cell is then taken as its own contribution plus the 
+contribution from upslope neighbors that have some fraction draining to 
+it according to the D-infinity flow model. The flow from each cell 
+either all drains to one neighbor, if the angle falls along a cardinal 
+(0, pi/2, pi, 3pi/2) or ordinal (pi/4, 3pi/4, 5pi/4, 7pi/4) direction, 
+or is on an angle falling between the direct angle to two adjacent 
+neighbors. In the latter case the flow is proportioned between these two
+ neighbor cells according to how close the flow direction angle is to 
+the direct angle to those cells. </span></p>
+  <p>&nbsp;</p>
+      <p><img src="images/tardemfig.gif"  alt="Dinfinity Figure"     /></p>
+      <p>&nbsp;</p>
+<p><span>Using
+ the grid cell size as the contribution at each grid cell assumes that 
+grid cell size is the effective contour length in the definition of 
+specific catchment area and does not distinguish any difference in 
+contour length dependent upon the flow direction. The resulting units of
+ the specific catchment area are then length units the same as those of 
+the grid cell size.</span></p>
+<p>&nbsp;</p>
+<p><span>If the 
+  optional outlet point shapefile is used, only the outlet cells and the 
+  cells upslope (by the D-infinity flow model) of them are in the domain 
+  to be evaluated.</span></p>
+<p>&nbsp;</p>
+<p><span>By default 
+  Dinfinity specific catchment area is evaluated using checks for edge 
+  contamination. This is defined as the possibility that a contributing 
+  area value may be underestimated due to grid cells outside of the domain
+  not being counted. This occurs when drainage is inwards from the 
+  boundaries or areas with "no data" values for elevation. The algorithm 
+  recognizes this and reports "no data" for the contributing area. It is 
+  common to see streaks of "no data" values extending inwards from 
+  boundaries along flow paths that enter the domain at a boundary. This is
+  the desired effect and indicates that contributing area for these grid 
+  cells is unknown due to it being dependent on terrain outside of the 
+  domain of data available. Edge contamination checking may be turned off 
+  in cases where you know it is not an issue or want to ignore these 
+  problems, if for example, the DEM has been clipped along a watershed 
+  outline.</span></p>
+<p><span></span></p></div></div></div><p></p><br>
+</div>
+<h2 class="gp" xmlns="">Usage</h2>
+<div class="gpItemInfo" xmlns="">
+<p></p><div style="text-align:Left;"><div><div><p><span><span>Command Prompt Syntax:</span></span></p><p><span>mpiexec -n &lt;number of processes&gt; </span><span style="font-style:italic;">AreaDinf </span><span><span style="font-weight:bold;">-ang </span><span>&lt; angfile &gt; </span><span style="font-weight:bold;">-sca </span><span>&lt; </span><span style="font-style:italic;font-weight:bold;">scafile</span><span>&gt; [ </span><span style="font-weight:bold;">-o </span><span>&lt;outletfile&gt;] [ </span><span style="font-weight:bold;">-wg </span><span>&lt;wgfile&gt;] [ </span><span style="font-weight:bold;">-nc</span><span>] [ </span><span style="font-weight:bold;">-lyrname </span><span>&lt;layer name&gt;] [ </span><span style="font-weight:bold;">-lyrno </span><span>&lt;layer number&gt;]</span></span></p><p><span>angfile: Input Dinfflow directions grid</span></p><p><span>scafile: Output Dinf contributing area grid</span></p><p><span><span>outletfile: input outlets file (OGR readable dataset)</span></span></p><p><span><span>wgfile: Input weight grid (optional)</span></span></p><p><span><span>nc: Flag for edge contamination</span></span></p><p><span><span>layer name: OGR layer name if outlets are not the first layer in outletfile (optional)</span></span></p><p><span><span>layer number: OGR layer number if outlets are not the first layer in outletfile (optional)</span></span></p><p><span><span>Layer name and layer number should not both be specified.</span></span></p><p><span></span></p></div></div></div><p></p><br>
+</div>
+<h2 class="gp" xmlns="">Syntax</h2>
+<div xmlns="">
+<p style="margin-top: -1.2em">AreaDinf 
+(Input_D-Infinity_Flow_Direction_Grid, {Input_Outlets}, 
+{Input_Weight_Grid}, Check_for_Edge_Contamination, 
+Input_Number_of_Processes, 
+Output_D-Infinity_Specific_Catchment_Area_Grid) <br><br>
+</p>
+<table width="100%" cellpadding="5" border="0">
+<tbody>
+<tr>
+<th width="30%">
+<b>Parameter</b>
+</th>
+<th width="50%">
+<b>Explanation</b>
+</th>
+<th width="20%">
+<b>Data Type</b>
+</th>
+</tr>
+<tr>
+<td class="info">Input_D-Infinity_Flow_Direction_Grid</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><p style="font-size:16ptmargin:7 0 7 0;"><span><span>A
+ grid of flow directions based on the D-infinity flow method using the 
+steepest slope of a triangular facet (Tarboton, 1997, "A New Method for 
+the Determination of Flow Directions and Contributing Areas in Grid 
+Digital Elevation Models," Water Resources Research, 33(2): 309-319). 
+Flow direction is determined as the direction of the steepest downward 
+slope on the 8 triangular facets of a 3 x 3 block centered grid. Flow 
+direction is encoded as an angle in radians, counter-clockwise from east
+ as a continuous (floating point) quantity between 0 and 2 pi. The 
+resulting flow in a grid is then usually interpreted as being 
+proportioned between the two neighboring cells that define the 
+triangular facet with the steepest downward slope.</span></span></p><div><p><span></span></p></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Raster Layer</td>
+</tr>
+<tr>
+<td class="info">Input_Outlets (Optional) </td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><div><div><p><span>A
+ point feature defining the outlets of interest. If this input is used, 
+only the cells upslope of these outlet points are considered to be 
+within the domain being evaluated.</span></p><p><span></span></p></div></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Feature Layer</td>
+</tr>
+<tr>
+<td class="info">Input_Weight_Grid (Optional) </td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><p style="font-size:16ptmargin:7 0 7 0;"><span><span>A
+ grid giving contribution to flow for each cell. These contributions 
+(also sometimes referred to as weights or loadings) are used in the 
+contributing area accumulation. If this input file is not used, the 
+result is reported in terms of specific catchment area (the upslope area
+ per unit contour length) taken as the number of cells times grid cell 
+length (cell area divided by cell length).</span></span></p><div><p><span></span></p></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Raster Layer</td>
+</tr>
+<tr>
+<td class="info">Check_for_Edge_Contamination</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><div><div><p><span>A
+ flag that indicates whether the tool should check for edge 
+contamination. Edge contamination is defined as the possibility that a 
+contributing area value may be underestimated due to the fact that grid 
+cells outside of the domain have not been evaluated. This occurs when 
+drainage is inwards from the boundaries or areas with "no data" values 
+for elevation. The algorithm recognizes this and reports "no data" for 
+the impated cells. It is common to see streaks of "no data" values 
+extending inwards from boundaries along flow paths that enter the domain
+ at a boundary. This is the desired effect and indicates that 
+contributing area for these grid cells is unknown due to it being 
+dependent on terrain outside of the domain of available data. Edge 
+contamination checking may be turned off in cases where you know this is
+ not an issue, or want to ignore these problems, if for example, the DEM
+ has been clipped along a watershed outline.</span></p></div></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Boolean</td>
+</tr>
+<tr>
+<td class="info">Input_Number_of_Processes</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><div><div><p><span>The
+ number of stripes that the domain will be divided into and the number 
+of MPI parallel processes that will be spawned to evaluate each of the 
+stripes.</span></p></div></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Long</td>
+</tr>
+<tr>
+<td class="info">Output_D-Infinity_Specific_Catchment_Area_Grid</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><p style="font-size:16ptmargin:7 0 7 0;"><span><span>A
+ grid of specific catchment area which is the contributing area per unit
+ contour length using the multiple flow direction D-infinity approach. 
+The contributing area of each grid cell is then taken as its own 
+contribution plus the contribution from upslope neighbors that have some
+ fraction draining to it according to the D-infinity flow model.</span></span></p><div><p><span></span></p></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Raster Dataset</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="gp" xmlns="">Code Samples</h2>
+<div class="gpItemInfo" xmlns="">
+<p><span class="noContent">There are no code samples for this tool.</span></p>
+</div>
+<h2 class="gp" xmlns="">Tags</h2>
+<div class="gpItemInfo" xmlns="">
+<p>
+<span class="noContent">There are no tags for this item.</span>
+</p>
+</div>
+<h2 class="gp" xmlns="">Credits</h2>
+<div class="gpItemInfo" xmlns="">
+<p><span class="noContent">There are no credits for this item.</span></p>
+</div>
+<h2 class="gp" xmlns="">Use limitations</h2>
+<div class="gpItemInfo" xmlns="">
+<p><span class="noContent">There are no use limitations for this item.</span></p>
+</div>
+
+
+</body></html>

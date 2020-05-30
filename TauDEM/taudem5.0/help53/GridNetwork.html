@@ -1,0 +1,543 @@
+﻿<!DOCTYPE HTML>
+<!--?xml version="1.0" encoding="UTF-8"?--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><!-- saved from url=(0016)http://localhost --><HEAD><META 
+content="IE=11.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<STYLE id="internalStyle" type="text/css" xmlns="">
+		body {
+		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
+		  font-size: 0.8em;
+		  font-weight: 500;
+		  color: #000020;
+		  background-color: #FFFFFF;
+		}
+		div.itemDescription {
+		  margin-right: 2em;
+		  margin-bottom: 2em;
+		}
+		h1 {
+		  font-size: 1.5em;
+		  margin-top: 0;
+		  margin-bottom: 5px;
+		}
+		h1.idHeading {
+		  color: #008FAF;
+		  text-align: center;
+		}
+		h1.gpHeading {
+		  color: black;
+		}
+		span.idHeading {
+		  color: #007799;
+		  font-weight: bold;
+		}
+		.center {
+		  text-align: center;
+		  margin-top: 5px;
+		  margin-bottom: 5px;
+		}
+		img {
+		  width: 210px;
+		  border-width: 1px;
+		  border-style: outset;
+		}
+		img.center {
+		  text-align: center;
+		  display: block;
+		  border-color: #666666;
+		}
+		img.enclosed {
+		  width: 60%;
+		}
+		img.gp {
+		  width: auto;
+		  border-style: none;
+		  margin-top: -1.2em;
+		}
+		.noThumbnail {
+		  color: #888888;
+		  font-size: 1.2em;
+		  border-width: 1px;
+		  border-style: solid;
+		  border-color: black;
+		  padding: 3em 3em;
+		  position: relative;
+		  text-align: center;
+		  width: 210px;
+		  height: 140px;
+		}
+		.noContent {
+		  color: #888888;
+		}
+		.itemInfo p {
+		  margin-top: -0.1em;
+		}
+		.itemInfo img {
+		  width: auto;
+		  border: none;
+		}
+		.gpItemInfo p {
+		  margin-top: -1.2em;
+		}
+		div.box {
+		  margin-left: 1em;
+		}
+		div.hide {
+		  display: none;
+		}
+		div.show {
+		  display: block;
+		}
+		span.hide {
+		  display: none;
+		}
+		span.show {
+		  display: inline-block;
+		}
+		.backToTop a {
+		  color: #DDDDDD;
+		  font-style: italic;
+		  font-size: 0.85em;
+		}
+		h2 {
+		  font-size: 1.2em;
+		}
+		h2.gp {
+		  color: #00709C;
+		}
+		.gpsubtitle {
+		  color: black;
+		  font-size: 1.2em;
+		  font-weight: normal;
+		}
+		.gptags {
+		  color: black;
+		  font-size: 0.8em;
+		  font-weight: normal;
+		}
+		.head {
+		  font-size: 1.3em;
+		}
+		a:link {
+		  color: #098EA6;
+		  font-weight: normal;
+		  text-decoration: none;
+		}
+		a:visited {
+		  color: #098EA6;
+		  text-decoration: none;
+		}
+		a:link:hover, a:visited:hover {
+		  color: #007799;
+		  background-color: #C6E6EF;
+		}
+		h2.iso a {
+		  color: #007799;
+		  font-weight: bold;
+		}
+		.iso a:link {
+		  color: #007799;
+		  text-decoration: none;
+		}
+		.iso a:visited {
+		  color: #007799;
+		  text-decoration: none;
+		}
+		.iso a:link:hover, .iso a:visited:hover {
+		  color: #006688;
+		  background-color: #C6E6EF;
+		}
+		h2.fgdc a {
+		  color: #888888;
+		  font-weight: bold;
+		}
+		.fgdc a:link {
+		  color: #888888;
+		  text-decoration: none;
+		}
+		.fgdc a:visited {
+		  color: #888888;
+		  text-decoration: none;
+		}
+		.fgdc a:link:hover, .fgdc a:visited:hover {
+		  color: #777777;
+		  background-color: #C6E6EF;
+		}
+		h3 {
+			font-size: 1em; 
+			color: #00709C;
+		}
+		.backToTop {
+		  color: #AAAAAA;
+		  margin-left: 1em;
+		}
+		p.gp {
+		  margin-top: .6em;
+		  margin-bottom: .6em;
+		}
+		ul ul {
+		  list-style-type: square;
+		}
+		ul li.iso19139heading {
+		  margin-left: -3em;
+		  list-style: none;
+		  font-weight: bold;
+		  color: #666666;
+		}
+		dl {
+		  margin: 0;
+		  padding: 0;
+		}
+		dl.iso {
+		  background-color: #F2F9FF;
+		}
+		dl.esri {
+		  background-color: #F2FFF9;
+		}
+		dl.subtype {
+		  width: 40em;
+		  margin-top: 0.5em;
+		  margin-bottom: 0.5em;
+		  padding: 0;
+		}
+		dt {
+		  margin-left: 0.6em;
+		  padding-left: 0.6em;
+		  clear: left;
+		}
+		.subtype dt {
+		  width: 60%;
+		  float: left;
+		  margin: 0;
+		  padding: 0.5em 0.5em 0 0.75em;
+		  border-top: 1px solid #006400;
+		  clear: none;
+		}
+		.subtype dt.header {
+		  padding: 0.5em 0.5em 0.5em 0;
+		  border-top: none;
+		}
+		dd {
+		  margin-left: 0.6em;
+		  padding-left: 0.6em;
+		  clear: left;
+		}
+		.subtype dd {
+		  float: left;
+		  width: 25%;
+		  margin: 0;
+		  padding: 0.5em 0.5em 0 0.75em;
+		  border-top: 1px solid #006400;
+		  clear: none;
+		}
+		.subtype dd.header {
+		  padding: 0.5em 0.5em 0.5em 0;
+		  border-top: none;
+		}
+		.isoElement {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #006688;
+		}
+		.esriElement {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #006688;
+		}
+		.element {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #666666;
+		}
+		unknownElement {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #333333;
+		}
+		.sync {
+		  color: #006400;
+		  font-weight: bold;
+		  font-size: 0.9em;
+		}
+		.syncOld {
+		  color: #888888;
+		  font-weight: bold;
+		  font-size: 0.9em;
+		}
+		.textOld {
+		  color: #999999;
+		}
+		.code {
+		  font-family: monospace;
+		}
+		pre.wrap {
+		  width: 96%;
+		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
+		  font-size: 1em;
+		  margin: 0 0 1em 0.6em;
+		  white-space: pre-wrap;       /* css-3 */
+		  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+		  white-space: -pre-wrap;      /* Opera 4-6 */
+		  white-space: -o-pre-wrap;    /* Opera 7 */
+		  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+		}
+		pre.gp {
+		  font-family: Courier New, Courier, monospace;
+		  line-height: 1.2em;
+		}
+		.gpcode {
+		  margin-left:15px;
+		  border: 1px dashed #ACC6D8;
+		  padding: 10px;
+		  background-color:#EEEEEE;
+		  height: auto;
+		  overflow: scroll; 
+		  width: 96%;
+		}
+		tr {
+		  vertical-align: top;
+		}
+		th {
+		  text-align: left;
+		  background: #dddddd;
+		  vertical-align: bottom;
+		  font-size: 0.8em;
+		}
+		td {
+		  background: #EEEEEE;
+		  color: black;
+		  vertical-align: top;
+		  font-size: 0.8em;
+		}
+		td.description {
+		  background: white;
+		}
+	  </STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.9600.17496"></HEAD> 
+<BODY oncontextmenu="return true">
+<H1 class="gpHeading" xmlns="">Grid Network</H1>
+<H2 class="gp" xmlns="">Title 		 <SPAN class="gpsubtitle">Grid Network</SPAN> 
+</H2>
+<H2 class="gp" xmlns="">Summary</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P>
+<DIV style="text-align: left;">
+<DIV>
+<DIV>
+<P><SPAN><SPAN>Creates 3 grids that contain for each grid cell: 1) the longest 
+path, 2) the total path, and 3) the Strahler order number. These values are 
+derived from the network defined by the D8 flow model.</SPAN></SPAN></P>
+<P><SPAN><SPAN>The longest upslope length is the length of the flow path from 
+the furthest cell that drains to each cell. The total upslope path length is the 
+length of the entire grid network upslope of each grid cell. Lengths are 
+measured between cell centers taking into account cell size and whether the 
+direction is adjacent or diagonal.</SPAN></SPAN></P>
+<P><SPAN><SPAN>Strahler order is defined as follows: A network of flow paths is 
+defined by the D8 Flow Direction grid. Source flow paths have a Strahler order 
+number of one. When two flow paths of different order join the order of the 
+downstream flow path is the order of the highest incoming flow path. When two 
+flow paths of equal order join the downstream flow path order is increased by 1. 
+When more than two flow paths join the downstream flow path order is calculated 
+as the maximum of the highest incoming flow path order or the second highest 
+incoming flow path order + 1. This generalizes the common definition to cases 
+where more than two flow paths join at a point.</SPAN></SPAN></P>
+<P><SPAN><SPAN>Where the optional mask grid and threshold value are input, the 
+function is evaluated only considering grid cells that lie in the domain with 
+mask grid value greater than or equal to the threshold value. Source (first 
+order) grid cells are taken as those that do not have any other grid cells from 
+inside the domain draining in to them, and only when two of these flow paths 
+join is order propagated according to the ordering rules. Lengths are also only 
+evaluated counting paths within the domain greater than or equal to the 
+threshold.</SPAN></SPAN></P>
+<P><SPAN>If the optional outlet point is used, only the outlet cells and the 
+cells upslope (by the D8 flow model) of them are in the domain to be 
+evaluated.</SPAN></P></DIV></DIV></DIV>
+<P></P><BR></DIV>
+<H2 class="gp" xmlns="">Illustration</H2>
+<DIV xmlns=""><IMG name="thumbnail" title="Thumbnail" class="gp" id="thumbnail" 
+alt="Thumbnail" src="GridNetwork_files/5.jpg"> </DIV>
+<H2 class="gp" xmlns="">Usage</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P>
+<DIV style="text-align: left;">
+<DIV>
+<DIV>
+<P><SPAN><SPAN>Command Prompt Syntax:</SPAN></SPAN></P>
+<P><SPAN>mpiexec -n &lt;number of processes&gt; </SPAN><SPAN style="font-style: italic;">Gridnet</SPAN><SPAN><SPAN 
+style="font-weight: bold;">   -p</SPAN><SPAN>&lt;pfile&gt; </SPAN><SPAN style="font-weight: bold;">-plen 
+</SPAN><SPAN>&lt;</SPAN><SPAN 
+style="font-style: italic; font-weight: bold;">plenfile</SPAN><SPAN>&gt; 
+</SPAN><SPAN style="font-weight: bold;">-tlen </SPAN><SPAN>&lt;</SPAN><SPAN 
+style="font-style: italic; font-weight: bold;">tlenfile</SPAN><SPAN>&gt; 
+</SPAN><SPAN style="font-weight: bold;">-gord </SPAN><SPAN>&lt;</SPAN><SPAN 
+style="font-style: italic; font-weight: bold;">gordfile</SPAN><SPAN>&gt; [</SPAN><SPAN style="font-weight: bold;">-o </SPAN><SPAN>&lt;outletfile&gt;] [</SPAN><SPAN style="font-weight: bold;">-lyrname </SPAN><SPAN>&lt;layer 
+name&gt;] [</SPAN><SPAN style="font-weight: bold;">-lyrno 
+</SPAN><SPAN>&lt;layer number&gt;] [</SPAN><SPAN 
+style="font-weight: bold;">-mask </SPAN><SPAN>&lt;maskfile&gt; [<strong>-thresh</strong> &lt;threshold&gt;]] 
+</SPAN></SPAN></P>
+<P>pfile: D8 flow directions input file</P>
+<P>plenfile: grid of longest flow length upstream of each point output 
+file</P>
+<P><SPAN>tlenfile: grid of total path length upstream of each point output 
+file</SPAN></P>
+<P><SPAN>gordfile: grid of strahler order output file</SPAN></P>
+<P><SPAN>outletfile: input outlets file (OGR readable dataset)</SPAN></P>
+<P><SPAN>layer name: OGR layer name if outlets are not the first layer in outletfile (optional)</SPAN></P>
+<P><SPAN>layer number: OGR layer number if outlets are not the first layer 
+in outletfile (optional)</SPAN></P>
+<P><SPAN>Layer name and layer number should not both be 
+specified.</SPAN></P>
+<P><SPAN>maskfile: mask file(optional)</SPAN></p>
+<P><SPAN>threshold: Where a maskfile is input, there is an additional option to specify a threshold.  This has to be immediately following the maskfile on the argument list.  The grid network is evaluated for grid cells where values of the maskfile grid read as 4 byte integers are &gt;= threshold.</SPAN></P>
+</DIV></DIV></DIV>
+<P></P><BR></DIV>
+<H2 class="gp" xmlns="">ArcGIS Geoprocessing Syntax</H2>
+<DIV xmlns="">
+<P style="margin-top: -1.2em;">GridNetwork (Input_D8_Flow_Direction_Grid, 
+Input_Number_of_Processes, {Input_Outlets}, {Input_Mask_Grid}, 
+{Input_Mask_Threshold_Value}, Output_Strahler_Network_Order_Grid, 
+Output_Longest_Upslope_Length_Grid, Output_Total_Upslope_Length_Grid) 
+<BR></P>
+<P style="margin-top: -1.2em;">Note that when ArcGIS Geoprocessing is used, some of the OGR layer name and layer number functionality may not be available and it is unknown whether this will work for outletfile anything other than a shapefile.<BR>
+</P>
+<TABLE width="100%" border="0" cellpadding="5">
+  <TBODY>
+  <TR>
+    <TH width="30%"><B>Parameter</B> </TH>
+    <TH width="50%"><B>Explanation</B> </TH>
+    <TH width="20%"><B>Data Type</B> </TH></TR>
+  <TR>
+    <TD class="info">Input_D8_Flow_Direction_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>A grid of D8 flow directions which are defined, for each 
+      cell, as the direction of the one of its eight adjacent or diagonal 
+      neighbors with the steepest downward slope.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_Number_of_Processes</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>The number of stripes that the domain will be divided into and 
+      the number of MPI parallel processes that will be spawned to evaluate each 
+      of the stripes.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Long</TD></TR>
+  <TR>
+    <TD class="info">Input_Outlets (Optional) </TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <P><SPAN>A point feature  defining the outlets of interest. If this input 
+      feature is used, only the cells upslope of these outlet cells are 
+      considered to be within the domain being evaluated.</SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Feature Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_Mask_Grid (Optional) </TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>A grid that is used to determine the domain do be analyzed. 
+      If the mask grid value &gt;= mask threshold, then the cell will be 
+      included in the domain. While this tool does not have an edge 
+      contamination flag, if edge contamination analysis is needed, then a mask 
+      grid from a function like AreaD8 that does support edge contamination can 
+      be used to achieve the same result.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Layer</TD></TR>
+  <TR>
+    <TD class="info">Input_Mask_Threshold_Value (Optional) </TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <DIV>
+      <DIV>
+      <P><SPAN>This input parameter is used in the calculation mask grid value 
+      &gt;= mask threshold to determine if the grid cell is in the domain to be 
+      analyzed.</SPAN></P></DIV></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Double</TD></TR>
+  <TR>
+    <TD class="info">Output_Strahler_Network_Order_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>A grid giving the Strahler order number for each cell. A 
+      network of flow paths is defined by the D8 Flow Direction grid. Source 
+      flow paths have a Strahler order number of one. When two flow paths of 
+      different order join the order of the downstream flow path is the order of 
+      the highest incoming flow path. When two flow paths of equal order join 
+      the downstream flow path order is increased by 1. When more than two flow 
+      paths join the downstream flow path order is calculated as the maximum of 
+      the highest incoming flow path order or the second highest incoming flow 
+      path order + 1. This generalizes the common definition to cases where more 
+      than two flow paths join at a point.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Dataset</TD></TR>
+  <TR>
+    <TD class="info">Output_Longest_Upslope_Length_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>A grid that gives the length of the longest upslope D8 flow 
+      path terminating at each grid cell. Lengths are measured between cell 
+      centers taking into account cell size and whether the direction is 
+      adjacent or diagonal.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Dataset</TD></TR>
+  <TR>
+    <TD class="info">Output_Total_Upslope_Length_Grid</TD>
+    <TD align="left" class="info"><SPAN style="font-weight: bold;">Dialog 
+      Reference</SPAN><BR>
+      <DIV style="text-align: left;">
+      <P><SPAN><SPAN>The total upslope path length is the length of the entire 
+      D8 flow grid network upslope of each grid cell. Lengths are measured 
+      between cell centers taking into account cell size and whether the 
+      direction is adjacent or diagonal.</SPAN></SPAN></P>
+      <DIV>
+      <P><SPAN></SPAN></P></DIV></DIV>
+      <P><SPAN class="noContent">There is no python reference for this 
+      parameter.</SPAN></P></TD>
+    <TD align="left" class="info">Raster Dataset</TD></TR></TBODY></TABLE></DIV>
+<H2 class="gp" xmlns="">Code Samples</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no code samples for this 
+tool.</SPAN></P></DIV>
+<H2 class="gp" xmlns="">Tags</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no tags for this item.</SPAN> </P></DIV>
+<H2 class="gp" xmlns="">Credits</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no credits for this item.</SPAN></P></DIV>
+<H2 class="gp" xmlns="">Use limitations</H2>
+<DIV class="gpItemInfo" xmlns="">
+<P><SPAN class="noContent">There are no use limitations for this 
+item.</SPAN></P></DIV></BODY></HTML>

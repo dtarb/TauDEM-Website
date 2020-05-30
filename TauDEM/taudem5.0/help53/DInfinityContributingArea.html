@@ -1,0 +1,497 @@
+﻿<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- saved from url=(005)local --><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css" id="internalStyle" xmlns="">
+		body {
+		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
+		  font-size: 0.8em;
+		  font-weight: 500;
+		  color: #000020;
+		  background-color: #FFFFFF;
+		}
+		div.itemDescription {
+		  margin-right: 2em;
+		  margin-bottom: 2em;
+		}
+		h1 {
+		  font-size: 1.5em;
+		  margin-top: 0;
+		  margin-bottom: 5px;
+		}
+		h1.idHeading {
+		  color: #008FAF;
+		  text-align: center;
+		}
+		h1.gpHeading {
+		  color: black;
+		}
+		span.idHeading {
+		  color: #007799;
+		  font-weight: bold;
+		}
+		.center {
+		  text-align: center;
+		  margin-top: 5px;
+		  margin-bottom: 5px;
+		}
+		img.center {
+		  text-align: center;
+		  display: block;
+		  border-color: #666666;
+		}
+		img.enclosed {
+		  width: 60%;
+		}
+		img.gp {
+		  width: auto;
+		  border-style: none;
+		  margin-top: -1.2em;
+		}
+		.noThumbnail {
+		  color: #888888;
+		  font-size: 1.2em;
+		  border-width: 1px;
+		  border-style: solid;
+		  border-color: black;
+		  padding: 3em 3em;
+		  position: relative;
+		  text-align: center;
+		  width: 210px;
+		  height: 140px;
+		}
+		.noContent {
+		  color: #888888;
+		}
+		.itemInfo p {
+		  margin-top: -0.1em;
+		}
+		.itemInfo img {
+		  width: auto;
+		  border: none;
+		}
+		.gpItemInfo p {
+		  margin-top: -1.2em;
+		}
+		div.box {
+		  margin-left: 1em;
+		}
+		div.hide {
+		  display: none;
+		}
+		div.show {
+		  display: block;
+		}
+		span.hide {
+		  display: none;
+		}
+		span.show {
+		  display: inline-block;
+		}
+		.backToTop a {
+		  color: #DDDDDD;
+		  font-style: italic;
+		  font-size: 0.85em;
+		}
+		h2 {
+		  font-size: 1.2em;
+		}
+		h2.gp {
+		  color: #00709C;
+		}
+		.gpsubtitle {
+		  color: black;
+		  font-size: 1.2em;
+		  font-weight: normal;
+		}
+		.gptags {
+		  color: black;
+		  font-size: 0.8em;
+		  font-weight: normal;
+		}
+		.head {
+		  font-size: 1.3em;
+		}
+		a:link {
+		  color: #098EA6;
+		  font-weight: normal;
+		  text-decoration: none;
+		}
+		a:visited {
+		  color: #098EA6;
+		  text-decoration: none;
+		}
+		a:link:hover, a:visited:hover {
+		  color: #007799;
+		  background-color: #C6E6EF;
+		}
+		h2.iso a {
+		  color: #007799;
+		  font-weight: bold;
+		}
+		.iso a:link {
+		  color: #007799;
+		  text-decoration: none;
+		}
+		.iso a:visited {
+		  color: #007799;
+		  text-decoration: none;
+		}
+		.iso a:link:hover, .iso a:visited:hover {
+		  color: #006688;
+		  background-color: #C6E6EF;
+		}
+		h2.fgdc a {
+		  color: #888888;
+		  font-weight: bold;
+		}
+		.fgdc a:link {
+		  color: #888888;
+		  text-decoration: none;
+		}
+		.fgdc a:visited {
+		  color: #888888;
+		  text-decoration: none;
+		}
+		.fgdc a:link:hover, .fgdc a:visited:hover {
+		  color: #777777;
+		  background-color: #C6E6EF;
+		}
+		h3 {
+			font-size: 1em; 
+			color: #00709C;
+		}
+		.backToTop {
+		  color: #AAAAAA;
+		  margin-left: 1em;
+		}
+		p.gp {
+		  margin-top: .6em;
+		  margin-bottom: .6em;
+		}
+		ul ul {
+		  list-style-type: square;
+		}
+		ul li.iso19139heading {
+		  margin-left: -3em;
+		  list-style: none;
+		  font-weight: bold;
+		  color: #666666;
+		}
+		dl {
+		  margin: 0;
+		  padding: 0;
+		}
+		dl.iso {
+		  background-color: #F2F9FF;
+		}
+		dl.esri {
+		  background-color: #F2FFF9;
+		}
+		dl.subtype {
+		  width: 40em;
+		  margin-top: 0.5em;
+		  margin-bottom: 0.5em;
+		  padding: 0;
+		}
+		dt {
+		  margin-left: 0.6em;
+		  padding-left: 0.6em;
+		  clear: left;
+		}
+		.subtype dt {
+		  width: 60%;
+		  float: left;
+		  margin: 0;
+		  padding: 0.5em 0.5em 0 0.75em;
+		  border-top: 1px solid #006400;
+		  clear: none;
+		}
+		.subtype dt.header {
+		  padding: 0.5em 0.5em 0.5em 0;
+		  border-top: none;
+		}
+		dd {
+		  margin-left: 0.6em;
+		  padding-left: 0.6em;
+		  clear: left;
+		}
+		.subtype dd {
+		  float: left;
+		  width: 25%;
+		  margin: 0;
+		  padding: 0.5em 0.5em 0 0.75em;
+		  border-top: 1px solid #006400;
+		  clear: none;
+		}
+		.subtype dd.header {
+		  padding: 0.5em 0.5em 0.5em 0;
+		  border-top: none;
+		}
+		.isoElement {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #006688;
+		}
+		.esriElement {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #006688;
+		}
+		.element {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #666666;
+		}
+		unknownElement {
+		  font-variant: small-caps;
+		  font-size: 0.9em;
+		  font-weight: normal;
+		  color: #333333;
+		}
+		.sync {
+		  color: #006400;
+		  font-weight: bold;
+		  font-size: 0.9em;
+		}
+		.syncOld {
+		  color: #888888;
+		  font-weight: bold;
+		  font-size: 0.9em;
+		}
+		.textOld {
+		  color: #999999;
+		}
+		.code {
+		  font-family: monospace;
+		}
+		pre.wrap {
+		  width: 96%;
+		  font-family: Verdana, Gill, Helvetica, Sans-serif ;
+		  font-size: 1em;
+		  margin: 0 0 1em 0.6em;
+		  white-space: pre-wrap;       /* css-3 */
+		  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+		  white-space: -pre-wrap;      /* Opera 4-6 */
+		  white-space: -o-pre-wrap;    /* Opera 7 */
+		  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+		}
+		pre.gp {
+		  font-family: Courier New, Courier, monospace;
+		  line-height: 1.2em;
+		}
+		.gpcode {
+		  margin-left:15px;
+		  border: 1px dashed #ACC6D8;
+		  padding: 10px;
+		  background-color:#EEEEEE;
+		  height: auto;
+		  overflow: scroll; 
+		  width: 96%;
+		}
+		tr {
+		  vertical-align: top;
+		}
+		th {
+		  text-align: left;
+		  background: #dddddd;
+		  vertical-align: bottom;
+		  font-size: 0.8em;
+		}
+		td {
+		  background: #EEEEEE;
+		  color: black;
+		  vertical-align: top;
+		  font-size: 0.8em;
+		}
+		td.description {
+		  background: white;
+		}
+	  </style>
+</head>
+<body oncontextmenu="return true">
+<h1 class="gpHeading" xmlns="">D-Infinity Contributing Area</h1>
+<h2 class="gp" xmlns="">Title 
+		<span class="gpsubtitle">D-Infinity Contributing Area</span>
+</h2>
+<h2 class="gp" xmlns="">Summary</h2>
+<div class="gpItemInfo" xmlns="">
+<p></p><div style="text-align:Left;"><div><div><p><span>Calculates a 
+grid of specific catchment area which is the contributing area per unit 
+contour length using the multiple flow direction D-infinity approach. 
+D-infinity flow direction is defined as steepest downward slope on 
+planar triangular facets on a block centered grid. The contribution at 
+each grid cell is taken as the grid cell length (or when the optional 
+weight grid input is used, from the weight grid). The contributing area 
+of each grid cell is then taken as its own contribution plus the 
+contribution from upslope neighbors that have some fraction draining to 
+it according to the D-infinity flow model. The flow from each cell 
+either all drains to one neighbor, if the angle falls along a cardinal 
+(0, pi/2, pi, 3pi/2) or ordinal (pi/4, 3pi/4, 5pi/4, 7pi/4) direction, 
+or is on an angle falling between the direct angle to two adjacent 
+neighbors. In the latter case the flow is proportioned between these two
+ neighbor cells according to how close the flow direction angle is to 
+the direct angle to those cells. </span></p>
+  <p>&nbsp;</p>
+      <p><img src="images/tardemfig.gif"  alt="Dinfinity Figure"     /></p>
+      <p>&nbsp;</p>
+<p><span>Using
+ the grid cell size as the contribution at each grid cell assumes that 
+grid cell size is the effective contour length in the definition of 
+specific catchment area and does not distinguish any difference in 
+contour length dependent upon the flow direction. The resulting units of
+ the specific catchment area are then length units the same as those of 
+the grid cell size.</span></p>
+<p>&nbsp;</p>
+<p><span>If the 
+  optional outlet point shapefile is used, only the outlet cells and the 
+  cells upslope (by the D-infinity flow model) of them are in the domain 
+  to be evaluated.</span></p>
+<p>&nbsp;</p>
+<p><span>By default 
+  Dinfinity specific catchment area is evaluated using checks for edge 
+  contamination. This is defined as the possibility that a contributing 
+  area value may be underestimated due to grid cells outside of the domain
+  not being counted. This occurs when drainage is inwards from the 
+  boundaries or areas with "no data" values for elevation. The algorithm 
+  recognizes this and reports "no data" for the contributing area. It is 
+  common to see streaks of "no data" values extending inwards from 
+  boundaries along flow paths that enter the domain at a boundary. This is
+  the desired effect and indicates that contributing area for these grid 
+  cells is unknown due to it being dependent on terrain outside of the 
+  domain of data available. Edge contamination checking may be turned off 
+  in cases where you know it is not an issue or want to ignore these 
+  problems, if for example, the DEM has been clipped along a watershed 
+  outline.</span></p>
+<p><span></span></p></div></div></div><p></p><br>
+</div>
+<h2 class="gp" xmlns="">Usage</h2>
+<div class="gpItemInfo" xmlns="">
+<p></p><div style="text-align:Left;"><div><div><p><span><span>Command Prompt Syntax:</span></span></p><p><span>mpiexec -n &lt;number of processes&gt; </span><span style="font-style:italic;">AreaDinf </span><span><span style="font-weight:bold;">-ang </span><span>&lt; angfile &gt; </span><span style="font-weight:bold;">-sca </span><span>&lt; </span><span style="font-style:italic;font-weight:bold;">scafile</span><span>&gt; [ </span><span style="font-weight:bold;">-o </span><span>&lt;outletfile&gt;] [ </span><span style="font-weight:bold;">-wg </span><span>&lt;wgfile&gt;] [ </span><span style="font-weight:bold;">-nc</span><span>] [ </span><span style="font-weight:bold;">-lyrname </span><span>&lt;layer name&gt;] [ </span><span style="font-weight:bold;">-lyrno </span><span>&lt;layer number&gt;]</span></span></p><p><span>angfile: Input Dinfflow directions grid</span></p><p><span>scafile: Output Dinf contributing area grid</span></p><p><span><span>outletfile: input outlets file (OGR readable dataset)</span></span></p><p><span><span>wgfile: Input weight grid (optional)</span></span></p><p><span><span>nc: Flag for edge contamination</span></span></p><p><span><span>layer name: OGR layer name if outlets are not the first layer in outletfile (optional)</span></span></p><p><span><span>layer number: OGR layer number if outlets are not the first layer in outletfile (optional)</span></span></p><p><span><span>Layer name and layer number should not both be specified.</span></span></p><p><span></span></p></div></div></div><p></p><br>
+</div>
+<h2 class="gp" xmlns="">Syntax</h2>
+<div xmlns="">
+<p style="margin-top: -1.2em">AreaDinf 
+(Input_D-Infinity_Flow_Direction_Grid, {Input_Outlets}, 
+{Input_Weight_Grid}, Check_for_Edge_Contamination, 
+Input_Number_of_Processes, 
+Output_D-Infinity_Specific_Catchment_Area_Grid) <br><br>
+</p>
+<table width="100%" cellpadding="5" border="0">
+<tbody>
+<tr>
+<th width="30%">
+<b>Parameter</b>
+</th>
+<th width="50%">
+<b>Explanation</b>
+</th>
+<th width="20%">
+<b>Data Type</b>
+</th>
+</tr>
+<tr>
+<td class="info">Input_D-Infinity_Flow_Direction_Grid</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><p style="font-size:16ptmargin:7 0 7 0;"><span><span>A
+ grid of flow directions based on the D-infinity flow method using the 
+steepest slope of a triangular facet (Tarboton, 1997, "A New Method for 
+the Determination of Flow Directions and Contributing Areas in Grid 
+Digital Elevation Models," Water Resources Research, 33(2): 309-319). 
+Flow direction is determined as the direction of the steepest downward 
+slope on the 8 triangular facets of a 3 x 3 block centered grid. Flow 
+direction is encoded as an angle in radians, counter-clockwise from east
+ as a continuous (floating point) quantity between 0 and 2 pi. The 
+resulting flow in a grid is then usually interpreted as being 
+proportioned between the two neighboring cells that define the 
+triangular facet with the steepest downward slope.</span></span></p><div><p><span></span></p></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Raster Layer</td>
+</tr>
+<tr>
+<td class="info">Input_Outlets (Optional) </td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><div><div><p><span>A
+ point feature defining the outlets of interest. If this input is used, 
+only the cells upslope of these outlet points are considered to be 
+within the domain being evaluated.</span></p><p><span></span></p></div></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Feature Layer</td>
+</tr>
+<tr>
+<td class="info">Input_Weight_Grid (Optional) </td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><p style="font-size:16ptmargin:7 0 7 0;"><span><span>A
+ grid giving contribution to flow for each cell. These contributions 
+(also sometimes referred to as weights or loadings) are used in the 
+contributing area accumulation. If this input file is not used, the 
+result is reported in terms of specific catchment area (the upslope area
+ per unit contour length) taken as the number of cells times grid cell 
+length (cell area divided by cell length).</span></span></p><div><p><span></span></p></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Raster Layer</td>
+</tr>
+<tr>
+<td class="info">Check_for_Edge_Contamination</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><div><div><p><span>A
+ flag that indicates whether the tool should check for edge 
+contamination. Edge contamination is defined as the possibility that a 
+contributing area value may be underestimated due to the fact that grid 
+cells outside of the domain have not been evaluated. This occurs when 
+drainage is inwards from the boundaries or areas with "no data" values 
+for elevation. The algorithm recognizes this and reports "no data" for 
+the impated cells. It is common to see streaks of "no data" values 
+extending inwards from boundaries along flow paths that enter the domain
+ at a boundary. This is the desired effect and indicates that 
+contributing area for these grid cells is unknown due to it being 
+dependent on terrain outside of the domain of available data. Edge 
+contamination checking may be turned off in cases where you know this is
+ not an issue, or want to ignore these problems, if for example, the DEM
+ has been clipped along a watershed outline.</span></p></div></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Boolean</td>
+</tr>
+<tr>
+<td class="info">Input_Number_of_Processes</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><div><div><p><span>The
+ number of stripes that the domain will be divided into and the number 
+of MPI parallel processes that will be spawned to evaluate each of the 
+stripes.</span></p></div></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Long</td>
+</tr>
+<tr>
+<td class="info">Output_D-Infinity_Specific_Catchment_Area_Grid</td>
+<td class="info" align="left">
+<span style="font-weight: bold">Dialog Reference</span><br><div style="text-align:Left;"><p style="font-size:16ptmargin:7 0 7 0;"><span><span>A
+ grid of specific catchment area which is the contributing area per unit
+ contour length using the multiple flow direction D-infinity approach. 
+The contributing area of each grid cell is then taken as its own 
+contribution plus the contribution from upslope neighbors that have some
+ fraction draining to it according to the D-infinity flow model.</span></span></p><div><p><span></span></p></div></div><p><span class="noContent">There is no python reference for this parameter.</span></p></td>
+<td class="info" align="left">Raster Dataset</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 class="gp" xmlns="">Code Samples</h2>
+<div class="gpItemInfo" xmlns="">
+<p><span class="noContent">There are no code samples for this tool.</span></p>
+</div>
+<h2 class="gp" xmlns="">Tags</h2>
+<div class="gpItemInfo" xmlns="">
+<p>
+<span class="noContent">There are no tags for this item.</span>
+</p>
+</div>
+<h2 class="gp" xmlns="">Credits</h2>
+<div class="gpItemInfo" xmlns="">
+<p><span class="noContent">There are no credits for this item.</span></p>
+</div>
+<h2 class="gp" xmlns="">Use limitations</h2>
+<div class="gpItemInfo" xmlns="">
+<p><span class="noContent">There are no use limitations for this item.</span></p>
+</div>
+
+
+</body></html>

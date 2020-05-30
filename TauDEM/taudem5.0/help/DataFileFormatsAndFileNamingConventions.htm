@@ -1,0 +1,194 @@
+﻿<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="styles/81Help.css">
+<script type="text/javascript" language="JavaScript" src="scripts/81Help.js"></script>
+<script language="JavaScript1.2"></script>
+<title></title>
+</head>
+<body>
+<table style="margin-top:-1em; margin-bottom:0; padding:0; margin-left:-1em">
+    <tr>
+        <td height="72" style="background:white"><img width="875" height="70" alt="TauDEM Toolbox banner" src="images/AHBanner_TauDEMToolbox.gif"></td>
+    </tr>
+</table>
+<h1>Data File Formats and File Naming Conventions</h1>
+<p>&nbsp;</p>
+<p>The TauDEM Toolbox uses 3 general types of input and output data files for it's various tools:
+<ul>
+    <li>Grid Files</li>
+    <li>Shapefile</li>
+    <li>Text Files</li>
+</ul>
+<p>Also TauDEM, by default, uses a file naming convention that has been developed to assist in organizing the numerous files that are often involved in terrain analysis.</p>
+<p>&nbsp;</p>
+<H2>Grid Files</h2>
+<P>Version 5.* of the TauDEM Toolbox uses TIFF formatted grid files.  These TIFF files must be uncompressed, and must use the GDAL Nodata Tag to hold the no data value.  They should also be regular TIFF files, not BigTIFF. One tool that can format TIFF files in this fashion is the GDAL File Utility. Other grid formats including formats that otherwise will work with ArcGIS will not work with TauDEM 5.
+<p>For a table listing the TauDEM grid defintions and naming conventions table click <a href="GridDefinitionsAndNamingConventions.htm">here</a>.</p>
+<p>&nbsp;</p>
+<H2>Shapefiles</H2>
+<P>Shapefiles are an open ESRI data format that stores vector data as described in a <A href="http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf">white paper</A>. Shapefiles are used  for the following purposes in TauDEM: </P>
+<UL>
+    <LI>Outlets Shapefile - A point shapefile giving the location of outlets or internal monitoring points. The attribute "id" may be used to specify an identifier (e.g. stream flow recorder number) associated with these monitoring points. The value -1 is reserved to indicate "no identifier". There is no default filename for outlet shapefiles.</LI>
+    <LI>Stream Reach Shapefile - A polyline shapefile giving the links in a stream network.&nbsp; This is created by&nbsp; the "Stream Shapefile and Watershed Grid" function and has attributes tabulated below.&nbsp; The default filename for this shapefile is "*net.shp", where * is the base DEM name. </LI>
+    <LI>Watershed Shapefile - A polygon shapefile demarcating each reach watershed.&nbsp; This is created by the function "Watershed grid to shapefile". The only attribute of this shapefile is polygon_id, identifier.&nbsp; This corresponds with the WSNO watershed number in the *net.shp file.&nbsp; The default filename for this shapefile is "*w.shp", where * is the base DEM name. </LI>
+</UL>
+<h3>Stream Reach Shapefile Attributes</h3>
+<Table width="95%" border="0" cellpadding="5">
+    <TR>
+        <TH>Attributes</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD class="info">LINKNO</TD>
+        <TD class="info">Link Number.&nbsp; A unique number associated with each link (segmentof channel between junctions). This is an arbitrary number that varies depending on the number of processes used.</TD>
+    </TR>
+    <TR>
+        <TD class="info">DSLINKNO</TD>
+        <TD class="info">Link Number of the downstream link. -1 indicates that this does not exist.</TD>
+    </TR>
+    <TR>
+        <TD class="info">USLINKNO1</TD>
+        <TD class="info">Link Number of first upstream link
+            </P>
+            . -1 indicates no links upstream.</TD>
+    </TR>
+    <TR>
+        <TD class="info">USLINKNO2</TD>
+        <TD class="info">Link Number of second upstream link.
+            </P>
+            -1 indicates no links upstream.</TD>
+    </TR>
+    <TR>
+        <TD class="info">DSNODEID</TD>
+        <TD class="info">Node identifier for node at downstream end of stream reach. This identifier corresponds to the "id" attribute from the Outlets shapefile used to designate nodes.</TD>
+    </TR>
+    <TR>
+        <TD class="info">Order</TD>
+        <TD class="info">Strahler Stream Order</TD>
+    </TR>
+    <TR>
+        <TD class="info">Length</TD>
+        <TD class="info">Length of the link</TD>
+    </TR>
+    <TR>
+        <TD class="info">Magnitude</TD>
+        <TD class="info">Shreve Magnitude of the link. This is the total number of sources upstream
+            </P></TD>
+    </TR>
+    <TR>
+        <TD class="info">DS_Cont_Ar</TD>
+        <TD class="info">Drainage area at the downstream end of the link. Generally this is one grid cell upstream of the downstream end because the drainage area at the downstream end grid cell includes the area of the stream being joined.</TD>
+    </TR>
+    <TR>
+        <TD class="info">Drop</TD>
+        <TD class="info">Drop in elevation from the start to the end of the link</TD>
+    </TR>
+    <TR>
+        <TD class="info">Slope</TD>
+        <TD class="info">Average slope of the link (computed as drop/length)</TD>
+    </TR>
+    <TR>
+        <TD class="info">Straight_L</TD>
+        <TD class="info">Straight line distance from the start to the end of the link</TD>
+    </TR>
+    <TR>
+        <TD class="info">US_Cont_Ar</TD>
+        <TD class="info">Drainage area at the upstream end of the link</TD>
+    </TR>
+    <TR>
+        <TD class="info">WSNO</TD>
+        <TD class="info">Watershed number. Cross reference to the *w.shp and *w grid files giving the identification number of the watershed draining directly to the link.</TD>
+    </TR>
+    <TR>
+        <TD class="info">DOUT_END</TD>
+        <TD class="info">Distance to the outlet from the downstream end of the link</TD>
+    </TR>
+    <TR>
+        <TD class="info">DOUT_START</TD>
+        <TD class="info">Distance to the outlet from the upstream end of the link</TD>
+    </TR>
+    <TR>
+        <TD class="info">DOUT_MID</TD>
+        <TD class="info">Distance to the outlet from the midpoint of the link</TD>
+    </TR>
+</TABLE>
+<p>&nbsp;</p>
+<H2>Text Files</H2>
+<P>Text files are used to store the Stream Network Tree and Stream Network Coordinate files, giving network topological connectivity and coordinates and attributes associated with points on the stream network.</p>
+<p>&nbsp;</p>
+<h3>Stream Network Tree File</h3>
+<p>This file defines the topological linkage of the stream network. The default filename is "*tree.dat", where * is the base DEM name. The Stream Network Tree File is created by the function "Stream order grid and network files". Columns are as follows: </P>
+<Table width="95%" border="0" cellpadding="5">
+    <TR>
+        <TH>#</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD class="info">1</TD>
+        <TD class="info">Link Number.  A unique number associated with each link (segmentof channel between junctions). This is an arbitrary number that varies depending on the number of processes used.</TD>
+    </TR>
+    <TR>
+        <TD class="info">2</TD>
+        <TD class="info">Start Point Number in Network Coordinates (*coord.dat) file (Indexed from 0)</TD>
+    </TR>
+    <TR>
+        <TD class="info">3</TD>
+        <TD class="info">End Point Number in Network Coordinates (*coord.dat) file (Indexed from 0)</TD>
+    </TR>
+    <TR>
+        <TD class="info">4</TD>
+        <TD class="info">Next  (Downstream) Link Number. Points to Link Number.&nbsp; -1 indicates no links downstream, i.e. a  terminal link.</TD>
+    </TR>
+    <TR>
+        <TD class="info">5</TD>
+        <TD class="info">First  Previous (Upstream) Link Number. Points to Link Number.&nbsp; -1 indicates no upstream links.</TD>
+    </TR>
+    <TR>
+        <TD class="info">6</TD>
+        <TD class="info">Second  Previous (Upstream) Link Numbers.&nbsp; Points  to Link Number.&nbsp; -1 indicates no upstream  links. Where only one previous link is -1, it indicates an internal monitoring  point where the reach is logically split, but the network does not bifurcate.</TD>
+    </TR>
+    <TR>
+        <TD class="info">7</TD>
+        <TD class="info">Strahler Order of Link</TD>
+    </TR>
+    <TR>
+        <TD class="info">8</TD>
+        <TD class="info">Monitoring point identifier at downstream end of link. -1 indicates downstream end is not a monitoring point.</TD>
+    </TR>
+    <TR>
+        <TD class="info">9</TD>
+        <TD class="info">Network magnitude of the link, calculated as the  number of upstream sources (following Shreve).</TD>
+    </TR>
+</TABLE>
+<p>&nbsp;</p>
+<H3>Stream Network Coordinate File</H3>
+<P>This file defines the coordinates and attributes of points along the stream network. The default filename is "*coord.dat", where * is the base DEM name. The Stream Network Coordinate File is created by the function "Stream Reach and Watershed". Columns are as follows: </P>
+<Table width="95%" border="0" cellpadding="5">
+    <TR>
+        <TH>#</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD class="info">1</TD>
+        <TD class="info">X coordinate</TD>
+    </TR>
+    <TR>
+        <TD class="info">2</TD>
+        <TD class="info">Y coordinate </TD>
+    </TR>
+    <TR>
+        <TD class="info">3</TD>
+        <TD class="info">Distance along channels to the downstream end of a terminal link</TD>
+    </TR>
+    <TR>
+        <TD class="info">4</TD>
+        <TD class="info">Elevation </TD>
+    </TR>
+    <TR>
+        <TD class="info">5</TD>
+        <TD class="info">Contributing area </TD>
+    </TR>
+</TABLE>
+</body>
+</html>

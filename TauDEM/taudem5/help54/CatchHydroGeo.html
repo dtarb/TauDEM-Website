@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CatchHydroGeo - TauDEM Tool Documentation</title>
+    <link rel="stylesheet" href="../../../static/css/help.css">
+</head>
+<body>
+    <header>
+        <h1 class="gp-heading">Catchment Hydrogeography</h1>
+        <h2 class="gp">Title <span class="gp-subtitle">Catchment Hydrogeography</span></h2>
+    </header>
+    <main>
+        <section>
+            <h2 class="gp">Summary</h2>
+            <div class="gp-item-info">
+                <p>Evaluates channel hydraulic properties based on HAND (Height Above Nearest Drainage).</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Usage</h2>
+            <div class="gp-item-info">
+                <h3>Command Prompt Syntax:</h3>
+                <code class="command-syntax">
+					mpiexec -n &lt;number of processes&gt; <em>CatchHydroGeo</em>
+					<strong>-hand</strong> &lt;handfile&gt;
+					<strong>-catch</strong> &lt;catchfile&gt;
+					<strong>-catchlist</strong> &lt;catchidlistfile&gt;
+					<strong>-slp</strong> &lt;slpfile&gt;
+					<strong>-h</strong> &lt;hfile&gt;
+					<strong>-table &lt;hpfile&gt;</strong>
+                </code>
+                <h3>Parameters:</h3>
+                <ul>
+                    <li><strong>handfile:</strong> File name of the hand raster file (input)</li>
+                    <li><strong>catchfile:</strong> File name of the catchment raster file (input)</li>
+                    <li><strong>catchidlistfile:</strong> File name of the input catchment id list CSV file (input). This file has at least 3 columns: catchment id, catchment slope, catchment length. Optionally, a 4th column for Manning's n can be provided</li>
+                    <li><strong>slpfile:</strong> File name of the input D-inf slope raster file (input)</li>
+                    <li><strong>hfile:</strong> File name of the input stage table text file (input)</li>
+                    <li><strong>hpfile:</strong> File name of the hydraulic property text file (output)</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Code Samples</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no code samples for this tool.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Tags</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no tags for this item.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Credits</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no credits for this item.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Use limitations</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no use limitations for this item.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

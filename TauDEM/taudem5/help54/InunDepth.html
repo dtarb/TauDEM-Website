@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>InunDepth - TauDEM Tool Documentation</title>
+    <link rel="stylesheet" href="../../../static/css/help.css">
+</head>
+<body>
+    <header>
+        <h1 class="gp-heading">Inundation Depth Estimation</h1>
+        <h2 class="gp">Title <span class="gp-subtitle">Inundation Depth Estimation</span></h2>
+    </header>
+    <main>
+        <section>
+            <h2 class="gp">Summary</h2>
+            <div class="gp-item-info">
+                <p>Computes inundation depth based on HAND (Height Above Nearest Drainage) input raster data, flow forecast input file, and hydraulic property input file.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Usage</h2>
+            <div class="gp-item-info">
+                <h3>Command Prompt Syntax:</h3>
+                <code class="command-syntax">
+                    mpiexec -n &lt;number of processes&gt; <em>InunDepth</em>
+                    <strong>-hand</strong> &lt;handfile&gt;
+                    <strong>-catch</strong> &lt;catchfile&gt;
+                    <strong>-mask</strong> &lt;maskfile&gt;
+                    <strong>-fc</strong> &lt;forecastfile&gt;
+                    <strong>-hp</strong> &lt;hydropropertyfile&gt;
+                    <strong>-inun &lt;outputinundationfile&gt;</strong>
+                    [<strong>-depth</strong> &lt;outputdepthfile&gt;]
+                </code>                
+                <h3>Parameters:</h3>
+                <ul>
+                    <li><strong>handfile:</strong> File name of the hand raster file (input)</li>
+                    <li><strong>catchfile:</strong> File name of the catchment raster file (input)</li>
+                    <li><strong>maskfile:</strong> File name of the mask raster file (input - optional)</li>
+                    <li><strong>forecastfile:</strong> File name of the inundation forecast CSV file (input). This file has 2 columns - id and flow.</li>
+                    <li><strong>hydropropertyfile:</strong> File name of the hydro property text file (input)</li>
+                    <li><strong>outputinundationfile:</strong> File name of the inundation raster file (output)</li>
+                    <li><strong>outputdepthfile:</strong> File name of the inundation depth text/CSV file (output - optional)</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Code Samples</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no code samples for this tool.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Tags</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no tags for this item.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Credits</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no credits for this item.</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="gp">Use limitations</h2>
+            <div class="gp-item-info">
+                <p class="no-content">There are no use limitations for this item.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

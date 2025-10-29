@@ -64,24 +64,38 @@ h3 {
 .parameters-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1em;
+    margin: 1em 0;
+    table-layout: fixed; /* This ensures column widths are respected */
+}
+
+.parameters-table th,
+.parameters-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word; /* Helps with long content */
 }
 
 .parameters-table th {
-    text-align: left;
-    background: #dddddd;
-    vertical-align: bottom;
-    font-size: 0.8em;
-    padding: 8px;
+    background-color: #f2f2f2;
     font-weight: bold;
 }
 
-.parameters-table td {
-    background: #EEEEEE;
-    color: black;
-    vertical-align: top;
-    font-size: 0.8em;
-    padding: 8px;
+/* Set specific column widths */
+.parameters-table th:nth-child(1),
+.parameters-table td:nth-child(1) {
+    width: 25%;
+}
+
+.parameters-table th:nth-child(2),
+.parameters-table td:nth-child(2) {
+    width: 60%;
+}
+
+.parameters-table th:nth-child(3),
+.parameters-table td:nth-child(3) {
+    width: 15%;
 }
 
 .parameters-table td.description {

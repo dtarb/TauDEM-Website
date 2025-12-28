@@ -9,14 +9,15 @@
 </head>
 <body>
     <header>
-        <h1 class="gp-heading">Inundation Depth Estimation</h1>
-        <h2 class="gp">Title <span class="gp-subtitle">Inundation Depth Estimation</span></h2>
+        <h1 class="gp-heading">Inundation Depth </h1>
+        <h2 class="gp">Title <span class="gp-subtitle">Inundation Depth </span></h2>
     </header>
     <main>
         <section>
             <h2 class="gp">Summary</h2>
             <div class="gp-item-info">
-                <p>Computes inundation depth based on HAND (Height Above Nearest Drainage) input raster data, flow forecast input file, and hydraulic property input file.</p>
+                <p>Generates an inundation depth map for river reaches based on forecasted flows and precomputed hydraulic properties. It uses the Height Above Nearest Drainage (HAND) raster, catchment IDs, and a synthetic rating curve to interpolate stage from flow, then computes cell inundation depth as max(stage − HAND, 0). Inputs include HAND and catchment rasters, optional mask, a flow forecast table, and hydraulic property table from catchhydrogeo. Outputs a raster file of inundation depths and optionally a CSV of reach depths.</p>
+                <p>&nbsp;</p>
             </div>
         </section>
         <section>
@@ -24,7 +25,7 @@
             <div class="gp-item-info">
                 <h3>Command Prompt Syntax:</h3>
                 <code class="command-syntax">
-                    mpiexec -n &lt;number of processes&gt; <em>InunDepth</em>
+                    mpiexec -n &lt;number of processes&gt; <em>inundepth</em>
                     <strong>-hand</strong> &lt;handfile&gt;
                     <strong>-catch</strong> &lt;catchfile&gt;
                     <strong>-mask</strong> &lt;maskfile&gt;
@@ -44,6 +45,75 @@
                     <li><strong>outputdepthfile:</strong> File name of the inundation depth text/CSV file (output - optional)</li>
                 </ul>
             </div>
+        </section>
+		<section>
+           
+        <table class="parameters-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Explanation</th>
+                        <th scope="col">Data Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="parameter-name">Input_handfile</td>
+                        <td class="description">The  Height Above Nearest Drainage (HAND) raster. Each pixel stores elevation above  stream. Commonly generated from Dinfinity Distance Down with the -v (vertical drop) option.                     </td>
+                        <td>Raster Layer</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_catchfile</td>
+                        <td class="description">Catchment  (watershed) ID raster. Each pixel labeled by its catchment ID. A separate synthetic rating curve for the stream reach associated with each catchment is used to evaluate inundation.</td>
+                        <td>Raster Layer</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_maskfile (Optional)</td>
+                        <td class="description">
+                          Cells  to be excluded from calculations such as permanent water bodies (e.g., lakes). </td>
+                        <td>Raster Layer</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_forecastfile</td>
+                        <td class="description">
+                          Flow  table file containing Id and flow (m3/s). 
+                          <br><br><u>Example </u><br>
+Id, flow_m3s<br>
+3, 277.3314643<br>
+10, 69.78496714<br>
+1, 64.16075885<br>
+2, 11.20897164<br>
+11, 398.7079813
+                        
+                      </td>
+                        <td>Comma Separated Variables (CSV)</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_<strong>hydropropertyfile</strong></td>
+                        <td class="description">
+                          Hydraulic property and synthetic rating curve file obtained from catchhydrogeo.</td>
+                        <td>CSV</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_Number_of_Processes</td>
+                      <td class="description">The number of stripes that the domain will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes.
+                      </td>
+                        <td>Long</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Output_<strong>outputinundationfile</strong></td>
+                        <td class="description">
+                      Output raster showing the calculated inundation depth (i.e., H - HAND) for valid cells.</td>
+                        <td>Raster Layer</td>
+                    </tr>
+		<tr>
+                        <td class="parameter-name">Output_<strong>outputdepthfile</strong> (Optional)</td>
+                        <td class="description">
+                      Reach depths that were computed.  Columns Id, flow, depth.</td>
+                        <td>CSV file</td>
+                  </tr>
+                </tbody>
+          </table>
         </section>
         <section>
             <h2 class="gp">Code Samples</h2>

@@ -9,22 +9,22 @@
 </head>
 <body>
     <header>
-        <h1 class="gp-heading">Catchment Hydrogeography</h1>
-        <h2 class="gp">Title <span class="gp-subtitle">Catchment Hydrogeography</span></h2>
+        <h1 class="gp-heading">Catchment Hydraulic Geometry</h1>
+        <h2 class="gp">Title <span class="gp-subtitle">Catchment Hydraulic Geometry</span></h2>
     </header>
     <main>
         <section>
             <h2 class="gp">Summary</h2>
             <div class="gp-item-info">
-                <p>Evaluates channel hydraulic properties based on HAND (Height Above Nearest Drainage).</p>
-            </div>
+                <p>Computes reach length average hydraulic geometry and synthetic  rating curve flow for river reaches within specified catchments using Height  Above Nearest Drainage (HAND) concepts. For each stage height, it calculates  wetted area, bed area, volume, cross-sectional area, wetted perimeter,  hydraulic radius, and discharge based on Manning&rsquo;s equation. Inputs include  HAND raster, catchment ID raster, slope raster, stage height table, and a  catchment list with slope, length, and optional roughness. Output is a table of  hydraulic properties for each catchment and stage. </p>
+See Zheng, X., D.G. Tarboton, D.R. Maidment,  Y.Y. Liu, and P. Passalacqua. 2018. &ldquo; River Channel Geometry and Rating Curve  Estimation Using Height above the Nearest Drainage.&rdquo; Journal of the American  Water Resources Association 54(4): 785–806. <a href="https://doi.org/10.1111/1752-1688.12661">https://doi.org/10.1111/1752-1688.12661</a>,  for theory and details.            </div>
         </section>
         <section>
             <h2 class="gp">Usage</h2>
             <div class="gp-item-info">
                 <h3>Command Prompt Syntax:</h3>
                 <code class="command-syntax">
-					mpiexec -n &lt;number of processes&gt; <em>CatchHydroGeo</em>
+					mpiexec -n &lt;number of processes&gt; <em>catchhydroGeo</em>
 					<strong>-hand</strong> &lt;handfile&gt;
 					<strong>-catch</strong> &lt;catchfile&gt;
 					<strong>-catchlist</strong> &lt;catchidlistfile&gt;
@@ -43,6 +43,160 @@
                 </ul>
             </div>
         </section>
+	  <section>
+           
+        <table class="parameters-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Parameter</th>
+                        <th scope="col">Explanation</th>
+                        <th scope="col">Data Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="parameter-name">Input_handfile</td>
+                        <td class="description">The  Height Above Nearest Drainage (HAND) raster. Each pixel stores elevation above  stream. Commonly generated from Dinfinity Distance Down with the -v (vertical drop) option.                                          </td>
+                        <td>Raster Layer</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_catchfile</td>
+                        <td class="description">Catchment  (watershed) ID raster. Each pixel labeled by its catchment ID. A separate synthetic rating curve is evaluated for the stream reach associated with each catchment.</td>
+                        <td>Raster Layer</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_catchitlistfile</td>
+                        <td class="description">
+                      CSV  file listing the catchment IDs to analyze, with slope, length, and optionally  Mannings n, for cases where n is determined from geospatial information and  varies for each reach.
+                      <br><br><u>Example</u><br>
+Id,Slope,Length,Manning_n<br>
+3,0.004495805,1708.7,0.05<br>
+10,0.009026781,10188.2,0.04<br>
+1,0.008613901,13755.5,0.05<br>
+2,0.006550436,4785.8,0.05<br>
+11,0.002922827,15490.9,0.04
+                      </td>
+                        <td>Comma Separated Variables (CSV)</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_slpfile</td>
+                        <td class="description">
+                      Slope raster derived from D-infinity algorithm (dinfflowdir). Used to calculate bed area by accounting for terrain steepness. </td>
+                        <td>Raster Layer</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_hfile</td>
+                        <td class="description">
+                      Stage  height table. Single column text file giving reach water depth in meters to be used in the calculation of hydraulic geometry and flow to establish the reach synthetic rating curve. 
+                     <br><br><u>Example</u><br>
+Stage<br>
+0.1<br>
+0.2<br>
+0.5<br>
+1<br>
+2<br>
+5<br>
+10</td>
+                        <td>Text file</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Input_Number_of_Processes</td>
+                      <td class="description">                          The number of stripes that the domain will be divided into and the number of MPI parallel processes that will be spawned to evaluate each of the stripes.
+                      </td>
+                        <td>Long</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">Output_<strong>hpfile</strong></td>
+                        <td class="description">
+                      Output  hydraulic properties text file containing calculated hydraulic properties for each stage and  catchment.</td>
+                        <td><strong>CSV file</strong></td>
+                    </tr>
+                </tbody>
+          </table>
+        </section>
+		        <section>
+            <h2 class="gp">Output</h2>
+            <p>Content of Output Hydraulic Properties text file</p>
+					
+<table class="parameters-table">
+  <thead>
+    <tr>
+      <th scope="col">Column</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Id</td>
+      <td>The watershed or reach ID. Extracted from the catchlist.csv file.</td>
+    </tr>
+    <tr>
+      <td>Stage_m</td>
+      <td>Water surface elevation (above drainage), taken from the stage.txt file.</td>
+    </tr>
+    <tr>
+      <td>Number of Cells</td>
+      <td>The count of raster cells where HAND(i,j) &lt; stage height. Computed per catchment for each stage height.</td>
+    </tr>
+    <tr>
+      <td>ReachWetArea_m2</td>
+      <td>
+        Sum of flat cell areas that are inundated at the given stage height. Calculated as:<br>
+        cellArea = dx × dy
+      </td>
+    </tr>
+    <tr>
+      <td>ReachBedArea_m2</td>
+      <td>
+        Sum of slope-adjusted areas (i.e., bed surface area) using:<br>
+        bedArea = cellArea × sqrt(1 + slope²)<br>
+        This accounts for terrain inclination.
+      Denoted Ab below.</td>
+    </tr>
+    <tr>
+      <td>ReachVolume_m3</td>
+      <td>
+        Volume of water over inundated cells, calculated as:<br>
+        volume = (stage - HAND) × cellArea<br>
+        Only added if the cell is &ldquo;wet.&rdquo;
+      </td>
+    </tr>
+    <tr>
+      <td>ReachSlope</td>
+      <td>Average slope of the catchment, taken from catchlist.txt. Not recomputed.</td>
+    </tr>
+    <tr>
+      <td>ReachLength_m</td>
+      <td>Reach length (in m), from catchlist.txt.</td>
+    </tr>
+    <tr>
+      <td>CatchArea_m2</td>
+      <td>Total area of the catchment in meters calculated from cells in the catchment and cell area.</td>
+    </tr>
+    <tr>
+      <td>CrossSectionArea_m2</td>
+      <td>Reach average cross section area calculated as Volume_m3 / ReachLength_m (A=V/L m²)</td>
+    </tr>
+    <tr>
+      <td>WetPerimeter_m</td>
+      <td>Reach average wetted perimeter  calculated as ReachBedArea_m2 / ReachLength_m (P=Ab/L m)</td>
+    </tr>
+    <tr>
+      <td>HydRadius_m</td>
+      <td>Reach average hydraulic radius calculated as CrossSectionArea_m2 / WetPerimeter_m (R=A/P m)</td>
+    </tr>
+    <tr>
+      <td>Manning_n</td>
+      <td>Mannings n representing reach roughness.</td>
+    </tr>
+    <tr>
+      <td>Flow_m3s</td>
+      <td>Discharge calculated using Manning's equation that assumes uniform flow. (CrossSectionArea_m2 × HydRadius_m^(2/3) × ReachSlope^(1/2)) / manningn (m³/s)</td>
+    </tr>
+  </tbody>
+</table>
+
+      </section>
         <section>
             <h2 class="gp">Code Samples</h2>
             <div class="gp-item-info">

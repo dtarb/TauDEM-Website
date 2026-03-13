@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Height above Nearest Drainage (HAND) Overview - TauDEM Tool Documentation</title>
+    <link rel="stylesheet" href="../../../static/css/help.css">
+</head>
+<body>
+    <header>
+        <table style="margin-top:-1em; margin-bottom:0; padding:0; margin-left:-1em">
+            <tr>
+                <td style="background:white"><img width="875" height="70" alt="TauDEM Toolbox banner" src="images/AHBanner_TauDEMToolbox.gif"></td>
+            </tr>
+        </table>
+        <h1 class="gp-heading">Height above Nearest Drainage (HAND) Overview</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="gp">Summary</h2>
+            <div class="gp-item-info">
+                <p>The HAND (Height Above the Nearest Drainage) tools compute the vertical distance from each cell to the nearest drainage cell and provide rasters useful for flood mapping and hydrologic analysis. HAND rasters are typically derived from a DEM and a stream/drainage raster and can be used to identify low-lying areas relative to channel elevation.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="gp">Tools</h2>
+            <table class="parameters-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Tool</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="parameter-name">Create HAND Grid</td>
+                        <td class="description">Generates a HAND raster from a digital elevation model (DEM) and an input drainage/stream raster. The output raster contains the vertical distance (height) above the nearest drainage cell for each pixel in the DEM domain. Inputs are resampled to the DEM resolution when necessary.</td>
+                    </tr>
+                    <tr>
+                        <td class="parameter-name">HAND-based Flood Mapping</td>
+                        <td class="description">Uses the HAND raster to derive inundation extents for specified water-level thresholds. This tool converts HAND values into binary inundation maps or depth rasters for simple flood-susceptibility assessments.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

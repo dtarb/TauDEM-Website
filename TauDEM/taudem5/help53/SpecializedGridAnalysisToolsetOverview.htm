@@ -82,14 +82,6 @@
                         <td class="parameter-name">Topographic Wetness Index</td>
                         <td class="description">Calculates the ratio of the natural log of the specific catchment area (contributing area) to slope, ln(a/S), or ln(a/tan (beta)). This provides an indication of depth to water table. No data values occur in locations where slope is 0 (flat).</td>
                     </tr>
-                    <tr>
-                        <td class="parameter-name">Catchment Hydraulic Geometry</td>
-                        <td class="description">Computes reach length average hydraulic geometry and synthetic rating curve flow for river reaches within specified catchments using Height Above Nearest Drainage (HAND) concepts. For each stage height, it calculates wetted area, bed area, volume, cross-sectional area, wetted perimeter, hydraulic radius, and discharge based on Manning’s equation. Inputs include HAND raster, catchment ID raster, slope raster, stage height table, and a catchment list with slope, length, and optional roughness. Output is a table of hydraulic properties for each catchment and stage. </td>
-                    </tr>
-                    <tr>
-                        <td class="parameter-name">Inundation Depth</td>
-                        <td class="description">Generates an inundation depth map for river reaches based on forecasted flows and precomputed hydraulic properties. It uses the Height Above Nearest Drainage (HAND) raster, catchment IDs, and a synthetic rating curve to interpolate stage from flow, then computes cell inundation depth as max(stage − HAND, 0). Inputs include HAND and catchment rasters, optional mask, a flow forecast table, and hydraulic property table from catchhydrogeo. Outputs a raster file of inundation depths and optionally a CSV of reach depths.</td>
-                    </tr>
                 </tbody>
             </table>
         </section>

@@ -36,12 +36,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="parameter-name">Create HAND Grid</td>
-                        <td class="description">Generates a HAND raster from a digital elevation model (DEM) and an input drainage/stream raster. The output raster contains the vertical distance (height) above the nearest drainage cell for each pixel in the DEM domain. Inputs are resampled to the DEM resolution when necessary.</td>
+                        <td class="parameter-name">Catchment Hydraulic Geometry</td>
+                        <td class="description">Computes reach length average hydraulic geometry and synthetic rating curve flow for river reaches within specified catchments using Height Above Nearest Drainage (HAND) concepts. For each stage height, it calculates wetted area, bed area, volume, cross-sectional area, wetted perimeter, hydraulic radius, and discharge based on Manning’s equation. Inputs include HAND raster, catchment ID raster, slope raster, stage height table, and a catchment list with slope, length, and optional roughness. Output is a table of hydraulic properties for each catchment and stage.</td>
                     </tr>
                     <tr>
-                        <td class="parameter-name">HAND-based Flood Mapping</td>
-                        <td class="description">Uses the HAND raster to derive inundation extents for specified water-level thresholds. This tool converts HAND values into binary inundation maps or depth rasters for simple flood-susceptibility assessments.</td>
+                        <td class="parameter-name">Inundation Depth</td>
+                        <td class="description">Generates an inundation depth map for river reaches based on forecasted flows and precomputed hydraulic properties. It uses the Height Above Nearest Drainage (HAND) raster, catchment IDs, and a synthetic rating curve to interpolate stage from flow, then computes cell inundation depth as max(stage − HAND, 0). Inputs include HAND and catchment rasters, optional mask, a flow forecast table, and hydraulic property table from catchhydrogeo. Outputs a raster file of inundation depths and optionally a CSV of reach depths.</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,0 +1,128 @@
+body {
+    font-family: Verdana, Gill, Helvetica, sans-serif;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #000020;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 20px;
+}
+
+.item-description {
+    margin-right: 2em;
+    margin-bottom: 2em;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+h1.gp-heading {
+    color: black;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+h2.gp {
+    color: #00709C;
+}
+
+h3 {
+    font-size: 1em;
+    color: #00709C;
+}
+
+.gp-subtitle {
+    color: black;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.gp-item-info {
+    margin-bottom: 1em;
+}
+
+.gp-item-info p {
+    margin-top: -1.2em;
+}
+
+.command-syntax {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #EEEEEE;
+    border: 1px dashed #ACC6D8;
+    padding: 10px;
+    margin: 15px;
+    display: block;
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+.parameters-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    table-layout: fixed; /* This ensures column widths are respected */
+}
+
+.parameters-table th,
+.parameters-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap: break-word; /* Helps with long content */
+}
+
+.parameters-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Set specific column widths */
+.parameters-table th:nth-child(1),
+.parameters-table td:nth-child(1) {
+    width: 25%;
+}
+
+.parameters-table th:nth-child(2),
+.parameters-table td:nth-child(2) {
+    width: 60%;
+}
+
+.parameters-table th:nth-child(3),
+.parameters-table td:nth-child(3) {
+    width: 15%;
+}
+
+.parameters-table td.description {
+    background: white;
+}
+
+.parameter-name {
+    font-weight: bold;
+}
+
+.no-content {
+    color: #888888;
+    font-style: italic;
+}
+
+a:link {
+    color: #098EA6;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #098EA6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #007799;
+    background-color: #C6E6EF;
+}

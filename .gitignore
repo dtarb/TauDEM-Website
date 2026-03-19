@@ -40,3 +40,7 @@ dwsync.xml
 # Executables
 *.out
 *.app
+
+# macOS finder metadata
+.DS_Store
+

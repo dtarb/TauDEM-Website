@@ -27,8 +27,22 @@
             <div class="gp-item-info">
                 <h3>Command Prompt Syntax:</h3>
                 <code class="command-syntax">
-					SIRegionTool.py --dem &lt;demfile&gt; --parreg &lt;output parameter region tif file&gt; --att &lt;output attribute table&gt; [--parreg-in &lt;input region raster&gt;] [--shp &lt;input feature class&gt; --shp-att-name &lt;input feature attribute&gt;]
+					siregion 
+                    <strong>-dem</strong> &lt;demfile&gt;
+                    <strong>-parreg</strong> &lt;output parameter region tif file&gt;
+                    <strong>-att</strong> &lt;output attribute table&gt;
+                    [<strong>-parreg-in</strong> &lt;input region raster&gt;]
+                    [<strong>-shp</strong> &lt;input feature class&gt; <strong>-shp-att-name</strong> &lt;input feature attribute&gt;]
                 </code>
+                <h3>Parameters:</h3>
+                <ul>
+                    <li><strong>demfile:</strong> Input digital elevation model grid</li>
+                    <li><strong>output parameter region tif file:</strong> Output parameter region grid (integer raster)</li>
+                    <li><strong>output attribute table:</strong> Output parameter attribute table (text file)</li>
+                    <li><strong>input region raster:</strong> Input integer raster defining parameter regions (optional)</li>
+                    <li><strong>input feature class:</strong> Input polygon feature class defining parameter regions (optional)</li>
+                    <li><strong>input feature attribute:</strong> Input attribute in the feature class used to define parameter regions (optional)</li>
+                </ul>
             </div>
         </section>
 

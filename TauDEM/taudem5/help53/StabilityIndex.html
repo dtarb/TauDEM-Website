@@ -24,45 +24,26 @@
         <section>
             <h2 class="gp">Usage</h2>
             <div class="gp-item-info">
-                <h3>Command Line Options:</h3>
-                
-                <h4>1. Python program that takes input from a control file</h4>
-                <code class="command-syntax">
-					StabilityIndex.py --params &lt;control file&gt;
-                </code>
-
-                <h4>Control file format</h4>
-                <pre class="code-block">
-# input parameters for combined stability index computation with road impact
-# input files
-slp=&lt;Slope grid&gt;
-sca=&lt;Specific catchment area grid&gt;
-cal=&lt;Region grid&gt;
-calpar=&lt;parameter attribute table&gt;
-# output files
-si=&lt;Stability index grid&gt;
-sat=&lt;Saturation grid&gt;
-# Additional parameters
-minimumterrainrecharge=0.0009 
-# m/hr
-maximumterrainrecharge=0.00135
-# m/hr
-# temporary output file directory
-temporary_output_files_directory=&lt;directory&gt;
-is_delete_intermediate_output_files=&lt;Boolean&gt;
-                </pre>
-
-                <h4>2. Direct command line call</h4>
+                <h3>Command Prompt Syntax</h3>
                 <code class="command-syntax">
 					mpiexec –n &lt;number of processes&gt; SinmapSI 
-					-slp &lt;Slope grid&gt; 
-					-sca &lt;Specific catchment area grid&gt; 
-					-calpar &lt;parameter attribute table&gt; 
-					-cal &lt;Region grid&gt; 
-					-si &lt;Stability index grid&gt; 
-					-sat &lt;Saturation grid&gt; 
+					<strong>-slp</strong> &lt;Slope grid&gt; 
+					<strong>-sca</strong> &lt;Specific catchment area grid&gt; 
+					<strong>-calpar</strong> &lt;parameter attribute table&gt; 
+					<strong>-cal</strong> &lt;Region grid&gt; 
+					<strong>-si</strong> &lt;Stability index grid&gt; 
+					<strong>-sat</strong> &lt;Saturation grid&gt; 
 					-par 0.0009 0.00135 9.81 1000
                 </code>
+                <h3>Parameters</h3>
+                <ul>
+                    <li><strong>Slope grid:</strong> Input slope grid (drop/distance)</li>
+                    <li><strong>Specific catchment area grid:</strong> Input specific catchment area grid (m^2/m)</li>
+                    <li><strong>Parameter attribute table:</strong> Input parameter attribute table (text file)</li>
+                    <li><strong>Region grid:</strong> Input parameter region grid (integer raster)</li>
+                    <li><strong>Stability index grid:</strong> Output stability index grid (float raster)</li>
+                    <li><strong>Saturation grid:</strong> Output saturation grid (float raster)</li>
+                    <li><strong>par:</strong> Minimum recharge, maximum recharge, gravity, soil density</li>
             </div>
         </section>
 
